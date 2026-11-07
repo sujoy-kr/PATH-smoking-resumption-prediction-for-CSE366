@@ -27,7 +27,10 @@ Thumbs.db
 /.agents/
 /.codex/
 /data/
-/artifacts/
+/artifacts/*
+# Authorized team/faculty prediction handoff: only the active frozen bundle.
+!/artifacts/longitudinal_v2_1/
+/artifacts/longitudinal_v2_1/*
 *.joblib
 *.pkl
 *.pickle
@@ -51,3 +54,9 @@ Thumbs.db
 # Streamlit/local credentials must never be shared.
 .streamlit/secrets.toml
 secrets.toml
+
+# Keep all other joblib files ignored; include this exact active-model path only.
+!/artifacts/longitudinal_v2_1/model.joblib
+
+# Locally generated handoff archives (source + selected model are tracked instead).
+/releases/

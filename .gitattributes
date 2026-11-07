@@ -1,0 +1,8 @@
+# Preserve the source/config fingerprints on Linux, macOS and Windows.
+* text=auto eol=lf
+*.joblib binary
+*.png binary
+*.pptx binary
+# These dictionaries have intentionally fingerprinted CSV bytes, including CRLF.
+/docs/feature_dictionary.csv -text
+/docs/feature_dictionary_final.csv -text
