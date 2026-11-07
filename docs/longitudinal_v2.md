@@ -3,9 +3,11 @@
 This is a separately trained study requested after completion of v1. It adds
 approximate calendar horizons to a **first observed return to current established
 smoking** endpoint. It does not validate actual first-cigarette/resumption dates.
-The current app uses only this model; the original next-survey interface has
-been retired from navigation. Original v1 cohorts, memberships, fitted artifacts and
-evaluation results remain unchanged.
+The current app uses only this model. Useful original next-survey research
+code/tests/docs were restored as historical references after cleanup; the old
+prompt runner, ignored model runs and caches remain removed. See
+[the research index](RESEARCH_GUIDE.md) to distinguish the studies. The current
+frozen model, its cohort and source data were preserved.
 
 ## Population and outcome
 
@@ -167,7 +169,7 @@ resources are cached, never answer or prediction histories.
 # Integrity and exact cohort reproduction; no model refit/test rescoring
 .venv/bin/python scripts/verify_longitudinal.py --rebuild-cohort
 .venv/bin/python -m pytest -q -p no:cacheprovider
-.venv/bin/python scripts/verify_inputs.py
+.venv/bin/python scripts/verify_runtime.py
 
 # Fresh build only, when the configured new output directories do not exist
 .venv/bin/python scripts/train_longitudinal.py
@@ -175,13 +177,14 @@ resources are cached, never answer or prediction histories.
 
 Configuration: `configs/longitudinal_v2.json`; implementation:
 `src/path_project/longitudinal.py`. Current outputs live in
-`data/processed/longitudinal_v2_1`, `artifacts/longitudinal_v2_1` (private local
-data/artifacts) and `reports/longitudinal_v2_1` (aggregates only). Loading verifies
+`data/processed/longitudinal_v2_1` (private local cohort),
+`artifacts/longitudinal_v2_1` (included authorized model bundle) and
+`reports/longitudinal_v2_1` (aggregates only). Loading verifies
 source/config/model/report hashes. Existing outputs refuse overwrite. Preserve
 this experiment and choose a separately versioned run for future changes.
 
-An initial diagnostic `longitudinal_v2` run is retained, marked **invalid**, and
-never loaded by the app. It exposed a Wave 8 coding difference: follow-up 0/1
-needed normalization to baseline history 1/2. The separately versioned v2.1 run
-corrects this, with a regression test. The diagnostic is not a model comparison
-or a source of valid performance claims. Original v1 evidence remains intact.
+An initial diagnostic exposed a Wave 8 coding difference: follow-up 0/1 needed
+normalization to baseline history 1/2. The separately versioned v2.1 run corrects
+this, with a regression test. The invalid diagnostic files were removed during
+cleanup; they are not a source of valid performance claims. Kept evidence and
+frozen model hashes refer to the corrected study only.

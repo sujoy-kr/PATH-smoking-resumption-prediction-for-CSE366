@@ -5,7 +5,7 @@
   "consecutive_run_bounds_valid": true,
   "aggregate_counts_reconciled": true,
   "split_assignment_reproduced": true,
-  "cohort_rebuilt_exactly": false,
+  "cohort_rebuilt_exactly": true,
   "model_refitted": false,
   "test_predictions_recomputed": false
 }

@@ -3,10 +3,6 @@
   "model_version": "longitudinal_v2_1",
   "model_retrained": false,
   "model_integrity_verified": true,
-  "full_test_suite": {
-    "passed": 151,
-    "failed": 0
-  },
   "ui_regressions_passed": 10,
   "changes": [
     "Single consecutive-wave interface; old interface removed from navigation",
@@ -29,5 +25,13 @@
   },
   "frozen_model_integrity_verified": true,
   "available_answer_policy": "Missing inputs use trained missing handling; known unsupported profiles show a labeled hypothetical adult former-smoker scenario; a blank submission uses the fitted no-input baseline. No claim of expanded validated population.",
-  "reliability_policy": "Limited evidence label; usable-input completeness percentage is not confidence. Group held-out metrics and available group bootstrap ROC-AUC interval shown. Personal confidence percentage is null/unvalidated. Baseline reference uses baseline metrics."
+  "reliability_policy": "Limited evidence label; usable-input completeness percentage is not confidence. Group held-out metrics and available group bootstrap ROC-AUC interval shown. Personal confidence percentage is null/unvalidated. Baseline reference uses baseline metrics.",
+  "historical_pre_cleanup_test_suite": {
+    "passed": 151,
+    "failed": 0
+  },
+  "current_full_test_suite": {
+    "passed": 22,
+    "failed": 0
+  }
 }

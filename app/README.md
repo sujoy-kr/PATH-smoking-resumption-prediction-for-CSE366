@@ -5,12 +5,13 @@
 ```
 
 Open http://127.0.0.1:8501. Restart the existing Streamlit process once after the
-UI/configuration update so toolbar settings take effect. There are no API keys
-or new package dependencies.
+UI/configuration update so toolbar settings take effect. Teammate/faculty setup
+uses the included trained bundle and pinned CPU-only `requirements-app.txt`;
+see [TEAM_SETUP.md](../TEAM_SETUP.md). No API keys are needed.
 
-The app uses only the consecutive-wave v2.1 model. The original next-survey
-interface has been retired from navigation; `legacy_app.py` and v1 research
-artifacts remain archived for reproducibility.
+The app uses only the consecutive-wave v2.1 model. `legacy_app.py` is restored
+as historical research source, with no route in the current interface. The
+development prompt runner remains removed.
 
 ## Assessment and results
 
@@ -62,7 +63,7 @@ caches. Close the session to discard them. Fictional examples are labeled.
 
 ```bash
 .venv/bin/python -m pytest tests/test_longitudinal_app.py -q -p no:cacheprovider
-.venv/bin/python scripts/verify_longitudinal.py
+.venv/bin/python scripts/verify_runtime.py
 ```
 
 The UI tests exercise manual complete entry, fictional profiles, automatic

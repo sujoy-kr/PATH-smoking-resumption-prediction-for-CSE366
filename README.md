@@ -7,12 +7,48 @@ Study, with participants observed in at least **three consecutive main waves**.
 
 The active application uses the **consecutive-wave v2.1 model**. It presents
 approximate month horizons, relative risk and contributing factors through a
-responsive interface. The original next-survey application is retired.
+responsive interface. The obsolete prompt runner remains removed. Useful
+earlier research code, tests and documentation are restored as clearly indexed
+references, not reactivated in the UI. **Use `run_app.py` to launch the project.**
 
-**This repository contains source code, configuration, metadata and aggregate
-research results. Raw survey data and trained models are excluded. A fresh
-clone cannot generate predictions until a compatible private model bundle is
-restored or a new study is built from authorized data.**
+**The handoff includes the exact trained prediction model**, source code,
+configuration, metadata, aggregate results and fictional regression examples.
+Teammates and faculty can generate the same model outputs without downloading
+raw PATH data or retraining. Raw surveys, processed participant histories and
+other research models remain excluded. See [TEAM_SETUP.md](TEAM_SETUP.md).
+
+## Download and run
+
+Download/clone the complete repository or extract the provided handoff ZIP,
+then open a terminal in the folder containing `run_app.py`. Use **Python 3.13**
+(tested: **3.13.5**).
+
+Linux/macOS:
+
+```bash
+python3.13 -m venv .venv
+.venv/bin/python -m pip install -r requirements-app.txt
+.venv/bin/python run_app.py
+```
+
+Windows PowerShell:
+
+```powershell
+py -3.13 -m venv .venv
+.venv\Scripts\python.exe -m pip install -r requirements-app.txt
+.venv\Scripts\python.exe run_app.py
+```
+
+Open **http://127.0.0.1:8501**. The launcher checks the model, dependencies and
+five fictional prediction profiles before starting Streamlit. Runtime
+dependencies are CPU-only; no GPU, CUDA, XGBoost, external API or raw survey
+files are needed for the active app. Install dependencies once; internet is
+not required for local prediction afterward.
+
+The tested handoff uses the existing Linux environment. New installations on
+Windows/macOS have not been verified. Identical answers must reproduce the
+included regression examples within numerical tolerance; this is reproducible
+software behavior, not a guarantee of individual forecast accuracy.
 
 ## What the app shows
 
@@ -50,37 +86,35 @@ The local configuration disables telemetry and hides the deployment toolbar.
 No API keys, account or external prediction service are required.
 
 Keep the compatible `configs/`, `src/` and aggregate `reports/` files with the
-private `artifacts/longitudinal_v2_1/model.joblib` bundle. Loading checks model,
+included `artifacts/longitudinal_v2_1/model.joblib` bundle. Loading checks model,
 source, configuration and report fingerprints. A mismatched bundle is rejected
 rather than silently replaced. The full cohort verifier additionally requires
 the raw data and private processed participant file.
 
 ## Set up a fresh clone
 
-The working environment uses **Python 3.13.5 on Linux**. `pyproject.toml` declares
-Python 3.11+, but fresh installations and other platforms have not been verified.
-The lock file records the existing environment, including research dependencies.
+Use the download-and-run steps above for normal teammate/faculty use. The
+following files must be present; they are included in the prepared handoff:
 
-Run these commands inside your cloned repository:
+| File or folder | Why it is needed |
+|---|---|
+| `artifacts/longitudinal_v2_1/model.joblib` | Exact fitted model, preprocessing, calibration and explanation reference |
+| `src/`, `app/` | Prediction code and responsive UI |
+| `configs/`, `docs/feature_dictionary*.csv` | Model contracts, question coding and fingerprinted metadata |
+| `reports/longitudinal_v2_1/` | Matching model manifest and aggregate evidence |
+| `requirements-app.txt`, `run_app.py` | Pinned app setup and verified startup |
+| `tests/fixtures/handoff_profiles.json` | Fictional expected outputs checked at startup |
+| `.gitattributes`, `.streamlit/config.toml` | Byte-preserving checkout and local server/UI settings |
 
-```bash
-python3 -m venv .venv
-.venv/bin/python -m pip install -r requirements-lock.txt
-```
+If the model is missing from a downloaded copy, that copy is incomplete for
+inference. Include the exact file permitted by `.gitignore`; do not upload all
+of `artifacts/`, disable integrity checks, or substitute an untrusted joblib file.
 
-On Windows, use `.venv\Scripts\python.exe` instead of `.venv/bin/python`.
-The archived PDF-inspection pipeline also needs the system `pdftotext` command;
-the current longitudinal training command does not parse PDFs.
-
-Then choose one of the following paths:
-
-1. **Restore an authorized, compatible private bundle.** Restore its matching
-   source/configuration, model and aggregate manifests/results. Private files
-   remain ignored; do not bypass fingerprint checks or load untrusted joblib
-   files. Launch the app using the command above.
-2. **Build a new local experiment.** Obtain the authorized survey files and
-   follow the next section. This creates a newly trained model, rather than
-   restoring the already evaluated model.
+Use `requirements-app.txt` for the app and `requirements-test.txt` for tests.
+The restored `requirements-lock.txt` is a historical full Linux research
+snapshot, including optional GPU/research packages. It is not needed for the
+app. PDF-based source inspection in the restored research tools also requires
+system `pdftotext`; the current app and longitudinal training do not parse PDFs.
 
 ## Obtain data and build a new experiment
 
@@ -101,7 +135,7 @@ PATH/DS8001/36498-8001-Data.tsv
 
 The training script refuses to overwrite existing data, artifact **or report**
 directories. A clone includes published aggregate reports, so simply running it
-with the saved output paths will fail. **For a fresh-clone experiment only**,
+with the saved output paths will fail. **For a separate research experiment only**,
 first give the experiment separate output paths:
 
 ```bash
@@ -187,58 +221,93 @@ risk. See the [full protocol](docs/longitudinal_v2.md),
 
 ## Verification
 
-Synthetic longitudinal tests can run without private data or model artifacts:
+Check the included model and compare five fictional profiles with saved
+probabilities, timing estimates and explanations. This needs no raw PATH data:
 
 ```bash
-.venv/bin/python -m pytest tests/test_longitudinal.py -q -p no:cacheprovider
+.venv/bin/python scripts/verify_runtime.py
+.venv/bin/python -m pip install -r requirements-test.txt
+.venv/bin/python -m pytest tests/test_longitudinal.py tests/test_longitudinal_app.py tests/test_runtime_handoff.py -q -p no:cacheprovider
 ```
 
-With a compatible current private bundle and raw data available:
+For research verification only, with separately obtained raw data and the
+processed cohort available:
 
 ```bash
 .venv/bin/python scripts/verify_longitudinal.py
 # Optional exact cohort reconstruction; no fitting or test rescoring:
 .venv/bin/python scripts/verify_longitudinal.py --rebuild-cohort
-.venv/bin/python -m pytest tests/test_longitudinal_app.py -q -p no:cacheprovider
 ```
 
-The full original workspace passed **151 tests**, including current UI tests.
-Running the full suite also requires private **archived v1** artifacts; it is not
-a source-only-clone check. The historical `verify_inputs.py` check has a
-documented 58/59 match because of the user-edited orchestration runner; do not
-rewrite its original checksum baseline. These results describe the local
-workspace, not a verified fresh install or production hosting deployment.
+The complete current suite has **22 tests**, covering the longitudinal model,
+UI and distributable handoff. Run all of them with
+`.venv/bin/python -m pytest -q -p no:cacheprovider`. They need the included model
+but no raw PATH files or obsolete next-survey artifacts. Historical research
+tests are restored but opt in with `--research-tests`; some require separately
+restored private v1 artifacts and extra dependencies. They are not part of the
+default current-app run. See [the research guide](docs/RESEARCH_GUIDE.md) for
+usable synthetic selections and dependency limits. The current model and
+expected predictions are unchanged. These checks do not claim a verified fresh
+install or production hosting deployment.
 
 ## Repository layout and upload boundaries
 
 | Path | Purpose | Included in source repository? |
 |---|---|---|
-| `app/` | Active UI, styles and archived original UI | Yes |
+| `app/` | Active consecutive-wave UI/styles plus historical legacy source | Yes |
 | `src/path_project/` | Cohort, modeling, inference and explanation code | Yes |
 | `scripts/`, `configs/` | Build/verification commands and versioned contracts | Yes |
 | `tests/` | Tests and fictional fixtures | Yes |
-| `docs/` | Protocols, source metadata and historical research documentation | Yes |
+| `docs/` | Current protocol/metadata and indexed historical research references | Yes |
 | `reports/longitudinal_v2_1/` | Current aggregate results and verification | Yes |
-| `reports/longitudinal_v2/` | **Invalid initial diagnostic**, preserved and labeled; do not use its results | Yes, historical only |
-| Other `reports/` and v1 documents | Archived original next-survey study | Yes, historical only |
+| `reports/feature_mapping_evidence.json`, `reports/prediction_source_evidence.json` | Source-documentation evidence for survey fields | Yes |
+| `reports/cleanup.json` | Record of removed obsolete files and preservation checks | Yes |
+| `reports/restoration.json`, historical v1 reports | Restoration record and earlier comparison/audit evidence; not current-model results | Yes |
 | `.streamlit/config.toml` | Local UI/server settings; no credentials | Yes |
-| `PATH/`, `data/`, `artifacts/` | Raw data, participant records, fitted models and private references | **No** |
+| `artifacts/longitudinal_v2_1/model.joblib` | Exact current prediction/explanation bundle | **Yes, authorized team/faculty handoff** |
+| `PATH/`, `data/` | Preserved local survey files and current processed cohort | **No** |
+| `Smoking_Relapse_Predictor_Presentation.pptx` | Original coursework presentation | Yes |
 | `.venv*/`, `.cache/`, `.analysis/`, `.prompt-runner/` | Environment, caches and local research/orchestration state | **No** |
 | `.env*`, `.streamlit/secrets.toml`, `.aws/` | Local configuration/secrets | **No** |
 
 `.gitignore` excludes CSV/TSV and binary data/model formats by default. The two
 feature-dictionary CSVs are explicitly allowed because they contain public
 metadata; aggregate report CSVs are ignored, with JSON equivalents retained.
+The only model exception is the exact current bundle listed above. Do not
+unignore other artifacts. `.gitattributes` preserves model and fingerprinted
+source/dictionary bytes across checkouts.
 Only reviewed aggregate results belong in the public reports directory.
 
 The active app writes no answer files and uses no external prediction API.
 Answers and the current result stay in session memory; only model resources are
-shared-cached. This privacy behavior does not make trained artifacts public:
-they can contain private explanation backgrounds and must remain excluded.
+shared-cached. The included model contains **16 survey-derived baseline
+reference records** for explanations, but no PERSONIDs or full histories.
+Share the handoff with authorized teammates/faculty and respect the source
+data's access/reuse terms; including a model does not establish unrestricted
+redistribution rights. Other artifacts remain excluded. No commit, upload,
+public publication or deployment is performed by the setup tools.
 
-Archived [v1 final report](docs/final_project_report.md) and
-[historical build order](docs/build_order.md) concern a different next-survey
-target. Their four-question UI, performance and timing restrictions do not
-describe the active v2.1 application. Consult
-[PROJECT_STATUS.md](PROJECT_STATUS.md) for the chronological audit history and
-[the app guide](app/README.md) for current UI details.
+To create an offline handoff archive from this workspace (dependencies still
+need installation), run:
+
+```bash
+.venv/bin/python scripts/build_handoff.py
+```
+
+It produces `releases/reclaim-team-handoff.zip` with a per-file SHA-256 manifest.
+Archives are ignored by Git; source files and the one model are included
+directly. The builder refuses to overwrite an existing archive.
+
+Some shared modules and fingerprinted metadata retain historical names because
+the saved model and validated transformations depend on them. They are still
+needed; renaming/removing them would break the trained bundle. Consult
+[the study protocol](docs/longitudinal_v2.md),
+[PROJECT_STATUS.md](PROJECT_STATUS.md) and [the app guide](app/README.md) for the
+current project. Cleanup did not alter the trained model or `PATH/` contents.
+
+For further development and faculty preparation, use the
+[current faculty guide](docs/faculty_guide.md) and
+[research/maintenance index](docs/RESEARCH_GUIDE.md). Restored old reports describe
+the earlier next-survey classifier; do not present their metrics or timing
+restrictions as the current app's results. The old ignored private model runs,
+participant artifacts and caches were not restored from Git.
