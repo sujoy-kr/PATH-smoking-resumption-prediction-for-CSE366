@@ -1,0 +1,150 @@
+{
+  "stage": 12,
+  "status": "complete",
+  "implemented": true,
+  "synthetic_streamlit_tests": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest tests/test_demo.py -q -p no:cacheprovider",
+    "exit_code": 0,
+    "passed": 6,
+    "seconds": 4.68
+  },
+  "full_suite": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q -p no:cacheprovider",
+    "exit_code": 0,
+    "passed": 131,
+    "seconds": 10.99
+  },
+  "read_only_final_verification": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python scripts/verify_final_evaluation.py",
+    "exit_code": 0,
+    "rescoring": false
+  },
+  "original_inputs": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python scripts/verify_inputs.py",
+    "exit_code": 0,
+    "unchanged": 59,
+    "total": 59
+  },
+  "http_launch": {
+    "command": ".venv/bin/python -m streamlit run app/streamlit_app.py --server.port 8501",
+    "exit_code": 1,
+    "error": "PermissionError: [Errno 1] Operation not permitted at socket.socket in Streamlit server socket binding",
+    "health_check_performed": false,
+    "browser_visual_check_performed": false,
+    "required_user_action": "None; historical sandbox launch failure is superseded for completion by user-supplied external browser launch and interaction evidence."
+  },
+  "versions": {
+    "streamlit": "1.67.0",
+    "shap": "0.54.1",
+    "xgboost": "3.4.1",
+    "pandas": "3.1.1"
+  },
+  "source_sha256": {
+    "app/streamlit_app.py": "78ba553c250c8a3f72a9026e11874c50c66d00bcb6a98d8187099b6c0514fc0f",
+    "src/path_project/demo.py": "33fe8107eb55289758f942b1c4543d51015277f55949c6a3f02e3719c51d2c03",
+    "configs/demo.json": "28935a4648f30668af5b23466903380693c89fdfb5d6daf60526d1bdc7eb9d9f",
+    ".streamlit/config.toml": "4e2c4ea5bef7ff68e960b3acbb7ac2f379d6d06ec75dc03bcd17a7e72b29ee56",
+    "tests/test_demo.py": "1be0ea5aee7e56915bbb1a07f35d9c5f29c43549046e8a33074e354b2fa9f9ae"
+  },
+  "final_test_recomputed": false,
+  "trained_artifacts_modified": false,
+  "private_answers_persisted": false,
+  "continuations": [
+    {
+      "date": "2026-11-08",
+      "app_source_hashes_unchanged": true,
+      "form_tests": {
+        "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest tests/test_demo.py -q -p no:cacheprovider",
+        "exit_code": 0,
+        "passed": 6,
+        "seconds": 10.42
+      },
+      "launch_retry": {
+        "command": ".venv/bin/python -m streamlit run app/streamlit_app.py --server.port 8501",
+        "exit_code": 1,
+        "error": "PermissionError: [Errno 1] Operation not permitted at socket.socket"
+      },
+      "final_evidence_verifier_exit_code": 0,
+      "original_inputs_verified_unchanged": 59,
+      "final_test_recomputed": false
+    },
+    {
+      "kind": "disk-evidence reconciliation",
+      "source_hashes_unchanged": true,
+      "form_tests": {
+        "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest tests/test_demo.py -q -p no:cacheprovider",
+        "exit_code": 0,
+        "passed": 6,
+        "seconds": 8.94
+      },
+      "final_evidence_verifier_exit_code": 0,
+      "original_inputs": {
+        "exit_code": 1,
+        "unchanged": 58,
+        "total": 59,
+        "changed": [
+          "run_prompts.py"
+        ],
+        "note": "Pre-existing baseline mismatch discovered; file not modified or restored in this continuation; provenance not established."
+      },
+      "socket_preflight_repeated": false,
+      "final_test_recomputed": false
+    }
+  ],
+  "browser_evidence": {
+    "source": "user-supplied screenshot recorded in PROJECT_STATUS.md; inspected directly this turn",
+    "path": "/home/hellfire/Downloads/screencapture-127-0-0-1-8501-2026-11-08-06_25_34.png",
+    "sha256": "6890ed7c4550e358fc3abf43a9f06fe79ff52af4dee1309a2f96bf775c1fd631",
+    "launch_confirmed": true,
+    "visible_checks": [
+      "blank form rendered",
+      "eligibility and four model-input controls",
+      "submit button",
+      "saved final-performance table",
+      "calibration warning",
+      "limitations expander"
+    ],
+    "not_confirmed": [],
+    "ambiguous_user_report": "all blank form submission shows result; personal estimate versus always-visible study-performance section not established",
+    "agent_http_health_check": false,
+    "interaction_confirmation": {
+      "source": "Explicit user confirmation recorded in PROJECT_STATUS.md, Stage 12 browser interaction confirmation \u2014 2026-11-08",
+      "quote": "Blank submission correctly warns without a prediction; all three presets show results without errors.",
+      "blank_submission_warning_and_no_prediction": true,
+      "three_fictional_preset_submissions_without_errors": true,
+      "agent_browser_automation": false,
+      "scope": "User observations confirm submission behavior; exact model identity/probability/category/explanation agreement is established by executed automated tests, not inferred from the initial screenshot."
+    }
+  },
+  "completion_audit": {
+    "scope": "Stage 12 only",
+    "source_hashes_unchanged": true,
+    "form_test_command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest tests/test_demo.py -q -p no:cacheprovider",
+    "test_exit_code": 0,
+    "tests_passed": 6,
+    "seconds": 10.73,
+    "checks": [
+      "same frozen probability and category",
+      "same model version and calibrated probability Exact SHAP additivity",
+      "three fictional profiles",
+      "unknown/outside-cohort/invalid recency suppression",
+      "blank-input suppression",
+      "reset behavior",
+      "source review of schema/units/privacy/caching/limitations/performance"
+    ],
+    "final_integrity_command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python scripts/verify_final_evaluation.py",
+    "final_integrity_exit_code": 0,
+    "original_integrity_command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python scripts/verify_inputs.py",
+    "original_integrity_exit_code": 1,
+    "original_files_unchanged": 58,
+    "original_files_total": 59,
+    "exception": {
+      "file": "run_prompts.py",
+      "reason": "User identifies intentional runner-instruction edit; not research data or model change. Baseline preserved.",
+      "current_sha256": "4b1f3b9ab1f5efb827bf4a565fffe8051d87ac7d48ec10e8a1fcfa968b7e242e"
+    },
+    "socket_preflight_repeated": false,
+    "final_test_recomputed": false,
+    "next_stage_started": false
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "development_access_test": "Passed predicate and returned-key checks for fold 0 training, no model fitted",
+  "authorized_training_rows_loaded": 10958,
+  "cohort_reads": [
+    {
+      "requested_columns": [
+        "PERSONID",
+        "starting_wave",
+        "followup_wave",
+        "age_band",
+        "sex_recorded",
+        "education_level",
+        "household_income_band",
+        "employment_status",
+        "last_cigarette_recency_days",
+        "prior_regular_cigarettes_per_day",
+        "regular_smoking_months",
+        "electronic_nicotine_p30d",
+        "traditional_cigar_p30d",
+        "cigarillo_p30d",
+        "filtered_cigar_p30d",
+        "hookah_p30d",
+        "smokeless_tobacco_p30d",
+        "snus_p30d",
+        "household_tobacco_any",
+        "home_combustible_smoking_rules",
+        "physical_health",
+        "mental_health",
+        "social_satisfaction",
+        "emotional_problems_7d",
+        "depressive_problem_recency",
+        "anxiety_problem_recency",
+        "alcohol_days_30d",
+        "alcohol_drinks_per_drinking_day",
+        "outcome_p30d"
+      ],
+      "participant_predicate_excludes_all_heldout": true,
+      "maximum_starting_wave": 6
+    }
+  ],
+  "retry_command": ".venv/bin/python scripts/create_evaluation_splits.py",
+  "retry_exit_code": 0,
+  "retry_mode": "reused_verified_lock",
+  "saved_files_hash_and_mtime_unchanged": 21,
+  "test_outcomes_or_features_read": false,
+  "additional_boundary_source_sha256": {
+    "src/path_project/training_boundaries.py": "634c4880ceab0dcd5b7b6bcb453e75beb1afe60643550278b5d9af98e76a128f",
+    "scripts/verify_evaluation_splits.py": "be119af034faa0b23fef3e1c26480c5cea769702bd90e7bf336f7a07931d2b18",
+    "tests/test_evaluation.py": "c4a688e9433ca79da8075451ec905018255a05070105ed86fe749ff1f87aad38",
+    "tests/fixtures/synthetic_evaluation.json": "3bbc85d9ae322bcccd48b00cd4c8bd7a55e53b341f5b06dc2703d62d5b61725c"
+  }
+}

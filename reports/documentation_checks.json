@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "files_checked": [
+    "README.md",
+    "docs/final_project_report.md",
+    "docs/proposal_revision_notes.md",
+    "docs/presentation_outline.md",
+    "docs/viva_questions.md"
+  ],
+  "local_links_checked": 49,
+  "documented_commands_checked": 25,
+  "final_metric_cells_checked": 28,
+  "development_rows_checked": 7,
+  "cohort_rows_checked": 7,
+  "category_rows_checked": 3,
+  "private_identifier_and_common_secret_scan": "No matches",
+  "original_proposal_and_analysis_checked": [
+    "Smoking_Relapse_Predictor_Presentation.pptx",
+    "Project_Analysis_and_Implementation_Plan.md"
+  ],
+  "literature_source_record": "reports/literature_verification.json",
+  "limits": "Literature access/verification scope recorded separately; this checker verifies documented numerical cells against saved aggregate values, not every possible prose implication or external URL availability. Fresh setup/install and new browser run not claimed.",
+  "errors": [],
+  "source_sha256": {
+    "README.md": "0f8dfb9b77e63f4d60922edf88ad432c9d073098dc6dd56b939c9eef3bf72881",
+    "docs/final_project_report.md": "20a5cfaf3a2f38867eb0c3a573102ceace550233619f68f2972aff2a4414792a",
+    "docs/proposal_revision_notes.md": "0d512c1d610e492a2f89e251762fb3331ee89b5d2d845a71d29672c3b3029d16",
+    "docs/presentation_outline.md": "ef2912866561fc5b9a0617093955dcf8a305f703efc98a7f2ca7893f300eeae5",
+    "docs/viva_questions.md": "0dbbbfed0fe9b45770f5706f0c124f3e1258b2afd1fc7e180d3c0aa629592ceb",
+    "reports/literature_verification.json": "e859b8c6624e02e79bedcbc3b3ea90ebdbab7628d09075433eac1e9d318aa318",
+    "scripts/verify_documentation.py": "980b2197071d201f1adc28d1ff9a2573a655ecee64615bbc08429d2319a7562e"
+  }
+}

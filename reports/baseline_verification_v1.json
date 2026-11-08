@@ -1,0 +1,17 @@
+{
+  "baseline_signature": "df836e506ac5336e4c50c9a4567ca66a14e69c13af6caa687d8f2b0a4c440aea",
+  "training_command": ".venv/bin/python scripts/train_baselines.py",
+  "retry_exit_code": 0,
+  "retry_mode": "reused_verified_run",
+  "baseline_files_hash_and_mtime_unchanged": 40,
+  "previous_cohort_split_files_unchanged": 21,
+  "report_and_figure_rebuild_byte_identical": true,
+  "public_reports_identifier_token_check_passed": true,
+  "verification_sources_sha256": {
+    "scripts/verify_baselines.py": "cbe9b66c590ca9869449dabba07a8ffb880b3233ee8f7a9761b9827cda374d60",
+    "scripts/write_baseline_report.py": "9fdc2cc309ac23ec47206e818e601801f74ec60956a8c9662288dae52c0421d7",
+    "tests/test_baselines.py": "591f11f51588590817d8daee5e8721e54a2399f74e68e75e35b72490edd89471"
+  },
+  "final_test_features_or_outcomes_read": false,
+  "checks_refit_models": false
+}

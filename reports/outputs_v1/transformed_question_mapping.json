@@ -1,0 +1,142 @@
+[
+  {
+    "transformed_feature": "categorical__age_band_-1.0",
+    "question_feature": "age_band",
+    "question": "Age category at the starting interview.",
+    "category_label": "Missing response (model category)",
+    "transform": "one-hot encoded training category"
+  },
+  {
+    "transformed_feature": "categorical__age_band_1.0",
+    "question_feature": "age_band",
+    "question": "Age category at the starting interview.",
+    "category_label": "18–24",
+    "transform": "one-hot encoded training category"
+  },
+  {
+    "transformed_feature": "categorical__age_band_2.0",
+    "question_feature": "age_band",
+    "question": "Age category at the starting interview.",
+    "category_label": "25–34",
+    "transform": "one-hot encoded training category"
+  },
+  {
+    "transformed_feature": "categorical__age_band_3.0",
+    "question_feature": "age_band",
+    "question": "Age category at the starting interview.",
+    "category_label": "35–44",
+    "transform": "one-hot encoded training category"
+  },
+  {
+    "transformed_feature": "categorical__age_band_4.0",
+    "question_feature": "age_band",
+    "question": "Age category at the starting interview.",
+    "category_label": "45–54",
+    "transform": "one-hot encoded training category"
+  },
+  {
+    "transformed_feature": "categorical__age_band_5.0",
+    "question_feature": "age_band",
+    "question": "Age category at the starting interview.",
+    "category_label": "55–64",
+    "transform": "one-hot encoded training category"
+  },
+  {
+    "transformed_feature": "categorical__age_band_6.0",
+    "question_feature": "age_band",
+    "question": "Age category at the starting interview.",
+    "category_label": "65+",
+    "transform": "one-hot encoded training category"
+  },
+  {
+    "transformed_feature": "categorical__education_level_-1.0",
+    "question_feature": "education_level",
+    "question": "Highest completed education, harmonized to five categories.",
+    "category_label": "Missing response (model category)",
+    "transform": "one-hot encoded training category"
+  },
+  {
+    "transformed_feature": "categorical__education_level_1.0",
+    "question_feature": "education_level",
+    "question": "Highest completed education, harmonized to five categories.",
+    "category_label": "Less than high school",
+    "transform": "one-hot encoded training category"
+  },
+  {
+    "transformed_feature": "categorical__education_level_2.0",
+    "question_feature": "education_level",
+    "question": "Highest completed education, harmonized to five categories.",
+    "category_label": "GED",
+    "transform": "one-hot encoded training category"
+  },
+  {
+    "transformed_feature": "categorical__education_level_3.0",
+    "question_feature": "education_level",
+    "question": "Highest completed education, harmonized to five categories.",
+    "category_label": "High school graduate",
+    "transform": "one-hot encoded training category"
+  },
+  {
+    "transformed_feature": "categorical__education_level_4.0",
+    "question_feature": "education_level",
+    "question": "Highest completed education, harmonized to five categories.",
+    "category_label": "Some college or associate degree",
+    "transform": "one-hot encoded training category"
+  },
+  {
+    "transformed_feature": "categorical__education_level_5.0",
+    "question_feature": "education_level",
+    "question": "Highest completed education, harmonized to five categories.",
+    "category_label": "Bachelor or advanced degree",
+    "transform": "one-hot encoded training category"
+  },
+  {
+    "transformed_feature": "categorical__employment_status_-1.0",
+    "question_feature": "employment_status",
+    "question": "Current paid employment status and weekly hours category.",
+    "category_label": "Missing response (model category)",
+    "transform": "one-hot encoded training category"
+  },
+  {
+    "transformed_feature": "categorical__employment_status_1.0",
+    "question_feature": "employment_status",
+    "question": "Current paid employment status and weekly hours category.",
+    "category_label": "Full-time, at least 35 hours/week",
+    "transform": "one-hot encoded training category"
+  },
+  {
+    "transformed_feature": "categorical__employment_status_2.0",
+    "question_feature": "employment_status",
+    "question": "Current paid employment status and weekly hours category.",
+    "category_label": "Part-time, 15–34 hours/week",
+    "transform": "one-hot encoded training category"
+  },
+  {
+    "transformed_feature": "categorical__employment_status_3.0",
+    "question_feature": "employment_status",
+    "question": "Current paid employment status and weekly hours category.",
+    "category_label": "Part-time, under 15 hours/week",
+    "transform": "one-hot encoded training category"
+  },
+  {
+    "transformed_feature": "categorical__employment_status_4.0",
+    "question_feature": "employment_status",
+    "question": "Current paid employment status and weekly hours category.",
+    "category_label": "Not currently working for pay",
+    "transform": "one-hot encoded training category"
+  },
+  {
+    "transformed_feature": "numeric__last_cigarette_recency_days",
+    "question_feature": "last_cigarette_recency_days",
+    "question": "Approximate time since completely quitting (Wave 1) or last cigarette (Waves 2–8).",
+    "category_label": null,
+    "transform": "training-median-imputed, standardized numerical history"
+  },
+  {
+    "transformed_feature": "numeric__missingindicator_last_cigarette_recency_days",
+    "question_feature": "last_cigarette_recency_days",
+    "question": "Approximate time since completely quitting (Wave 1) or last cigarette (Waves 2–8).",
+    "category_label": null,
+    "transform": "standardized missing indicator"
+  }
+]

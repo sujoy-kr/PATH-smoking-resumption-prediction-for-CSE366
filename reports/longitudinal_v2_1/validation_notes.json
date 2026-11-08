@@ -1,0 +1,27 @@
+{
+  "version": "longitudinal_v2_1",
+  "full_test_suite": {
+    "passed": 151,
+    "failed": 0
+  },
+  "cohort_rebuild": "Exact equality with saved participant rows, baseline features, outcomes, clocks and split assignments; see verification.json. No model refit or held-out prediction recomputation.",
+  "original_model": "scripts/verify_final_evaluation.py passed without fitting or rescoring; v1 artifacts and saved evaluation preserved.",
+  "original_input_check": {
+    "exit_code": 1,
+    "unchanged": 58,
+    "total": 59,
+    "exception": "run_prompts.py",
+    "reason": "Previously documented, user-confirmed orchestration edit, already recorded in stage 14/15 status. This extension did not edit that file. Original baseline was not rewritten."
+  },
+  "browser_validation": "Current UI: actual entry point, manual complete answers, fictional profiles, automatic horizons, fixed choices, eligibility and recency correction, optional unknowns, recency clearing, stale-result invalidation and explanation additivity passed AppTest. Prior legacy sidebar is now retired. No interactive browser viewport/server launch claimed.",
+  "timing_validation": "Assumed observation-time prediction only; no actual individual resumption dates available, so no measured month-of-resumption error claimed.",
+  "privacy": "Participant rows, split identifiers, model and explanation background remain local in ignored data/artifact directories; reports expose aggregate results only. No answer persistence or external messages.",
+  "scope": "No package installation, deployment, upload, Git operation or original survey/proposal edit.",
+  "previous_full_test_suite": {
+    "passed": 146,
+    "failed": 0
+  },
+  "current_ui_revision": "ui_revision.json",
+  "available_answer_adapter": "Partial/unsupported/blank cases tested as conditional scenarios or study reference; exact matched-profile predictions and explanations unchanged.",
+  "reliability": "No invented individual confidence; input coverage and group evaluation are explicitly distinguished."
+}

@@ -1,0 +1,2956 @@
+{
+  "model_version": "xgb_minimal_s1_none:9b46cdb1783302c05c3b56b83d5695a1ad58b90da0614f04188ee687170eae36",
+  "evaluation_signature": "0b301df0a9a28468b25d24c5b9e478a4df8859bdbc350cf73a3da90cf04b5e30",
+  "endpoint": "Past-30-day cigarette smoking reported at next scheduled survey among eligible former established smokers, conditional on valid observed follow-up",
+  "test_pair": [
+    7,
+    8
+  ],
+  "records": 1243,
+  "unique_people": 1243,
+  "positive_records": 128,
+  "negative_records": 1115,
+  "positive_prevalence": 0.10297666934835076,
+  "people_with_repeated_test_records": 0,
+  "metrics": {
+    "selected_calibrated": {
+      "description": "Stage 8 selected XGBoost with frozen reserved sigmoid and operating threshold",
+      "threshold": 0.2590049599706509,
+      "participant_equal": {
+        "prevalence": 0.10297666934835076,
+        "average_precision": 0.24465100634733508,
+        "roc_auc": 0.739237668161435,
+        "brier": 0.0885295461093696,
+        "log_loss": 0.3050748340979474,
+        "mean_probability": 0.13897774830268367,
+        "precision": 0.27906976744186046,
+        "recall": 0.46875,
+        "specificity": 0.8609865470852018,
+        "f1": 0.3498542274052478,
+        "confusion": {
+          "tn": 960.0,
+          "fp": 155.0,
+          "fn": 68.0,
+          "tp": 60.0
+        }
+      },
+      "interval_equal": {
+        "prevalence": 0.10297666934835076,
+        "average_precision": 0.24465100634733508,
+        "roc_auc": 0.739237668161435,
+        "brier": 0.0885295461093696,
+        "log_loss": 0.3050748340979474,
+        "mean_probability": 0.13897774830268367,
+        "precision": 0.27906976744186046,
+        "recall": 0.46875,
+        "specificity": 0.8609865470852018,
+        "f1": 0.3498542274052478,
+        "confusion": {
+          "tn": 960.0,
+          "fp": 155.0,
+          "fn": 68.0,
+          "tp": 60.0
+        }
+      },
+      "confidence_intervals": {
+        "prevalence": {
+          "lower": 0.08688656476267095,
+          "upper": 0.11987127916331457,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "average_precision": {
+          "lower": 0.19611522758239952,
+          "upper": 0.31459517140700877,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "roc_auc": {
+          "lower": 0.695497981940478,
+          "upper": 0.780962049478712,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "brier": {
+          "lower": 0.07815249478994635,
+          "upper": 0.09926901378595157,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "log_loss": {
+          "lower": 0.27513827924704487,
+          "upper": 0.3364982956427189,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "mean_probability": {
+          "lower": 0.13147836463576112,
+          "upper": 0.1467302592635985,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "precision": {
+          "lower": 0.2169769577558858,
+          "upper": 0.3350813712690766,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "recall": {
+          "lower": 0.3828074048913043,
+          "upper": 0.5547092013888889,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "specificity": {
+          "lower": 0.841493539290878,
+          "upper": 0.8805346180820968,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "f1": {
+          "lower": 0.28307692307692306,
+          "upper": 0.41066785714285714,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      }
+    },
+    "selected_raw": {
+      "description": "Frozen selected base XGBoost, uncalibrated; diagnostic threshold 0.5",
+      "threshold": 0.5,
+      "participant_equal": {
+        "prevalence": 0.10297666934835076,
+        "average_precision": 0.24465100634733508,
+        "roc_auc": 0.739237668161435,
+        "brier": 0.08509146987597267,
+        "log_loss": 0.29796917141048423,
+        "mean_probability": 0.10088657036915194,
+        "precision": 0.0,
+        "recall": 0.0,
+        "specificity": 0.9982062780269059,
+        "f1": 0.0,
+        "confusion": {
+          "tn": 1113.0,
+          "fp": 2.0,
+          "fn": 128.0,
+          "tp": 0.0
+        }
+      },
+      "interval_equal": {
+        "prevalence": 0.10297666934835076,
+        "average_precision": 0.24465100634733508,
+        "roc_auc": 0.739237668161435,
+        "brier": 0.08509146987597267,
+        "log_loss": 0.29796917141048423,
+        "mean_probability": 0.10088657036915194,
+        "precision": 0.0,
+        "recall": 0.0,
+        "specificity": 0.9982062780269059,
+        "f1": 0.0,
+        "confusion": {
+          "tn": 1113.0,
+          "fp": 2.0,
+          "fn": 128.0,
+          "tp": 0.0
+        }
+      },
+      "confidence_intervals": {
+        "prevalence": {
+          "lower": 0.08688656476267095,
+          "upper": 0.11987127916331457,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "average_precision": {
+          "lower": 0.19611522758239952,
+          "upper": 0.31459517140700877,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "roc_auc": {
+          "lower": 0.695497981940478,
+          "upper": 0.780962049478712,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "brier": {
+          "lower": 0.07347298581999365,
+          "upper": 0.09699108657614533,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "log_loss": {
+          "lower": 0.2627436456665533,
+          "upper": 0.33680412440007734,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "mean_probability": {
+          "lower": 0.09500960231946343,
+          "upper": 0.10702498525037181,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "precision": {
+          "lower": 0.0,
+          "upper": 0.0,
+          "valid_replicates": 870,
+          "undefined_replicates": 130,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "recall": {
+          "lower": 0.0,
+          "upper": 0.0,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "specificity": {
+          "lower": 0.9954831860705587,
+          "upper": 1.0,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "f1": {
+          "lower": 0.0,
+          "upper": 0.0,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      }
+    },
+    "training_prevalence": {
+      "description": "Stage 7 frozen raw training_prevalence at fixed diagnostic 0.5",
+      "threshold": 0.5,
+      "participant_equal": {
+        "prevalence": 0.10297666934835076,
+        "average_precision": 0.10297666934835076,
+        "roc_auc": 0.5,
+        "brier": 0.09239862543243958,
+        "log_loss": 0.331712138726541,
+        "mean_probability": 0.10809042669186594,
+        "precision": null,
+        "recall": 0.0,
+        "specificity": 1.0,
+        "f1": 0.0,
+        "confusion": {
+          "tn": 1115.0,
+          "fp": 0.0,
+          "fn": 128.0,
+          "tp": 0.0
+        }
+      },
+      "interval_equal": {
+        "prevalence": 0.10297666934835076,
+        "average_precision": 0.10297666934835076,
+        "roc_auc": 0.5,
+        "brier": 0.09239862543243958,
+        "log_loss": 0.331712138726541,
+        "mean_probability": 0.10809042669186594,
+        "precision": null,
+        "recall": 0.0,
+        "specificity": 1.0,
+        "f1": 0.0,
+        "confusion": {
+          "tn": 1115.0,
+          "fp": 0.0,
+          "fn": 128.0,
+          "tp": 0.0
+        }
+      },
+      "confidence_intervals": {
+        "prevalence": {
+          "lower": 0.08688656476267095,
+          "upper": 0.11987127916331457,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "average_precision": {
+          "lower": 0.08688656476267097,
+          "upper": 0.11987127916331457,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "roc_auc": {
+          "lower": 0.5,
+          "upper": 0.5,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "brier": {
+          "lower": 0.07978689338712552,
+          "upper": 0.10564094408001934,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "log_loss": {
+          "lower": 0.29775563685615003,
+          "upper": 0.3673664656904516,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "mean_probability": {
+          "lower": 0.10809042669186587,
+          "upper": 0.10809042669186594,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "precision": {
+          "lower": null,
+          "upper": null,
+          "valid_replicates": 0,
+          "undefined_replicates": 1000,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "recall": {
+          "lower": 0.0,
+          "upper": 0.0,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "specificity": {
+          "lower": 1.0,
+          "upper": 1.0,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "f1": {
+          "lower": 0.0,
+          "upper": 0.0,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      }
+    },
+    "minimal_logistic": {
+      "description": "Stage 7 frozen raw minimal_logistic at fixed diagnostic 0.5",
+      "threshold": 0.5,
+      "participant_equal": {
+        "prevalence": 0.10297666934835076,
+        "average_precision": 0.27594243920744155,
+        "roc_auc": 0.7366942264573991,
+        "brier": 0.084758177934257,
+        "log_loss": 0.29760198172399127,
+        "mean_probability": 0.1005261717393363,
+        "precision": 0.8,
+        "recall": 0.03125,
+        "specificity": 0.9991031390134529,
+        "f1": 0.06015037593984962,
+        "confusion": {
+          "tn": 1114.0,
+          "fp": 1.0,
+          "fn": 124.0,
+          "tp": 4.0
+        }
+      },
+      "interval_equal": {
+        "prevalence": 0.10297666934835076,
+        "average_precision": 0.27594243920744155,
+        "roc_auc": 0.7366942264573991,
+        "brier": 0.084758177934257,
+        "log_loss": 0.29760198172399127,
+        "mean_probability": 0.1005261717393363,
+        "precision": 0.8,
+        "recall": 0.03125,
+        "specificity": 0.9991031390134529,
+        "f1": 0.06015037593984962,
+        "confusion": {
+          "tn": 1114.0,
+          "fp": 1.0,
+          "fn": 124.0,
+          "tp": 4.0
+        }
+      },
+      "confidence_intervals": {
+        "prevalence": {
+          "lower": 0.08688656476267095,
+          "upper": 0.11987127916331457,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "average_precision": {
+          "lower": 0.2158313033340618,
+          "upper": 0.35657400954221596,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "roc_auc": {
+          "lower": 0.6897338966033453,
+          "upper": 0.7800885590440917,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "brier": {
+          "lower": 0.07378033152017341,
+          "upper": 0.096855671898249,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "log_loss": {
+          "lower": 0.2627679134758694,
+          "upper": 0.3346167493587953,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "mean_probability": {
+          "lower": 0.09492575141807565,
+          "upper": 0.10640584351291411,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "precision": {
+          "lower": 0.3333333333333333,
+          "upper": 1.0,
+          "valid_replicates": 995,
+          "undefined_replicates": 5,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "recall": {
+          "lower": 0.007461304588170261,
+          "upper": 0.06251407657657657,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "specificity": {
+          "lower": 0.9972800833562319,
+          "upper": 1.0,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "f1": {
+          "lower": 0.014598540145985401,
+          "upper": 0.11682913945447557,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      }
+    },
+    "minimal_logistic_balanced": {
+      "description": "Stage 7 frozen raw minimal_logistic_balanced at fixed diagnostic 0.5",
+      "threshold": 0.5,
+      "participant_equal": {
+        "prevalence": 0.10297666934835076,
+        "average_precision": 0.27998547383079725,
+        "roc_auc": 0.7407336042600897,
+        "brier": 0.1801340311502081,
+        "log_loss": 0.5491759826977456,
+        "mean_probability": 0.3847799831276036,
+        "precision": 0.24666666666666667,
+        "recall": 0.578125,
+        "specificity": 0.7973094170403587,
+        "f1": 0.34579439252336447,
+        "confusion": {
+          "tn": 889.0,
+          "fp": 226.0,
+          "fn": 54.0,
+          "tp": 74.0
+        }
+      },
+      "interval_equal": {
+        "prevalence": 0.10297666934835076,
+        "average_precision": 0.27998547383079725,
+        "roc_auc": 0.7407336042600897,
+        "brier": 0.1801340311502081,
+        "log_loss": 0.5491759826977456,
+        "mean_probability": 0.3847799831276036,
+        "precision": 0.24666666666666667,
+        "recall": 0.578125,
+        "specificity": 0.7973094170403587,
+        "f1": 0.34579439252336447,
+        "confusion": {
+          "tn": 889.0,
+          "fp": 226.0,
+          "fn": 54.0,
+          "tp": 74.0
+        }
+      },
+      "confidence_intervals": {
+        "prevalence": {
+          "lower": 0.08688656476267095,
+          "upper": 0.11987127916331457,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "average_precision": {
+          "lower": 0.22088298244070184,
+          "upper": 0.35923783937682996,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "roc_auc": {
+          "lower": 0.6937741326914388,
+          "upper": 0.7826995945782944,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "brier": {
+          "lower": 0.1692559864328264,
+          "upper": 0.1911332608557212,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "log_loss": {
+          "lower": 0.5240258946791295,
+          "upper": 0.5746345477656577,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "mean_probability": {
+          "lower": 0.37322837645882456,
+          "upper": 0.39652585583798927,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "precision": {
+          "lower": 0.1970260223048327,
+          "upper": 0.29781242464432117,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "recall": {
+          "lower": 0.491593045112782,
+          "upper": 0.6666666666666666,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "specificity": {
+          "lower": 0.7745968502946295,
+          "upper": 0.820606827964732,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "f1": {
+          "lower": 0.2876289253817344,
+          "upper": 0.40456253713606655,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      }
+    },
+    "app_logistic": {
+      "description": "Stage 7 frozen raw app_logistic at fixed diagnostic 0.5",
+      "threshold": 0.5,
+      "participant_equal": {
+        "prevalence": 0.10297666934835076,
+        "average_precision": 0.2796082759934144,
+        "roc_auc": 0.7435678251121076,
+        "brier": 0.0846478601252766,
+        "log_loss": 0.2963944247353516,
+        "mean_probability": 0.1037122980544694,
+        "precision": 0.4166666666666667,
+        "recall": 0.0390625,
+        "specificity": 0.9937219730941704,
+        "f1": 0.07142857142857142,
+        "confusion": {
+          "tn": 1108.0,
+          "fp": 7.0,
+          "fn": 123.0,
+          "tp": 5.0
+        }
+      },
+      "interval_equal": {
+        "prevalence": 0.10297666934835076,
+        "average_precision": 0.2796082759934144,
+        "roc_auc": 0.7435678251121076,
+        "brier": 0.0846478601252766,
+        "log_loss": 0.2963944247353516,
+        "mean_probability": 0.1037122980544694,
+        "precision": 0.4166666666666667,
+        "recall": 0.0390625,
+        "specificity": 0.9937219730941704,
+        "f1": 0.07142857142857142,
+        "confusion": {
+          "tn": 1108.0,
+          "fp": 7.0,
+          "fn": 123.0,
+          "tp": 5.0
+        }
+      },
+      "confidence_intervals": {
+        "prevalence": {
+          "lower": 0.08688656476267095,
+          "upper": 0.11987127916331457,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "average_precision": {
+          "lower": 0.21959221101443774,
+          "upper": 0.3588829500921745,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "roc_auc": {
+          "lower": 0.6980028127522844,
+          "upper": 0.7874540448793812,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "brier": {
+          "lower": 0.07331200186295705,
+          "upper": 0.09674064659990755,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "log_loss": {
+          "lower": 0.26166911487128963,
+          "upper": 0.33254589710478055,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "mean_probability": {
+          "lower": 0.09731578460411688,
+          "upper": 0.10995476172944142,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "precision": {
+          "lower": 0.14285714285714285,
+          "upper": 0.7,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "recall": {
+          "lower": 0.008770022883295196,
+          "upper": 0.07563343519225871,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "specificity": {
+          "lower": 0.9883405455233434,
+          "upper": 0.9981785891703924,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "f1": {
+          "lower": 0.01638360655737706,
+          "upper": 0.13333333333333333,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      }
+    },
+    "app_logistic_balanced": {
+      "description": "Stage 7 frozen raw app_logistic_balanced at fixed diagnostic 0.5",
+      "threshold": 0.5,
+      "participant_equal": {
+        "prevalence": 0.10297666934835076,
+        "average_precision": 0.2821842278023856,
+        "roc_auc": 0.747050168161435,
+        "brier": 0.18411999330042714,
+        "log_loss": 0.5598766577099192,
+        "mean_probability": 0.38665889631483796,
+        "precision": 0.24390243902439024,
+        "recall": 0.625,
+        "specificity": 0.7775784753363228,
+        "f1": 0.3508771929824561,
+        "confusion": {
+          "tn": 867.0,
+          "fp": 248.0,
+          "fn": 48.0,
+          "tp": 80.0
+        }
+      },
+      "interval_equal": {
+        "prevalence": 0.10297666934835076,
+        "average_precision": 0.2821842278023856,
+        "roc_auc": 0.747050168161435,
+        "brier": 0.18411999330042714,
+        "log_loss": 0.5598766577099192,
+        "mean_probability": 0.38665889631483796,
+        "precision": 0.24390243902439024,
+        "recall": 0.625,
+        "specificity": 0.7775784753363228,
+        "f1": 0.3508771929824561,
+        "confusion": {
+          "tn": 867.0,
+          "fp": 248.0,
+          "fn": 48.0,
+          "tp": 80.0
+        }
+      },
+      "confidence_intervals": {
+        "prevalence": {
+          "lower": 0.08688656476267095,
+          "upper": 0.11987127916331457,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "average_precision": {
+          "lower": 0.22380869582891136,
+          "upper": 0.36243077225092024,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "roc_auc": {
+          "lower": 0.7020074304987846,
+          "upper": 0.7895214462831447,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "brier": {
+          "lower": 0.17255755548065518,
+          "upper": 0.1956165939657957,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "log_loss": {
+          "lower": 0.5317646666566351,
+          "upper": 0.5885690123440905,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "mean_probability": {
+          "lower": 0.37400060864429474,
+          "upper": 0.39979867896709537,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "precision": {
+          "lower": 0.20070254328518886,
+          "upper": 0.29268833886563717,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "recall": {
+          "lower": 0.5416588345864661,
+          "upper": 0.7069128171763175,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "specificity": {
+          "lower": 0.7531255897833792,
+          "upper": 0.8016001350853991,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "f1": {
+          "lower": 0.2969311550798006,
+          "upper": 0.40816560569181803,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      }
+    },
+    "minimal_logistic_calibrated": {
+      "description": "Stage 7 frozen selected minimal logistic with reserved sigmoid/threshold",
+      "threshold": 0.16677679805083043,
+      "participant_equal": {
+        "prevalence": 0.10297666934835076,
+        "average_precision": 0.27594243920744155,
+        "roc_auc": 0.7366942264573991,
+        "brier": 0.08796107237722577,
+        "log_loss": 0.3048599955732456,
+        "mean_probability": 0.140475735067533,
+        "precision": 0.25,
+        "recall": 0.53125,
+        "specificity": 0.8170403587443946,
+        "f1": 0.34,
+        "confusion": {
+          "tn": 911.0,
+          "fp": 204.0,
+          "fn": 60.0,
+          "tp": 68.0
+        }
+      },
+      "interval_equal": {
+        "prevalence": 0.10297666934835076,
+        "average_precision": 0.27594243920744155,
+        "roc_auc": 0.7366942264573991,
+        "brier": 0.08796107237722577,
+        "log_loss": 0.3048599955732456,
+        "mean_probability": 0.140475735067533,
+        "precision": 0.25,
+        "recall": 0.53125,
+        "specificity": 0.8170403587443946,
+        "f1": 0.34,
+        "confusion": {
+          "tn": 911.0,
+          "fp": 204.0,
+          "fn": 60.0,
+          "tp": 68.0
+        }
+      },
+      "confidence_intervals": {
+        "prevalence": {
+          "lower": 0.08688656476267095,
+          "upper": 0.11987127916331457,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "average_precision": {
+          "lower": 0.2158313033340618,
+          "upper": 0.35657400954221596,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "roc_auc": {
+          "lower": 0.6897338966033453,
+          "upper": 0.7800885590440917,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "brier": {
+          "lower": 0.07772714572043536,
+          "upper": 0.09881280106594978,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "log_loss": {
+          "lower": 0.2754109037497404,
+          "upper": 0.3370274077114029,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "mean_probability": {
+          "lower": 0.13328505674022711,
+          "upper": 0.14793544019720026,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "precision": {
+          "lower": 0.20142017873590404,
+          "upper": 0.30040285801155364,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "recall": {
+          "lower": 0.4492085268045589,
+          "upper": 0.616,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "specificity": {
+          "lower": 0.7958890374331551,
+          "upper": 0.8381301468770734,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        },
+        "f1": {
+          "lower": 0.2803699804868029,
+          "upper": 0.3968688338349311,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      }
+    }
+  },
+  "paired_difference_selected_minus_baseline": {
+    "selected_raw": {
+      "average_precision": {
+        "lower": 0.0,
+        "upper": 0.0,
+        "valid_replicates": 1000,
+        "undefined_replicates": 0,
+        "method": "participant-cluster percentile bootstrap",
+        "confidence_level": 0.95
+      },
+      "brier": {
+        "lower": 0.0011553941063980808,
+        "upper": 0.00567042384039994,
+        "valid_replicates": 1000,
+        "undefined_replicates": 0,
+        "method": "participant-cluster percentile bootstrap",
+        "confidence_level": 0.95
+      },
+      "roc_auc": {
+        "lower": 0.0,
+        "upper": 0.0,
+        "valid_replicates": 1000,
+        "undefined_replicates": 0,
+        "method": "participant-cluster percentile bootstrap",
+        "confidence_level": 0.95
+      }
+    },
+    "training_prevalence": {
+      "average_precision": {
+        "lower": 0.10030377904201555,
+        "upper": 0.20620759974627645,
+        "valid_replicates": 1000,
+        "undefined_replicates": 0,
+        "method": "participant-cluster percentile bootstrap",
+        "confidence_level": 0.95
+      },
+      "brier": {
+        "lower": -0.010895801475642038,
+        "upper": 0.003002018648688868,
+        "valid_replicates": 1000,
+        "undefined_replicates": 0,
+        "method": "participant-cluster percentile bootstrap",
+        "confidence_level": 0.95
+      },
+      "roc_auc": {
+        "lower": 0.19549798194047793,
+        "upper": 0.28096204947871195,
+        "valid_replicates": 1000,
+        "undefined_replicates": 0,
+        "method": "participant-cluster percentile bootstrap",
+        "confidence_level": 0.95
+      }
+    },
+    "minimal_logistic": {
+      "average_precision": {
+        "lower": -0.06686309595464052,
+        "upper": 0.004435707462021912,
+        "valid_replicates": 1000,
+        "undefined_replicates": 0,
+        "method": "participant-cluster percentile bootstrap",
+        "confidence_level": 0.95
+      },
+      "brier": {
+        "lower": 0.0006758498443178163,
+        "upper": 0.0069724911309787035,
+        "valid_replicates": 1000,
+        "undefined_replicates": 0,
+        "method": "participant-cluster percentile bootstrap",
+        "confidence_level": 0.95
+      },
+      "roc_auc": {
+        "lower": -0.007640727647862408,
+        "upper": 0.013961173130812514,
+        "valid_replicates": 1000,
+        "undefined_replicates": 0,
+        "method": "participant-cluster percentile bootstrap",
+        "confidence_level": 0.95
+      }
+    },
+    "minimal_logistic_balanced": {
+      "average_precision": {
+        "lower": -0.07073396968911923,
+        "upper": 0.0021772347181882572,
+        "valid_replicates": 1000,
+        "undefined_replicates": 0,
+        "method": "participant-cluster percentile bootstrap",
+        "confidence_level": 0.95
+      },
+      "brier": {
+        "lower": -0.10182217012411325,
+        "upper": -0.0807861686946679,
+        "valid_replicates": 1000,
+        "undefined_replicates": 0,
+        "method": "participant-cluster percentile bootstrap",
+        "confidence_level": 0.95
+      },
+      "roc_auc": {
+        "lower": -0.011698890022735536,
+        "upper": 0.009593975113120885,
+        "valid_replicates": 1000,
+        "undefined_replicates": 0,
+        "method": "participant-cluster percentile bootstrap",
+        "confidence_level": 0.95
+      }
+    },
+    "app_logistic": {
+      "average_precision": {
+        "lower": -0.07562422805603139,
+        "upper": 0.007034414175341135,
+        "valid_replicates": 1000,
+        "undefined_replicates": 0,
+        "method": "participant-cluster percentile bootstrap",
+        "confidence_level": 0.95
+      },
+      "brier": {
+        "lower": 0.0006015030882558451,
+        "upper": 0.007051578700904275,
+        "valid_replicates": 1000,
+        "undefined_replicates": 0,
+        "method": "participant-cluster percentile bootstrap",
+        "confidence_level": 0.95
+      },
+      "roc_auc": {
+        "lower": -0.020114131682778764,
+        "upper": 0.01269764350290242,
+        "valid_replicates": 1000,
+        "undefined_replicates": 0,
+        "method": "participant-cluster percentile bootstrap",
+        "confidence_level": 0.95
+      }
+    },
+    "app_logistic_balanced": {
+      "average_precision": {
+        "lower": -0.0802867780596244,
+        "upper": 0.0055349341798601745,
+        "valid_replicates": 1000,
+        "undefined_replicates": 0,
+        "method": "participant-cluster percentile bootstrap",
+        "confidence_level": 0.95
+      },
+      "brier": {
+        "lower": -0.10691424857996555,
+        "upper": -0.0837381310809281,
+        "valid_replicates": 1000,
+        "undefined_replicates": 0,
+        "method": "participant-cluster percentile bootstrap",
+        "confidence_level": 0.95
+      },
+      "roc_auc": {
+        "lower": -0.024476641151583278,
+        "upper": 0.009737185547934579,
+        "valid_replicates": 1000,
+        "undefined_replicates": 0,
+        "method": "participant-cluster percentile bootstrap",
+        "confidence_level": 0.95
+      }
+    },
+    "minimal_logistic_calibrated": {
+      "average_precision": {
+        "lower": -0.06686309595464052,
+        "upper": 0.004435707462021912,
+        "valid_replicates": 1000,
+        "undefined_replicates": 0,
+        "method": "participant-cluster percentile bootstrap",
+        "confidence_level": 0.95
+      },
+      "brier": {
+        "lower": -0.0016645872003126442,
+        "upper": 0.0027577813240154936,
+        "valid_replicates": 1000,
+        "undefined_replicates": 0,
+        "method": "participant-cluster percentile bootstrap",
+        "confidence_level": 0.95
+      },
+      "roc_auc": {
+        "lower": -0.007640727647862408,
+        "upper": 0.013961173130812514,
+        "valid_replicates": 1000,
+        "undefined_replicates": 0,
+        "method": "participant-cluster percentile bootstrap",
+        "confidence_level": 0.95
+      }
+    }
+  },
+  "calibration": {
+    "selected_calibrated": [
+      {
+        "lower": 0,
+        "upper": 0.1,
+        "records": 783,
+        "positive_records": 37,
+        "mean_probability": 0.05708104313589498,
+        "observed_fraction": 0.04725415070242656,
+        "observed_fraction_ci": {
+          "lower": 0.034004585041405314,
+          "upper": 0.062339730333360904,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      },
+      {
+        "lower": 0.1,
+        "upper": 0.2,
+        "records": 190,
+        "positive_records": 23,
+        "mean_probability": 0.13767182562259445,
+        "observed_fraction": 0.12105263157894737,
+        "observed_fraction_ci": {
+          "lower": 0.07731896508790279,
+          "upper": 0.16842400946185687,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      },
+      {
+        "lower": 0.2,
+        "upper": 0.3,
+        "records": 97,
+        "positive_records": 14,
+        "mean_probability": 0.25377769440979414,
+        "observed_fraction": 0.14432989690721648,
+        "observed_fraction_ci": {
+          "lower": 0.07316438008130081,
+          "upper": 0.21622318194483142,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      },
+      {
+        "lower": 0.3,
+        "upper": 0.4,
+        "records": 55,
+        "positive_records": 12,
+        "mean_probability": 0.3512975472934912,
+        "observed_fraction": 0.21818181818181817,
+        "observed_fraction_ci": {
+          "lower": 0.11666666666666667,
+          "upper": 0.3333333333333333,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      },
+      {
+        "lower": 0.4,
+        "upper": 0.5,
+        "records": 71,
+        "positive_records": 27,
+        "mean_probability": 0.4498757148559298,
+        "observed_fraction": 0.38028169014084506,
+        "observed_fraction_ci": {
+          "lower": 0.2631363244176014,
+          "upper": 0.4915254237288136,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      },
+      {
+        "lower": 0.5,
+        "upper": 0.6,
+        "records": 42,
+        "positive_records": 15,
+        "mean_probability": 0.545789671537866,
+        "observed_fraction": 0.35714285714285715,
+        "observed_fraction_ci": {
+          "lower": 0.22727272727272727,
+          "upper": 0.5128378378378378,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      },
+      {
+        "lower": 0.6,
+        "upper": 0.7,
+        "records": 5,
+        "positive_records": 0,
+        "mean_probability": 0.6190188156567329,
+        "observed_fraction": 0.0,
+        "observed_fraction_ci": {
+          "lower": 0.0,
+          "upper": 0.0,
+          "valid_replicates": 996,
+          "undefined_replicates": 4,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      },
+      {
+        "lower": 0.7,
+        "upper": 0.8,
+        "records": 0,
+        "positive_records": 0,
+        "mean_probability": null,
+        "observed_fraction": null,
+        "observed_fraction_ci": {
+          "lower": null,
+          "upper": null,
+          "valid_replicates": 0,
+          "undefined_replicates": 1000,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      },
+      {
+        "lower": 0.8,
+        "upper": 0.9,
+        "records": 0,
+        "positive_records": 0,
+        "mean_probability": null,
+        "observed_fraction": null,
+        "observed_fraction_ci": {
+          "lower": null,
+          "upper": null,
+          "valid_replicates": 0,
+          "undefined_replicates": 1000,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      },
+      {
+        "lower": 0.9,
+        "upper": 1,
+        "records": 0,
+        "positive_records": 0,
+        "mean_probability": null,
+        "observed_fraction": null,
+        "observed_fraction_ci": {
+          "lower": null,
+          "upper": null,
+          "valid_replicates": 0,
+          "undefined_replicates": 1000,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      }
+    ],
+    "selected_raw": [
+      {
+        "lower": 0,
+        "upper": 0.1,
+        "records": 900,
+        "positive_records": 51,
+        "mean_probability": 0.04420337609946728,
+        "observed_fraction": 0.056666666666666664,
+        "observed_fraction_ci": {
+          "lower": 0.04212743675307487,
+          "upper": 0.07240229425103376,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      },
+      {
+        "lower": 0.1,
+        "upper": 0.2,
+        "records": 148,
+        "positive_records": 20,
+        "mean_probability": 0.14314820874180342,
+        "observed_fraction": 0.13513513513513514,
+        "observed_fraction_ci": {
+          "lower": 0.08106554830692764,
+          "upper": 0.19051561021759691,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      },
+      {
+        "lower": 0.2,
+        "upper": 0.3,
+        "records": 76,
+        "positive_records": 15,
+        "mean_probability": 0.24571231674206884,
+        "observed_fraction": 0.19736842105263158,
+        "observed_fraction_ci": {
+          "lower": 0.11428571428571428,
+          "upper": 0.2878787878787879,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      },
+      {
+        "lower": 0.3,
+        "upper": 0.4,
+        "records": 79,
+        "positive_records": 31,
+        "mean_probability": 0.34993989143190507,
+        "observed_fraction": 0.3924050632911392,
+        "observed_fraction_ci": {
+          "lower": 0.2857142857142857,
+          "upper": 0.5,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      },
+      {
+        "lower": 0.4,
+        "upper": 0.5,
+        "records": 38,
+        "positive_records": 11,
+        "mean_probability": 0.4485847071597451,
+        "observed_fraction": 0.2894736842105263,
+        "observed_fraction_ci": {
+          "lower": 0.15783625730994155,
+          "upper": 0.45011363636363627,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      },
+      {
+        "lower": 0.5,
+        "upper": 0.6,
+        "records": 2,
+        "positive_records": 0,
+        "mean_probability": 0.5337136089801788,
+        "observed_fraction": 0.0,
+        "observed_fraction_ci": {
+          "lower": 0.0,
+          "upper": 0.0,
+          "valid_replicates": 870,
+          "undefined_replicates": 130,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      },
+      {
+        "lower": 0.6,
+        "upper": 0.7,
+        "records": 0,
+        "positive_records": 0,
+        "mean_probability": null,
+        "observed_fraction": null,
+        "observed_fraction_ci": {
+          "lower": null,
+          "upper": null,
+          "valid_replicates": 0,
+          "undefined_replicates": 1000,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      },
+      {
+        "lower": 0.7,
+        "upper": 0.8,
+        "records": 0,
+        "positive_records": 0,
+        "mean_probability": null,
+        "observed_fraction": null,
+        "observed_fraction_ci": {
+          "lower": null,
+          "upper": null,
+          "valid_replicates": 0,
+          "undefined_replicates": 1000,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      },
+      {
+        "lower": 0.8,
+        "upper": 0.9,
+        "records": 0,
+        "positive_records": 0,
+        "mean_probability": null,
+        "observed_fraction": null,
+        "observed_fraction_ci": {
+          "lower": null,
+          "upper": null,
+          "valid_replicates": 0,
+          "undefined_replicates": 1000,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      },
+      {
+        "lower": 0.9,
+        "upper": 1,
+        "records": 0,
+        "positive_records": 0,
+        "mean_probability": null,
+        "observed_fraction": null,
+        "observed_fraction_ci": {
+          "lower": null,
+          "upper": null,
+          "valid_replicates": 0,
+          "undefined_replicates": 1000,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      }
+    ],
+    "minimal_logistic_calibrated": [
+      {
+        "lower": 0,
+        "upper": 0.1,
+        "records": 762,
+        "positive_records": 37,
+        "mean_probability": 0.06293921837971317,
+        "observed_fraction": 0.048556430446194225,
+        "observed_fraction_ci": {
+          "lower": 0.03518201856393775,
+          "upper": 0.06408758915630823,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      },
+      {
+        "lower": 0.1,
+        "upper": 0.2,
+        "records": 234,
+        "positive_records": 25,
+        "mean_probability": 0.12836709781256117,
+        "observed_fraction": 0.10683760683760683,
+        "observed_fraction_ci": {
+          "lower": 0.06986407402104661,
+          "upper": 0.1465545977011494,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      },
+      {
+        "lower": 0.2,
+        "upper": 0.3,
+        "records": 48,
+        "positive_records": 8,
+        "mean_probability": 0.2548314759529146,
+        "observed_fraction": 0.16666666666666666,
+        "observed_fraction_ci": {
+          "lower": 0.0689459247648903,
+          "upper": 0.288143741851369,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      },
+      {
+        "lower": 0.3,
+        "upper": 0.4,
+        "records": 90,
+        "positive_records": 25,
+        "mean_probability": 0.35297466876031486,
+        "observed_fraction": 0.2777777777777778,
+        "observed_fraction_ci": {
+          "lower": 0.18680952380952381,
+          "upper": 0.37180232558139537,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      },
+      {
+        "lower": 0.4,
+        "upper": 0.5,
+        "records": 70,
+        "positive_records": 19,
+        "mean_probability": 0.4431807876497522,
+        "observed_fraction": 0.2714285714285714,
+        "observed_fraction_ci": {
+          "lower": 0.16948500651890483,
+          "upper": 0.38235294117647056,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      },
+      {
+        "lower": 0.5,
+        "upper": 0.6,
+        "records": 34,
+        "positive_records": 10,
+        "mean_probability": 0.5436394783589584,
+        "observed_fraction": 0.29411764705882354,
+        "observed_fraction_ci": {
+          "lower": 0.14814814814814814,
+          "upper": 0.4546103896103895,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      },
+      {
+        "lower": 0.6,
+        "upper": 0.7,
+        "records": 5,
+        "positive_records": 4,
+        "mean_probability": 0.6215449923214614,
+        "observed_fraction": 0.8,
+        "observed_fraction_ci": {
+          "lower": 0.3333333333333333,
+          "upper": 1.0,
+          "valid_replicates": 995,
+          "undefined_replicates": 5,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      },
+      {
+        "lower": 0.7,
+        "upper": 0.8,
+        "records": 0,
+        "positive_records": 0,
+        "mean_probability": null,
+        "observed_fraction": null,
+        "observed_fraction_ci": {
+          "lower": null,
+          "upper": null,
+          "valid_replicates": 0,
+          "undefined_replicates": 1000,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      },
+      {
+        "lower": 0.8,
+        "upper": 0.9,
+        "records": 0,
+        "positive_records": 0,
+        "mean_probability": null,
+        "observed_fraction": null,
+        "observed_fraction_ci": {
+          "lower": null,
+          "upper": null,
+          "valid_replicates": 0,
+          "undefined_replicates": 1000,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      },
+      {
+        "lower": 0.9,
+        "upper": 1,
+        "records": 0,
+        "positive_records": 0,
+        "mean_probability": null,
+        "observed_fraction": null,
+        "observed_fraction_ci": {
+          "lower": null,
+          "upper": null,
+          "valid_replicates": 0,
+          "undefined_replicates": 1000,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      }
+    ],
+    "training_prevalence": [
+      {
+        "lower": 0,
+        "upper": 0.1,
+        "records": 0,
+        "positive_records": 0,
+        "mean_probability": null,
+        "observed_fraction": null,
+        "observed_fraction_ci": {
+          "lower": null,
+          "upper": null,
+          "valid_replicates": 0,
+          "undefined_replicates": 1000,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      },
+      {
+        "lower": 0.1,
+        "upper": 0.2,
+        "records": 1243,
+        "positive_records": 128,
+        "mean_probability": 0.10809042669186596,
+        "observed_fraction": 0.10297666934835076,
+        "observed_fraction_ci": {
+          "lower": 0.08688656476267095,
+          "upper": 0.11987127916331457,
+          "valid_replicates": 1000,
+          "undefined_replicates": 0,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      },
+      {
+        "lower": 0.2,
+        "upper": 0.3,
+        "records": 0,
+        "positive_records": 0,
+        "mean_probability": null,
+        "observed_fraction": null,
+        "observed_fraction_ci": {
+          "lower": null,
+          "upper": null,
+          "valid_replicates": 0,
+          "undefined_replicates": 1000,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      },
+      {
+        "lower": 0.3,
+        "upper": 0.4,
+        "records": 0,
+        "positive_records": 0,
+        "mean_probability": null,
+        "observed_fraction": null,
+        "observed_fraction_ci": {
+          "lower": null,
+          "upper": null,
+          "valid_replicates": 0,
+          "undefined_replicates": 1000,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      },
+      {
+        "lower": 0.4,
+        "upper": 0.5,
+        "records": 0,
+        "positive_records": 0,
+        "mean_probability": null,
+        "observed_fraction": null,
+        "observed_fraction_ci": {
+          "lower": null,
+          "upper": null,
+          "valid_replicates": 0,
+          "undefined_replicates": 1000,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      },
+      {
+        "lower": 0.5,
+        "upper": 0.6,
+        "records": 0,
+        "positive_records": 0,
+        "mean_probability": null,
+        "observed_fraction": null,
+        "observed_fraction_ci": {
+          "lower": null,
+          "upper": null,
+          "valid_replicates": 0,
+          "undefined_replicates": 1000,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      },
+      {
+        "lower": 0.6,
+        "upper": 0.7,
+        "records": 0,
+        "positive_records": 0,
+        "mean_probability": null,
+        "observed_fraction": null,
+        "observed_fraction_ci": {
+          "lower": null,
+          "upper": null,
+          "valid_replicates": 0,
+          "undefined_replicates": 1000,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      },
+      {
+        "lower": 0.7,
+        "upper": 0.8,
+        "records": 0,
+        "positive_records": 0,
+        "mean_probability": null,
+        "observed_fraction": null,
+        "observed_fraction_ci": {
+          "lower": null,
+          "upper": null,
+          "valid_replicates": 0,
+          "undefined_replicates": 1000,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      },
+      {
+        "lower": 0.8,
+        "upper": 0.9,
+        "records": 0,
+        "positive_records": 0,
+        "mean_probability": null,
+        "observed_fraction": null,
+        "observed_fraction_ci": {
+          "lower": null,
+          "upper": null,
+          "valid_replicates": 0,
+          "undefined_replicates": 1000,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      },
+      {
+        "lower": 0.9,
+        "upper": 1,
+        "records": 0,
+        "positive_records": 0,
+        "mean_probability": null,
+        "observed_fraction": null,
+        "observed_fraction_ci": {
+          "lower": null,
+          "upper": null,
+          "valid_replicates": 0,
+          "undefined_replicates": 1000,
+          "method": "participant-cluster percentile bootstrap",
+          "confidence_level": 0.95
+        }
+      }
+    ]
+  },
+  "risk_categories": [
+    {
+      "category": "lower",
+      "records": 570,
+      "people": 570,
+      "positive_records": 23,
+      "interval_rate": 0.04035087719298246,
+      "participant_equal_rate": 0.04035087719298246,
+      "rate_ci": {
+        "lower": 0.02456140350877193,
+        "upper": 0.05789473684210526,
+        "valid_replicates": 1000,
+        "undefined_replicates": 0,
+        "method": "participant-cluster percentile bootstrap",
+        "confidence_level": 0.95
+      },
+      "mean_probability": 0.044426735462766494
+    },
+    {
+      "category": "moderate",
+      "records": 460,
+      "people": 460,
+      "positive_records": 45,
+      "interval_rate": 0.09782608695652174,
+      "participant_equal_rate": 0.09782608695652174,
+      "rate_ci": {
+        "lower": 0.07168478260869571,
+        "upper": 0.12608695652173912,
+        "valid_replicates": 1000,
+        "undefined_replicates": 0,
+        "method": "participant-cluster percentile bootstrap",
+        "confidence_level": 0.95
+      },
+      "mean_probability": 0.12795714692459897
+    },
+    {
+      "category": "higher",
+      "records": 213,
+      "people": 213,
+      "positive_records": 60,
+      "interval_rate": 0.28169014084507044,
+      "participant_equal_rate": 0.28169014084507044,
+      "rate_ci": {
+        "lower": 0.22065727699530516,
+        "upper": 0.3427230046948357,
+        "valid_replicates": 1000,
+        "undefined_replicates": 0,
+        "method": "participant-cluster percentile bootstrap",
+        "confidence_level": 0.95
+      },
+      "mean_probability": 0.415801945263584
+    }
+  ],
+  "risk_cuts": [
+    0.0750747765280418,
+    0.2590049599706509
+  ],
+  "subgroups": [
+    {
+      "subgroup": "recent_observed_last_use_30_to_365_25_days",
+      "records": 191,
+      "people": 191,
+      "positive_records": 57,
+      "interval_rate": 0.29842931937172773,
+      "participant_equal_rate": 0.29842931937172773,
+      "rate_ci": {
+        "lower": 0.2356020942408377,
+        "upper": 0.3612565445026178,
+        "valid_replicates": 1000,
+        "undefined_replicates": 0,
+        "method": "participant-cluster percentile bootstrap",
+        "confidence_level": 0.95
+      },
+      "performance_supported": true,
+      "performance": {
+        "description": "Frozen selected classifier within prespecified subgroup",
+        "threshold": 0.2590049599706509,
+        "participant_equal": {
+          "prevalence": 0.29842931937172773,
+          "average_precision": 0.3188435195519375,
+          "roc_auc": 0.5637601466352449,
+          "brier": 0.22724357165537976,
+          "log_loss": 0.6459774581134603,
+          "mean_probability": 0.4229666969684565,
+          "precision": 0.3016759776536313,
+          "recall": 0.9473684210526315,
+          "specificity": 0.06716417910447761,
+          "f1": 0.4576271186440678,
+          "confusion": {
+            "tn": 9.0,
+            "fp": 125.0,
+            "fn": 3.0,
+            "tp": 54.0
+          }
+        },
+        "interval_equal": {
+          "prevalence": 0.29842931937172773,
+          "average_precision": 0.3188435195519375,
+          "roc_auc": 0.5637601466352449,
+          "brier": 0.22724357165537976,
+          "log_loss": 0.6459774581134603,
+          "mean_probability": 0.4229666969684565,
+          "precision": 0.3016759776536313,
+          "recall": 0.9473684210526315,
+          "specificity": 0.06716417910447761,
+          "f1": 0.4576271186440678,
+          "confusion": {
+            "tn": 9.0,
+            "fp": 125.0,
+            "fn": 3.0,
+            "tp": 54.0
+          }
+        },
+        "confidence_intervals": {
+          "prevalence": {
+            "lower": 0.2356020942408377,
+            "upper": 0.3612565445026178,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "average_precision": {
+            "lower": 0.2437668012056175,
+            "upper": 0.42378362092528027,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "roc_auc": {
+            "lower": 0.4787264870062858,
+            "upper": 0.6569315361057382,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "brier": {
+            "lower": 0.20961631541251421,
+            "upper": 0.24327745814315868,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "log_loss": {
+            "lower": 0.6084876302685639,
+            "upper": 0.6811617963938205,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "mean_probability": {
+            "lower": 0.408294182765917,
+            "upper": 0.4369227966824333,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "precision": {
+            "lower": 0.23885589318600373,
+            "upper": 0.3699477852649059,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "recall": {
+            "lower": 0.8771929824561403,
+            "upper": 1.0,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "specificity": {
+            "lower": 0.03007518796992481,
+            "upper": 0.11036398467432948,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "f1": {
+            "lower": 0.3813432237369688,
+            "upper": 0.5354472440944882,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          }
+        }
+      },
+      "limitation": null
+    },
+    {
+      "subgroup": "longer_observed_last_use_over_365_25_days",
+      "records": 92,
+      "people": 92,
+      "positive_records": 16,
+      "interval_rate": 0.17391304347826086,
+      "participant_equal_rate": 0.17391304347826086,
+      "rate_ci": {
+        "lower": 0.09782608695652174,
+        "upper": 0.25,
+        "valid_replicates": 1000,
+        "undefined_replicates": 0,
+        "method": "participant-cluster percentile bootstrap",
+        "confidence_level": 0.95
+      },
+      "performance_supported": false,
+      "performance": null,
+      "limitation": "Below prespecified 100-person and/or 20-positive/20-negative minimum; counts and outcome-rate uncertainty only. No regrouping or minimum change after exposure."
+    },
+    {
+      "subgroup": "unknown_last_use_recency",
+      "records": 960,
+      "people": 960,
+      "positive_records": 55,
+      "interval_rate": 0.057291666666666664,
+      "participant_equal_rate": 0.057291666666666664,
+      "rate_ci": {
+        "lower": 0.043723958333333354,
+        "upper": 0.07291666666666667,
+        "valid_replicates": 1000,
+        "undefined_replicates": 0,
+        "method": "participant-cluster percentile bootstrap",
+        "confidence_level": 0.95
+      },
+      "performance_supported": true,
+      "performance": {
+        "description": "Frozen selected classifier within prespecified subgroup",
+        "threshold": 0.2590049599706509,
+        "participant_equal": {
+          "prevalence": 0.057291666666666664,
+          "average_precision": 0.09671482892205872,
+          "roc_auc": 0.6419387242591662,
+          "brier": 0.054326851052317174,
+          "log_loss": 0.2171013032623996,
+          "mean_probability": 0.07856730458454265,
+          "precision": 0.125,
+          "recall": 0.03636363636363636,
+          "specificity": 0.9845303867403314,
+          "f1": 0.056338028169014086,
+          "confusion": {
+            "tn": 891.0,
+            "fp": 14.0,
+            "fn": 53.0,
+            "tp": 2.0
+          }
+        },
+        "interval_equal": {
+          "prevalence": 0.057291666666666664,
+          "average_precision": 0.09671482892205872,
+          "roc_auc": 0.6419387242591662,
+          "brier": 0.054326851052317174,
+          "log_loss": 0.2171013032623996,
+          "mean_probability": 0.07856730458454265,
+          "precision": 0.125,
+          "recall": 0.03636363636363636,
+          "specificity": 0.9845303867403314,
+          "f1": 0.056338028169014086,
+          "confusion": {
+            "tn": 891.0,
+            "fp": 14.0,
+            "fn": 53.0,
+            "tp": 2.0
+          }
+        },
+        "confidence_intervals": {
+          "prevalence": {
+            "lower": 0.04375,
+            "upper": 0.071875,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "average_precision": {
+            "lower": 0.0672560093834138,
+            "upper": 0.15543343981242852,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "roc_auc": {
+            "lower": 0.5667427087725393,
+            "upper": 0.7136601522680704,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "brier": {
+            "lower": 0.0434465490759308,
+            "upper": 0.06601056485879638,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "log_loss": {
+            "lower": 0.18373338208573722,
+            "upper": 0.2543590275622058,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "mean_probability": {
+            "lower": 0.07515687292551614,
+            "upper": 0.08176869907401824,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "precision": {
+            "lower": 0.0,
+            "upper": 0.3076923076923077,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "recall": {
+            "lower": 0.0,
+            "upper": 0.09436208445642406,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "specificity": {
+            "lower": 0.9755235638003362,
+            "upper": 0.992187934994432,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "f1": {
+            "lower": 0.0,
+            "upper": 0.1388888888888889,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          }
+        }
+      },
+      "limitation": null
+    },
+    {
+      "subgroup": "recent_boundary_excluded_sensitivity",
+      "records": 157,
+      "people": 157,
+      "positive_records": 46,
+      "interval_rate": 0.2929936305732484,
+      "participant_equal_rate": 0.2929936305732484,
+      "rate_ci": {
+        "lower": 0.2229299363057325,
+        "upper": 0.36942675159235666,
+        "valid_replicates": 1000,
+        "undefined_replicates": 0,
+        "method": "participant-cluster percentile bootstrap",
+        "confidence_level": 0.95
+      },
+      "performance_supported": true,
+      "performance": {
+        "description": "Frozen selected classifier within prespecified subgroup",
+        "threshold": 0.2590049599706509,
+        "participant_equal": {
+          "prevalence": 0.2929936305732484,
+          "average_precision": 0.3089840178314617,
+          "roc_auc": 0.5660987074030552,
+          "brier": 0.23100680176399785,
+          "log_loss": 0.6535189742355291,
+          "mean_probability": 0.44823558356703164,
+          "precision": 0.2948717948717949,
+          "recall": 1.0,
+          "specificity": 0.009009009009009009,
+          "f1": 0.45544554455445546,
+          "confusion": {
+            "tn": 1.0,
+            "fp": 110.0,
+            "fn": 0.0,
+            "tp": 46.0
+          }
+        },
+        "interval_equal": {
+          "prevalence": 0.2929936305732484,
+          "average_precision": 0.3089840178314617,
+          "roc_auc": 0.5660987074030552,
+          "brier": 0.23100680176399785,
+          "log_loss": 0.6535189742355291,
+          "mean_probability": 0.44823558356703164,
+          "precision": 0.2948717948717949,
+          "recall": 1.0,
+          "specificity": 0.009009009009009009,
+          "f1": 0.45544554455445546,
+          "confusion": {
+            "tn": 1.0,
+            "fp": 110.0,
+            "fn": 0.0,
+            "tp": 46.0
+          }
+        },
+        "confidence_intervals": {
+          "prevalence": {
+            "lower": 0.2229299363057325,
+            "upper": 0.3630573248407643,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "average_precision": {
+            "lower": 0.23135479989789912,
+            "upper": 0.41112510947698616,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "roc_auc": {
+            "lower": 0.47032908877156543,
+            "upper": 0.6549350263572226,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "brier": {
+            "lower": 0.2173288710595028,
+            "upper": 0.2455841749923958,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "log_loss": {
+            "lower": 0.6251485558268768,
+            "upper": 0.6835723676518072,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "mean_probability": {
+            "lower": 0.43389579373018833,
+            "upper": 0.46297980073994405,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "precision": {
+            "lower": 0.2272360703812317,
+            "upper": 0.3631155071043605,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "recall": {
+            "lower": 1.0,
+            "upper": 1.0,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "specificity": {
+            "lower": 0.0,
+            "upper": 0.02857142857142857,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "f1": {
+            "lower": 0.3703216374269006,
+            "upper": 0.5327728050546268,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          }
+        }
+      },
+      "limitation": null
+    },
+    {
+      "subgroup": "age_18–34",
+      "records": 357,
+      "people": 357,
+      "positive_records": 59,
+      "interval_rate": 0.16526610644257703,
+      "participant_equal_rate": 0.16526610644257703,
+      "rate_ci": {
+        "lower": 0.12885154061624648,
+        "upper": 0.20448179271708683,
+        "valid_replicates": 1000,
+        "undefined_replicates": 0,
+        "method": "participant-cluster percentile bootstrap",
+        "confidence_level": 0.95
+      },
+      "performance_supported": true,
+      "performance": {
+        "description": "Frozen selected classifier within prespecified subgroup",
+        "threshold": 0.2590049599706509,
+        "participant_equal": {
+          "prevalence": 0.16526610644257703,
+          "average_precision": 0.2727547965434821,
+          "roc_auc": 0.6852462745990218,
+          "brier": 0.1404597451120494,
+          "log_loss": 0.44506235084268975,
+          "mean_probability": 0.25416018718049277,
+          "precision": 0.2753623188405797,
+          "recall": 0.6440677966101694,
+          "specificity": 0.6644295302013423,
+          "f1": 0.38578680203045684,
+          "confusion": {
+            "tn": 198.0,
+            "fp": 100.0,
+            "fn": 21.0,
+            "tp": 38.0
+          }
+        },
+        "interval_equal": {
+          "prevalence": 0.16526610644257703,
+          "average_precision": 0.2727547965434821,
+          "roc_auc": 0.6852462745990218,
+          "brier": 0.1404597451120494,
+          "log_loss": 0.44506235084268975,
+          "mean_probability": 0.25416018718049277,
+          "precision": 0.2753623188405797,
+          "recall": 0.6440677966101694,
+          "specificity": 0.6644295302013423,
+          "f1": 0.38578680203045684,
+          "confusion": {
+            "tn": 198.0,
+            "fp": 100.0,
+            "fn": 21.0,
+            "tp": 38.0
+          }
+        },
+        "confidence_intervals": {
+          "prevalence": {
+            "lower": 0.12878151260504206,
+            "upper": 0.20168067226890757,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "average_precision": {
+            "lower": 0.20295769447041728,
+            "upper": 0.3723171242859281,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "roc_auc": {
+            "lower": 0.6060823303237349,
+            "upper": 0.7605547344251241,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "brier": {
+            "lower": 0.12095733448692958,
+            "upper": 0.16078667684443226,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "log_loss": {
+            "lower": 0.39656623611276726,
+            "upper": 0.49795307946937445,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "mean_probability": {
+            "lower": 0.2381988106346167,
+            "upper": 0.2700471203926977,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "precision": {
+            "lower": 0.20167462668520647,
+            "upper": 0.34587946243561657,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "recall": {
+            "lower": 0.5165548780487806,
+            "upper": 0.7727424242424242,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "specificity": {
+            "lower": 0.6109027014519581,
+            "upper": 0.7171977507029053,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "f1": {
+            "lower": 0.29627805145046526,
+            "upper": 0.46511627906976744,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          }
+        }
+      },
+      "limitation": null
+    },
+    {
+      "subgroup": "age_35–54",
+      "records": 434,
+      "people": 434,
+      "positive_records": 50,
+      "interval_rate": 0.1152073732718894,
+      "participant_equal_rate": 0.1152073732718894,
+      "rate_ci": {
+        "lower": 0.08750000000000005,
+        "upper": 0.14516129032258066,
+        "valid_replicates": 1000,
+        "undefined_replicates": 0,
+        "method": "participant-cluster percentile bootstrap",
+        "confidence_level": 0.95
+      },
+      "performance_supported": true,
+      "performance": {
+        "description": "Frozen selected classifier within prespecified subgroup",
+        "threshold": 0.2590049599706509,
+        "participant_equal": {
+          "prevalence": 0.1152073732718894,
+          "average_precision": 0.2721667486596126,
+          "roc_auc": 0.6930989583333333,
+          "brier": 0.0939233121109321,
+          "log_loss": 0.32686901381023253,
+          "mean_probability": 0.12736987100425617,
+          "precision": 0.32142857142857145,
+          "recall": 0.36,
+          "specificity": 0.9010416666666666,
+          "f1": 0.33962264150943394,
+          "confusion": {
+            "tn": 346.0,
+            "fp": 38.0,
+            "fn": 32.0,
+            "tp": 18.0
+          }
+        },
+        "interval_equal": {
+          "prevalence": 0.1152073732718894,
+          "average_precision": 0.2721667486596126,
+          "roc_auc": 0.6930989583333333,
+          "brier": 0.0939233121109321,
+          "log_loss": 0.32686901381023253,
+          "mean_probability": 0.12736987100425617,
+          "precision": 0.32142857142857145,
+          "recall": 0.36,
+          "specificity": 0.9010416666666666,
+          "f1": 0.33962264150943394,
+          "confusion": {
+            "tn": 346.0,
+            "fp": 38.0,
+            "fn": 32.0,
+            "tp": 18.0
+          }
+        },
+        "confidence_intervals": {
+          "prevalence": {
+            "lower": 0.08755760368663594,
+            "upper": 0.14521889400921656,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "average_precision": {
+            "lower": 0.1750018867304642,
+            "upper": 0.4170301395354091,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "roc_auc": {
+            "lower": 0.5996993710762933,
+            "upper": 0.7774156191375573,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "brier": {
+            "lower": 0.07478792638266595,
+            "upper": 0.11489257550554952,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "log_loss": {
+            "lower": 0.2739461276359692,
+            "upper": 0.3867255152332575,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "mean_probability": {
+            "lower": 0.11816878570428174,
+            "upper": 0.13762579992943924,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "precision": {
+            "lower": 0.1967139929742389,
+            "upper": 0.4445578231292516,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "recall": {
+            "lower": 0.22805023923444975,
+            "upper": 0.5,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "specificity": {
+            "lower": 0.8697802083333334,
+            "upper": 0.9298713550600343,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "f1": {
+            "lower": 0.21969111969111976,
+            "upper": 0.45314141281512604,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          }
+        }
+      },
+      "limitation": null
+    },
+    {
+      "subgroup": "age_55+",
+      "records": 452,
+      "people": 452,
+      "positive_records": 19,
+      "interval_rate": 0.0420353982300885,
+      "participant_equal_rate": 0.0420353982300885,
+      "rate_ci": {
+        "lower": 0.024336283185840708,
+        "upper": 0.061946902654867256,
+        "valid_replicates": 1000,
+        "undefined_replicates": 0,
+        "method": "participant-cluster percentile bootstrap",
+        "confidence_level": 0.95
+      },
+      "performance_supported": false,
+      "performance": null,
+      "limitation": "Below prespecified 100-person and/or 20-positive/20-negative minimum; counts and outcome-rate uncertainty only. No regrouping or minimum change after exposure."
+    },
+    {
+      "subgroup": "age_unknown",
+      "records": 0,
+      "people": 0,
+      "positive_records": 0,
+      "interval_rate": null,
+      "participant_equal_rate": null,
+      "rate_ci": {
+        "lower": null,
+        "upper": null,
+        "valid_replicates": 0,
+        "undefined_replicates": 1000,
+        "method": "participant-cluster percentile bootstrap",
+        "confidence_level": 0.95
+      },
+      "performance_supported": false,
+      "performance": null,
+      "limitation": "Below prespecified 100-person and/or 20-positive/20-negative minimum; counts and outcome-rate uncertainty only. No regrouping or minimum change after exposure."
+    },
+    {
+      "subgroup": "recorded_sex_Male (survey recorded)",
+      "records": 643,
+      "people": 643,
+      "positive_records": 71,
+      "interval_rate": 0.1104199066874028,
+      "participant_equal_rate": 0.1104199066874028,
+      "rate_ci": {
+        "lower": 0.08709175738724728,
+        "upper": 0.13374805598755832,
+        "valid_replicates": 1000,
+        "undefined_replicates": 0,
+        "method": "participant-cluster percentile bootstrap",
+        "confidence_level": 0.95
+      },
+      "performance_supported": true,
+      "performance": {
+        "description": "Frozen selected classifier within prespecified subgroup",
+        "threshold": 0.2590049599706509,
+        "participant_equal": {
+          "prevalence": 0.1104199066874028,
+          "average_precision": 0.29584659130791063,
+          "roc_auc": 0.755712597261893,
+          "brier": 0.0885531665146309,
+          "log_loss": 0.30526933128873374,
+          "mean_probability": 0.1346604052710655,
+          "precision": 0.3431372549019608,
+          "recall": 0.49295774647887325,
+          "specificity": 0.8828671328671329,
+          "f1": 0.4046242774566474,
+          "confusion": {
+            "tn": 505.0,
+            "fp": 67.0,
+            "fn": 36.0,
+            "tp": 35.0
+          }
+        },
+        "interval_equal": {
+          "prevalence": 0.1104199066874028,
+          "average_precision": 0.29584659130791063,
+          "roc_auc": 0.755712597261893,
+          "brier": 0.0885531665146309,
+          "log_loss": 0.30526933128873374,
+          "mean_probability": 0.1346604052710655,
+          "precision": 0.3431372549019608,
+          "recall": 0.49295774647887325,
+          "specificity": 0.8828671328671329,
+          "f1": 0.4046242774566474,
+          "confusion": {
+            "tn": 505.0,
+            "fp": 67.0,
+            "fn": 36.0,
+            "tp": 35.0
+          }
+        },
+        "confidence_intervals": {
+          "prevalence": {
+            "lower": 0.08553654743390357,
+            "upper": 0.13530326594090203,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "average_precision": {
+            "lower": 0.22289459500809347,
+            "upper": 0.4095575514941591,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "roc_auc": {
+            "lower": 0.6922423143988958,
+            "upper": 0.8146488923080477,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "brier": {
+            "lower": 0.0739800358432194,
+            "upper": 0.10543543462384831,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "log_loss": {
+            "lower": 0.2621673410544914,
+            "upper": 0.3585097779929761,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "mean_probability": {
+            "lower": 0.12372334140049959,
+            "upper": 0.1458919466811487,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "precision": {
+            "lower": 0.2571428571428571,
+            "upper": 0.4375,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "recall": {
+            "lower": 0.37035768645357686,
+            "upper": 0.6154166666666667,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "specificity": {
+            "lower": 0.8566368495307899,
+            "upper": 0.9086284648831451,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "f1": {
+            "lower": 0.3105298376857349,
+            "upper": 0.4950870604301809,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          }
+        }
+      },
+      "limitation": null
+    },
+    {
+      "subgroup": "recorded_sex_Female (survey recorded)",
+      "records": 598,
+      "people": 598,
+      "positive_records": 57,
+      "interval_rate": 0.09531772575250837,
+      "participant_equal_rate": 0.09531772575250837,
+      "rate_ci": {
+        "lower": 0.07357859531772576,
+        "upper": 0.12040133779264214,
+        "valid_replicates": 1000,
+        "undefined_replicates": 0,
+        "method": "participant-cluster percentile bootstrap",
+        "confidence_level": 0.95
+      },
+      "performance_supported": true,
+      "performance": {
+        "description": "Frozen selected classifier within prespecified subgroup",
+        "threshold": 0.2590049599706509,
+        "participant_equal": {
+          "prevalence": 0.09531772575250837,
+          "average_precision": 0.20359476625309375,
+          "roc_auc": 0.718714531244933,
+          "brier": 0.08878086774291268,
+          "log_loss": 0.3056334521475606,
+          "mean_probability": 0.14384249646776634,
+          "precision": 0.22123893805309736,
+          "recall": 0.43859649122807015,
+          "specificity": 0.8373382624768947,
+          "f1": 0.29411764705882354,
+          "confusion": {
+            "tn": 453.0,
+            "fp": 88.0,
+            "fn": 32.0,
+            "tp": 25.0
+          }
+        },
+        "interval_equal": {
+          "prevalence": 0.09531772575250837,
+          "average_precision": 0.20359476625309375,
+          "roc_auc": 0.718714531244933,
+          "brier": 0.08878086774291268,
+          "log_loss": 0.3056334521475606,
+          "mean_probability": 0.14384249646776634,
+          "precision": 0.22123893805309736,
+          "recall": 0.43859649122807015,
+          "specificity": 0.8373382624768947,
+          "f1": 0.29411764705882354,
+          "confusion": {
+            "tn": 453.0,
+            "fp": 88.0,
+            "fn": 32.0,
+            "tp": 25.0
+          }
+        },
+        "confidence_intervals": {
+          "prevalence": {
+            "lower": 0.07357859531772576,
+            "upper": 0.11872909698996656,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "average_precision": {
+            "lower": 0.1391910103223891,
+            "upper": 0.28901246141726455,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "roc_auc": {
+            "lower": 0.6482249107138642,
+            "upper": 0.7789545421989025,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "brier": {
+            "lower": 0.07455827630073712,
+            "upper": 0.10389937314288174,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "log_loss": {
+            "lower": 0.26451884125188185,
+            "upper": 0.35078663645797264,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "mean_probability": {
+            "lower": 0.13283324332973406,
+            "upper": 0.15513834057444514,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "precision": {
+            "lower": 0.14545066045066044,
+            "upper": 0.2941626650660264,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "recall": {
+            "lower": 0.3076530612244898,
+            "upper": 0.5625284090909091,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "specificity": {
+            "lower": 0.8047386943636463,
+            "upper": 0.8673082201299378,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          },
+          "f1": {
+            "lower": 0.20252787823990356,
+            "upper": 0.37501726519337014,
+            "valid_replicates": 1000,
+            "undefined_replicates": 0,
+            "method": "participant-cluster percentile bootstrap",
+            "confidence_level": 0.95
+          }
+        }
+      },
+      "limitation": null
+    },
+    {
+      "subgroup": "recorded_sex_unknown",
+      "records": 2,
+      "people": 2,
+      "positive_records": 0,
+      "interval_rate": 0.0,
+      "participant_equal_rate": 0.0,
+      "rate_ci": {
+        "lower": 0.0,
+        "upper": 0.0,
+        "valid_replicates": 1000,
+        "undefined_replicates": 0,
+        "method": "participant-cluster percentile bootstrap",
+        "confidence_level": 0.95
+      },
+      "performance_supported": false,
+      "performance": null,
+      "limitation": "Below prespecified 100-person and/or 20-positive/20-negative minimum; counts and outcome-rate uncertainty only. No regrouping or minimum change after exposure."
+    }
+  ],
+  "bootstrap_replicates": 1000,
+  "bootstrap_seed": 366,
+  "bootstrap_method": "Participant-cluster percentile bootstrap; same participant draws for model comparisons; repeated rows travel together and each drawn cluster occurrence has total metric weight one. No-positive AP and one-class ROC undefined; undefined denominators omitted metric-by-metric with counts.",
+  "confidence_level": 0.95,
+  "metric_definition": "Stepwise weighted average_precision_score equivalent, not trapezoidal PR-AUC; weighted tie-aware ROC. Undefined AP when no positive weight; undefined ROC when either class absent. Precision/recall/specificity/F1 undefined on zero denominators.",
+  "timing_decision": "C; no survival model or supported elapsed horizons",
+  "survey_weighting": "No matching survey weights/design; no national inference",
+  "app_input_coverage": {
+    "minimum_supplied_inputs": 2,
+    "records_meeting_input_count": 1243,
+    "evaluation_policy": "All locked valid-outcome test records evaluated; app input-count guard is descriptive coverage, not a post-hoc test exclusion"
+  },
+  "no_fitting_or_test_driven_tuning": true,
+  "test_exposure_policy": "First recorded answer access in this run; predictions saved once; reruns must reuse complete saved evidence."
+}

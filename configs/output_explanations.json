@@ -1,0 +1,45 @@
+{
+  "version": "1.0",
+  "run_name": "outputs_v1",
+  "output_dir": "artifacts/outputs_v1",
+  "report_dir": "reports/outputs_v1",
+  "category_config": "configs/risk_categories_v1.json",
+  "seed": 366,
+  "cpu_threads": 1,
+  "category_source": "Reserved threshold-selection participants, starting waves 1\u20136, observed valid next-survey outcome; saved stage 8 calibrated predictions",
+  "category_rule": "First score at which cumulative participant-equal weight reaches 1/3 and 2/3; thresholds use scores/weights only, never outcome optimization. Equal scores stay together. Lower <= cut1; moderate cut1 < p <= cut2; higher p > cut2.",
+  "category_quantiles": [
+    0.3333333333333333,
+    0.6666666666666666
+  ],
+  "minimum_category_records": 100,
+  "category_labels": {
+    "lower": "Lower estimated risk",
+    "moderate": "Moderate estimated risk",
+    "higher": "Higher estimated risk"
+  },
+  "category_caution": "Project-defined relative groups in development data; not established medical cutoffs or independently validated risk categories.",
+  "background_people": 64,
+  "global_explanation_people": 128,
+  "background_namespace": "path-stage10-shap-background-v1",
+  "global_namespace": "path-stage10-shap-global-v1",
+  "minimum_observed_inputs": 2,
+  "incomplete_input_policy": "Suppress probability/category/explanation below two supplied model inputs or when cohort eligibility is not confirmed. Otherwise use the actual trained missing handling, retain answer reasons and warn about missingness/distribution shift. This is a project usability guard, not a validated accuracy guarantee.",
+  "eligibility_keys": [
+    "adult",
+    "established_history",
+    "current_smoking",
+    "past30_use"
+  ],
+  "explanation_method": "SHAP ExactExplainer over all four original selected model inputs, independent empirical tuning background; prediction callable is the actual saved calibrated wrapper's positive-class probability. No underlying raw-tree log-odds explanation is substituted.",
+  "additivity_absolute_tolerance": 1e-08,
+  "code_inputs": [
+    "src/path_project/outputs.py",
+    "scripts/build_outputs.py",
+    "src/path_project/baselines.py",
+    "src/path_project/final_inputs.py",
+    "src/path_project/timing.py",
+    "tests/fixtures/output_profiles.json"
+  ],
+  "category_predictions": "artifacts/trees_v1/threshold_predictions.parquet"
+}

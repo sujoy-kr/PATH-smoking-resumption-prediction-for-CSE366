@@ -1,0 +1,28 @@
+{
+  "version": "longitudinal_v2",
+  "source_sha256": {
+    "configs/longitudinal_v2.json": "b9103a947b7091026d008fae9b12c38097746354fcc835c31ecee334bb0fd00e",
+    "src/path_project/longitudinal.py": "5e26dda63cf386cf1e2fe69cdbcd5645134ac581fa2b27c8edfe023f0447a7e8",
+    "configs/feature_mapping_final.json": "53d43e8a8f960660a3da17602004b05b70d91220debebde27002030cd2d18f12",
+    "configs/app_questions.json": "44058bb735fea56b858837025d80ed34ff0cf99ba5abbc6bed32044384a0a97f",
+    "configs/feature_mapping.json": "8c1c2b435a6edfde431dd483ec5f81a95a6eab3f6b596133d43ac0136d194ba3",
+    "configs/cohort.json": "dd4adde37bbd5b0394b15505625cb25186c7a0f20dbd55b32e7385dae0a51df1"
+  },
+  "output_sha256": {
+    "data/processed/longitudinal_v2/participants.parquet": "6d695bb3ff02ebf41e041c3ad172a9975bd9505cd7b313a950386566e728c23f",
+    "artifacts/longitudinal_v2/model.joblib": "54c19870ffd113af0963687fac724990c7658f468839c344d13d4ac341a8aa67",
+    "reports/longitudinal_v2/summary.json": "7c5e2de0129df0399d7e9143645bed8fb768eacaa6ff9c13b460b92e1d6ca7d4",
+    "reports/longitudinal_v2/results.json": "95b8b1c8793f4231e3d6073d5cd465f67ed3623a530398f4808c217242b9088b"
+  },
+  "source_data_sha256": {
+    "1": "82934e96cca68fa8fa84abf18938fd58f6ea6559082a2f205744cd9156baf4ac",
+    "2": "97111dbfcc48573b66d650ef9abf2affc5f9f6d2992642ab7f118d06f758dca7",
+    "3": "00abb51d75d2eec6675a4d5679532b380b9ce072e5e29e43ac649225b3159b30",
+    "4": "569fb5f5d8cd5e2bf3f7a408afc4ef5ea2d763cffa74fd7c758377bda28346dd",
+    "5": "dbbdeec57131cccd4f1e4e62f8c14820d91b2e1cd1dbefe85d0e63093f02e04e",
+    "6": "b51cfa4fa1d1397b9cb7990506cdca575c4f0de9c5b7ea46bb1f22cc5e624a50",
+    "7": "37c4fe9dc12366d0c989b4ea766432a2eb77f2aa5a96f2573c8fdd4231423109",
+    "8": "57ae5e526235997f4d9e32e5cc48bc42d3cfa75b9f34751951fe4c70f5940479"
+  },
+  "original_v1_unchanged": true
+}

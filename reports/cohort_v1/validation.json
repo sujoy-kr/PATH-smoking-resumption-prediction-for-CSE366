@@ -1,0 +1,10 @@
+{
+  "unique_interval_keys": true,
+  "adjacent_intervals_only": true,
+  "primary_labels_binary_observed": true,
+  "unobserved_labels_preserved_null": true,
+  "identifier_strings_preserved": true,
+  "feature_value_reason_consistency": true,
+  "no_learned_preprocessing_or_training": true,
+  "parquet_round_trip_exact": true
+}

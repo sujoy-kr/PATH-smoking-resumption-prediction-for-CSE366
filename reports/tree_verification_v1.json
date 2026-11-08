@@ -1,0 +1,17 @@
+{
+  "tree_signature": "60ce6ce4a02442c59204bd17754339ffdeeb74772b208763ba64dfa2690c655b",
+  "retry_command": ".venv/bin/python scripts/train_tree_models.py",
+  "retry_exit_code": 0,
+  "retry_mode": "reused_verified_run",
+  "unchanged_tree_files_hash_and_mtime": 92,
+  "unchanged_prior_cohort_split_baseline_files": 61,
+  "selection_doc_and_figure_byte_identical_on_rebuild": true,
+  "public_identifier_check_passed": true,
+  "verification_source_sha256": {
+    "scripts/verify_tree_models.py": "86921978d0833117b4b666bcd58a262788c68a6af431b6e19c1a09537f7cbf5b",
+    "scripts/write_model_selection.py": "133fb9d98cc5fbf96a830974bfa3115b8d69dce8ec1482ccf09d00e65963a956",
+    "tests/test_trees.py": "d6a4ca58b671fd6ba0d4577b08a4d1e67f28ae2c8cd42706412219f7197c6b16"
+  },
+  "final_test_features_or_outcomes_read": false,
+  "models_refitted_by_verification": false
+}

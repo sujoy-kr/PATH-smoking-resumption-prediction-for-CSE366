@@ -1,0 +1,626 @@
+{
+  "selected_candidate": {
+    "profile": "compact",
+    "shape": false,
+    "penalty": 10.0,
+    "validation_mean_ipcw_brier": 0.11789439655634291,
+    "metrics": {
+      "18": {
+        "supported": true,
+        "known_outcomes": 1051,
+        "events_by_horizon": 113,
+        "censored_before_horizon": 95,
+        "ipcw_brier": 0.08373671559377929,
+        "ipcw_roc_auc": 0.7870188045987923,
+        "ipcw_average_precision": 0.24601093162038698,
+        "mean_predicted_risk": 0.09246036986074276,
+        "ipcw_observed_risk": 0.10165850218206239,
+        "maximum_censor_weight": 1.1029601029601028
+      },
+      "36": {
+        "supported": true,
+        "known_outcomes": 983,
+        "events_by_horizon": 194,
+        "censored_before_horizon": 163,
+        "ipcw_brier": 0.1264590432099967,
+        "ipcw_roc_auc": 0.7877578753752648,
+        "ipcw_average_precision": 0.41364773365780755,
+        "mean_predicted_risk": 0.16897579108425648,
+        "ipcw_observed_risk": 0.18112025963620781,
+        "maximum_censor_weight": 1.1715650431111468
+      },
+      "60": {
+        "supported": true,
+        "known_outcomes": 812,
+        "events_by_horizon": 241,
+        "censored_before_horizon": 334,
+        "ipcw_brier": 0.14348743086525273,
+        "ipcw_roc_auc": 0.8058521173245916,
+        "ipcw_average_precision": 0.5127768438510207,
+        "mean_predicted_risk": 0.2527455094957248,
+        "ipcw_observed_risk": 0.2335721011047246,
+        "maximum_censor_weight": 1.5218067556498573
+      }
+    }
+  },
+  "candidates": [
+    {
+      "profile": "compact",
+      "shape": false,
+      "penalty": 1.0,
+      "validation_mean_ipcw_brier": 0.11794689397083835,
+      "metrics": {
+        "18": {
+          "supported": true,
+          "known_outcomes": 1051,
+          "events_by_horizon": 113,
+          "censored_before_horizon": 95,
+          "ipcw_brier": 0.08372027365194126,
+          "ipcw_roc_auc": 0.7866915236410746,
+          "ipcw_average_precision": 0.24643553773787025,
+          "mean_predicted_risk": 0.09250352854302216,
+          "ipcw_observed_risk": 0.10165850218206239,
+          "maximum_censor_weight": 1.1029601029601028
+        },
+        "36": {
+          "supported": true,
+          "known_outcomes": 983,
+          "events_by_horizon": 194,
+          "censored_before_horizon": 163,
+          "ipcw_brier": 0.12653418145343512,
+          "ipcw_roc_auc": 0.7869892880443105,
+          "ipcw_average_precision": 0.41324481100278926,
+          "mean_predicted_risk": 0.16877933127262754,
+          "ipcw_observed_risk": 0.18112025963620781,
+          "maximum_censor_weight": 1.1715650431111468
+        },
+        "60": {
+          "supported": true,
+          "known_outcomes": 812,
+          "events_by_horizon": 241,
+          "censored_before_horizon": 334,
+          "ipcw_brier": 0.14358622680713864,
+          "ipcw_roc_auc": 0.8055420226901933,
+          "ipcw_average_precision": 0.514140469169646,
+          "mean_predicted_risk": 0.2520491077813969,
+          "ipcw_observed_risk": 0.2335721011047246,
+          "maximum_censor_weight": 1.5218067556498573
+        }
+      }
+    },
+    {
+      "profile": "compact",
+      "shape": false,
+      "penalty": 10.0,
+      "validation_mean_ipcw_brier": 0.11789439655634291,
+      "metrics": {
+        "18": {
+          "supported": true,
+          "known_outcomes": 1051,
+          "events_by_horizon": 113,
+          "censored_before_horizon": 95,
+          "ipcw_brier": 0.08373671559377929,
+          "ipcw_roc_auc": 0.7870188045987923,
+          "ipcw_average_precision": 0.24601093162038698,
+          "mean_predicted_risk": 0.09246036986074276,
+          "ipcw_observed_risk": 0.10165850218206239,
+          "maximum_censor_weight": 1.1029601029601028
+        },
+        "36": {
+          "supported": true,
+          "known_outcomes": 983,
+          "events_by_horizon": 194,
+          "censored_before_horizon": 163,
+          "ipcw_brier": 0.1264590432099967,
+          "ipcw_roc_auc": 0.7877578753752648,
+          "ipcw_average_precision": 0.41364773365780755,
+          "mean_predicted_risk": 0.16897579108425648,
+          "ipcw_observed_risk": 0.18112025963620781,
+          "maximum_censor_weight": 1.1715650431111468
+        },
+        "60": {
+          "supported": true,
+          "known_outcomes": 812,
+          "events_by_horizon": 241,
+          "censored_before_horizon": 334,
+          "ipcw_brier": 0.14348743086525273,
+          "ipcw_roc_auc": 0.8058521173245916,
+          "ipcw_average_precision": 0.5127768438510207,
+          "mean_predicted_risk": 0.2527455094957248,
+          "ipcw_observed_risk": 0.2335721011047246,
+          "maximum_censor_weight": 1.5218067556498573
+        }
+      }
+    },
+    {
+      "profile": "compact",
+      "shape": true,
+      "penalty": 1.0,
+      "validation_mean_ipcw_brier": 0.11839838916988009,
+      "metrics": {
+        "18": {
+          "supported": true,
+          "known_outcomes": 1051,
+          "events_by_horizon": 113,
+          "censored_before_horizon": 95,
+          "ipcw_brier": 0.08430589790259732,
+          "ipcw_roc_auc": 0.7868659345123848,
+          "ipcw_average_precision": 0.24730601706829713,
+          "mean_predicted_risk": 0.0809819938351628,
+          "ipcw_observed_risk": 0.10165850218206239,
+          "maximum_censor_weight": 1.1029601029601028
+        },
+        "36": {
+          "supported": true,
+          "known_outcomes": 983,
+          "events_by_horizon": 194,
+          "censored_before_horizon": 163,
+          "ipcw_brier": 0.12703192758713383,
+          "ipcw_roc_auc": 0.786708570751212,
+          "ipcw_average_precision": 0.41437382266930556,
+          "mean_predicted_risk": 0.16131001012928167,
+          "ipcw_observed_risk": 0.18112025963620781,
+          "maximum_censor_weight": 1.1715650431111468
+        },
+        "60": {
+          "supported": true,
+          "known_outcomes": 812,
+          "events_by_horizon": 241,
+          "censored_before_horizon": 334,
+          "ipcw_brier": 0.1438573420199091,
+          "ipcw_roc_auc": 0.8052305462414623,
+          "ipcw_average_precision": 0.5137719089294753,
+          "mean_predicted_risk": 0.25417835034223024,
+          "ipcw_observed_risk": 0.2335721011047246,
+          "maximum_censor_weight": 1.5218067556498573
+        }
+      }
+    },
+    {
+      "profile": "compact",
+      "shape": true,
+      "penalty": 10.0,
+      "validation_mean_ipcw_brier": 0.11833401884280119,
+      "metrics": {
+        "18": {
+          "supported": true,
+          "known_outcomes": 1051,
+          "events_by_horizon": 113,
+          "censored_before_horizon": 95,
+          "ipcw_brier": 0.08432115148313193,
+          "ipcw_roc_auc": 0.7871117986051308,
+          "ipcw_average_precision": 0.24697889163401382,
+          "mean_predicted_risk": 0.08117256343941964,
+          "ipcw_observed_risk": 0.10165850218206239,
+          "maximum_censor_weight": 1.1029601029601028
+        },
+        "36": {
+          "supported": true,
+          "known_outcomes": 983,
+          "events_by_horizon": 194,
+          "censored_before_horizon": 163,
+          "ipcw_brier": 0.1269469763457553,
+          "ipcw_roc_auc": 0.787663785038628,
+          "ipcw_average_precision": 0.41450288012723907,
+          "mean_predicted_risk": 0.16162894293229,
+          "ipcw_observed_risk": 0.18112025963620781,
+          "maximum_censor_weight": 1.1715650431111468
+        },
+        "60": {
+          "supported": true,
+          "known_outcomes": 812,
+          "events_by_horizon": 241,
+          "censored_before_horizon": 334,
+          "ipcw_brier": 0.14373392869951634,
+          "ipcw_roc_auc": 0.805781294650515,
+          "ipcw_average_precision": 0.5136123256159267,
+          "mean_predicted_risk": 0.2548201662329698,
+          "ipcw_observed_risk": 0.2335721011047246,
+          "maximum_censor_weight": 1.5218067556498573
+        }
+      }
+    },
+    {
+      "profile": "extended",
+      "shape": false,
+      "penalty": 1.0,
+      "validation_mean_ipcw_brier": 0.11865611789723822,
+      "metrics": {
+        "18": {
+          "supported": true,
+          "known_outcomes": 1051,
+          "events_by_horizon": 113,
+          "censored_before_horizon": 95,
+          "ipcw_brier": 0.08411054027922045,
+          "ipcw_roc_auc": 0.7876954843895954,
+          "ipcw_average_precision": 0.24468517499691286,
+          "mean_predicted_risk": 0.0925416426405124,
+          "ipcw_observed_risk": 0.10165850218206239,
+          "maximum_censor_weight": 1.1029601029601028
+        },
+        "36": {
+          "supported": true,
+          "known_outcomes": 983,
+          "events_by_horizon": 194,
+          "censored_before_horizon": 163,
+          "ipcw_brier": 0.12716455740108534,
+          "ipcw_roc_auc": 0.7867971512272273,
+          "ipcw_average_precision": 0.4045107455449083,
+          "mean_predicted_risk": 0.16859476892310252,
+          "ipcw_observed_risk": 0.18112025963620781,
+          "maximum_censor_weight": 1.1715650431111468
+        },
+        "60": {
+          "supported": true,
+          "known_outcomes": 812,
+          "events_by_horizon": 241,
+          "censored_before_horizon": 334,
+          "ipcw_brier": 0.14469325601140887,
+          "ipcw_roc_auc": 0.8039291197549452,
+          "ipcw_average_precision": 0.5033259917489656,
+          "mean_predicted_risk": 0.2514028990983601,
+          "ipcw_observed_risk": 0.2335721011047246,
+          "maximum_censor_weight": 1.5218067556498573
+        }
+      }
+    },
+    {
+      "profile": "extended",
+      "shape": false,
+      "penalty": 10.0,
+      "validation_mean_ipcw_brier": 0.11850865790125609,
+      "metrics": {
+        "18": {
+          "supported": true,
+          "known_outcomes": 1051,
+          "events_by_horizon": 113,
+          "censored_before_horizon": 95,
+          "ipcw_brier": 0.08412359108914194,
+          "ipcw_roc_auc": 0.7874988732014224,
+          "ipcw_average_precision": 0.2434839264167491,
+          "mean_predicted_risk": 0.09248062191838831,
+          "ipcw_observed_risk": 0.10165850218206239,
+          "maximum_censor_weight": 1.1029601029601028
+        },
+        "36": {
+          "supported": true,
+          "known_outcomes": 983,
+          "events_by_horizon": 194,
+          "censored_before_horizon": 163,
+          "ipcw_brier": 0.12703826737061186,
+          "ipcw_roc_auc": 0.787993583966541,
+          "ipcw_average_precision": 0.4044684238820869,
+          "mean_predicted_risk": 0.16880773316341538,
+          "ipcw_observed_risk": 0.18112025963620781,
+          "maximum_censor_weight": 1.1715650431111468
+        },
+        "60": {
+          "supported": true,
+          "known_outcomes": 812,
+          "events_by_horizon": 241,
+          "censored_before_horizon": 334,
+          "ipcw_brier": 0.1443641152440145,
+          "ipcw_roc_auc": 0.8051200136777663,
+          "ipcw_average_precision": 0.5045886745198034,
+          "mean_predicted_risk": 0.25219089226343605,
+          "ipcw_observed_risk": 0.2335721011047246,
+          "maximum_censor_weight": 1.5218067556498573
+        }
+      }
+    },
+    {
+      "profile": "extended",
+      "shape": true,
+      "penalty": 1.0,
+      "validation_mean_ipcw_brier": 0.11910676940545882,
+      "metrics": {
+        "18": {
+          "supported": true,
+          "known_outcomes": 1051,
+          "events_by_horizon": 113,
+          "censored_before_horizon": 95,
+          "ipcw_brier": 0.08466352088311045,
+          "ipcw_roc_auc": 0.7874606556798205,
+          "ipcw_average_precision": 0.24493402687130858,
+          "mean_predicted_risk": 0.08085567652669677,
+          "ipcw_observed_risk": 0.10165850218206239,
+          "maximum_censor_weight": 1.1029601029601028
+        },
+        "36": {
+          "supported": true,
+          "known_outcomes": 983,
+          "events_by_horizon": 194,
+          "censored_before_horizon": 163,
+          "ipcw_brier": 0.12765403292290206,
+          "ipcw_roc_auc": 0.7862371966493519,
+          "ipcw_average_precision": 0.40432707654031874,
+          "mean_predicted_risk": 0.1610938791678661,
+          "ipcw_observed_risk": 0.18112025963620781,
+          "maximum_censor_weight": 1.1715650431111468
+        },
+        "60": {
+          "supported": true,
+          "known_outcomes": 812,
+          "events_by_horizon": 241,
+          "censored_before_horizon": 334,
+          "ipcw_brier": 0.14500275441036392,
+          "ipcw_roc_auc": 0.803683251623209,
+          "ipcw_average_precision": 0.5031755949077207,
+          "mean_predicted_risk": 0.25367839326983915,
+          "ipcw_observed_risk": 0.2335721011047246,
+          "maximum_censor_weight": 1.5218067556498573
+        }
+      }
+    },
+    {
+      "profile": "extended",
+      "shape": true,
+      "penalty": 10.0,
+      "validation_mean_ipcw_brier": 0.11894888263144761,
+      "metrics": {
+        "18": {
+          "supported": true,
+          "known_outcomes": 1051,
+          "events_by_horizon": 113,
+          "censored_before_horizon": 95,
+          "ipcw_brier": 0.08467753239115969,
+          "ipcw_roc_auc": 0.7871950056282793,
+          "ipcw_average_precision": 0.24389790952246793,
+          "mean_predicted_risk": 0.08106284839385883,
+          "ipcw_observed_risk": 0.10165850218206239,
+          "maximum_censor_weight": 1.1029601029601028
+        },
+        "36": {
+          "supported": true,
+          "known_outcomes": 983,
+          "events_by_horizon": 194,
+          "censored_before_horizon": 163,
+          "ipcw_brier": 0.1275233824518478,
+          "ipcw_roc_auc": 0.7873348233616282,
+          "ipcw_average_precision": 0.404832751726045,
+          "mean_predicted_risk": 0.16144279569512357,
+          "ipcw_observed_risk": 0.18112025963620781,
+          "maximum_censor_weight": 1.1715650431111468
+        },
+        "60": {
+          "supported": true,
+          "known_outcomes": 812,
+          "events_by_horizon": 241,
+          "censored_before_horizon": 334,
+          "ipcw_brier": 0.14464573305133538,
+          "ipcw_roc_auc": 0.8046712599540308,
+          "ipcw_average_precision": 0.5053495460824742,
+          "mean_predicted_risk": 0.2543993404137526,
+          "ipcw_observed_risk": 0.2335721011047246,
+          "maximum_censor_weight": 1.5218067556498573
+        }
+      }
+    }
+  ],
+  "features": [
+    "age_band",
+    "education_level",
+    "employment_status",
+    "last_cigarette_recency_days",
+    "electronic_nicotine_p30d",
+    "household_tobacco_any",
+    "mental_health",
+    "emotional_problems_7d"
+  ],
+  "supported_horizons_months": [
+    12,
+    18,
+    24,
+    36,
+    48,
+    60
+  ],
+  "shape": 1.0,
+  "calibration_log_rate_shift": -0.062010864308854184,
+  "category_reference_horizon_months": 36,
+  "risk_category_cuts": [
+    0.07567972969168832,
+    0.2010397058667465
+  ],
+  "metrics": {
+    "12": {
+      "model": {
+        "supported": true,
+        "known_outcomes": 1148,
+        "events_by_horizon": 35,
+        "censored_before_horizon": 0,
+        "ipcw_brier": 0.03230040788794982,
+        "ipcw_roc_auc": 0.648889744577076,
+        "ipcw_average_precision": 0.05249928249376878,
+        "mean_predicted_risk": 0.06029348924171267,
+        "ipcw_observed_risk": 0.03048780487804878,
+        "maximum_censor_weight": 1.0
+      },
+      "no_input_baseline": {
+        "supported": true,
+        "known_outcomes": 1148,
+        "events_by_horizon": 35,
+        "censored_before_horizon": 0,
+        "ipcw_brier": 0.030364790095341074,
+        "ipcw_roc_auc": 0.5,
+        "ipcw_average_precision": 0.03048780487804878,
+        "mean_predicted_risk": 0.05888659822520103,
+        "ipcw_observed_risk": 0.03048780487804878,
+        "maximum_censor_weight": 1.0
+      }
+    },
+    "18": {
+      "model": {
+        "supported": true,
+        "known_outcomes": 1061,
+        "events_by_horizon": 108,
+        "censored_before_horizon": 87,
+        "ipcw_brier": 0.0817861055546977,
+        "ipcw_roc_auc": 0.7581850663852243,
+        "ipcw_average_precision": 0.2095135682594973,
+        "mean_predicted_risk": 0.08768650175785672,
+        "ipcw_observed_risk": 0.09629012871237541,
+        "maximum_censor_weight": 1.1016427104722792
+      },
+      "no_input_baseline": {
+        "supported": true,
+        "known_outcomes": 1061,
+        "events_by_horizon": 108,
+        "censored_before_horizon": 87,
+        "ipcw_brier": 0.08720863792546252,
+        "ipcw_roc_auc": 0.5,
+        "ipcw_average_precision": 0.09526063583180647,
+        "mean_predicted_risk": 0.0857636169189996,
+        "ipcw_observed_risk": 0.09629012871237541,
+        "maximum_censor_weight": 1.1016427104722792
+      }
+    },
+    "24": {
+      "model": {
+        "supported": true,
+        "known_outcomes": 1016,
+        "events_by_horizon": 151,
+        "censored_before_horizon": 132,
+        "ipcw_brier": 0.11031843561570892,
+        "ipcw_roc_auc": 0.7441843485889752,
+        "ipcw_average_precision": 0.273497305650678,
+        "mean_predicted_risk": 0.11345975550615767,
+        "ipcw_observed_risk": 0.137553749400797,
+        "maximum_censor_weight": 1.1530013449931313
+      },
+      "no_input_baseline": {
+        "supported": true,
+        "known_outcomes": 1016,
+        "events_by_horizon": 151,
+        "censored_before_horizon": 132,
+        "ipcw_brier": 0.11938769958543174,
+        "ipcw_roc_auc": 0.5,
+        "ipcw_average_precision": 0.1366895727117936,
+        "mean_predicted_risk": 0.11154763454999148,
+        "ipcw_observed_risk": 0.137553749400797,
+        "maximum_censor_weight": 1.1530013449931313
+      }
+    },
+    "36": {
+      "model": {
+        "supported": true,
+        "known_outcomes": 1007,
+        "events_by_horizon": 196,
+        "censored_before_horizon": 141,
+        "ipcw_brier": 0.13047319021821419,
+        "ipcw_roc_auc": 0.7781298679354195,
+        "ipcw_average_precision": 0.3913206945804224,
+        "mean_predicted_risk": 0.16069112868197988,
+        "ipcw_observed_risk": 0.18301141122965298,
+        "maximum_censor_weight": 1.174453863195683
+      },
+      "no_input_baseline": {
+        "supported": true,
+        "known_outcomes": 1007,
+        "events_by_horizon": 196,
+        "censored_before_horizon": 141,
+        "ipcw_brier": 0.15035938996511827,
+        "ipcw_roc_auc": 0.5,
+        "ipcw_average_precision": 0.18071637883931974,
+        "mean_predicted_risk": 0.16032380602623644,
+        "ipcw_observed_risk": 0.18301141122965298,
+        "maximum_censor_weight": 1.174453863195683
+      }
+    },
+    "48": {
+      "model": {
+        "supported": true,
+        "known_outcomes": 865,
+        "events_by_horizon": 237,
+        "censored_before_horizon": 283,
+        "ipcw_brier": 0.1516181512537884,
+        "ipcw_roc_auc": 0.7601209297284988,
+        "ipcw_average_precision": 0.44677787801851315,
+        "mean_predicted_risk": 0.20293584285788285,
+        "ipcw_observed_risk": 0.22581087086511226,
+        "maximum_censor_weight": 1.4202089426836149
+      },
+      "no_input_baseline": {
+        "supported": true,
+        "known_outcomes": 865,
+        "events_by_horizon": 237,
+        "censored_before_horizon": 283,
+        "ipcw_brier": 0.17533378944436234,
+        "ipcw_roc_auc": 0.5,
+        "ipcw_average_precision": 0.2251984222250067,
+        "mean_predicted_risk": 0.20585539053881532,
+        "ipcw_observed_risk": 0.22581087086511226,
+        "maximum_censor_weight": 1.4202089426836149
+      }
+    },
+    "60": {
+      "model": {
+        "supported": true,
+        "known_outcomes": 825,
+        "events_by_horizon": 255,
+        "censored_before_horizon": 323,
+        "ipcw_brier": 0.150618434996696,
+        "ipcw_roc_auc": 0.7915766604784495,
+        "ipcw_average_precision": 0.5329546559903389,
+        "mean_predicted_risk": 0.24095467667115708,
+        "ipcw_observed_risk": 0.24859687566876024,
+        "maximum_censor_weight": 1.5226741200334468
+      },
+      "no_input_baseline": {
+        "supported": true,
+        "known_outcomes": 825,
+        "events_by_horizon": 255,
+        "censored_before_horizon": 323,
+        "ipcw_brier": 0.18708234609461188,
+        "ipcw_roc_auc": 0.5,
+        "ipcw_average_precision": 0.24745155826962584,
+        "mean_predicted_risk": 0.24852364559754883,
+        "ipcw_observed_risk": 0.24859687566876024,
+        "maximum_censor_weight": 1.5226741200334468
+      }
+    }
+  },
+  "default_horizon_bootstrap_95_intervals": {
+    "ipcw_brier": [
+      0.11602734239156716,
+      0.14335315815933378
+    ],
+    "ipcw_roc_auc": [
+      0.7426942030966989,
+      0.8088028748679857
+    ],
+    "ipcw_average_precision": [
+      0.3334356857025814,
+      0.4643975861050295
+    ]
+  },
+  "clock_sensitivity_at_default_horizon": {
+    "start": {
+      "supported": true,
+      "known_outcomes": 1007,
+      "events_by_horizon": 196,
+      "censored_before_horizon": 141,
+      "ipcw_brier": 0.1324916898771197,
+      "ipcw_roc_auc": 0.7775214501631454,
+      "ipcw_average_precision": 0.39745814057194295,
+      "mean_predicted_risk": 0.16069112868197988,
+      "ipcw_observed_risk": 0.18685373501094543,
+      "maximum_censor_weight": 1.1663785406624838
+    },
+    "end": {
+      "supported": true,
+      "known_outcomes": 1007,
+      "events_by_horizon": 182,
+      "censored_before_horizon": 141,
+      "ipcw_brier": 0.12444040969529996,
+      "ipcw_roc_auc": 0.7646180707476444,
+      "ipcw_average_precision": 0.3451988848373605,
+      "mean_predicted_risk": 0.16069112868197988,
+      "ipcw_observed_risk": 0.16668469339154557,
+      "maximum_censor_weight": 1.17785017196188
+    }
+  },
+  "selection_rule": "Minimum validation mean IPCW Brier; prefer eight inputs if within 0.002. Refit train+validation; independent calibration; held-out test evaluated after selection.",
+  "censoring_assumption": "IPCW and survival fitting assume conditionally noninformative observation loss; consecutive-attendance selection and smoking snapshots may violate this.",
+  "calibration_method": "One multiplicative cumulative-hazard adjustment fitted on calibration participants only."
+}

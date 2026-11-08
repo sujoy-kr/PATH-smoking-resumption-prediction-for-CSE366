@@ -1,0 +1,59 @@
+{
+  "verification_date": "2026-11-08",
+  "method": "Live web tool access to primary publisher pages and PubMed search record; no full-text copies stored.",
+  "references": [
+    {
+      "id": "Dai_PATH_relapse",
+      "doi": "10.1007/s40615-025-02385-x",
+      "pmid": "40117048",
+      "authors": [
+        "Hongying Daisy Dai",
+        "Fang Qiu",
+        "Ran Dai",
+        "Xiaoyue Cheng"
+      ],
+      "online_date": "2025-03-21",
+      "issue_year": 2026,
+      "volume": 13,
+      "issue": 3,
+      "pages": "1910\u20131928",
+      "primary_url": "https://link.springer.com/article/10.1007/s40615-025-02385-x",
+      "required_url": "https://pubmed.ncbi.nlm.nih.gov/40117048/",
+      "verified_sections": [
+        "Publisher title/authors/publication information",
+        "Publisher Abstract Results",
+        "PubMed indexed search metadata"
+      ],
+      "reported_group_auc": {
+        "White": 0.77,
+        "Black": 0.88,
+        "Hispanic": 0.7
+      },
+      "metric_scope": "Race-specific abstract AUC; not a pooled benchmark for our endpoint.",
+      "unresolved": "Abstract Methods says one-year follow-up whereas Results refers to four years. Full methods subscription-restricted; endpoint/timing reconciliation unverified. Direct PubMed open returned only a footer; primary publisher plus PubMed search metadata used."
+    },
+    {
+      "id": "Issabakhsh_PATH_cessation",
+      "doi": "10.1371/journal.pone.0286883",
+      "publication_date": "2023-06-08",
+      "volume": 18,
+      "issue": 6,
+      "article": "e0286883",
+      "primary_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0286883",
+      "verified_sections": [
+        "Citation block",
+        "Methods (cohort, prediction inputs)",
+        "Discussion (best-model metrics)"
+      ],
+      "best_reported_model": "Random Forest with bagging",
+      "balanced_accuracy": 0.72,
+      "roc_auc": 0.76,
+      "metric_scope": "Full-text Discussion explicitly names balanced accuracy; abstract uses generic accuracy. Cessation target differs from ours.",
+      "unresolved": "Separate Table 2 viewer failed; full-text Discussion remained available and directly supports cited metrics."
+    }
+  ],
+  "unverified_proposal_claims": [
+    "Generic 85% relapse within 6\u201312 months has not been established for the project population/endpoint; remove or independently verify before reuse."
+  ],
+  "no_novelty_claim": "Existing PATH relapse ML acknowledged; no first-ever claim."
+}

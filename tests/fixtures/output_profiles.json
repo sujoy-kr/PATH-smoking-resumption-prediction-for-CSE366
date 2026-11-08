@@ -1,0 +1,14 @@
+{
+  "synthetic": true,
+  "description": "Wholly fictional inference profiles for software checks. Not PATH records, observed outcomes, or performance evidence.",
+  "profiles": [
+    {"name": "fictional_recent_quitter", "wave": 7, "answers": {"age_band": "1", "education_level": "3", "employment_status": "2", "last_cigarette_recency_days": {"number": 2, "unit": "2"}}, "eligibility": {"adult": "Yes", "established_history": "Yes", "current_smoking": "Not at all", "past30_use": "No"}},
+    {"name": "fictional_one_year_history", "wave": 7, "answers": {"age_band": "4", "education_level": "5", "employment_status": "1", "last_cigarette_recency_days": {"number": 1, "unit": "3"}}, "eligibility": {"adult": "Yes", "established_history": "Yes", "current_smoking": "Not at all", "past30_use": "No"}},
+    {"name": "fictional_longer_quit_history", "wave": 7, "answers": {"age_band": "6", "education_level": "4", "employment_status": "4", "last_cigarette_recency_days": {"number": 10, "unit": "3"}}, "eligibility": {"adult": "Yes", "established_history": "Yes", "current_smoking": "Not at all", "past30_use": "No"}},
+    {"name": "fictional_not_asked_recency", "wave": 7, "answers": {"age_band": "5", "education_level": "3", "employment_status": "1", "last_cigarette_recency_days": "not_previously_asked"}, "eligibility": {"adult": "Yes", "established_history": "Yes", "current_smoking": "Not at all", "past30_use": "No"}},
+    {"name": "fictional_partial_answers", "wave": 7, "answers": {"age_band": "3", "education_level": "2", "employment_status": "prefer_not_to_answer", "last_cigarette_recency_days": "dont_know"}, "eligibility": {"adult": "Yes", "established_history": "Yes", "current_smoking": "Not at all", "past30_use": "No"}},
+    {"name": "fictional_all_unknown", "wave": 7, "answers": {}, "eligibility": {"adult": "Yes", "established_history": "Yes", "current_smoking": "Not at all", "past30_use": "No"}},
+    {"name": "fictional_unknown_eligibility", "wave": 7, "answers": {"age_band": "4", "education_level": "3"}, "eligibility": {}},
+    {"name": "fictional_outside_cohort", "wave": 7, "answers": {"age_band": "4", "education_level": "3"}, "eligibility": {"adult": "Yes", "established_history": "Yes", "current_smoking": "Some days", "past30_use": "Yes"}}
+  ]
+}

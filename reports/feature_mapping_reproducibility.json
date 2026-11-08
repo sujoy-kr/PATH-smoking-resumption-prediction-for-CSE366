@@ -1,0 +1,14 @@
+{
+  "command": ".venv/bin/python scripts/build_feature_mapping.py",
+  "before_sha256": {
+    "configs/feature_mapping.json": "8c1c2b435a6edfde431dd483ec5f81a95a6eab3f6b596133d43ac0136d194ba3",
+    "docs/feature_dictionary.csv": "44f5cd89b88261bf989362738e1ef768b3141e5778e64f74b1099b0fe73d7abb",
+    "reports/feature_mapping_evidence.json": "bf3c1b5e959bb7d45c9dfcc95f95ce774b59f46f9299f9d74d3125b5f7e76c6f"
+  },
+  "after_sha256": {
+    "configs/feature_mapping.json": "8c1c2b435a6edfde431dd483ec5f81a95a6eab3f6b596133d43ac0136d194ba3",
+    "docs/feature_dictionary.csv": "44f5cd89b88261bf989362738e1ef768b3141e5778e64f74b1099b0fe73d7abb",
+    "reports/feature_mapping_evidence.json": "bf3c1b5e959bb7d45c9dfcc95f95ce774b59f46f9299f9d74d3125b5f7e76c6f"
+  },
+  "byte_identical": true
+}

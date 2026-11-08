@@ -1,0 +1,117 @@
+{
+  "scope": "Tuning participants only; starting Waves 1–6; no calibration/threshold/test exploration",
+  "parquet_predicates": "PERSONID in locked tuning people; starting_wave <=6",
+  "canonical_baselines": [
+    {
+      "starting_wave": 1,
+      "source": "PATH/DS1001/36498-1001-Data.tsv",
+      "source_sha256": "82934e96cca68fa8fa84abf18938fd58f6ea6559082a2f205744cd9156baf4ac",
+      "columns_read": [
+        "PERSONID",
+        "R01R_A_AGECAT7",
+        "R01R_A_AM0018",
+        "R01R_A_P30D_ECIG",
+        "R01R_A_SEX",
+        "R01_AC1009_NN",
+        "R01_AC1009_UN",
+        "R01_AX0090",
+        "R01_AX0091"
+      ],
+      "rows_harmonized": 2334,
+      "filter": "Only tuning participants eligible in this baseline ledger; no other responses summarized."
+    },
+    {
+      "starting_wave": 2,
+      "source": "PATH/DS2001/36498-2001-Data.tsv",
+      "source_sha256": "97111dbfcc48573b66d650ef9abf2affc5f9f6d2992642ab7f118d06f758dca7",
+      "columns_read": [
+        "PERSONID",
+        "R02R_A_AGECAT7",
+        "R02R_A_AM0018",
+        "R02R_A_P30D_ECIG",
+        "R02R_A_SEX",
+        "R02_AC1009_NN",
+        "R02_AC1009_UN",
+        "R02_AX0090",
+        "R02_AX0091"
+      ],
+      "rows_harmonized": 2411,
+      "filter": "Only tuning participants eligible in this baseline ledger; no other responses summarized."
+    },
+    {
+      "starting_wave": 3,
+      "source": "PATH/DS3001/36498-3001-Data.tsv",
+      "source_sha256": "00abb51d75d2eec6675a4d5679532b380b9ce072e5e29e43ac649225b3159b30",
+      "columns_read": [
+        "PERSONID",
+        "R03R_A_AGECAT7",
+        "R03R_A_AM0018",
+        "R03R_A_P30D_EPRODS",
+        "R03R_A_SEX",
+        "R03_AC1009_NN",
+        "R03_AC1009_UN",
+        "R03_AX0090",
+        "R03_AX0091"
+      ],
+      "rows_harmonized": 2497,
+      "filter": "Only tuning participants eligible in this baseline ledger; no other responses summarized."
+    },
+    {
+      "starting_wave": 4,
+      "source": "PATH/DS4001/36498-4001-Data.tsv",
+      "source_sha256": "569fb5f5d8cd5e2bf3f7a408afc4ef5ea2d763cffa74fd7c758377bda28346dd",
+      "columns_read": [
+        "PERSONID",
+        "R04R_A_AGECAT6",
+        "R04R_A_AM0018_V2",
+        "R04R_A_P30D_EPRODS",
+        "R04R_A_SEX",
+        "R04_AC1009_NN",
+        "R04_AC1009_UN",
+        "R04_AX0090",
+        "R04_AX0091"
+      ],
+      "rows_harmonized": 2895,
+      "filter": "Only tuning participants eligible in this baseline ledger; no other responses summarized."
+    },
+    {
+      "starting_wave": 5,
+      "source": "PATH/DS5001/36498-5001-Data.tsv",
+      "source_sha256": "dbbdeec57131cccd4f1e4e62f8c14820d91b2e1cd1dbefe85d0e63093f02e04e",
+      "columns_read": [
+        "PERSONID",
+        "R05R_A_AGECAT6",
+        "R05R_A_AM0018_V2",
+        "R05R_A_P30D_EPRODS",
+        "R05R_A_SEX",
+        "R05_AC1009_NN",
+        "R05_AC1009_UN",
+        "R05_AX0090",
+        "R05_AX0091"
+      ],
+      "rows_harmonized": 3085,
+      "filter": "Only tuning participants eligible in this baseline ledger; no other responses summarized."
+    },
+    {
+      "starting_wave": 6,
+      "source": "PATH/DS6001/36498-6001-Data.tsv",
+      "source_sha256": "b51cfa4fa1d1397b9cb7990506cdca575c4f0de9c5b7ea46bb1f22cc5e624a50",
+      "columns_read": [
+        "PERSONID",
+        "R06R_A_AGECAT6",
+        "R06R_A_AM0018_V2",
+        "R06R_A_P30D_EPRODS",
+        "R06R_A_SEX",
+        "R06_AC1009_NN",
+        "R06_AC1009_UN",
+        "R06_AX0090",
+        "R06_AX0091"
+      ],
+      "rows_harmonized": 3116,
+      "filter": "Only tuning participants eligible in this baseline ledger; no other responses summarized."
+    }
+  ],
+  "test_features_or_outcomes_read": false,
+  "calibration_threshold_used": false,
+  "raw_tsv_limitation": "No participant predicate pushdown in TSV; chunk-filter earlier-wave raw selected columns before any harmonization or summary."
+}

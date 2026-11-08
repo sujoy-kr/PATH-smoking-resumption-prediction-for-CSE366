@@ -1,0 +1,114 @@
+{
+  "synthetic": true,
+  "not_real_PATH_data": true,
+  "purpose": "Tiny deterministic unit fixture. Every identifier is invented; omitted responses are blank, not imputed.",
+  "baseline_wave": 1,
+  "followup_wave": 2,
+  "baseline_records": [
+    {
+      "PERSONID": "SYN_0001",
+      "R01R_A_FMR_ESTD_CIGS": "1",
+      "R01R_A_P30D_CIGS": "2",
+      "R01R_A_CUR_ESTD_CIGS": "2",
+      "R01_AC1009_NN": "2",
+      "R01_AC1009_UN": "2",
+      "R01_AC9003_NN": "2",
+      "R01_AC9003_UN": "2",
+      "R01_AX0075": "0"
+    },
+    {
+      "PERSONID": "SYN_0002",
+      "R01R_A_FMR_ESTD_CIGS": "1",
+      "R01R_A_P30D_CIGS": "2",
+      "R01R_A_CUR_ESTD_CIGS": "2",
+      "R01_AC1009_NN": "-1",
+      "R01_AC1009_UN": "-1",
+      "R01_AX0075": "-1",
+      "R01_AX0090": "-9",
+      "R01R_A_AGECAT7": "7",
+      "R01R_A_AM0018": "6"
+    },
+    {
+      "PERSONID": "SYN_0003",
+      "R01R_A_FMR_ESTD_CIGS": "1",
+      "R01R_A_P30D_CIGS": "2",
+      "R01R_A_CUR_ESTD_CIGS": "2"
+    },
+    {
+      "PERSONID": "SYN_0004",
+      "R01R_A_FMR_ESTD_CIGS": "1",
+      "R01R_A_P30D_CIGS": "2",
+      "R01R_A_CUR_ESTD_CIGS": "2",
+      "R01_AC1009_NN": "-9",
+      "R01_AC1009_UN": "-1"
+    },
+    {
+      "PERSONID": "SYN_0005",
+      "R01R_A_FMR_ESTD_CIGS": "2",
+      "R01R_A_P30D_CIGS": "2",
+      "R01R_A_CUR_ESTD_CIGS": "2"
+    },
+    {
+      "PERSONID": "SYN_0006",
+      "R01R_A_FMR_ESTD_CIGS": "1",
+      "R01R_A_P30D_CIGS": "1",
+      "R01R_A_CUR_ESTD_CIGS": "2"
+    },
+    {
+      "PERSONID": "SYN_0007",
+      "R01R_A_FMR_ESTD_CIGS": "1",
+      "R01R_A_P30D_CIGS": ".",
+      "R01R_A_CUR_ESTD_CIGS": "2"
+    },
+    {
+      "PERSONID": "SYN_0008",
+      "R01R_A_FMR_ESTD_CIGS": ".",
+      "R01R_A_P30D_CIGS": "2",
+      "R01R_A_CUR_ESTD_CIGS": "2"
+    },
+    {
+      "PERSONID": "SYN_0009",
+      "R01R_A_FMR_ESTD_CIGS": "1",
+      "R01R_A_P30D_CIGS": "2",
+      "R01R_A_CUR_ESTD_CIGS": "2",
+      "R01_AC1009_NN": "1",
+      "R01_AC1009_UN": "2"
+    }
+  ],
+  "followup_records": [
+    {
+      "PERSONID": "SYN_0001",
+      "R02R_A_P30D_CIGS": "1",
+      "R02R_A_CUR_ESTD_CIGS": "1",
+      "R02R_A_AGECAT7": "7"
+    },
+    {
+      "PERSONID": "SYN_0002",
+      "R02R_A_P30D_CIGS": "2",
+      "R02R_A_CUR_ESTD_CIGS": "2"
+    },
+    {
+      "PERSONID": "SYN_0004",
+      "R02R_A_P30D_CIGS": "-99988",
+      "R02R_A_CUR_ESTD_CIGS": "1"
+    },
+    {
+      "PERSONID": "SYN_0009",
+      "R02R_A_P30D_CIGS": "2",
+      "R02R_A_CUR_ESTD_CIGS": "-99977"
+    },
+    {
+      "PERSONID": "SYN_NEW",
+      "R02R_A_P30D_CIGS": "1",
+      "R02R_A_CUR_ESTD_CIGS": "1"
+    }
+  ],
+  "expected": {
+    "eligible_baseline": 5,
+    "labeled_records": 3,
+    "positive_outcomes": 1,
+    "negative_outcomes": 2,
+    "missing_followup_interview": 1,
+    "invalid_followup_outcome": 1
+  }
+}

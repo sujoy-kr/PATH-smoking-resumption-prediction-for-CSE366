@@ -1,0 +1,36 @@
+{
+  "version": "1.0",
+  "required_output_fields": [
+    "probability",
+    "endpoint",
+    "prediction_interval",
+    "category",
+    "category_thresholds",
+    "contributing_factors",
+    "input_completeness",
+    "model_version",
+    "limitations"
+  ],
+  "probability": "Unrounded calibrated positive-class probability in [0,1], null if suppressed; not personal confidence",
+  "statuses": [
+    "scored",
+    "insufficient_input",
+    "eligibility_unconfirmed",
+    "outside_cohort"
+  ],
+  "category_rule": "lower: p<=cut1; moderate: cut1<p<=cut2; higher: p>cut2",
+  "category_config": "configs/risk_categories_v1.json",
+  "explanation_scale": "calibrated_probability",
+  "timing_estimates_included": false,
+  "model_sha256": "9b46cdb1783302c05c3b56b83d5695a1ad58b90da0614f04188ee687170eae36",
+  "minimum_observed_inputs": 2,
+  "eligibility_keys": [
+    "adult",
+    "established_history",
+    "current_smoking",
+    "past30_use"
+  ],
+  "suppressed_output": "probability/category null; no contributing factors; explain eligibility/input limitation",
+  "missing_answer_policy": "Suppress probability/category/explanation below two supplied model inputs or when cohort eligibility is not confirmed. Otherwise use the actual trained missing handling, retain answer reasons and warn about missingness/distribution shift. This is a project usability guard, not a validated accuracy guarantee.",
+  "no_confidence_field": true
+}

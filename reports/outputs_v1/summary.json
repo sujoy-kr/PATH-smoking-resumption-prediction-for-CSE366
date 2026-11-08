@@ -1,0 +1,56 @@
+{
+  "cuts": [
+    0.0750747765280418,
+    0.2590049599706509
+  ],
+  "category_groups": [
+    {
+      "category": "lower",
+      "interval_records": 1411,
+      "unique_people": 443,
+      "positive_outcomes": 36,
+      "observed_interval_fraction": 0.025513819985825654,
+      "participant_weight_total": 353.31666666666666,
+      "participant_equal_observed_fraction": 0.04533232699655644,
+      "participant_equal_mean_probability": 0.04303663162768603
+    },
+    {
+      "category": "moderate",
+      "interval_records": 886,
+      "unique_people": 471,
+      "positive_outcomes": 95,
+      "observed_interval_fraction": 0.1072234762979684,
+      "participant_weight_total": 306.73333333333335,
+      "participant_equal_observed_fraction": 0.1717018039556618,
+      "participant_equal_mean_probability": 0.1472607941238406
+    },
+    {
+      "category": "higher",
+      "interval_records": 613,
+      "unique_people": 455,
+      "positive_outcomes": 205,
+      "observed_interval_fraction": 0.33442088091353994,
+      "participant_weight_total": 329.95,
+      "participant_equal_observed_fraction": 0.4372379653482851,
+      "participant_equal_mean_probability": 0.42271799619615114
+    }
+  ],
+  "reference_cohort": "Reserved threshold-selection participants, starting waves 1–6, observed valid next-survey outcome; saved stage 8 calibrated predictions",
+  "reference_interval_records": 2910,
+  "reference_unique_people": 990,
+  "reference_positive_interval_outcomes": 336,
+  "reference_interval_prevalence": 0.1154639175257732,
+  "reference_participant_equal_prevalence": 0.2151010101010101,
+  "category_cutoffs_use_outcomes": false,
+  "background_intervals": 64,
+  "background_people": 64,
+  "global_intervals": 128,
+  "global_people": 128,
+  "global_reference_model_probability": 0.1919374525299298,
+  "max_additivity_error": 8.881784197001252e-16,
+  "explanation_scale": "Actual calibrated positive-class probability, not raw tree log odds",
+  "synthetic_profiles_verified": 8,
+  "final_test_features_or_outcomes_read": false,
+  "models_fitted": 0,
+  "elapsed_seconds": 2.9900119379999524
+}

@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "model_version": "xgb_minimal_s1_none:9b46cdb1783302c05c3b56b83d5695a1ad58b90da0614f04188ee687170eae36",
+  "model_sha256": "9b46cdb1783302c05c3b56b83d5695a1ad58b90da0614f04188ee687170eae36",
+  "final_evaluation_complete": true,
+  "results_file": "reports/final_evaluation_v1/results.json",
+  "results_sha256": "fecd9878925f7cf83ef8b84f1665010c942a3c572452c9b7afa6baa46c3ce019",
+  "timing_decision": "C",
+  "new_user_or_clinical_validity_established": false,
+  "legacy_metadata_note": "Earlier immutable development metadata retains its historical pending-test wording; use this additive evaluation-status record and final report for current evidence. No old artifact was rewritten."
+}

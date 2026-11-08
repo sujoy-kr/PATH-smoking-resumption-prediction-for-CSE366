@@ -1,0 +1,89 @@
+{
+  "version": "1.0",
+  "output_dir": "reports/development_v1",
+  "summary_file": "reports/development_data_summary.md",
+  "selection_population": "tuning participants only, starting waves 1 through 6",
+  "app_features": [
+    "age_band",
+    "education_level",
+    "employment_status",
+    "last_cigarette_recency_days",
+    "electronic_nicotine_p30d",
+    "household_tobacco_any",
+    "home_combustible_smoking_rules",
+    "physical_health",
+    "mental_health",
+    "social_satisfaction",
+    "emotional_problems_7d"
+  ],
+  "minimal_features": [
+    "age_band",
+    "education_level",
+    "employment_status",
+    "last_cigarette_recency_days"
+  ],
+  "research_features": [
+    "age_band",
+    "sex_recorded",
+    "education_level",
+    "household_income_band",
+    "employment_status",
+    "last_cigarette_recency_days",
+    "prior_regular_cigarettes_per_day",
+    "regular_smoking_months",
+    "electronic_nicotine_p30d",
+    "traditional_cigar_p30d",
+    "cigarillo_p30d",
+    "filtered_cigar_p30d",
+    "hookah_p30d",
+    "smokeless_tobacco_p30d",
+    "snus_p30d",
+    "household_tobacco_any",
+    "home_combustible_smoking_rules",
+    "physical_health",
+    "mental_health",
+    "social_satisfaction",
+    "emotional_problems_7d",
+    "depressive_problem_recency",
+    "anxiety_problem_recency",
+    "alcohol_days_30d",
+    "alcohol_drinks_per_drinking_day"
+  ],
+  "attrition_features": [
+    "age_band",
+    "sex_recorded",
+    "education_level",
+    "last_cigarette_recency_days",
+    "physical_health",
+    "mental_health",
+    "electronic_nicotine_p30d"
+  ],
+  "raw_chunk_rows": 10000,
+  "review_flags": {
+    "last_cigarette_recency_days": 36525,
+    "prior_regular_cigarettes_per_day": 100,
+    "regular_smoking_months": 1200,
+    "alcohol_drinks_per_drinking_day": 30
+  },
+  "recency_bin_edges_days": [
+    0,
+    30,
+    365.25,
+    1826.25,
+    3652.5,
+    36525
+  ],
+  "recency_bin_labels": [
+    "up to 30 days",
+    "over 30 days to 1 year",
+    "over 1 to 5 years",
+    "over 5 to 10 years",
+    "over 10 to 100 years"
+  ],
+  "missing_answer_policy": "All optional model questions permit don't know, prefer not to answer, and not applicable/not previously asked; encode null plus distinct reason, never zero. No invented historical responses or fixed imputation values. Later preprocessing learns from tuning training folds only.",
+  "decisions": {
+    "app": "Eleven understandable baseline inputs; exclude the historically carried sex/gender category, sparse regular-smoking histories, nominal-US income, detailed product inventories, diagnostic recency and conditional alcohol quantities. Recency and household retain routing/distribution-shift caveats.",
+    "minimal": "Three basic demographics plus observed quit/last-cigarette recency; no reconstruction or missing-as-zero.",
+    "research": "Preserve the 25-candidate survey-available set as a separate research comparison, including conditional history. This is a fixed research profile, not an app model and not an outcome-ranked feature selection. Its performance and incremental utility remain unknown."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "revision": "available_answer_scenarios_reliability_color",
+  "model_version": "longitudinal_v2_1",
+  "model_retrained": false,
+  "model_integrity_verified": true,
+  "full_test_suite": {
+    "passed": 151,
+    "failed": 0
+  },
+  "ui_regressions_passed": 10,
+  "changes": [
+    "Single consecutive-wave interface; old interface removed from navigation",
+    "Automatic probabilities for all supported horizons; no horizon selector",
+    "Fixed radio options in place of editable/searchable dropdowns",
+    "Direct nullable recency entry; no hidden unanswered mode",
+    "Live completion; specific validation; stale results cleared on input edits",
+    "Responsive styling, cumulative probability cards and charts, factor explanations",
+    "Deploy/top toolbar disabled in configuration and CSS"
+  ],
+  "validation_scope": "Actual Streamlit AppTest interactions and source breakpoint/config checks. No interactive browser viewport or production hosting validation claimed.",
+  "restart_required": "Restart the existing Streamlit server once to load toolbar and watcher configuration.",
+  "source_sha256": {
+    "app/streamlit_app.py": "f23fc2d22414f9fd4fe289fc8f9391f44c087e7cfb5795bcbc4f49b6a862477a",
+    "app/longitudinal_app.py": "4944a26b3babb19ac09b753c210f19c528c25b65e08fa2e2ae44bd63df03107c",
+    "app/styles.css": "a2f8e374acbe5d4fee89be2bc151fe21ed0fa59045180bec6d3ffa9ef64c8136",
+    ".streamlit/config.toml": "f9f477703f439a6d5543312d20c3f8da874056efd8a7bd1b98d84ce35552a317",
+    "tests/test_longitudinal_app.py": "74e33f62185c4484c8bb9a7629858acecca4c6039717e268a81a29954d258eef",
+    "src/path_project/assessment.py": "cf63cde63e81249d7677237e1c318bb856ed648ca3a403f2b5dd228d5de0ea67"
+  },
+  "frozen_model_integrity_verified": true,
+  "available_answer_policy": "Missing inputs use trained missing handling; known unsupported profiles show a labeled hypothetical adult former-smoker scenario; a blank submission uses the fitted no-input baseline. No claim of expanded validated population.",
+  "reliability_policy": "Limited evidence label; usable-input completeness percentage is not confidence. Group held-out metrics and available group bootstrap ROC-AUC interval shown. Personal confidence percentage is null/unvalidated. Baseline reference uses baseline metrics."
+}

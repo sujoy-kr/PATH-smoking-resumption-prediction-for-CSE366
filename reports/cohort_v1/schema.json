@@ -1,0 +1,786 @@
+{
+  "version": "1.0",
+  "row_key": [
+    "PERSONID",
+    "starting_wave",
+    "followup_wave"
+  ],
+  "identifier_policy": "Stable string, never a predictor; no identifier values in this schema.",
+  "prediction_target": "Past-30-day cigarette smoking reported at the next scheduled survey, conditional on valid observed follow-up.",
+  "timing_decision": "C; no individual duration or relapse date created.",
+  "predictor_columns": [
+    "age_band",
+    "sex_recorded",
+    "education_level",
+    "household_income_band",
+    "employment_status",
+    "last_cigarette_recency_days",
+    "prior_regular_cigarettes_per_day",
+    "regular_smoking_months",
+    "electronic_nicotine_p30d",
+    "traditional_cigar_p30d",
+    "cigarillo_p30d",
+    "filtered_cigar_p30d",
+    "hookah_p30d",
+    "smokeless_tobacco_p30d",
+    "snus_p30d",
+    "household_tobacco_any",
+    "home_combustible_smoking_rules",
+    "physical_health",
+    "mental_health",
+    "social_satisfaction",
+    "emotional_problems_7d",
+    "depressive_problem_recency",
+    "anxiety_problem_recency",
+    "alcohol_days_30d",
+    "alcohol_drinks_per_drinking_day"
+  ],
+  "predictor_definitions": {
+    "age_band": {
+      "units": "category",
+      "output_labels": {
+        "1": "18–24",
+        "2": "25–34",
+        "3": "35–44",
+        "4": "45–54",
+        "5": "55–64",
+        "6": "65+"
+      },
+      "description": "Age category at the starting interview.",
+      "applicable_mapping": "configs/feature_mapping.json; choose starting-wave entry, including product-scope notes"
+    },
+    "sex_recorded": {
+      "units": "category",
+      "output_labels": {
+        "1": "Male",
+        "2": "Female"
+      },
+      "description": "Male/female sex or gender category as recorded by the survey.",
+      "applicable_mapping": "configs/feature_mapping.json; choose starting-wave entry, including product-scope notes"
+    },
+    "education_level": {
+      "units": "category",
+      "output_labels": {
+        "1": "Less than high school",
+        "2": "GED",
+        "3": "High school graduate",
+        "4": "Some college or associate degree",
+        "5": "Bachelor or advanced degree"
+      },
+      "description": "Highest completed education, harmonized to five categories.",
+      "applicable_mapping": "configs/feature_mapping.json; choose starting-wave entry, including product-scope notes"
+    },
+    "household_income_band": {
+      "units": "nominal USD category",
+      "output_labels": {
+        "1": "Less than $10,000",
+        "2": "$10,000–$24,999",
+        "3": "$25,000–$49,999",
+        "4": "$50,000–$99,999",
+        "5": "$100,000 or more"
+      },
+      "description": "Total household income during the prior 12 months in nominal US dollar bands.",
+      "applicable_mapping": "configs/feature_mapping.json; choose starting-wave entry, including product-scope notes"
+    },
+    "employment_status": {
+      "units": "category",
+      "output_labels": {
+        "1": "Full-time, at least 35 hours/week",
+        "2": "Part-time, 15–34 hours/week",
+        "3": "Part-time, under 15 hours/week",
+        "4": "Not currently working for pay"
+      },
+      "description": "Current paid employment status and weekly hours category.",
+      "applicable_mapping": "configs/feature_mapping.json; choose starting-wave entry, including product-scope notes"
+    },
+    "last_cigarette_recency_days": {
+      "units": "approximate days",
+      "output_labels": {},
+      "description": "Approximate time since completely quitting (Wave 1) or last cigarette (Waves 2–8).",
+      "applicable_mapping": "configs/feature_mapping.json; choose starting-wave entry, including product-scope notes"
+    },
+    "prior_regular_cigarettes_per_day": {
+      "units": "cigarettes/day",
+      "output_labels": {},
+      "description": "Average daily cigarettes when previously smoking fairly regularly.",
+      "applicable_mapping": "configs/feature_mapping.json; choose starting-wave entry, including product-scope notes"
+    },
+    "regular_smoking_months": {
+      "units": "months",
+      "output_labels": {},
+      "description": "Total duration of fairly regular cigarette smoking, excluding periods off cigarettes.",
+      "applicable_mapping": "configs/feature_mapping.json; choose starting-wave entry, including product-scope notes"
+    },
+    "electronic_nicotine_p30d": {
+      "units": "binary indicator",
+      "output_labels": {
+        "0": "No",
+        "1": "Yes"
+      },
+      "description": "Any use of e-cigarettes/electronic nicotine products in the past 30 days at baseline.",
+      "applicable_mapping": "configs/feature_mapping.json; choose starting-wave entry, including product-scope notes"
+    },
+    "traditional_cigar_p30d": {
+      "units": "binary indicator",
+      "output_labels": {
+        "0": "No",
+        "1": "Yes"
+      },
+      "description": "Any use of traditional cigars in the past 30 days at baseline.",
+      "applicable_mapping": "configs/feature_mapping.json; choose starting-wave entry, including product-scope notes"
+    },
+    "cigarillo_p30d": {
+      "units": "binary indicator",
+      "output_labels": {
+        "0": "No",
+        "1": "Yes"
+      },
+      "description": "Any use of cigarillos in the past 30 days at baseline.",
+      "applicable_mapping": "configs/feature_mapping.json; choose starting-wave entry, including product-scope notes"
+    },
+    "filtered_cigar_p30d": {
+      "units": "binary indicator",
+      "output_labels": {
+        "0": "No",
+        "1": "Yes"
+      },
+      "description": "Any use of filtered cigars in the past 30 days at baseline.",
+      "applicable_mapping": "configs/feature_mapping.json; choose starting-wave entry, including product-scope notes"
+    },
+    "hookah_p30d": {
+      "units": "binary indicator",
+      "output_labels": {
+        "0": "No",
+        "1": "Yes"
+      },
+      "description": "Any use of hookah tobacco in the past 30 days at baseline.",
+      "applicable_mapping": "configs/feature_mapping.json; choose starting-wave entry, including product-scope notes"
+    },
+    "smokeless_tobacco_p30d": {
+      "units": "binary indicator",
+      "output_labels": {
+        "0": "No",
+        "1": "Yes"
+      },
+      "description": "Past-30-day use of the smokeless tobacco products defined for the starting wave; loose-snus classification changes across waves.",
+      "applicable_mapping": "configs/feature_mapping.json; choose starting-wave entry, including product-scope notes"
+    },
+    "snus_p30d": {
+      "units": "binary indicator",
+      "output_labels": {
+        "0": "No",
+        "1": "Yes"
+      },
+      "description": "Past-30-day snus use as defined for the starting wave: snus pouches in Waves 1–3; loose snus and pouches in Waves 4–8.",
+      "applicable_mapping": "configs/feature_mapping.json; choose starting-wave entry, including product-scope notes"
+    },
+    "household_tobacco_any": {
+      "units": "binary indicator",
+      "output_labels": {
+        "0": "No",
+        "1": "Yes"
+      },
+      "description": "Whether another person living in the home uses any listed tobacco/nicotine product.",
+      "applicable_mapping": "configs/feature_mapping.json; choose starting-wave entry, including product-scope notes"
+    },
+    "home_combustible_smoking_rules": {
+      "units": "category",
+      "output_labels": {
+        "1": "Not allowed anywhere or at any time",
+        "2": "Allowed in some places or at some times",
+        "3": "Allowed anywhere and at any time"
+      },
+      "description": "Rules about smoking products that are burned inside the home.",
+      "applicable_mapping": "configs/feature_mapping.json; choose starting-wave entry, including product-scope notes"
+    },
+    "physical_health": {
+      "units": "category",
+      "output_labels": {
+        "1": "Excellent",
+        "2": "Very good",
+        "3": "Good",
+        "4": "Fair",
+        "5": "Poor"
+      },
+      "description": "Self-rated general physical health.",
+      "applicable_mapping": "configs/feature_mapping.json; choose starting-wave entry, including product-scope notes"
+    },
+    "mental_health": {
+      "units": "category",
+      "output_labels": {
+        "1": "Excellent",
+        "2": "Very good",
+        "3": "Good",
+        "4": "Fair",
+        "5": "Poor"
+      },
+      "description": "Self-rated general mental health including stress and emotions.",
+      "applicable_mapping": "configs/feature_mapping.json; choose starting-wave entry, including product-scope notes"
+    },
+    "social_satisfaction": {
+      "units": "category",
+      "output_labels": {
+        "1": "Extremely satisfied",
+        "2": "Very satisfied",
+        "3": "Moderately satisfied",
+        "4": "A little satisfied",
+        "5": "Not at all satisfied"
+      },
+      "description": "Satisfaction with social activities and relationships.",
+      "applicable_mapping": "configs/feature_mapping.json; choose starting-wave entry, including product-scope notes"
+    },
+    "emotional_problems_7d": {
+      "units": "category",
+      "output_labels": {
+        "1": "Never",
+        "2": "Rarely",
+        "3": "Sometimes",
+        "4": "Often",
+        "5": "Very often"
+      },
+      "description": "How often emotional problems bothered the respondent in the past 7 days.",
+      "applicable_mapping": "configs/feature_mapping.json; choose starting-wave entry, including product-scope notes"
+    },
+    "depressive_problem_recency": {
+      "units": "category",
+      "output_labels": {
+        "1": "Past month",
+        "2": "2–12 months ago",
+        "3": "Over a year ago",
+        "4": "Never"
+      },
+      "description": "Last significant problems with feeling trapped, lonely, sad, blue, depressed or hopeless.",
+      "applicable_mapping": "configs/feature_mapping.json; choose starting-wave entry, including product-scope notes"
+    },
+    "anxiety_problem_recency": {
+      "units": "category",
+      "output_labels": {
+        "1": "Past month",
+        "2": "2–12 months ago",
+        "3": "Over a year ago",
+        "4": "Never"
+      },
+      "description": "Last significant problems with feeling anxious, nervous, tense, scared, panicked or impending harm.",
+      "applicable_mapping": "configs/feature_mapping.json; choose starting-wave entry, including product-scope notes"
+    },
+    "alcohol_days_30d": {
+      "units": "days/30 days",
+      "output_labels": {},
+      "description": "Number of days with at least one alcoholic drink in the past 30 days.",
+      "applicable_mapping": "configs/feature_mapping.json; choose starting-wave entry, including product-scope notes"
+    },
+    "alcohol_drinks_per_drinking_day": {
+      "units": "drinks/drinking day",
+      "output_labels": {},
+      "description": "Usual number of alcoholic drinks per drinking day in the past 30 days.",
+      "applicable_mapping": "configs/feature_mapping.json; choose starting-wave entry, including product-scope notes"
+    }
+  },
+  "cohort_columns": [
+    {
+      "name": "PERSONID",
+      "pandas_dtype": "string",
+      "role": "identifier_join_group_only"
+    },
+    {
+      "name": "starting_wave",
+      "pandas_dtype": "Int8",
+      "role": "interval_or_quality_control_metadata_never_automatic_predictor"
+    },
+    {
+      "name": "followup_wave",
+      "pandas_dtype": "Int8",
+      "role": "interval_or_quality_control_metadata_never_automatic_predictor"
+    },
+    {
+      "name": "baseline_current_established_qc",
+      "pandas_dtype": "Int8",
+      "role": "interval_or_quality_control_metadata_never_automatic_predictor"
+    },
+    {
+      "name": "outcome_p30d",
+      "pandas_dtype": "Int8",
+      "role": "outcome_never_predictor"
+    },
+    {
+      "name": "outcome_reason",
+      "pandas_dtype": "string",
+      "role": "interval_or_quality_control_metadata_never_automatic_predictor"
+    },
+    {
+      "name": "outcome_current_established",
+      "pandas_dtype": "Int8",
+      "role": "outcome_never_predictor"
+    },
+    {
+      "name": "secondary_outcome_reason",
+      "pandas_dtype": "string",
+      "role": "interval_or_quality_control_metadata_never_automatic_predictor"
+    },
+    {
+      "name": "observation_status",
+      "pandas_dtype": "string",
+      "role": "interval_or_quality_control_metadata_never_automatic_predictor"
+    },
+    {
+      "name": "recency_group",
+      "pandas_dtype": "string",
+      "role": "interval_or_quality_control_metadata_never_automatic_predictor"
+    },
+    {
+      "name": "recency_boundary_report",
+      "pandas_dtype": "boolean",
+      "role": "interval_or_quality_control_metadata_never_automatic_predictor"
+    },
+    {
+      "name": "recency_group_rounding_sensitivity",
+      "pandas_dtype": "string",
+      "role": "interval_or_quality_control_metadata_never_automatic_predictor"
+    },
+    {
+      "name": "age_band",
+      "pandas_dtype": "Float64",
+      "role": "candidate_predictor"
+    },
+    {
+      "name": "age_band__reason",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "age_band__component_reasons",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "sex_recorded",
+      "pandas_dtype": "Float64",
+      "role": "candidate_predictor"
+    },
+    {
+      "name": "sex_recorded__reason",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "sex_recorded__component_reasons",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "education_level",
+      "pandas_dtype": "Float64",
+      "role": "candidate_predictor"
+    },
+    {
+      "name": "education_level__reason",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "education_level__component_reasons",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "household_income_band",
+      "pandas_dtype": "Float64",
+      "role": "candidate_predictor"
+    },
+    {
+      "name": "household_income_band__reason",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "household_income_band__component_reasons",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "employment_status",
+      "pandas_dtype": "Float64",
+      "role": "candidate_predictor"
+    },
+    {
+      "name": "employment_status__reason",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "employment_status__component_reasons",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "last_cigarette_recency_days",
+      "pandas_dtype": "Float64",
+      "role": "candidate_predictor"
+    },
+    {
+      "name": "last_cigarette_recency_days__reason",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "last_cigarette_recency_days__component_reasons",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "prior_regular_cigarettes_per_day",
+      "pandas_dtype": "Float64",
+      "role": "candidate_predictor"
+    },
+    {
+      "name": "prior_regular_cigarettes_per_day__reason",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "prior_regular_cigarettes_per_day__component_reasons",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "regular_smoking_months",
+      "pandas_dtype": "Float64",
+      "role": "candidate_predictor"
+    },
+    {
+      "name": "regular_smoking_months__reason",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "regular_smoking_months__component_reasons",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "electronic_nicotine_p30d",
+      "pandas_dtype": "Float64",
+      "role": "candidate_predictor"
+    },
+    {
+      "name": "electronic_nicotine_p30d__reason",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "electronic_nicotine_p30d__component_reasons",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "traditional_cigar_p30d",
+      "pandas_dtype": "Float64",
+      "role": "candidate_predictor"
+    },
+    {
+      "name": "traditional_cigar_p30d__reason",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "traditional_cigar_p30d__component_reasons",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "cigarillo_p30d",
+      "pandas_dtype": "Float64",
+      "role": "candidate_predictor"
+    },
+    {
+      "name": "cigarillo_p30d__reason",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "cigarillo_p30d__component_reasons",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "filtered_cigar_p30d",
+      "pandas_dtype": "Float64",
+      "role": "candidate_predictor"
+    },
+    {
+      "name": "filtered_cigar_p30d__reason",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "filtered_cigar_p30d__component_reasons",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "hookah_p30d",
+      "pandas_dtype": "Float64",
+      "role": "candidate_predictor"
+    },
+    {
+      "name": "hookah_p30d__reason",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "hookah_p30d__component_reasons",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "smokeless_tobacco_p30d",
+      "pandas_dtype": "Float64",
+      "role": "candidate_predictor"
+    },
+    {
+      "name": "smokeless_tobacco_p30d__reason",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "smokeless_tobacco_p30d__component_reasons",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "snus_p30d",
+      "pandas_dtype": "Float64",
+      "role": "candidate_predictor"
+    },
+    {
+      "name": "snus_p30d__reason",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "snus_p30d__component_reasons",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "household_tobacco_any",
+      "pandas_dtype": "Float64",
+      "role": "candidate_predictor"
+    },
+    {
+      "name": "household_tobacco_any__reason",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "household_tobacco_any__component_reasons",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "home_combustible_smoking_rules",
+      "pandas_dtype": "Float64",
+      "role": "candidate_predictor"
+    },
+    {
+      "name": "home_combustible_smoking_rules__reason",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "home_combustible_smoking_rules__component_reasons",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "physical_health",
+      "pandas_dtype": "Float64",
+      "role": "candidate_predictor"
+    },
+    {
+      "name": "physical_health__reason",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "physical_health__component_reasons",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "mental_health",
+      "pandas_dtype": "Float64",
+      "role": "candidate_predictor"
+    },
+    {
+      "name": "mental_health__reason",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "mental_health__component_reasons",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "social_satisfaction",
+      "pandas_dtype": "Float64",
+      "role": "candidate_predictor"
+    },
+    {
+      "name": "social_satisfaction__reason",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "social_satisfaction__component_reasons",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "emotional_problems_7d",
+      "pandas_dtype": "Float64",
+      "role": "candidate_predictor"
+    },
+    {
+      "name": "emotional_problems_7d__reason",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "emotional_problems_7d__component_reasons",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "depressive_problem_recency",
+      "pandas_dtype": "Float64",
+      "role": "candidate_predictor"
+    },
+    {
+      "name": "depressive_problem_recency__reason",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "depressive_problem_recency__component_reasons",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "anxiety_problem_recency",
+      "pandas_dtype": "Float64",
+      "role": "candidate_predictor"
+    },
+    {
+      "name": "anxiety_problem_recency__reason",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "anxiety_problem_recency__component_reasons",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "alcohol_days_30d",
+      "pandas_dtype": "Float64",
+      "role": "candidate_predictor"
+    },
+    {
+      "name": "alcohol_days_30d__reason",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "alcohol_days_30d__component_reasons",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "alcohol_drinks_per_drinking_day",
+      "pandas_dtype": "Float64",
+      "role": "candidate_predictor"
+    },
+    {
+      "name": "alcohol_drinks_per_drinking_day__reason",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    },
+    {
+      "name": "alcohol_drinks_per_drinking_day__component_reasons",
+      "pandas_dtype": "string",
+      "role": "baseline_missingness_metadata_not_automatically_a_predictor"
+    }
+  ],
+  "ledger_columns": [
+    {
+      "name": "PERSONID",
+      "pandas_dtype": "string",
+      "role": "identifier_join_group_only"
+    },
+    {
+      "name": "starting_wave",
+      "pandas_dtype": "Int8",
+      "role": "interval_or_quality_control_metadata_never_automatic_predictor"
+    },
+    {
+      "name": "followup_wave",
+      "pandas_dtype": "Int8",
+      "role": "interval_or_quality_control_metadata_never_automatic_predictor"
+    },
+    {
+      "name": "baseline_current_established_qc",
+      "pandas_dtype": "Int8",
+      "role": "interval_or_quality_control_metadata_never_automatic_predictor"
+    },
+    {
+      "name": "outcome_p30d",
+      "pandas_dtype": "Int8",
+      "role": "outcome_never_predictor"
+    },
+    {
+      "name": "outcome_reason",
+      "pandas_dtype": "string",
+      "role": "interval_or_quality_control_metadata_never_automatic_predictor"
+    },
+    {
+      "name": "outcome_current_established",
+      "pandas_dtype": "Int8",
+      "role": "outcome_never_predictor"
+    },
+    {
+      "name": "secondary_outcome_reason",
+      "pandas_dtype": "string",
+      "role": "interval_or_quality_control_metadata_never_automatic_predictor"
+    },
+    {
+      "name": "observation_status",
+      "pandas_dtype": "string",
+      "role": "interval_or_quality_control_metadata_never_automatic_predictor"
+    },
+    {
+      "name": "recency_group",
+      "pandas_dtype": "string",
+      "role": "interval_or_quality_control_metadata_never_automatic_predictor"
+    },
+    {
+      "name": "recency_boundary_report",
+      "pandas_dtype": "boolean",
+      "role": "interval_or_quality_control_metadata_never_automatic_predictor"
+    },
+    {
+      "name": "recency_group_rounding_sensitivity",
+      "pandas_dtype": "string",
+      "role": "interval_or_quality_control_metadata_never_automatic_predictor"
+    }
+  ],
+  "outcome_values": {
+    "0": "No past-30-day cigarette smoking at follow-up",
+    "1": "Past-30-day cigarette smoking at follow-up",
+    "null": "Unobserved/invalid; ledger only for primary outcome"
+  },
+  "feature_missingness": "Null value plus feature__reason and optional component-reason JSON. Valid observed zero remains zero; no imputation learned.",
+  "ledger_policy": "All baseline-eligible adjacent intervals, including labeled intervals. Features only stored in labeled cohort; ledger records observation/secondary/subgroup metadata.",
+  "survey_weighting": "Unweighted, no national inference."
+}

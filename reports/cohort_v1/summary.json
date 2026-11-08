@@ -1,0 +1,28 @@
+{
+  "run_name": "cohort_v1",
+  "labeled_records": 30890,
+  "positive_outcomes": 3258,
+  "negative_outcomes": 27632,
+  "positive_prevalence": 0.10547102622207834,
+  "unique_labeled_people": 9597,
+  "people_with_multiple_labeled_intervals": 6830,
+  "repeated_records_beyond_first_per_person": 21293,
+  "maximum_labeled_intervals_per_person": 7,
+  "participant_record_count_distribution": {
+    "1": 2767,
+    "2": 1809,
+    "3": 1300,
+    "4": 1174,
+    "5": 658,
+    "6": 604,
+    "7": 1285
+  },
+  "eligible_interval_records": 36639,
+  "unique_baseline_eligible_people": 11717,
+  "unobserved_interval_outcomes": 5749,
+  "canonical_wave_files_processed": 8,
+  "candidate_features": 25,
+  "intervals": 7,
+  "weighted": false,
+  "timing": "Next scheduled survey; varying unknown individual elapsed intervals. No relapse dates or fixed-year risks."
+}

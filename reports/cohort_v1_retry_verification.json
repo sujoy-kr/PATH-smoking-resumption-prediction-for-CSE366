@@ -1,0 +1,8 @@
+{
+  "command": ".venv/bin/python scripts/build_cohort.py",
+  "exit_code": 0,
+  "unchanged_saved_file_count": 17,
+  "changed_files": [],
+  "all_saved_hashes_and_mtimes_unchanged": true,
+  "aggregate_command_stdout": "Mode: reused_verified_immutable_run; labeled=30890; unique_people=9597; positive=3258; unobserved=5749\n"
+}

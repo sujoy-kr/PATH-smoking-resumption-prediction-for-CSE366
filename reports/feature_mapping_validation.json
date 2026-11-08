@@ -1,0 +1,27 @@
+{
+  "candidate_predictors": 25,
+  "role_counts": {
+    "candidate_predictor": 25,
+    "cohort_field": 3,
+    "design_weight_field": 4,
+    "identifier": 2,
+    "outcome_field": 2
+  },
+  "waves_checked": 8,
+  "field_wave_rows": 288,
+  "unique_source_columns_by_wave": {
+    "1": 139,
+    "2": 140,
+    "3": 39,
+    "4": 32,
+    "5": 32,
+    "6": 32,
+    "7": 32,
+    "8": 32
+  },
+  "source_column_references_checked": 494,
+  "source_documents_checked": 16,
+  "documentation_records": 1061,
+  "errors": [],
+  "method": "Actual TSV headers only; original PDF fingerprints, declared roles/temporal availability, documented code domains and dictionary consistency. No survey rows or outcomes used."
+}

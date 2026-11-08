@@ -1,0 +1,550 @@
+{
+  "specification_version": "1.1-final-inputs",
+  "task": "next_scheduled_wave_past_30_day_cigarette_smoking",
+  "timing_decision": "C",
+  "prediction_time": "end_of_starting_interview",
+  "pairs": [
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      4,
+      5
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      7,
+      8
+    ]
+  ],
+  "identifier": "PERSONID",
+  "identifier_role": "join_and_participant_group_only",
+  "baseline_requirements": {
+    "former_established_equals": "1",
+    "past_30_day_equals": "2"
+  },
+  "outcome_mapping": {
+    "1": 1,
+    "2": 0
+  },
+  "invalid_status_policy": "exclude_with_reason_never_impute",
+  "missing_followup_policy": "exclude_pair_record_and_report_attrition",
+  "skip_missing_wave": false,
+  "require_all_eight_waves": false,
+  "waves": {
+    "1": {
+      "former_established": "R01R_A_FMR_ESTD_CIGS",
+      "past_30_day": "R01R_A_P30D_CIGS",
+      "current_established": "R01R_A_CUR_ESTD_CIGS",
+      "last_smoked_number": "R01_AC1009_NN",
+      "last_smoked_unit": "R01_AC1009_UN"
+    },
+    "2": {
+      "former_established": "R02R_A_FMR_ESTD_CIGS_REV",
+      "past_30_day": "R02R_A_P30D_CIGS",
+      "current_established": "R02R_A_CUR_ESTD_CIGS",
+      "last_smoked_number": "R02_AC1009_NN",
+      "last_smoked_unit": "R02_AC1009_UN"
+    },
+    "3": {
+      "former_established": "R03R_A_FMR_ESTD_CIGS_REV",
+      "past_30_day": "R03R_A_P30D_CIGS",
+      "current_established": "R03R_A_CUR_ESTD_CIGS",
+      "last_smoked_number": "R03_AC1009_NN",
+      "last_smoked_unit": "R03_AC1009_UN"
+    },
+    "4": {
+      "former_established": "R04R_A_FMR_ESTD_CIGS",
+      "past_30_day": "R04R_A_P30D_CIGS",
+      "current_established": "R04R_A_CUR_ESTD_CIGS",
+      "last_smoked_number": "R04_AC1009_NN",
+      "last_smoked_unit": "R04_AC1009_UN"
+    },
+    "5": {
+      "former_established": "R05R_A_FMR_ESTD_CIGS",
+      "past_30_day": "R05R_A_P30D_CIGS",
+      "current_established": "R05R_A_CUR_ESTD_CIGS",
+      "last_smoked_number": "R05_AC1009_NN",
+      "last_smoked_unit": "R05_AC1009_UN"
+    },
+    "6": {
+      "former_established": "R06R_A_FMR_ESTD_CIGS",
+      "past_30_day": "R06R_A_P30D_CIGS",
+      "current_established": "R06R_A_CUR_ESTD_CIGS",
+      "last_smoked_number": "R06_AC1009_NN",
+      "last_smoked_unit": "R06_AC1009_UN"
+    },
+    "7": {
+      "former_established": "R07R_A_FMR_ESTD_CIGS",
+      "past_30_day": "R07R_A_P30D_CIGS",
+      "current_established": "R07R_A_CUR_ESTD_CIGS",
+      "last_smoked_number": "R07_AC1009_NN",
+      "last_smoked_unit": "R07_AC1009_UN"
+    },
+    "8": {
+      "former_established": "R08R_A_FMR_ESTD_CIGS",
+      "past_30_day": "R08R_A_P30D_CIGS",
+      "current_established": "R08R_A_CUR_ESTD_CIGS",
+      "last_smoked_number": "R08_AC1009_NN",
+      "last_smoked_unit": "R08_AC1009_UN"
+    }
+  },
+  "harmonization": {
+    "use_official_derived_status": true,
+    "established_lifetime_threshold_cigarettes": 100,
+    "wave1_description_resolution": "algorithm_and_raw_category_6_mean_100_or_more",
+    "recanting": "use_wave_specific_official_algorithms_no_future_information",
+    "zero_past_30_day": "official_derived_code_2_not_raw_skip"
+  },
+  "allowed_inputs": {
+    "time_boundary": "current_or_earlier_interview_only",
+    "feature_allowlist": [
+      "age_band",
+      "education_level",
+      "employment_status",
+      "last_cigarette_recency_days",
+      "electronic_nicotine_p30d",
+      "household_tobacco_any",
+      "home_combustible_smoking_rules",
+      "physical_health",
+      "mental_health",
+      "social_satisfaction",
+      "emotional_problems_7d"
+    ],
+    "feature_allowlist_status": "stage3_documented_candidates_only_not_outcome_selected_or_final_fitted_features",
+    "interval_context": "starting_wave_and_scheduled_followup_wave_may_be_metadata_no_calendar_duration_invented",
+    "feature_mapping": "configs/feature_mapping.json",
+    "feature_allowlist_scope": "Default app model only; explicit minimal/research profiles have separately named allowlists."
+  },
+  "forbidden_predictors": [
+    "PERSONID",
+    "followup_status",
+    "followup_responses",
+    "future_interviews",
+    "raw_interview_dates",
+    "outcome_derived_fields"
+  ],
+  "secondary_analyses": {
+    "recent_quitters": {
+      "enabled": true,
+      "definition": "core cohort plus observed time since last cigarette in (30,365.25] approximate days at baseline",
+      "time_source": "raw_number_and_unit_only_no_carry_forward",
+      "unit_days": {
+        "1": 1,
+        "2": 30.4375,
+        "3": 365.25
+      },
+      "allowed_units_by_wave": {
+        "1": [
+          "1",
+          "2",
+          "3"
+        ],
+        "2": [
+          "1",
+          "2"
+        ],
+        "3": [
+          "1",
+          "2",
+          "3"
+        ],
+        "4": [
+          "1",
+          "2",
+          "3"
+        ],
+        "5": [
+          "1",
+          "2",
+          "3"
+        ],
+        "6": [
+          "1",
+          "2",
+          "3"
+        ],
+        "7": [
+          "1",
+          "2",
+          "3"
+        ],
+        "8": [
+          "1",
+          "2",
+          "3"
+        ]
+      },
+      "number_must_be_positive": true,
+      "missing_policy": "unknown_not_long_term_exclude_from_recent_quitter_subgroup_only",
+      "rounding_sensitivity": "report boundary ambiguity; raw 12 months or 1 year may round across cutoff",
+      "unit_rounding_sensitivity": {
+        "enabled": true,
+        "exclude_raw_boundary_reports": [
+          {
+            "unit": "2",
+            "number": 1
+          },
+          {
+            "unit": "2",
+            "number": 12
+          },
+          {
+            "unit": "3",
+            "number": 1
+          }
+        ],
+        "purpose": "Exclude rounded month/year responses at the 30-day/one-year boundaries; no invented precision"
+      }
+    },
+    "current_established_followup": {
+      "enabled": true,
+      "valid_codes": [
+        "1",
+        "2"
+      ],
+      "positive_code": "1",
+      "requires_core_primary_valid_outcome": true,
+      "meaning": "current every_day_or_some_day_established_smoking_not_persistent_relapse"
+    },
+    "observed_cessation_transition": {
+      "enabled": false,
+      "definition": "optional future analysis requiring observed past30 positive at t-1 and core eligibility at t; not a default inclusion rule"
+    },
+    "wave1_exclusion_sensitivity": {
+      "enabled": true,
+      "pairs": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          8
+        ]
+      ],
+      "purpose": "assess baseline instrument and recanter-definition differences"
+    }
+  },
+  "app_claim": {
+    "endpoint_label": "Smoking reported in the past 30 days at the next PATH survey",
+    "must_state": "Research prototype; varying survey intervals; probability requires validation; not a personal prognosis",
+    "allow_fixed_year_risks": false,
+    "allow_exact_relapse_date": false,
+    "allow_persistent_relapse_claim": false,
+    "allow_causal_claim": false,
+    "allow_personal_confidence_percentage": false,
+    "allow_national_representativeness_claim": false
+  },
+  "source_review_suffixes": [
+    "R_A_FMR_ESTD_CIGS",
+    "R_A_FMR_ESTD_CIGS_REV",
+    "R_A_P30D_CIGS",
+    "R_A_P12M_CIGS",
+    "R_A_CUR_ESTD_CIGS",
+    "R_A_EVR_CIGS",
+    "R_A_THRSHLD_CIGS",
+    "R_A_EVR_THRSH_CIGS",
+    "_AC1002",
+    "_AC1002_12M",
+    "_AC1003",
+    "_AC1004",
+    "_AC1005",
+    "_AC1009_NN",
+    "_AC1009_UN",
+    "_AC1010",
+    "_AC1132",
+    "R_A_DAYSQUIT_CIGS",
+    "R_A_DAYSLASTUSED_CIGS",
+    "_AC9029_NN",
+    "_AC9029_UN",
+    "_AN0130_NN",
+    "_AN0130_UN",
+    "_AN0135",
+    "_AN0135_VALUE_INFO",
+    "_AN0145_NN",
+    "_AN0145_UN",
+    "_AN0257"
+  ],
+  "timing_title_pattern": "\\bdate\\b|interview|relaps|resum|since last smoked|quit attempt|longest time|length of time.*stopped",
+  "interview_header_pattern": "INTVDATE|INTDATE|INTERVIEW.*DATE|DATE.*INTERVIEW|INTV.*(MONTH|YEAR|DAY)|INTERVAL|ELAPSED|LASTINT",
+  "questionnaire_timing_pattern": "INTVDATE|interview date|date of (the |this )?interview|date that the interview|last.*interview.*date|end date of.*quit attempt",
+  "documented_status_missing_codes": {
+    "1": {
+      "former_established": [
+        "-99999",
+        "-99988",
+        "-99977",
+        "-99955",
+        "-99911",
+        "-97777"
+      ],
+      "past_30_day": [
+        "-99999",
+        "-99988",
+        "-99977",
+        "-99955",
+        "-99911",
+        "-97777"
+      ],
+      "current_established": [
+        "-99999",
+        "-99988",
+        "-99977",
+        "-99955",
+        "-99911",
+        "-97777"
+      ]
+    },
+    "2": {
+      "former_established": [
+        "-99999",
+        "-99988",
+        "-99977",
+        "-99966",
+        "-99911",
+        "-97777"
+      ],
+      "past_30_day": [
+        "-99999",
+        "-99988",
+        "-99977",
+        "-99966",
+        "-99955",
+        "-99911",
+        "-97777"
+      ],
+      "current_established": [
+        "-99999",
+        "-99988",
+        "-99977",
+        "-99966",
+        "-99911",
+        "-97777"
+      ]
+    },
+    "3": {
+      "former_established": [
+        "-99999",
+        "-99988",
+        "-99977",
+        "-99966",
+        "-99911",
+        "-97777"
+      ],
+      "past_30_day": [
+        "-99999",
+        "-99988",
+        "-99977",
+        "-99966",
+        "-99955",
+        "-99911",
+        "-97777"
+      ],
+      "current_established": [
+        "-99999",
+        "-99988",
+        "-99977",
+        "-99966",
+        "-99911",
+        "-97777"
+      ]
+    },
+    "4": {
+      "former_established": [
+        "-99999",
+        "-99988",
+        "-99977",
+        "-99966",
+        "-99911",
+        "-97777"
+      ],
+      "past_30_day": [
+        "-99999",
+        "-99988",
+        "-99977",
+        "-99966",
+        "-99955",
+        "-99911",
+        "-97777"
+      ],
+      "current_established": [
+        "-99999",
+        "-99988",
+        "-99977",
+        "-99966",
+        "-99911",
+        "-97777"
+      ]
+    },
+    "5": {
+      "former_established": [
+        "-99999",
+        "-99988",
+        "-99977",
+        "-99966",
+        "-99911",
+        "-97777"
+      ],
+      "past_30_day": [
+        "-99999",
+        "-99988",
+        "-99977",
+        "-99966",
+        "-99955",
+        "-99911",
+        "-97777"
+      ],
+      "current_established": [
+        "-99999",
+        "-99988",
+        "-99977",
+        "-99966",
+        "-99911",
+        "-97777"
+      ]
+    },
+    "6": {
+      "former_established": [
+        "-97777",
+        "."
+      ],
+      "past_30_day": [
+        "-97777",
+        "."
+      ],
+      "current_established": [
+        "-97777",
+        "."
+      ]
+    },
+    "7": {
+      "former_established": [
+        "-97777",
+        "."
+      ],
+      "past_30_day": [
+        "-97777",
+        "."
+      ],
+      "current_established": [
+        "-97777",
+        "."
+      ]
+    },
+    "8": {
+      "former_established": [
+        "."
+      ],
+      "past_30_day": [
+        "."
+      ],
+      "current_established": [
+        "."
+      ]
+    }
+  },
+  "supplementary_documentation": [
+    {
+      "file": "PATH/DS8001/36498-8001-Documentation-Nonresponse_Report.pdf",
+      "pdf_pages": [
+        9,
+        15,
+        18,
+        19
+      ],
+      "sections": [
+        "Introduction",
+        "2.1.5 Wave 6",
+        "2.4 Data Collection Summary; Table 2.1"
+      ],
+      "purpose": "General wave collection windows, changing intervals, age ranges and attrition design; not individual followup times"
+    }
+  ],
+  "base_specification": "configs/prediction_specification.json",
+  "base_specification_sha256": "67ff7d9f0984c04db0e19eb598ad01838b285d87f64b26e230d885d13199cc6a",
+  "final_feature_sets": {
+    "app": [
+      "age_band",
+      "education_level",
+      "employment_status",
+      "last_cigarette_recency_days",
+      "electronic_nicotine_p30d",
+      "household_tobacco_any",
+      "home_combustible_smoking_rules",
+      "physical_health",
+      "mental_health",
+      "social_satisfaction",
+      "emotional_problems_7d"
+    ],
+    "minimal": [
+      "age_band",
+      "education_level",
+      "employment_status",
+      "last_cigarette_recency_days"
+    ],
+    "research": [
+      "age_band",
+      "sex_recorded",
+      "education_level",
+      "household_income_band",
+      "employment_status",
+      "last_cigarette_recency_days",
+      "prior_regular_cigarettes_per_day",
+      "regular_smoking_months",
+      "electronic_nicotine_p30d",
+      "traditional_cigar_p30d",
+      "cigarillo_p30d",
+      "filtered_cigar_p30d",
+      "hookah_p30d",
+      "smokeless_tobacco_p30d",
+      "snus_p30d",
+      "household_tobacco_any",
+      "home_combustible_smoking_rules",
+      "physical_health",
+      "mental_health",
+      "social_satisfaction",
+      "emotional_problems_7d",
+      "depressive_problem_recency",
+      "anxiety_problem_recency",
+      "alcohol_days_30d",
+      "alcohol_drinks_per_drinking_day"
+    ]
+  },
+  "final_mapping": "configs/feature_mapping_final.json",
+  "app_questions": "configs/app_questions.json",
+  "cohort_change": false,
+  "no_model_or_probability_validated": true
+}

@@ -1,0 +1,25 @@
+{
+  "decision": "C",
+  "timing_omitted_with_documented_reason": true,
+  "preserved_cohort_split_baseline_tree_files_hash_and_mtime": 153,
+  "metadata_and_evidence_byte_identical_on_retry": true,
+  "retry_command": ".venv/bin/python scripts/confirm_timing.py",
+  "retry_exit_code": 0,
+  "models_refitted": false,
+  "final_test_features_or_outcomes_read": false,
+  "source_sha256": {
+    "configs/timing_decision.json": "c105f94428aed921a26f05e0747863930b808c4c24eed0bef49503b1567ef525",
+    "src/path_project/timing.py": "35da5b571c56592515f6d76b91cbcc4ea4cb00d461eea4c523b9c6abbc9a0317",
+    "scripts/confirm_timing.py": "e2d4e55b2bcea520943da076426a8b208e35eeedd95e056223efad4510e3b713",
+    "scripts/verify_timing.py": "a286f0b07ac44f67bd7741dca0a80fcabed0949298b052e35111fb3b72b56fe8",
+    "tests/test_timing.py": "2b6d2a8b95c25d85d544f40742183f78de51a7f43ec48b9b75e7777f3d836023",
+    "docs/timing_decision.md": "06d42ecdf2aefeab81e11b0610f50f0808b848bd154b2e9b2d5dfef5792de017"
+  },
+  "output_sha256": {
+    "configs/app_metadata.json": "9279d454bcca610e3480e494540724dbd831f7494a41827b7e8b99b367b6212e",
+    "reports/timing_confirmation_v1.json": "5acad0d08caacab920f6a070591c4b7492c2097b3e194c7511b48894ead5a843"
+  },
+  "python": "3.13.5 (main, Aug 10 2026, 12:06:59) [GCC 14.2.0]",
+  "pyarrow": "26.0.1",
+  "pdftotext_version": "pdftotext version 25.03.0"
+}

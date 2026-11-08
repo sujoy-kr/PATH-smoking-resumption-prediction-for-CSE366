@@ -1,0 +1,705 @@
+[
+  {
+    "pair": "1-2",
+    "population": "eligible_baseline",
+    "counts_are_input_components_not_people": true,
+    "missing_component_reason_counts": {
+      "age_band": {
+        "refused": 3
+      },
+      "sex_recorded": {
+        "refused": 5
+      },
+      "education_level": {
+        "dont_know": 2,
+        "refused": 14
+      },
+      "household_income_band": {
+        "dont_know": 69,
+        "refused": 342
+      },
+      "employment_status": {
+        "dont_know": 5,
+        "refused": 18
+      },
+      "last_cigarette_recency_days": {
+        "dont_know": 2,
+        "improbable_response_removed": 7,
+        "refused": 3,
+        "structural_skip": 5
+      },
+      "prior_regular_cigarettes_per_day": {
+        "dont_know": 2,
+        "improbable_response_removed": 9,
+        "refused": 1,
+        "structural_skip": 993
+      },
+      "regular_smoking_months": {
+        "dont_know": 12,
+        "improbable_component": 7,
+        "refused": 1,
+        "structural_skip": 495
+      },
+      "electronic_nicotine_p30d": {
+        "dont_know": 3,
+        "refused": 1
+      },
+      "traditional_cigar_p30d": {
+        "dont_know": 26,
+        "refused": 7
+      },
+      "cigarillo_p30d": {
+        "dont_know": 81,
+        "refused": 28
+      },
+      "filtered_cigar_p30d": {
+        "dont_know": 81,
+        "refused": 28
+      },
+      "hookah_p30d": {
+        "dont_know": 3,
+        "refused": 1
+      },
+      "smokeless_tobacco_p30d": {
+        "dont_know": 8,
+        "refused": 3,
+        "structural_skip": 30
+      },
+      "snus_p30d": {
+        "dont_know": 15,
+        "refused": 3
+      },
+      "household_tobacco_any": {
+        "dont_know": 10,
+        "refused": 35,
+        "structural_skip": 3050
+      },
+      "home_combustible_smoking_rules": {
+        "dont_know": 5,
+        "refused": 6
+      },
+      "physical_health": {
+        "dont_know": 1,
+        "refused": 3
+      },
+      "mental_health": {
+        "dont_know": 3,
+        "refused": 4
+      },
+      "social_satisfaction": {
+        "dont_know": 2,
+        "refused": 5
+      },
+      "emotional_problems_7d": {
+        "dont_know": 1,
+        "refused": 11
+      },
+      "depressive_problem_recency": {
+        "dont_know": 4,
+        "refused": 29
+      },
+      "anxiety_problem_recency": {
+        "dont_know": 6,
+        "refused": 23
+      },
+      "alcohol_days_30d": {
+        "refused": 4,
+        "structural_skip": 1720
+      },
+      "alcohol_drinks_per_drinking_day": {
+        "dont_know": 2,
+        "refused": 5,
+        "structural_skip": 1732
+      }
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "eligible_baseline",
+    "counts_are_input_components_not_people": true,
+    "missing_component_reason_counts": {
+      "age_band": {
+        "refused": 1
+      },
+      "sex_recorded": {
+        "refused": 6
+      },
+      "education_level": {
+        "dont_know": 4,
+        "refused": 19
+      },
+      "household_income_band": {
+        "dont_know": 74,
+        "refused": 227
+      },
+      "employment_status": {
+        "dont_know": 5,
+        "refused": 17
+      },
+      "last_cigarette_recency_days": {
+        "improbable_response_removed": 44,
+        "not_ascertained": 35,
+        "refused": 24,
+        "structural_skip": 6837
+      },
+      "prior_regular_cigarettes_per_day": {
+        "structural_skip": 8580
+      },
+      "regular_smoking_months": {
+        "refused": 3,
+        "structural_skip": 8583
+      },
+      "electronic_nicotine_p30d": {
+        "dont_know": 8,
+        "improbable_component": 4,
+        "not_ascertained": 59,
+        "prior_wave_missing": 8,
+        "refused": 1,
+        "structural_skip": 1
+      },
+      "traditional_cigar_p30d": {},
+      "cigarillo_p30d": {
+        "dont_know": 2
+      },
+      "filtered_cigar_p30d": {
+        "dont_know": 1
+      },
+      "hookah_p30d": {},
+      "smokeless_tobacco_p30d": {
+        "dont_know": 1
+      },
+      "snus_p30d": {},
+      "household_tobacco_any": {
+        "dont_know": 30,
+        "refused": 30,
+        "structural_skip": 3555
+      },
+      "home_combustible_smoking_rules": {
+        "dont_know": 9,
+        "refused": 7
+      },
+      "physical_health": {
+        "refused": 4
+      },
+      "mental_health": {
+        "dont_know": 3,
+        "refused": 8
+      },
+      "social_satisfaction": {
+        "dont_know": 2,
+        "refused": 9
+      },
+      "emotional_problems_7d": {
+        "dont_know": 4,
+        "refused": 9
+      },
+      "depressive_problem_recency": {
+        "dont_know": 8,
+        "refused": 28
+      },
+      "anxiety_problem_recency": {
+        "dont_know": 6,
+        "refused": 21
+      },
+      "alcohol_days_30d": {
+        "dont_know": 5,
+        "refused": 4,
+        "structural_skip": 1783
+      },
+      "alcohol_drinks_per_drinking_day": {
+        "dont_know": 10,
+        "refused": 4,
+        "structural_skip": 1799
+      }
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "eligible_baseline",
+    "counts_are_input_components_not_people": true,
+    "missing_component_reason_counts": {
+      "age_band": {
+        "dont_know": 1
+      },
+      "sex_recorded": {
+        "dont_know": 1,
+        "refused": 4
+      },
+      "education_level": {
+        "dont_know": 3,
+        "refused": 9
+      },
+      "household_income_band": {
+        "dont_know": 84,
+        "refused": 243
+      },
+      "employment_status": {
+        "dont_know": 8,
+        "refused": 14
+      },
+      "last_cigarette_recency_days": {
+        "dont_know": 7,
+        "improbable_response_removed": 14,
+        "refused": 2,
+        "structural_skip": 7233
+      },
+      "prior_regular_cigarettes_per_day": {
+        "structural_skip": 9134
+      },
+      "regular_smoking_months": {
+        "dont_know": 2,
+        "structural_skip": 4488
+      },
+      "electronic_nicotine_p30d": {
+        "dont_know": 1
+      },
+      "traditional_cigar_p30d": {
+        "dont_know": 1
+      },
+      "cigarillo_p30d": {},
+      "filtered_cigar_p30d": {},
+      "hookah_p30d": {
+        "refused": 1
+      },
+      "smokeless_tobacco_p30d": {
+        "refused": 1
+      },
+      "snus_p30d": {},
+      "household_tobacco_any": {
+        "dont_know": 72,
+        "refused": 48,
+        "structural_skip": 5864
+      },
+      "home_combustible_smoking_rules": {
+        "dont_know": 9,
+        "refused": 5
+      },
+      "physical_health": {
+        "dont_know": 3,
+        "refused": 3
+      },
+      "mental_health": {
+        "dont_know": 5,
+        "refused": 3
+      },
+      "social_satisfaction": {
+        "dont_know": 2,
+        "refused": 7
+      },
+      "emotional_problems_7d": {
+        "dont_know": 4,
+        "refused": 11
+      },
+      "depressive_problem_recency": {
+        "dont_know": 13,
+        "refused": 15
+      },
+      "anxiety_problem_recency": {
+        "dont_know": 15,
+        "refused": 13
+      },
+      "alcohol_days_30d": {
+        "dont_know": 4,
+        "refused": 1,
+        "structural_skip": 1785
+      },
+      "alcohol_drinks_per_drinking_day": {
+        "dont_know": 2,
+        "refused": 2,
+        "structural_skip": 1806
+      }
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "eligible_baseline",
+    "counts_are_input_components_not_people": true,
+    "missing_component_reason_counts": {
+      "age_band": {
+        "refused": 1
+      },
+      "sex_recorded": {
+        "dont_know": 1,
+        "refused": 5
+      },
+      "education_level": {
+        "dont_know": 3,
+        "refused": 11
+      },
+      "household_income_band": {
+        "dont_know": 83,
+        "refused": 213
+      },
+      "employment_status": {
+        "dont_know": 7,
+        "refused": 13
+      },
+      "last_cigarette_recency_days": {
+        "dont_know": 7,
+        "improbable_response_removed": 29,
+        "refused": 4,
+        "structural_skip": 7375
+      },
+      "prior_regular_cigarettes_per_day": {
+        "structural_skip": 9426
+      },
+      "regular_smoking_months": {
+        "structural_skip": 4653
+      },
+      "electronic_nicotine_p30d": {
+        "refused": 1
+      },
+      "traditional_cigar_p30d": {
+        "dont_know": 3
+      },
+      "cigarillo_p30d": {
+        "dont_know": 1,
+        "refused": 2
+      },
+      "filtered_cigar_p30d": {
+        "dont_know": 1,
+        "refused": 1
+      },
+      "hookah_p30d": {
+        "refused": 1
+      },
+      "smokeless_tobacco_p30d": {
+        "dont_know": 1
+      },
+      "snus_p30d": {
+        "dont_know": 3,
+        "refused": 1
+      },
+      "household_tobacco_any": {
+        "dont_know": 6,
+        "refused": 10,
+        "structural_skip": 891
+      },
+      "home_combustible_smoking_rules": {
+        "dont_know": 6,
+        "refused": 4
+      },
+      "physical_health": {
+        "dont_know": 1,
+        "not_ascertained": 1,
+        "refused": 1
+      },
+      "mental_health": {
+        "not_ascertained": 1,
+        "refused": 4
+      },
+      "social_satisfaction": {
+        "dont_know": 5,
+        "refused": 6
+      },
+      "emotional_problems_7d": {
+        "dont_know": 5,
+        "refused": 8
+      },
+      "depressive_problem_recency": {
+        "dont_know": 8,
+        "refused": 10
+      },
+      "anxiety_problem_recency": {
+        "dont_know": 6,
+        "refused": 11
+      },
+      "alcohol_days_30d": {
+        "dont_know": 4,
+        "refused": 1,
+        "structural_skip": 2125
+      },
+      "alcohol_drinks_per_drinking_day": {
+        "dont_know": 2,
+        "refused": 2,
+        "structural_skip": 2162
+      }
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "eligible_baseline",
+    "counts_are_input_components_not_people": true,
+    "missing_component_reason_counts": {
+      "age_band": {},
+      "sex_recorded": {
+        "dont_know": 1,
+        "refused": 4
+      },
+      "education_level": {
+        "dont_know": 3,
+        "refused": 9
+      },
+      "household_income_band": {
+        "dont_know": 80,
+        "refused": 202
+      },
+      "employment_status": {
+        "dont_know": 12,
+        "refused": 13
+      },
+      "last_cigarette_recency_days": {
+        "dont_know": 7,
+        "improbable_response_removed": 39,
+        "refused": 8,
+        "structural_skip": 8433
+      },
+      "prior_regular_cigarettes_per_day": {
+        "dont_know": 2,
+        "structural_skip": 11394
+      },
+      "regular_smoking_months": {
+        "dont_know": 2,
+        "structural_skip": 5643
+      },
+      "electronic_nicotine_p30d": {
+        "refused": 2
+      },
+      "traditional_cigar_p30d": {
+        "dont_know": 1
+      },
+      "cigarillo_p30d": {},
+      "filtered_cigar_p30d": {},
+      "hookah_p30d": {},
+      "smokeless_tobacco_p30d": {
+        "dont_know": 1,
+        "refused": 1
+      },
+      "snus_p30d": {
+        "dont_know": 1,
+        "refused": 1
+      },
+      "household_tobacco_any": {
+        "dont_know": 9,
+        "refused": 16,
+        "structural_skip": 994
+      },
+      "home_combustible_smoking_rules": {
+        "dont_know": 8,
+        "refused": 10
+      },
+      "physical_health": {
+        "dont_know": 4,
+        "refused": 8
+      },
+      "mental_health": {
+        "dont_know": 8,
+        "refused": 7
+      },
+      "social_satisfaction": {
+        "dont_know": 5,
+        "refused": 6
+      },
+      "emotional_problems_7d": {
+        "dont_know": 2,
+        "refused": 7
+      },
+      "depressive_problem_recency": {
+        "dont_know": 5,
+        "refused": 20
+      },
+      "anxiety_problem_recency": {
+        "dont_know": 4,
+        "not_ascertained": 1,
+        "refused": 16
+      },
+      "alcohol_days_30d": {
+        "dont_know": 3,
+        "refused": 3,
+        "structural_skip": 2426
+      },
+      "alcohol_drinks_per_drinking_day": {
+        "dont_know": 2,
+        "refused": 8,
+        "structural_skip": 2457
+      }
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "eligible_baseline",
+    "counts_are_input_components_not_people": true,
+    "missing_component_reason_counts": {
+      "age_band": {},
+      "sex_recorded": {
+        "system_missing": 3
+      },
+      "education_level": {
+        "system_missing": 11
+      },
+      "household_income_band": {
+        "system_missing": 232
+      },
+      "employment_status": {
+        "dont_know": 5,
+        "refused": 1
+      },
+      "last_cigarette_recency_days": {
+        "dont_know": 9,
+        "refused": 2,
+        "structural_skip": 9021
+      },
+      "prior_regular_cigarettes_per_day": {
+        "structural_skip": 11614
+      },
+      "regular_smoking_months": {
+        "system_missing": 5720
+      },
+      "electronic_nicotine_p30d": {},
+      "traditional_cigar_p30d": {
+        "system_missing": 3
+      },
+      "cigarillo_p30d": {
+        "system_missing": 6
+      },
+      "filtered_cigar_p30d": {
+        "system_missing": 6
+      },
+      "hookah_p30d": {
+        "system_missing": 2
+      },
+      "smokeless_tobacco_p30d": {
+        "system_missing": 3
+      },
+      "snus_p30d": {
+        "system_missing": 2
+      },
+      "household_tobacco_any": {
+        "system_missing": 1090
+      },
+      "home_combustible_smoking_rules": {
+        "dont_know": 6,
+        "refused": 5
+      },
+      "physical_health": {
+        "dont_know": 1,
+        "not_ascertained": 1,
+        "refused": 5
+      },
+      "mental_health": {
+        "dont_know": 2,
+        "not_ascertained": 1,
+        "refused": 2
+      },
+      "social_satisfaction": {
+        "dont_know": 2,
+        "refused": 3
+      },
+      "emotional_problems_7d": {
+        "dont_know": 4,
+        "refused": 6
+      },
+      "depressive_problem_recency": {
+        "dont_know": 5,
+        "not_ascertained": 4,
+        "refused": 7
+      },
+      "anxiety_problem_recency": {
+        "dont_know": 7,
+        "not_ascertained": 4,
+        "refused": 5
+      },
+      "alcohol_days_30d": {
+        "dont_know": 3,
+        "refused": 1,
+        "structural_skip": 2430
+      },
+      "alcohol_drinks_per_drinking_day": {
+        "dont_know": 5,
+        "refused": 1,
+        "structural_skip": 2448
+      }
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "eligible_baseline",
+    "counts_are_input_components_not_people": true,
+    "missing_component_reason_counts": {
+      "age_band": {},
+      "sex_recorded": {
+        "system_missing": 5
+      },
+      "education_level": {
+        "system_missing": 26
+      },
+      "household_income_band": {
+        "system_missing": 263
+      },
+      "employment_status": {
+        "dont_know": 7,
+        "refused": 13
+      },
+      "last_cigarette_recency_days": {
+        "dont_know": 7,
+        "refused": 8,
+        "structural_skip": 8739
+      },
+      "prior_regular_cigarettes_per_day": {
+        "structural_skip": 11098
+      },
+      "regular_smoking_months": {
+        "system_missing": 5490
+      },
+      "electronic_nicotine_p30d": {
+        "system_missing": 2
+      },
+      "traditional_cigar_p30d": {},
+      "cigarillo_p30d": {
+        "system_missing": 2
+      },
+      "filtered_cigar_p30d": {
+        "system_missing": 2
+      },
+      "hookah_p30d": {
+        "system_missing": 1
+      },
+      "smokeless_tobacco_p30d": {
+        "system_missing": 1
+      },
+      "snus_p30d": {},
+      "household_tobacco_any": {
+        "system_missing": 1069
+      },
+      "home_combustible_smoking_rules": {
+        "dont_know": 9,
+        "refused": 7
+      },
+      "physical_health": {
+        "dont_know": 2,
+        "refused": 5
+      },
+      "mental_health": {
+        "dont_know": 3,
+        "refused": 14
+      },
+      "social_satisfaction": {
+        "dont_know": 4,
+        "refused": 8
+      },
+      "emotional_problems_7d": {
+        "dont_know": 1,
+        "refused": 12
+      },
+      "depressive_problem_recency": {
+        "dont_know": 6,
+        "refused": 12
+      },
+      "anxiety_problem_recency": {
+        "dont_know": 6,
+        "refused": 13
+      },
+      "alcohol_days_30d": {
+        "dont_know": 3,
+        "refused": 3,
+        "structural_skip": 2569
+      },
+      "alcohol_drinks_per_drinking_day": {
+        "dont_know": 6,
+        "improbable_response_removed": 8,
+        "refused": 2,
+        "structural_skip": 2592
+      }
+    }
+  }
+]

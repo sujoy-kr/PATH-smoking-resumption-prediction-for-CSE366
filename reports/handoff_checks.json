@@ -1,0 +1,158 @@
+{
+  "status": "passed",
+  "stages": {
+    "1": {
+      "required_files": [
+        "docs/data_inventory.md",
+        "reports/input_inventory.json",
+        "docs/original_inputs.sha256.json"
+      ],
+      "files_present_nonempty": true,
+      "status": "complete evidence present"
+    },
+    "2": {
+      "required_files": [
+        "docs/prediction_specification.md",
+        "docs/timing_feasibility.md",
+        "reports/prediction_source_evidence.json"
+      ],
+      "files_present_nonempty": true,
+      "status": "complete evidence present"
+    },
+    "3": {
+      "required_files": [
+        "configs/feature_mapping.json",
+        "docs/feature_dictionary.csv",
+        "reports/feature_evidence_checks.json"
+      ],
+      "files_present_nonempty": true,
+      "status": "complete evidence present"
+    },
+    "4": {
+      "required_files": [
+        "src/path_project/cohort.py",
+        "data/processed/cohort_v1/cohort.parquet",
+        "data/processed/cohort_v1/schema.json",
+        "reports/cohort_v1/cohort_flow.json"
+      ],
+      "files_present_nonempty": true,
+      "status": "complete evidence present"
+    },
+    "5": {
+      "required_files": [
+        "configs/evaluation.json",
+        "artifacts/evaluation_v1/participants.parquet",
+        "artifacts/evaluation_v1/records.parquet",
+        "artifacts/evaluation_v1/manifest.json"
+      ],
+      "files_present_nonempty": true,
+      "status": "complete evidence present"
+    },
+    "6": {
+      "required_files": [
+        "reports/development_data_summary.md",
+        "configs/feature_mapping_final.json",
+        "configs/app_questions.json"
+      ],
+      "files_present_nonempty": true,
+      "status": "complete evidence present"
+    },
+    "7": {
+      "required_files": [
+        "reports/baseline_results.md",
+        "artifacts/baselines_v1/selected_calibrated.joblib",
+        "artifacts/baselines_v1/manifest.json"
+      ],
+      "files_present_nonempty": true,
+      "status": "complete evidence present"
+    },
+    "8": {
+      "required_files": [
+        "docs/model_selection.md",
+        "artifacts/trees_v1/selected_calibrated.joblib",
+        "artifacts/trees_v1/manifest.json"
+      ],
+      "files_present_nonempty": true,
+      "status": "complete evidence present"
+    },
+    "9": {
+      "required_files": [
+        "docs/timing_decision.md",
+        "configs/timing_decision.json",
+        "reports/timing_confirmation_v1.json"
+      ],
+      "files_present_nonempty": true,
+      "status": "supported omission"
+    },
+    "10": {
+      "required_files": [
+        "src/path_project/outputs.py",
+        "configs/risk_categories_v1.json",
+        "configs/output_contract.json",
+        "artifacts/outputs_v1/manifest.json"
+      ],
+      "files_present_nonempty": true,
+      "status": "complete evidence present"
+    },
+    "11": {
+      "required_files": [
+        "reports/final_evaluation.md",
+        "reports/final_evaluation_v1/results.json",
+        "artifacts/final_evaluation_v1/pretest_freeze.json",
+        "artifacts/final_evaluation_v1/complete_manifest.json"
+      ],
+      "files_present_nonempty": true,
+      "status": "complete evidence present"
+    },
+    "12": {
+      "required_files": [
+        "app/streamlit_app.py",
+        "tests/test_demo.py",
+        "reports/demo_verification_v1.json"
+      ],
+      "files_present_nonempty": true,
+      "status": "complete evidence present"
+    },
+    "13": {
+      "required_files": [
+        "reports/verification.md",
+        "reports/verification_evidence.json",
+        "tests/test_project_smoke.py"
+      ],
+      "files_present_nonempty": true,
+      "status": "complete evidence present"
+    },
+    "14": {
+      "required_files": [
+        "README.md",
+        "docs/final_project_report.md",
+        "docs/proposal_revision_notes.md",
+        "docs/presentation_outline.md",
+        "docs/viva_questions.md",
+        "reports/documentation_checks.json",
+        "reports/literature_verification.json"
+      ],
+      "files_present_nonempty": true,
+      "status": "complete evidence present"
+    }
+  },
+  "handoff_links_checked": 26,
+  "handoff_commands_checked": 40,
+  "frozen_model_sha256": "9b46cdb1783302c05c3b56b83d5695a1ad58b90da0614f04188ee687170eae36",
+  "frozen_test_records": 1243,
+  "frozen_positive_records": 128,
+  "timing_decision": "C",
+  "timing_outputs_enabled": false,
+  "browser_evidence_source": "User-supplied screenshot and explicit confirmation; not an agent launch. Synthetic UI/path tests recorded separately.",
+  "originals_unchanged": 58,
+  "originals_total": 59,
+  "documented_original_exceptions": [
+    "run_prompts.py"
+  ],
+  "no_final_test_scoring_metrics_bootstrap_or_fit": true,
+  "errors": [],
+  "source_sha256": {
+    "PROJECT_HANDOFF.md": "ff289a217ca0927a18db464e7b6e123818d067ccb433ee3983a0a14c859b6fca",
+    "scripts/verify_handoff.py": "f09c8571fd6c7805eaaac9ba246a941c1358bd9d2d550d414ab49df41aefb55c"
+  }
+}

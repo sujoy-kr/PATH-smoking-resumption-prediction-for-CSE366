@@ -1,0 +1,56 @@
+[
+  {
+    "starting_wave": 1,
+    "pair": "1-2",
+    "records": 1950,
+    "people": 1950,
+    "positive": 227,
+    "prevalence": 0.11641025641025642,
+    "participant_weighted_prevalence": 0.11641025641025642
+  },
+  {
+    "starting_wave": 2,
+    "pair": "2-3",
+    "records": 2159,
+    "people": 2159,
+    "positive": 244,
+    "prevalence": 0.11301528485409912,
+    "participant_weighted_prevalence": 0.11301528485409912
+  },
+  {
+    "starting_wave": 3,
+    "pair": "3-4",
+    "records": 2206,
+    "people": 2206,
+    "positive": 251,
+    "prevalence": 0.11378059836808703,
+    "participant_weighted_prevalence": 0.11378059836808703
+  },
+  {
+    "starting_wave": 4,
+    "pair": "4-5",
+    "records": 2509,
+    "people": 2509,
+    "positive": 309,
+    "prevalence": 0.12315663611000399,
+    "participant_weighted_prevalence": 0.12315663611000399
+  },
+  {
+    "starting_wave": 5,
+    "pair": "5-6",
+    "records": 2346,
+    "people": 2346,
+    "positive": 194,
+    "prevalence": 0.08269394714407502,
+    "participant_weighted_prevalence": 0.08269394714407502
+  },
+  {
+    "starting_wave": 6,
+    "pair": "6-7",
+    "records": 2587,
+    "people": 2587,
+    "positive": 262,
+    "prevalence": 0.10127560881329725,
+    "participant_weighted_prevalence": 0.10127560881329725
+  }
+]

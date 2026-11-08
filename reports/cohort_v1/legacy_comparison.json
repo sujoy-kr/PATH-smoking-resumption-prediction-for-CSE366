@@ -1,0 +1,345 @@
+[
+  {
+    "pair": "1-2",
+    "metric": "former_established",
+    "actual": 4918,
+    "legacy": 4918,
+    "difference": 0
+  },
+  {
+    "pair": "1-2",
+    "metric": "eligible_baseline",
+    "actual": 4401,
+    "legacy": 4401,
+    "difference": 0
+  },
+  {
+    "pair": "1-2",
+    "metric": "labeled_records",
+    "actual": 3684,
+    "legacy": 3684,
+    "difference": 0
+  },
+  {
+    "pair": "1-2",
+    "metric": "positive_outcomes",
+    "actual": 416,
+    "legacy": 416,
+    "difference": 0
+  },
+  {
+    "pair": "1-2",
+    "metric": "secondary_positive_outcomes",
+    "actual": 299,
+    "legacy": 299,
+    "difference": 0
+  },
+  {
+    "pair": "1-2",
+    "metric": "recent_recency_observed_records",
+    "actual": 594,
+    "legacy": 594,
+    "difference": 0
+  },
+  {
+    "pair": "1-2",
+    "metric": "recent_recency_positive_outcomes",
+    "actual": 220,
+    "legacy": 220,
+    "difference": 0
+  },
+  {
+    "pair": "2-3",
+    "metric": "former_established",
+    "actual": 5136,
+    "legacy": 5136,
+    "difference": 0
+  },
+  {
+    "pair": "2-3",
+    "metric": "eligible_baseline",
+    "actual": 4580,
+    "legacy": 4580,
+    "difference": 0
+  },
+  {
+    "pair": "2-3",
+    "metric": "labeled_records",
+    "actual": 4090,
+    "legacy": 4090,
+    "difference": 0
+  },
+  {
+    "pair": "2-3",
+    "metric": "positive_outcomes",
+    "actual": 447,
+    "legacy": 447,
+    "difference": 0
+  },
+  {
+    "pair": "2-3",
+    "metric": "secondary_positive_outcomes",
+    "actual": 322,
+    "legacy": 322,
+    "difference": 0
+  },
+  {
+    "pair": "2-3",
+    "metric": "recent_recency_observed_records",
+    "actual": 812,
+    "legacy": 0,
+    "difference": 812
+  },
+  {
+    "pair": "2-3",
+    "metric": "recent_recency_positive_outcomes",
+    "actual": 278,
+    "legacy": 0,
+    "difference": 278
+  },
+  {
+    "pair": "3-4",
+    "metric": "former_established",
+    "actual": 5226,
+    "legacy": 5226,
+    "difference": 0
+  },
+  {
+    "pair": "3-4",
+    "metric": "eligible_baseline",
+    "actual": 4685,
+    "legacy": 4685,
+    "difference": 0
+  },
+  {
+    "pair": "3-4",
+    "metric": "labeled_records",
+    "actual": 4164,
+    "legacy": 4164,
+    "difference": 0
+  },
+  {
+    "pair": "3-4",
+    "metric": "positive_outcomes",
+    "actual": 505,
+    "legacy": 505,
+    "difference": 0
+  },
+  {
+    "pair": "3-4",
+    "metric": "secondary_positive_outcomes",
+    "actual": 366,
+    "legacy": 366,
+    "difference": 0
+  },
+  {
+    "pair": "3-4",
+    "metric": "recent_recency_observed_records",
+    "actual": 782,
+    "legacy": 782,
+    "difference": 0
+  },
+  {
+    "pair": "3-4",
+    "metric": "recent_recency_positive_outcomes",
+    "actual": 288,
+    "legacy": 288,
+    "difference": 0
+  },
+  {
+    "pair": "4-5",
+    "metric": "former_established",
+    "actual": 6081,
+    "legacy": 6081,
+    "difference": 0
+  },
+  {
+    "pair": "4-5",
+    "metric": "eligible_baseline",
+    "actual": 5470,
+    "legacy": 5470,
+    "difference": 0
+  },
+  {
+    "pair": "4-5",
+    "metric": "labeled_records",
+    "actual": 4722,
+    "legacy": 4722,
+    "difference": 0
+  },
+  {
+    "pair": "4-5",
+    "metric": "positive_outcomes",
+    "actual": 563,
+    "legacy": 563,
+    "difference": 0
+  },
+  {
+    "pair": "4-5",
+    "metric": "secondary_positive_outcomes",
+    "actual": 427,
+    "legacy": 427,
+    "difference": 0
+  },
+  {
+    "pair": "4-5",
+    "metric": "recent_recency_observed_records",
+    "actual": 869,
+    "legacy": 869,
+    "difference": 0
+  },
+  {
+    "pair": "4-5",
+    "metric": "recent_recency_positive_outcomes",
+    "actual": 298,
+    "legacy": 298,
+    "difference": 0
+  },
+  {
+    "pair": "5-6",
+    "metric": "former_established",
+    "actual": 6449,
+    "legacy": 6449,
+    "difference": 0
+  },
+  {
+    "pair": "5-6",
+    "metric": "eligible_baseline",
+    "actual": 5847,
+    "legacy": 5847,
+    "difference": 0
+  },
+  {
+    "pair": "5-6",
+    "metric": "labeled_records",
+    "actual": 4463,
+    "legacy": 4463,
+    "difference": 0
+  },
+  {
+    "pair": "5-6",
+    "metric": "positive_outcomes",
+    "actual": 393,
+    "legacy": 393,
+    "difference": 0
+  },
+  {
+    "pair": "5-6",
+    "metric": "secondary_positive_outcomes",
+    "actual": 292,
+    "legacy": 292,
+    "difference": 0
+  },
+  {
+    "pair": "5-6",
+    "metric": "recent_recency_observed_records",
+    "actual": 773,
+    "legacy": 773,
+    "difference": 0
+  },
+  {
+    "pair": "5-6",
+    "metric": "recent_recency_positive_outcomes",
+    "actual": 191,
+    "legacy": 191,
+    "difference": 0
+  },
+  {
+    "pair": "6-7",
+    "metric": "former_established",
+    "actual": 6212,
+    "legacy": 6212,
+    "difference": 0
+  },
+  {
+    "pair": "6-7",
+    "metric": "eligible_baseline",
+    "actual": 5854,
+    "legacy": 5854,
+    "difference": 0
+  },
+  {
+    "pair": "6-7",
+    "metric": "labeled_records",
+    "actual": 4861,
+    "legacy": 4861,
+    "difference": 0
+  },
+  {
+    "pair": "6-7",
+    "metric": "positive_outcomes",
+    "actual": 478,
+    "legacy": 478,
+    "difference": 0
+  },
+  {
+    "pair": "6-7",
+    "metric": "secondary_positive_outcomes",
+    "actual": 309,
+    "legacy": 309,
+    "difference": 0
+  },
+  {
+    "pair": "6-7",
+    "metric": "recent_recency_observed_records",
+    "actual": 753,
+    "legacy": 644,
+    "difference": 109
+  },
+  {
+    "pair": "6-7",
+    "metric": "recent_recency_positive_outcomes",
+    "actual": 231,
+    "legacy": 201,
+    "difference": 30
+  },
+  {
+    "pair": "7-8",
+    "metric": "former_established",
+    "actual": 6235,
+    "legacy": 6235,
+    "difference": 0
+  },
+  {
+    "pair": "7-8",
+    "metric": "eligible_baseline",
+    "actual": 5802,
+    "legacy": 5802,
+    "difference": 0
+  },
+  {
+    "pair": "7-8",
+    "metric": "labeled_records",
+    "actual": 4906,
+    "legacy": 4906,
+    "difference": 0
+  },
+  {
+    "pair": "7-8",
+    "metric": "positive_outcomes",
+    "actual": 456,
+    "legacy": 456,
+    "difference": 0
+  },
+  {
+    "pair": "7-8",
+    "metric": "secondary_positive_outcomes",
+    "actual": 323,
+    "legacy": 323,
+    "difference": 0
+  },
+  {
+    "pair": "7-8",
+    "metric": "recent_recency_observed_records",
+    "actual": 698,
+    "legacy": 585,
+    "difference": 113
+  },
+  {
+    "pair": "7-8",
+    "metric": "recent_recency_positive_outcomes",
+    "actual": 182,
+    "legacy": 150,
+    "difference": 32
+  }
+]

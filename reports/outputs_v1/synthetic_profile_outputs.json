@@ -1,0 +1,641 @@
+[
+  {
+    "synthetic": true,
+    "name": "fictional_recent_quitter",
+    "output": {
+      "contract_version": "1.0",
+      "status": "scored",
+      "probability": 0.495265096869086,
+      "endpoint": "Past-30-day cigarette smoking reported at the next scheduled PATH survey",
+      "prediction_interval": "Next scheduled interview; individual elapsed time is unavailable and survey intervals vary.",
+      "category": {
+        "code": "higher",
+        "label": "Higher estimated risk",
+        "definition": "Project-defined relative groups in development data; not established medical cutoffs or independently validated risk categories."
+      },
+      "category_thresholds": {
+        "lower_upper_inclusive": 0.0750747765280418,
+        "moderate_upper_inclusive": 0.2590049599706509,
+        "higher_rule": "probability > moderate_upper_inclusive",
+        "scale": "calibrated_probability",
+        "uses_unrounded_score": true
+      },
+      "contributing_factors": [
+        {
+          "feature": "last_cigarette_recency_days",
+          "question": "About how long has it been since you last smoked a cigarette?",
+          "answer": "60.875 approximate days",
+          "answer_reason": "observed",
+          "contribution": 0.25943403180510977,
+          "contribution_units": "calibrated probability units; multiply by 100 only for percentage-point attribution",
+          "interpretation": "Pushes the model estimate up relative to the background mixture"
+        },
+        {
+          "feature": "age_band",
+          "question": "What is your age group at the starting interview?",
+          "answer": "18–24",
+          "answer_reason": "observed",
+          "contribution": 0.0748482519130638,
+          "contribution_units": "calibrated probability units; multiply by 100 only for percentage-point attribution",
+          "interpretation": "Pushes the model estimate up relative to the background mixture"
+        },
+        {
+          "feature": "employment_status",
+          "question": "What is your current paid employment status and usual weekly hours category?",
+          "answer": "Part-time, 15–34 hours/week",
+          "answer_reason": "observed",
+          "contribution": -0.0437524882340205,
+          "contribution_units": "calibrated probability units; multiply by 100 only for percentage-point attribution",
+          "interpretation": "Pushes the model estimate down relative to the background mixture"
+        },
+        {
+          "feature": "education_level",
+          "question": "What is the highest level of education you have completed?",
+          "answer": "High school graduate",
+          "answer_reason": "observed",
+          "contribution": 0.012797848855003766,
+          "contribution_units": "calibrated probability units; multiply by 100 only for percentage-point attribution",
+          "interpretation": "Pushes the model estimate up relative to the background mixture"
+        }
+      ],
+      "input_completeness": {
+        "provided": 4,
+        "expected": 4,
+        "missing": [],
+        "reasons": {
+          "age_band": "observed",
+          "education_level": "observed",
+          "employment_status": "observed",
+          "last_cigarette_recency_days": "observed"
+        },
+        "meaning": "Input counts, not a personal confidence estimate"
+      },
+      "model_version": {
+        "selected_model": "xgb_minimal_s1_none",
+        "artifact_sha256": "9b46cdb1783302c05c3b56b83d5695a1ad58b90da0614f04188ee687170eae36",
+        "stage8_signature": "60ce6ce4a02442c59204bd17754339ffdeeb74772b208763ba64dfa2690c655b",
+        "output_version": "outputs_v1"
+      },
+      "limitations": [
+        "Project-defined relative groups in development data; not established medical cutoffs or independently validated risk categories.",
+        "Development only; final-test and new-user validity not established",
+        "Elapsed-time risks and estimated relapse dates are unavailable. This research classifier predicts smoking reported at the next survey, not when smoking will resume.",
+        "Model associations and SHAP contributions are not causes or effects of changing an answer. No personal confidence percentage or clinical action guarantee.",
+        "Survey-conditioned observed-follow-up research cohort; no national representativeness. Correlated-feature mixtures in marginal SHAP may be unrealistic."
+      ],
+      "explanation": {
+        "method": "Exact SHAP on the actual calibrated wrapper probability",
+        "scale": "calibrated_probability",
+        "reference_model_probability": 0.19193745252992983,
+        "reference_meaning": "Mean model output for 64 reference intervals/profiles; 64 distinct tuning people when known; not an observed outcome rate",
+        "background_people": 64,
+        "additivity_residual": 6.661338147750939e-16,
+        "identity": "Same artifact and calibrated probability as displayed; no raw-margin/log-odds explanation substituted",
+        "caution": "Contributions are relative model attributions, not the probability change that an intervention would cause."
+      }
+    }
+  },
+  {
+    "synthetic": true,
+    "name": "fictional_one_year_history",
+    "output": {
+      "contract_version": "1.0",
+      "status": "scored",
+      "probability": 0.21772986031904293,
+      "endpoint": "Past-30-day cigarette smoking reported at the next scheduled PATH survey",
+      "prediction_interval": "Next scheduled interview; individual elapsed time is unavailable and survey intervals vary.",
+      "category": {
+        "code": "moderate",
+        "label": "Moderate estimated risk",
+        "definition": "Project-defined relative groups in development data; not established medical cutoffs or independently validated risk categories."
+      },
+      "category_thresholds": {
+        "lower_upper_inclusive": 0.0750747765280418,
+        "moderate_upper_inclusive": 0.2590049599706509,
+        "higher_rule": "probability > moderate_upper_inclusive",
+        "scale": "calibrated_probability",
+        "uses_unrounded_score": true
+      },
+      "contributing_factors": [
+        {
+          "feature": "last_cigarette_recency_days",
+          "question": "About how long has it been since you last smoked a cigarette?",
+          "answer": "365.25 approximate days",
+          "answer_reason": "observed",
+          "contribution": 0.07544147834337983,
+          "contribution_units": "calibrated probability units; multiply by 100 only for percentage-point attribution",
+          "interpretation": "Pushes the model estimate up relative to the background mixture"
+        },
+        {
+          "feature": "age_band",
+          "question": "What is your age group at the starting interview?",
+          "answer": "45–54",
+          "answer_reason": "observed",
+          "contribution": -0.02448251006232631,
+          "contribution_units": "calibrated probability units; multiply by 100 only for percentage-point attribution",
+          "interpretation": "Pushes the model estimate down relative to the background mixture"
+        },
+        {
+          "feature": "education_level",
+          "question": "What is the highest level of education you have completed?",
+          "answer": "Bachelor or advanced degree",
+          "answer_reason": "observed",
+          "contribution": -0.019519188340495174,
+          "contribution_units": "calibrated probability units; multiply by 100 only for percentage-point attribution",
+          "interpretation": "Pushes the model estimate down relative to the background mixture"
+        },
+        {
+          "feature": "employment_status",
+          "question": "What is your current paid employment status and usual weekly hours category?",
+          "answer": "Full-time, at least 35 hours/week",
+          "answer_reason": "observed",
+          "contribution": -0.005647372151445248,
+          "contribution_units": "calibrated probability units; multiply by 100 only for percentage-point attribution",
+          "interpretation": "Pushes the model estimate down relative to the background mixture"
+        }
+      ],
+      "input_completeness": {
+        "provided": 4,
+        "expected": 4,
+        "missing": [],
+        "reasons": {
+          "age_band": "observed",
+          "education_level": "observed",
+          "employment_status": "observed",
+          "last_cigarette_recency_days": "observed"
+        },
+        "meaning": "Input counts, not a personal confidence estimate"
+      },
+      "model_version": {
+        "selected_model": "xgb_minimal_s1_none",
+        "artifact_sha256": "9b46cdb1783302c05c3b56b83d5695a1ad58b90da0614f04188ee687170eae36",
+        "stage8_signature": "60ce6ce4a02442c59204bd17754339ffdeeb74772b208763ba64dfa2690c655b",
+        "output_version": "outputs_v1"
+      },
+      "limitations": [
+        "Project-defined relative groups in development data; not established medical cutoffs or independently validated risk categories.",
+        "Development only; final-test and new-user validity not established",
+        "Elapsed-time risks and estimated relapse dates are unavailable. This research classifier predicts smoking reported at the next survey, not when smoking will resume.",
+        "Model associations and SHAP contributions are not causes or effects of changing an answer. No personal confidence percentage or clinical action guarantee.",
+        "Survey-conditioned observed-follow-up research cohort; no national representativeness. Correlated-feature mixtures in marginal SHAP may be unrealistic."
+      ],
+      "explanation": {
+        "method": "Exact SHAP on the actual calibrated wrapper probability",
+        "scale": "calibrated_probability",
+        "reference_model_probability": 0.19193745252992983,
+        "reference_meaning": "Mean model output for 64 reference intervals/profiles; 64 distinct tuning people when known; not an observed outcome rate",
+        "background_people": 64,
+        "additivity_residual": 0.0,
+        "identity": "Same artifact and calibrated probability as displayed; no raw-margin/log-odds explanation substituted",
+        "caution": "Contributions are relative model attributions, not the probability change that an intervention would cause."
+      }
+    }
+  },
+  {
+    "synthetic": true,
+    "name": "fictional_longer_quit_history",
+    "output": {
+      "contract_version": "1.0",
+      "status": "scored",
+      "probability": 0.08814331708633684,
+      "endpoint": "Past-30-day cigarette smoking reported at the next scheduled PATH survey",
+      "prediction_interval": "Next scheduled interview; individual elapsed time is unavailable and survey intervals vary.",
+      "category": {
+        "code": "moderate",
+        "label": "Moderate estimated risk",
+        "definition": "Project-defined relative groups in development data; not established medical cutoffs or independently validated risk categories."
+      },
+      "category_thresholds": {
+        "lower_upper_inclusive": 0.0750747765280418,
+        "moderate_upper_inclusive": 0.2590049599706509,
+        "higher_rule": "probability > moderate_upper_inclusive",
+        "scale": "calibrated_probability",
+        "uses_unrounded_score": true
+      },
+      "contributing_factors": [
+        {
+          "feature": "last_cigarette_recency_days",
+          "question": "About how long has it been since you last smoked a cigarette?",
+          "answer": "3652.5 approximate days",
+          "answer_reason": "observed",
+          "contribution": -0.05394474438961479,
+          "contribution_units": "calibrated probability units; multiply by 100 only for percentage-point attribution",
+          "interpretation": "Pushes the model estimate down relative to the background mixture"
+        },
+        {
+          "feature": "age_band",
+          "question": "What is your age group at the starting interview?",
+          "answer": "65+",
+          "answer_reason": "observed",
+          "contribution": -0.04913351954742512,
+          "contribution_units": "calibrated probability units; multiply by 100 only for percentage-point attribution",
+          "interpretation": "Pushes the model estimate down relative to the background mixture"
+        },
+        {
+          "feature": "education_level",
+          "question": "What is the highest level of education you have completed?",
+          "answer": "Some college or associate degree",
+          "answer_reason": "observed",
+          "contribution": -0.006627565983692206,
+          "contribution_units": "calibrated probability units; multiply by 100 only for percentage-point attribution",
+          "interpretation": "Pushes the model estimate down relative to the background mixture"
+        },
+        {
+          "feature": "employment_status",
+          "question": "What is your current paid employment status and usual weekly hours category?",
+          "answer": "Not currently working for pay",
+          "answer_reason": "observed",
+          "contribution": 0.005911694477139257,
+          "contribution_units": "calibrated probability units; multiply by 100 only for percentage-point attribution",
+          "interpretation": "Pushes the model estimate up relative to the background mixture"
+        }
+      ],
+      "input_completeness": {
+        "provided": 4,
+        "expected": 4,
+        "missing": [],
+        "reasons": {
+          "age_band": "observed",
+          "education_level": "observed",
+          "employment_status": "observed",
+          "last_cigarette_recency_days": "observed"
+        },
+        "meaning": "Input counts, not a personal confidence estimate"
+      },
+      "model_version": {
+        "selected_model": "xgb_minimal_s1_none",
+        "artifact_sha256": "9b46cdb1783302c05c3b56b83d5695a1ad58b90da0614f04188ee687170eae36",
+        "stage8_signature": "60ce6ce4a02442c59204bd17754339ffdeeb74772b208763ba64dfa2690c655b",
+        "output_version": "outputs_v1"
+      },
+      "limitations": [
+        "Project-defined relative groups in development data; not established medical cutoffs or independently validated risk categories.",
+        "Development only; final-test and new-user validity not established",
+        "Elapsed-time risks and estimated relapse dates are unavailable. This research classifier predicts smoking reported at the next survey, not when smoking will resume.",
+        "Model associations and SHAP contributions are not causes or effects of changing an answer. No personal confidence percentage or clinical action guarantee.",
+        "Survey-conditioned observed-follow-up research cohort; no national representativeness. Correlated-feature mixtures in marginal SHAP may be unrealistic."
+      ],
+      "explanation": {
+        "method": "Exact SHAP on the actual calibrated wrapper probability",
+        "scale": "calibrated_probability",
+        "reference_model_probability": 0.19193745252992983,
+        "reference_meaning": "Mean model output for 64 reference intervals/profiles; 64 distinct tuning people when known; not an observed outcome rate",
+        "background_people": 64,
+        "additivity_residual": 1.3877787807814457e-16,
+        "identity": "Same artifact and calibrated probability as displayed; no raw-margin/log-odds explanation substituted",
+        "caution": "Contributions are relative model attributions, not the probability change that an intervention would cause."
+      }
+    }
+  },
+  {
+    "synthetic": true,
+    "name": "fictional_not_asked_recency",
+    "output": {
+      "contract_version": "1.0",
+      "status": "scored",
+      "probability": 0.04862823311230829,
+      "endpoint": "Past-30-day cigarette smoking reported at the next scheduled PATH survey",
+      "prediction_interval": "Next scheduled interview; individual elapsed time is unavailable and survey intervals vary.",
+      "category": {
+        "code": "lower",
+        "label": "Lower estimated risk",
+        "definition": "Project-defined relative groups in development data; not established medical cutoffs or independently validated risk categories."
+      },
+      "category_thresholds": {
+        "lower_upper_inclusive": 0.0750747765280418,
+        "moderate_upper_inclusive": 0.2590049599706509,
+        "higher_rule": "probability > moderate_upper_inclusive",
+        "scale": "calibrated_probability",
+        "uses_unrounded_score": true
+      },
+      "contributing_factors": [
+        {
+          "feature": "last_cigarette_recency_days",
+          "question": "About how long has it been since you last smoked a cigarette?",
+          "answer": "Not supplied (app_not_previously_asked); uses trained missing handling",
+          "answer_reason": "app_not_previously_asked",
+          "contribution": -0.0960151138474875,
+          "contribution_units": "calibrated probability units; multiply by 100 only for percentage-point attribution",
+          "interpretation": "Pushes the model estimate down relative to the background mixture"
+        },
+        {
+          "feature": "age_band",
+          "question": "What is your age group at the starting interview?",
+          "answer": "55–64",
+          "answer_reason": "observed",
+          "contribution": -0.04552002994222214,
+          "contribution_units": "calibrated probability units; multiply by 100 only for percentage-point attribution",
+          "interpretation": "Pushes the model estimate down relative to the background mixture"
+        },
+        {
+          "feature": "employment_status",
+          "question": "What is your current paid employment status and usual weekly hours category?",
+          "answer": "Full-time, at least 35 hours/week",
+          "answer_reason": "observed",
+          "contribution": -0.004816373126511305,
+          "contribution_units": "calibrated probability units; multiply by 100 only for percentage-point attribution",
+          "interpretation": "Pushes the model estimate down relative to the background mixture"
+        },
+        {
+          "feature": "education_level",
+          "question": "What is the highest level of education you have completed?",
+          "answer": "High school graduate",
+          "answer_reason": "observed",
+          "contribution": 0.003042297498599477,
+          "contribution_units": "calibrated probability units; multiply by 100 only for percentage-point attribution",
+          "interpretation": "Pushes the model estimate up relative to the background mixture"
+        }
+      ],
+      "input_completeness": {
+        "provided": 3,
+        "expected": 4,
+        "missing": [
+          "last_cigarette_recency_days"
+        ],
+        "reasons": {
+          "age_band": "observed",
+          "education_level": "observed",
+          "employment_status": "observed",
+          "last_cigarette_recency_days": "app_not_previously_asked"
+        },
+        "meaning": "Input counts, not a personal confidence estimate"
+      },
+      "model_version": {
+        "selected_model": "xgb_minimal_s1_none",
+        "artifact_sha256": "9b46cdb1783302c05c3b56b83d5695a1ad58b90da0614f04188ee687170eae36",
+        "stage8_signature": "60ce6ce4a02442c59204bd17754339ffdeeb74772b208763ba64dfa2690c655b",
+        "output_version": "outputs_v1"
+      },
+      "limitations": [
+        "Project-defined relative groups in development data; not established medical cutoffs or independently validated risk categories.",
+        "Development only; final-test and new-user validity not established",
+        "Elapsed-time risks and estimated relapse dates are unavailable. This research classifier predicts smoking reported at the next survey, not when smoking will resume.",
+        "Model associations and SHAP contributions are not causes or effects of changing an answer. No personal confidence percentage or clinical action guarantee.",
+        "Survey-conditioned observed-follow-up research cohort; no national representativeness. Correlated-feature mixtures in marginal SHAP may be unrealistic.",
+        "Missing answers use trained imputation/missing-category handling, not assumed zero/No. Routing and new-user missingness may differ from development data."
+      ],
+      "explanation": {
+        "method": "Exact SHAP on the actual calibrated wrapper probability",
+        "scale": "calibrated_probability",
+        "reference_model_probability": 0.19193745252992983,
+        "reference_meaning": "Mean model output for 64 reference intervals/profiles; 64 distinct tuning people when known; not an observed outcome rate",
+        "background_people": 64,
+        "additivity_residual": 9.020562075079397e-17,
+        "identity": "Same artifact and calibrated probability as displayed; no raw-margin/log-odds explanation substituted",
+        "caution": "Contributions are relative model attributions, not the probability change that an intervention would cause."
+      }
+    }
+  },
+  {
+    "synthetic": true,
+    "name": "fictional_partial_answers",
+    "output": {
+      "contract_version": "1.0",
+      "status": "scored",
+      "probability": 0.10845251102728287,
+      "endpoint": "Past-30-day cigarette smoking reported at the next scheduled PATH survey",
+      "prediction_interval": "Next scheduled interview; individual elapsed time is unavailable and survey intervals vary.",
+      "category": {
+        "code": "moderate",
+        "label": "Moderate estimated risk",
+        "definition": "Project-defined relative groups in development data; not established medical cutoffs or independently validated risk categories."
+      },
+      "category_thresholds": {
+        "lower_upper_inclusive": 0.0750747765280418,
+        "moderate_upper_inclusive": 0.2590049599706509,
+        "higher_rule": "probability > moderate_upper_inclusive",
+        "scale": "calibrated_probability",
+        "uses_unrounded_score": true
+      },
+      "contributing_factors": [
+        {
+          "feature": "last_cigarette_recency_days",
+          "question": "About how long has it been since you last smoked a cigarette?",
+          "answer": "Not supplied (app_dont_know); uses trained missing handling",
+          "answer_reason": "app_dont_know",
+          "contribution": -0.09400251125510449,
+          "contribution_units": "calibrated probability units; multiply by 100 only for percentage-point attribution",
+          "interpretation": "Pushes the model estimate down relative to the background mixture"
+        },
+        {
+          "feature": "education_level",
+          "question": "What is the highest level of education you have completed?",
+          "answer": "GED",
+          "answer_reason": "observed",
+          "contribution": 0.01603187861849976,
+          "contribution_units": "calibrated probability units; multiply by 100 only for percentage-point attribution",
+          "interpretation": "Pushes the model estimate up relative to the background mixture"
+        },
+        {
+          "feature": "age_band",
+          "question": "What is your age group at the starting interview?",
+          "answer": "35–44",
+          "answer_reason": "observed",
+          "contribution": -0.00933205447670564,
+          "contribution_units": "calibrated probability units; multiply by 100 only for percentage-point attribution",
+          "interpretation": "Pushes the model estimate down relative to the background mixture"
+        },
+        {
+          "feature": "employment_status",
+          "question": "What is your current paid employment status and usual weekly hours category?",
+          "answer": "Not supplied (app_refused); uses trained missing handling",
+          "answer_reason": "app_refused",
+          "contribution": 0.0038177456106632673,
+          "contribution_units": "calibrated probability units; multiply by 100 only for percentage-point attribution",
+          "interpretation": "Pushes the model estimate up relative to the background mixture"
+        }
+      ],
+      "input_completeness": {
+        "provided": 2,
+        "expected": 4,
+        "missing": [
+          "employment_status",
+          "last_cigarette_recency_days"
+        ],
+        "reasons": {
+          "age_band": "observed",
+          "education_level": "observed",
+          "employment_status": "app_refused",
+          "last_cigarette_recency_days": "app_dont_know"
+        },
+        "meaning": "Input counts, not a personal confidence estimate"
+      },
+      "model_version": {
+        "selected_model": "xgb_minimal_s1_none",
+        "artifact_sha256": "9b46cdb1783302c05c3b56b83d5695a1ad58b90da0614f04188ee687170eae36",
+        "stage8_signature": "60ce6ce4a02442c59204bd17754339ffdeeb74772b208763ba64dfa2690c655b",
+        "output_version": "outputs_v1"
+      },
+      "limitations": [
+        "Project-defined relative groups in development data; not established medical cutoffs or independently validated risk categories.",
+        "Development only; final-test and new-user validity not established",
+        "Elapsed-time risks and estimated relapse dates are unavailable. This research classifier predicts smoking reported at the next survey, not when smoking will resume.",
+        "Model associations and SHAP contributions are not causes or effects of changing an answer. No personal confidence percentage or clinical action guarantee.",
+        "Survey-conditioned observed-follow-up research cohort; no national representativeness. Correlated-feature mixtures in marginal SHAP may be unrealistic.",
+        "Missing answers use trained imputation/missing-category handling, not assumed zero/No. Routing and new-user missingness may differ from development data."
+      ],
+      "explanation": {
+        "method": "Exact SHAP on the actual calibrated wrapper probability",
+        "scale": "calibrated_probability",
+        "reference_model_probability": 0.19193745252992983,
+        "reference_meaning": "Mean model output for 64 reference intervals/profiles; 64 distinct tuning people when known; not an observed outcome rate",
+        "background_people": 64,
+        "additivity_residual": 1.3877787807814457e-16,
+        "identity": "Same artifact and calibrated probability as displayed; no raw-margin/log-odds explanation substituted",
+        "caution": "Contributions are relative model attributions, not the probability change that an intervention would cause."
+      }
+    }
+  },
+  {
+    "synthetic": true,
+    "name": "fictional_all_unknown",
+    "output": {
+      "contract_version": "1.0",
+      "status": "insufficient_input",
+      "probability": null,
+      "endpoint": "Past-30-day cigarette smoking reported at the next scheduled PATH survey",
+      "prediction_interval": "Next scheduled interview; individual elapsed time is unavailable and survey intervals vary.",
+      "category": null,
+      "category_thresholds": {
+        "lower_upper_inclusive": 0.0750747765280418,
+        "moderate_upper_inclusive": 0.2590049599706509,
+        "higher_rule": "probability > moderate_upper_inclusive",
+        "scale": "calibrated_probability",
+        "uses_unrounded_score": true
+      },
+      "contributing_factors": [],
+      "input_completeness": {
+        "provided": 0,
+        "expected": 4,
+        "missing": [
+          "age_band",
+          "education_level",
+          "employment_status",
+          "last_cigarette_recency_days"
+        ],
+        "reasons": {
+          "age_band": "app_unanswered",
+          "education_level": "app_unanswered",
+          "employment_status": "app_unanswered",
+          "last_cigarette_recency_days": "app_unanswered"
+        },
+        "meaning": "Input counts, not a personal confidence estimate"
+      },
+      "model_version": {
+        "selected_model": "xgb_minimal_s1_none",
+        "artifact_sha256": "9b46cdb1783302c05c3b56b83d5695a1ad58b90da0614f04188ee687170eae36",
+        "stage8_signature": "60ce6ce4a02442c59204bd17754339ffdeeb74772b208763ba64dfa2690c655b",
+        "output_version": "outputs_v1"
+      },
+      "limitations": [
+        "Project-defined relative groups in development data; not established medical cutoffs or independently validated risk categories.",
+        "Development only; final-test and new-user validity not established",
+        "Elapsed-time risks and estimated relapse dates are unavailable. This research classifier predicts smoking reported at the next survey, not when smoking will resume.",
+        "Model associations and SHAP contributions are not causes or effects of changing an answer. No personal confidence percentage or clinical action guarantee.",
+        "Survey-conditioned observed-follow-up research cohort; no national representativeness. Correlated-feature mixtures in marginal SHAP may be unrealistic.",
+        "Missing answers use trained imputation/missing-category handling, not assumed zero/No. Routing and new-user missingness may differ from development data."
+      ],
+      "suppression_reason": "Provide at least 2 of 4 model inputs; an estimate would otherwise rely too heavily on missing-value handling."
+    }
+  },
+  {
+    "synthetic": true,
+    "name": "fictional_unknown_eligibility",
+    "output": {
+      "contract_version": "1.0",
+      "status": "eligibility_unconfirmed",
+      "probability": null,
+      "endpoint": "Past-30-day cigarette smoking reported at the next scheduled PATH survey",
+      "prediction_interval": "Next scheduled interview; individual elapsed time is unavailable and survey intervals vary.",
+      "category": null,
+      "category_thresholds": {
+        "lower_upper_inclusive": 0.0750747765280418,
+        "moderate_upper_inclusive": 0.2590049599706509,
+        "higher_rule": "probability > moderate_upper_inclusive",
+        "scale": "calibrated_probability",
+        "uses_unrounded_score": true
+      },
+      "contributing_factors": [],
+      "input_completeness": {
+        "provided": 2,
+        "expected": 4,
+        "missing": [
+          "employment_status",
+          "last_cigarette_recency_days"
+        ],
+        "reasons": {
+          "age_band": "observed",
+          "education_level": "observed",
+          "employment_status": "app_unanswered",
+          "last_cigarette_recency_days": "app_unanswered"
+        },
+        "meaning": "Input counts, not a personal confidence estimate"
+      },
+      "model_version": {
+        "selected_model": "xgb_minimal_s1_none",
+        "artifact_sha256": "9b46cdb1783302c05c3b56b83d5695a1ad58b90da0614f04188ee687170eae36",
+        "stage8_signature": "60ce6ce4a02442c59204bd17754339ffdeeb74772b208763ba64dfa2690c655b",
+        "output_version": "outputs_v1"
+      },
+      "limitations": [
+        "Project-defined relative groups in development data; not established medical cutoffs or independently validated risk categories.",
+        "Development only; final-test and new-user validity not established",
+        "Elapsed-time risks and estimated relapse dates are unavailable. This research classifier predicts smoking reported at the next survey, not when smoking will resume.",
+        "Model associations and SHAP contributions are not causes or effects of changing an answer. No personal confidence percentage or clinical action guarantee.",
+        "Survey-conditioned observed-follow-up research cohort; no national representativeness. Correlated-feature mixtures in marginal SHAP may be unrealistic.",
+        "Missing answers use trained imputation/missing-category handling, not assumed zero/No. Routing and new-user missingness may differ from development data."
+      ],
+      "suppression_reason": "Confirm all cohort eligibility questions before requesting an estimate."
+    }
+  },
+  {
+    "synthetic": true,
+    "name": "fictional_outside_cohort",
+    "output": {
+      "contract_version": "1.0",
+      "status": "outside_cohort",
+      "probability": null,
+      "endpoint": "Past-30-day cigarette smoking reported at the next scheduled PATH survey",
+      "prediction_interval": "Next scheduled interview; individual elapsed time is unavailable and survey intervals vary.",
+      "category": null,
+      "category_thresholds": {
+        "lower_upper_inclusive": 0.0750747765280418,
+        "moderate_upper_inclusive": 0.2590049599706509,
+        "higher_rule": "probability > moderate_upper_inclusive",
+        "scale": "calibrated_probability",
+        "uses_unrounded_score": true
+      },
+      "contributing_factors": [],
+      "input_completeness": {
+        "provided": 2,
+        "expected": 4,
+        "missing": [
+          "employment_status",
+          "last_cigarette_recency_days"
+        ],
+        "reasons": {
+          "age_band": "observed",
+          "education_level": "observed",
+          "employment_status": "app_unanswered",
+          "last_cigarette_recency_days": "app_unanswered"
+        },
+        "meaning": "Input counts, not a personal confidence estimate"
+      },
+      "model_version": {
+        "selected_model": "xgb_minimal_s1_none",
+        "artifact_sha256": "9b46cdb1783302c05c3b56b83d5695a1ad58b90da0614f04188ee687170eae36",
+        "stage8_signature": "60ce6ce4a02442c59204bd17754339ffdeeb74772b208763ba64dfa2690c655b",
+        "output_version": "outputs_v1"
+      },
+      "limitations": [
+        "Project-defined relative groups in development data; not established medical cutoffs or independently validated risk categories.",
+        "Development only; final-test and new-user validity not established",
+        "Elapsed-time risks and estimated relapse dates are unavailable. This research classifier predicts smoking reported at the next survey, not when smoking will resume.",
+        "Model associations and SHAP contributions are not causes or effects of changing an answer. No personal confidence percentage or clinical action guarantee.",
+        "Survey-conditioned observed-follow-up research cohort; no national representativeness. Correlated-feature mixtures in marginal SHAP may be unrealistic.",
+        "Missing answers use trained imputation/missing-category handling, not assumed zero/No. Routing and new-user missingness may differ from development data."
+      ],
+      "suppression_reason": "Eligibility answers do not match the model cohort; no estimate is issued."
+    }
+  }
+]

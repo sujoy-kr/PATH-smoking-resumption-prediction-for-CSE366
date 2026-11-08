@@ -1,0 +1,24 @@
+{
+  "version": "1.0",
+  "run_name": "trees_v1",
+  "output_dir": "artifacts/trees_v1",
+  "report_dir": "reports/trees_v1",
+  "seed": 366,
+  "cpu_threads": 1,
+  "profiles": ["minimal", "app"],
+  "class_weight_options": ["none", "balanced"],
+  "random_forest": {
+    "fixed": {"n_estimators": 150, "min_samples_split": 2, "max_features": "sqrt", "bootstrap": true, "n_jobs": 1},
+    "search": [{"max_depth": 4, "min_samples_leaf": 20}, {"max_depth": 8, "min_samples_leaf": 10}]
+  },
+  "xgboost": {
+    "fixed": {"objective": "binary:logistic", "eval_metric": "logloss", "tree_method": "hist", "device": "cpu", "n_jobs": 1, "subsample": 1.0, "colsample_bytree": 1.0, "reg_lambda": 5.0, "verbosity": 0},
+    "search": [{"n_estimators": 120, "max_depth": 2, "learning_rate": 0.05, "min_child_weight": 10}, {"n_estimators": 180, "max_depth": 3, "learning_rate": 0.05, "min_child_weight": 10}]
+  },
+  "alternative": {"family": "hist_gradient_boosting", "fixed": {"max_iter": 150, "learning_rate": 0.05, "l2_regularization": 5.0, "early_stopping": false}, "search": [{"max_leaf_nodes": 7, "min_samples_leaf": 20}, {"max_leaf_nodes": 15, "min_samples_leaf": 20}]},
+  "selection_rule": "Preserve locked mean five-fold participant-weighted AP, exact ties use prespecified simplicity order: five saved baselines first, then listed tree candidates. Brier/log loss/calibration and ROC are mandatory tradeoff diagnostics, not an undisclosed new ranking objective.",
+  "probability_quality_policy": "Require finite bounded probabilities and finite Brier/log loss. Quantify raw probability quality against the prevalence baseline. A newly selected tree must receive the locked reserved sigmoid calibration before any app-ready probability claim; apparent calibration-fit and threshold-selection scores are labeled, never used to re-rank. No clinical risk claim or category is established.",
+  "search_design": "Two paired complexity settings per family, two training-only weight options, two profiles = 16 new candidates, five grouped folds = 80 fits; no random search or adaptive expansion, no validation-driven early stopping.",
+  "imbalance": "No targeted resampling. RF balanced weights or XGB training-fold negative/positive scale_pos_weight. RF native bootstrap is training-only bagging, not class balancing. Evaluation rows unchanged.",
+  "code_inputs": ["src/path_project/trees.py", "scripts/train_tree_models.py", "src/path_project/baselines.py", "src/path_project/evaluation.py", "src/path_project/final_inputs.py"]
+}

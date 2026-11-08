@@ -1,0 +1,28 @@
+{
+  "scope": "Tuning participants only; starting Waves 1–6; no calibration/threshold/test exploration",
+  "labeled_records": 13757,
+  "labeled_people": 4692,
+  "positives": 1487,
+  "eligible_intervals": 16338,
+  "eligible_people": 5716,
+  "unobserved_outcomes": 2581,
+  "people_with_repeated_records": 3191,
+  "repeated_records_beyond_first": 9065,
+  "repeat_distribution": {
+    "1": 1501,
+    "2": 848,
+    "3": 714,
+    "4": 493,
+    "5": 370,
+    "6": 766
+  },
+  "recency_distribution": {
+    "Unknown / skipped": 8937,
+    "over 30 days to 1 year": 2429,
+    "over 10 to 100 years": 1081,
+    "over 1 to 5 years": 951,
+    "over 5 to 10 years": 359
+  },
+  "no_model_fitting": true,
+  "final_test_features_or_outcomes_read": false
+}

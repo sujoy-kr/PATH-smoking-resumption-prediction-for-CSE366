@@ -1,0 +1,70 @@
+{
+  "seed": 366,
+  "data_root": "PATH",
+  "processed_dir": "data/processed",
+  "artifact_dir": "artifacts",
+  "report_dir": "reports",
+  "waves": [
+    {
+      "wave": 1,
+      "data": "PATH/DS1001/36498-1001-Data.tsv",
+      "codebook": "PATH/DS1001/36498-1001-Codebook.pdf",
+      "questionnaire": "PATH/DS1001/36498-1001-Questionnaire.pdf"
+    },
+    {
+      "wave": 2,
+      "data": "PATH/DS2001/36498-2001-Data.tsv",
+      "codebook": "PATH/DS2001/36498-2001-Codebook.pdf",
+      "questionnaire": "PATH/DS2001/36498-2001-Questionnaire.pdf"
+    },
+    {
+      "wave": 3,
+      "data": "PATH/DS3001/36498-3001-Data.tsv",
+      "codebook": "PATH/DS3001/36498-3001-Codebook.pdf",
+      "questionnaire": "PATH/DS3001/36498-3001-Questionnaire.pdf"
+    },
+    {
+      "wave": 4,
+      "data": "PATH/DS4001/36498-4001-Data.tsv",
+      "codebook": "PATH/DS4001/36498-4001-Codebook.pdf",
+      "questionnaire": "PATH/DS4001/36498-4001-Questionnaire.pdf"
+    },
+    {
+      "wave": 5,
+      "data": "PATH/DS5001/36498-5001-Data.tsv",
+      "codebook": "PATH/DS5001/36498-5001-Codebook.pdf",
+      "questionnaire": "PATH/DS5001/36498-5001-Questionnaire.pdf"
+    },
+    {
+      "wave": 6,
+      "data": "PATH/DS6001/36498-6001-Data.tsv",
+      "codebook": "PATH/DS6001/36498-6001-Codebook.pdf",
+      "questionnaire": "PATH/DS6001/36498-6001-Questionnaire-English.pdf"
+    },
+    {
+      "wave": 7,
+      "data": "PATH/DS7001/36498-7001-Data.tsv",
+      "codebook": "PATH/DS7001/36498-7001-Codebook.pdf",
+      "questionnaire": "PATH/DS7001/36498-7001-Questionnaire-English.pdf"
+    },
+    {
+      "wave": 8,
+      "data": "PATH/DS8001/36498-8001-Data.tsv",
+      "codebook": "PATH/DS8001/36498-8001-Codebook.pdf",
+      "questionnaire": "PATH/DS8001/36498-8001-Questionnaire-English.pdf"
+    }
+  ],
+  "runtime_cache_dir": ".cache",
+  "environment_check_imports": [
+    "numpy",
+    "pandas",
+    "sklearn",
+    "scipy",
+    "joblib",
+    "matplotlib",
+    "streamlit",
+    "pytest",
+    "pypdf",
+    "pptx"
+  ]
+}

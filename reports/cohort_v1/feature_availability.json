@@ -1,0 +1,5180 @@
+[
+  {
+    "pair": "1-2",
+    "population": "eligible_baseline",
+    "feature": "age_band",
+    "rows": 4401,
+    "observed": 4398,
+    "missing": 3,
+    "availability_fraction": 0.9993183367416496,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 4398,
+      "refused": 3
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "eligible_baseline",
+    "feature": "sex_recorded",
+    "rows": 4401,
+    "observed": 4396,
+    "missing": 5,
+    "availability_fraction": 0.998863894569416,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 4396,
+      "refused": 5
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "eligible_baseline",
+    "feature": "education_level",
+    "rows": 4401,
+    "observed": 4385,
+    "missing": 16,
+    "availability_fraction": 0.9963644626221313,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 2,
+      "observed": 4385,
+      "refused": 14
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "eligible_baseline",
+    "feature": "household_income_band",
+    "rows": 4401,
+    "observed": 3990,
+    "missing": 411,
+    "availability_fraction": 0.9066121336059987,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 69,
+      "observed": 3990,
+      "refused": 342
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "eligible_baseline",
+    "feature": "employment_status",
+    "rows": 4401,
+    "observed": 4378,
+    "missing": 23,
+    "availability_fraction": 0.9947739150193138,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 5,
+      "observed": 4378,
+      "refused": 18
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "eligible_baseline",
+    "feature": "last_cigarette_recency_days",
+    "rows": 4401,
+    "observed": 4389,
+    "missing": 12,
+    "availability_fraction": 0.9972733469665985,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 2,
+      "improbable_response_removed": 7,
+      "observed": 4389,
+      "refused": 3
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "eligible_baseline",
+    "feature": "prior_regular_cigarettes_per_day",
+    "rows": 4401,
+    "observed": 3894,
+    "missing": 507,
+    "availability_fraction": 0.8847989093387867,
+    "valid_zero_values": 3,
+    "reason_counts": {
+      "dont_know": 2,
+      "improbable_response_removed": 9,
+      "observed": 3894,
+      "refused": 1,
+      "structural_skip": 495
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "eligible_baseline",
+    "feature": "regular_smoking_months",
+    "rows": 4401,
+    "observed": 3886,
+    "missing": 515,
+    "availability_fraction": 0.8829811406498523,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 12,
+      "improbable_component": 7,
+      "observed": 3886,
+      "refused": 1,
+      "structural_skip": 495
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "eligible_baseline",
+    "feature": "electronic_nicotine_p30d",
+    "rows": 4401,
+    "observed": 4397,
+    "missing": 4,
+    "availability_fraction": 0.9990911156555329,
+    "valid_zero_values": 3990,
+    "reason_counts": {
+      "dont_know": 3,
+      "observed": 4397,
+      "refused": 1
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "eligible_baseline",
+    "feature": "traditional_cigar_p30d",
+    "rows": 4401,
+    "observed": 4368,
+    "missing": 33,
+    "availability_fraction": 0.9925017041581459,
+    "valid_zero_values": 4091,
+    "reason_counts": {
+      "dont_know": 26,
+      "observed": 4368,
+      "refused": 7
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "eligible_baseline",
+    "feature": "cigarillo_p30d",
+    "rows": 4401,
+    "observed": 4292,
+    "missing": 109,
+    "availability_fraction": 0.9752329016132697,
+    "valid_zero_values": 4117,
+    "reason_counts": {
+      "dont_know": 81,
+      "observed": 4292,
+      "refused": 28
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "eligible_baseline",
+    "feature": "filtered_cigar_p30d",
+    "rows": 4401,
+    "observed": 4292,
+    "missing": 109,
+    "availability_fraction": 0.9752329016132697,
+    "valid_zero_values": 4226,
+    "reason_counts": {
+      "dont_know": 81,
+      "observed": 4292,
+      "refused": 28
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "eligible_baseline",
+    "feature": "hookah_p30d",
+    "rows": 4401,
+    "observed": 4397,
+    "missing": 4,
+    "availability_fraction": 0.9990911156555329,
+    "valid_zero_values": 4308,
+    "reason_counts": {
+      "dont_know": 3,
+      "observed": 4397,
+      "refused": 1
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "eligible_baseline",
+    "feature": "smokeless_tobacco_p30d",
+    "rows": 4401,
+    "observed": 4360,
+    "missing": 41,
+    "availability_fraction": 0.9906839354692115,
+    "valid_zero_values": 3999,
+    "reason_counts": {
+      "dont_know": 8,
+      "observed": 4360,
+      "refused": 3,
+      "structural_skip": 30
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "eligible_baseline",
+    "feature": "snus_p30d",
+    "rows": 4401,
+    "observed": 4383,
+    "missing": 18,
+    "availability_fraction": 0.9959100204498977,
+    "valid_zero_values": 4332,
+    "reason_counts": {
+      "dont_know": 15,
+      "observed": 4383,
+      "refused": 3
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "eligible_baseline",
+    "feature": "household_tobacco_any",
+    "rows": 4401,
+    "observed": 3782,
+    "missing": 619,
+    "availability_fraction": 0.859350147693706,
+    "valid_zero_values": 2739,
+    "reason_counts": {
+      "dont_know": 2,
+      "observed": 3782,
+      "refused": 7,
+      "structural_skip": 610
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "eligible_baseline",
+    "feature": "home_combustible_smoking_rules",
+    "rows": 4401,
+    "observed": 4390,
+    "missing": 11,
+    "availability_fraction": 0.9975005680527153,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 5,
+      "observed": 4390,
+      "refused": 6
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "eligible_baseline",
+    "feature": "physical_health",
+    "rows": 4401,
+    "observed": 4397,
+    "missing": 4,
+    "availability_fraction": 0.9990911156555329,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 4397,
+      "refused": 3
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "eligible_baseline",
+    "feature": "mental_health",
+    "rows": 4401,
+    "observed": 4394,
+    "missing": 7,
+    "availability_fraction": 0.9984094523971825,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 3,
+      "observed": 4394,
+      "refused": 4
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "eligible_baseline",
+    "feature": "social_satisfaction",
+    "rows": 4401,
+    "observed": 4394,
+    "missing": 7,
+    "availability_fraction": 0.9984094523971825,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 2,
+      "observed": 4394,
+      "refused": 5
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "eligible_baseline",
+    "feature": "emotional_problems_7d",
+    "rows": 4401,
+    "observed": 4389,
+    "missing": 12,
+    "availability_fraction": 0.9972733469665985,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 4389,
+      "refused": 11
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "eligible_baseline",
+    "feature": "depressive_problem_recency",
+    "rows": 4401,
+    "observed": 4368,
+    "missing": 33,
+    "availability_fraction": 0.9925017041581459,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 4,
+      "observed": 4368,
+      "refused": 29
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "eligible_baseline",
+    "feature": "anxiety_problem_recency",
+    "rows": 4401,
+    "observed": 4372,
+    "missing": 29,
+    "availability_fraction": 0.993410588502613,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 6,
+      "observed": 4372,
+      "refused": 23
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "eligible_baseline",
+    "feature": "alcohol_days_30d",
+    "rows": 4401,
+    "observed": 2677,
+    "missing": 1724,
+    "availability_fraction": 0.6082708475346512,
+    "valid_zero_values": 12,
+    "reason_counts": {
+      "observed": 2677,
+      "refused": 4,
+      "structural_skip": 1720
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "eligible_baseline",
+    "feature": "alcohol_drinks_per_drinking_day",
+    "rows": 4401,
+    "observed": 2662,
+    "missing": 1739,
+    "availability_fraction": 0.6048625312428993,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 2,
+      "observed": 2662,
+      "refused": 5,
+      "structural_skip": 1732
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "labeled_cohort",
+    "feature": "age_band",
+    "rows": 3684,
+    "observed": 3683,
+    "missing": 1,
+    "availability_fraction": 0.999728555917481,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 3683,
+      "refused": 1
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "labeled_cohort",
+    "feature": "sex_recorded",
+    "rows": 3684,
+    "observed": 3680,
+    "missing": 4,
+    "availability_fraction": 0.998914223669924,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 3680,
+      "refused": 4
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "labeled_cohort",
+    "feature": "education_level",
+    "rows": 3684,
+    "observed": 3673,
+    "missing": 11,
+    "availability_fraction": 0.997014115092291,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 3673,
+      "refused": 10
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "labeled_cohort",
+    "feature": "household_income_band",
+    "rows": 3684,
+    "observed": 3371,
+    "missing": 313,
+    "availability_fraction": 0.9150380021715526,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 58,
+      "observed": 3371,
+      "refused": 255
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "labeled_cohort",
+    "feature": "employment_status",
+    "rows": 3684,
+    "observed": 3671,
+    "missing": 13,
+    "availability_fraction": 0.996471226927253,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 3,
+      "observed": 3671,
+      "refused": 10
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "labeled_cohort",
+    "feature": "last_cigarette_recency_days",
+    "rows": 3684,
+    "observed": 3675,
+    "missing": 9,
+    "availability_fraction": 0.997557003257329,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 2,
+      "improbable_response_removed": 5,
+      "observed": 3675,
+      "refused": 2
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "labeled_cohort",
+    "feature": "prior_regular_cigarettes_per_day",
+    "rows": 3684,
+    "observed": 3267,
+    "missing": 417,
+    "availability_fraction": 0.8868078175895765,
+    "valid_zero_values": 2,
+    "reason_counts": {
+      "dont_know": 1,
+      "improbable_response_removed": 8,
+      "observed": 3267,
+      "refused": 1,
+      "structural_skip": 407
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "labeled_cohort",
+    "feature": "regular_smoking_months",
+    "rows": 3684,
+    "observed": 3265,
+    "missing": 419,
+    "availability_fraction": 0.8862649294245385,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 6,
+      "improbable_component": 5,
+      "observed": 3265,
+      "refused": 1,
+      "structural_skip": 407
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "labeled_cohort",
+    "feature": "electronic_nicotine_p30d",
+    "rows": 3684,
+    "observed": 3680,
+    "missing": 4,
+    "availability_fraction": 0.998914223669924,
+    "valid_zero_values": 3335,
+    "reason_counts": {
+      "dont_know": 3,
+      "observed": 3680,
+      "refused": 1
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "labeled_cohort",
+    "feature": "traditional_cigar_p30d",
+    "rows": 3684,
+    "observed": 3661,
+    "missing": 23,
+    "availability_fraction": 0.993756786102063,
+    "valid_zero_values": 3443,
+    "reason_counts": {
+      "dont_know": 17,
+      "observed": 3661,
+      "refused": 6
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "labeled_cohort",
+    "feature": "cigarillo_p30d",
+    "rows": 3684,
+    "observed": 3594,
+    "missing": 90,
+    "availability_fraction": 0.9755700325732899,
+    "valid_zero_values": 3457,
+    "reason_counts": {
+      "dont_know": 65,
+      "observed": 3594,
+      "refused": 25
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "labeled_cohort",
+    "feature": "filtered_cigar_p30d",
+    "rows": 3684,
+    "observed": 3594,
+    "missing": 90,
+    "availability_fraction": 0.9755700325732899,
+    "valid_zero_values": 3539,
+    "reason_counts": {
+      "dont_know": 65,
+      "observed": 3594,
+      "refused": 25
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "labeled_cohort",
+    "feature": "hookah_p30d",
+    "rows": 3684,
+    "observed": 3680,
+    "missing": 4,
+    "availability_fraction": 0.998914223669924,
+    "valid_zero_values": 3609,
+    "reason_counts": {
+      "dont_know": 3,
+      "observed": 3680,
+      "refused": 1
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "labeled_cohort",
+    "feature": "smokeless_tobacco_p30d",
+    "rows": 3684,
+    "observed": 3651,
+    "missing": 33,
+    "availability_fraction": 0.991042345276873,
+    "valid_zero_values": 3365,
+    "reason_counts": {
+      "dont_know": 7,
+      "observed": 3651,
+      "refused": 3,
+      "structural_skip": 23
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "labeled_cohort",
+    "feature": "snus_p30d",
+    "rows": 3684,
+    "observed": 3669,
+    "missing": 15,
+    "availability_fraction": 0.995928338762215,
+    "valid_zero_values": 3624,
+    "reason_counts": {
+      "dont_know": 12,
+      "observed": 3669,
+      "refused": 3
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "labeled_cohort",
+    "feature": "household_tobacco_any",
+    "rows": 3684,
+    "observed": 3151,
+    "missing": 533,
+    "availability_fraction": 0.8553203040173725,
+    "valid_zero_values": 2279,
+    "reason_counts": {
+      "dont_know": 2,
+      "observed": 3151,
+      "refused": 6,
+      "structural_skip": 525
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "labeled_cohort",
+    "feature": "home_combustible_smoking_rules",
+    "rows": 3684,
+    "observed": 3677,
+    "missing": 7,
+    "availability_fraction": 0.998099891422367,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 3,
+      "observed": 3677,
+      "refused": 4
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "labeled_cohort",
+    "feature": "physical_health",
+    "rows": 3684,
+    "observed": 3680,
+    "missing": 4,
+    "availability_fraction": 0.998914223669924,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 3680,
+      "refused": 3
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "labeled_cohort",
+    "feature": "mental_health",
+    "rows": 3684,
+    "observed": 3678,
+    "missing": 6,
+    "availability_fraction": 0.998371335504886,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 2,
+      "observed": 3678,
+      "refused": 4
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "labeled_cohort",
+    "feature": "social_satisfaction",
+    "rows": 3684,
+    "observed": 3680,
+    "missing": 4,
+    "availability_fraction": 0.998914223669924,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 3680,
+      "refused": 4
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "labeled_cohort",
+    "feature": "emotional_problems_7d",
+    "rows": 3684,
+    "observed": 3674,
+    "missing": 10,
+    "availability_fraction": 0.99728555917481,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 3674,
+      "refused": 9
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "labeled_cohort",
+    "feature": "depressive_problem_recency",
+    "rows": 3684,
+    "observed": 3660,
+    "missing": 24,
+    "availability_fraction": 0.993485342019544,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 3,
+      "observed": 3660,
+      "refused": 21
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "labeled_cohort",
+    "feature": "anxiety_problem_recency",
+    "rows": 3684,
+    "observed": 3660,
+    "missing": 24,
+    "availability_fraction": 0.993485342019544,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 6,
+      "observed": 3660,
+      "refused": 18
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "labeled_cohort",
+    "feature": "alcohol_days_30d",
+    "rows": 3684,
+    "observed": 2227,
+    "missing": 1457,
+    "availability_fraction": 0.6045059717698155,
+    "valid_zero_values": 9,
+    "reason_counts": {
+      "observed": 2227,
+      "refused": 2,
+      "structural_skip": 1455
+    }
+  },
+  {
+    "pair": "1-2",
+    "population": "labeled_cohort",
+    "feature": "alcohol_drinks_per_drinking_day",
+    "rows": 3684,
+    "observed": 2216,
+    "missing": 1468,
+    "availability_fraction": 0.6015200868621065,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 2,
+      "observed": 2216,
+      "refused": 2,
+      "structural_skip": 1464
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "eligible_baseline",
+    "feature": "age_band",
+    "rows": 4580,
+    "observed": 4579,
+    "missing": 1,
+    "availability_fraction": 0.9997816593886463,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 4579,
+      "refused": 1
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "eligible_baseline",
+    "feature": "sex_recorded",
+    "rows": 4580,
+    "observed": 4574,
+    "missing": 6,
+    "availability_fraction": 0.9986899563318777,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 4574,
+      "refused": 6
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "eligible_baseline",
+    "feature": "education_level",
+    "rows": 4580,
+    "observed": 4557,
+    "missing": 23,
+    "availability_fraction": 0.9949781659388647,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 4,
+      "observed": 4557,
+      "refused": 19
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "eligible_baseline",
+    "feature": "household_income_band",
+    "rows": 4580,
+    "observed": 4279,
+    "missing": 301,
+    "availability_fraction": 0.9342794759825328,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 74,
+      "observed": 4279,
+      "refused": 227
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "eligible_baseline",
+    "feature": "employment_status",
+    "rows": 4580,
+    "observed": 4558,
+    "missing": 22,
+    "availability_fraction": 0.9951965065502183,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 5,
+      "observed": 4558,
+      "refused": 17
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "eligible_baseline",
+    "feature": "last_cigarette_recency_days",
+    "rows": 4580,
+    "observed": 1088,
+    "missing": 3492,
+    "availability_fraction": 0.23755458515283842,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "improbable_response_removed": 44,
+      "not_ascertained": 35,
+      "observed": 1088,
+      "refused": 24,
+      "structural_skip": 3389
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "eligible_baseline",
+    "feature": "prior_regular_cigarettes_per_day",
+    "rows": 4580,
+    "observed": 290,
+    "missing": 4290,
+    "availability_fraction": 0.06331877729257641,
+    "valid_zero_values": 1,
+    "reason_counts": {
+      "observed": 290,
+      "structural_skip": 4290
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "eligible_baseline",
+    "feature": "regular_smoking_months",
+    "rows": 4580,
+    "observed": 287,
+    "missing": 4293,
+    "availability_fraction": 0.06266375545851528,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 287,
+      "refused": 3,
+      "structural_skip": 4290
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "eligible_baseline",
+    "feature": "electronic_nicotine_p30d",
+    "rows": 4580,
+    "observed": 4499,
+    "missing": 81,
+    "availability_fraction": 0.9823144104803494,
+    "valid_zero_values": 4042,
+    "reason_counts": {
+      "dont_know": 8,
+      "improbable_component": 4,
+      "not_ascertained": 59,
+      "observed": 4499,
+      "prior_wave_missing": 8,
+      "refused": 1,
+      "structural_skip": 1
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "eligible_baseline",
+    "feature": "traditional_cigar_p30d",
+    "rows": 4580,
+    "observed": 4580,
+    "missing": 0,
+    "availability_fraction": 1.0,
+    "valid_zero_values": 4308,
+    "reason_counts": {
+      "observed": 4580
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "eligible_baseline",
+    "feature": "cigarillo_p30d",
+    "rows": 4580,
+    "observed": 4578,
+    "missing": 2,
+    "availability_fraction": 0.9995633187772925,
+    "valid_zero_values": 4394,
+    "reason_counts": {
+      "dont_know": 2,
+      "observed": 4578
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "eligible_baseline",
+    "feature": "filtered_cigar_p30d",
+    "rows": 4580,
+    "observed": 4579,
+    "missing": 1,
+    "availability_fraction": 0.9997816593886463,
+    "valid_zero_values": 4531,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 4579
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "eligible_baseline",
+    "feature": "hookah_p30d",
+    "rows": 4580,
+    "observed": 4580,
+    "missing": 0,
+    "availability_fraction": 1.0,
+    "valid_zero_values": 4480,
+    "reason_counts": {
+      "observed": 4580
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "eligible_baseline",
+    "feature": "smokeless_tobacco_p30d",
+    "rows": 4580,
+    "observed": 4579,
+    "missing": 1,
+    "availability_fraction": 0.9997816593886463,
+    "valid_zero_values": 4226,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 4579
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "eligible_baseline",
+    "feature": "snus_p30d",
+    "rows": 4580,
+    "observed": 4580,
+    "missing": 0,
+    "availability_fraction": 1.0,
+    "valid_zero_values": 4498,
+    "reason_counts": {
+      "observed": 4580
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "eligible_baseline",
+    "feature": "household_tobacco_any",
+    "rows": 4580,
+    "observed": 3857,
+    "missing": 723,
+    "availability_fraction": 0.8421397379912664,
+    "valid_zero_values": 2874,
+    "reason_counts": {
+      "dont_know": 6,
+      "observed": 3857,
+      "refused": 6,
+      "structural_skip": 711
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "eligible_baseline",
+    "feature": "home_combustible_smoking_rules",
+    "rows": 4580,
+    "observed": 4564,
+    "missing": 16,
+    "availability_fraction": 0.9965065502183406,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 9,
+      "observed": 4564,
+      "refused": 7
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "eligible_baseline",
+    "feature": "physical_health",
+    "rows": 4580,
+    "observed": 4576,
+    "missing": 4,
+    "availability_fraction": 0.9991266375545852,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 4576,
+      "refused": 4
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "eligible_baseline",
+    "feature": "mental_health",
+    "rows": 4580,
+    "observed": 4569,
+    "missing": 11,
+    "availability_fraction": 0.9975982532751092,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 3,
+      "observed": 4569,
+      "refused": 8
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "eligible_baseline",
+    "feature": "social_satisfaction",
+    "rows": 4580,
+    "observed": 4569,
+    "missing": 11,
+    "availability_fraction": 0.9975982532751092,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 2,
+      "observed": 4569,
+      "refused": 9
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "eligible_baseline",
+    "feature": "emotional_problems_7d",
+    "rows": 4580,
+    "observed": 4567,
+    "missing": 13,
+    "availability_fraction": 0.9971615720524017,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 4,
+      "observed": 4567,
+      "refused": 9
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "eligible_baseline",
+    "feature": "depressive_problem_recency",
+    "rows": 4580,
+    "observed": 4544,
+    "missing": 36,
+    "availability_fraction": 0.9921397379912664,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 8,
+      "observed": 4544,
+      "refused": 28
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "eligible_baseline",
+    "feature": "anxiety_problem_recency",
+    "rows": 4580,
+    "observed": 4553,
+    "missing": 27,
+    "availability_fraction": 0.9941048034934498,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 6,
+      "observed": 4553,
+      "refused": 21
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "eligible_baseline",
+    "feature": "alcohol_days_30d",
+    "rows": 4580,
+    "observed": 2788,
+    "missing": 1792,
+    "availability_fraction": 0.6087336244541485,
+    "valid_zero_values": 16,
+    "reason_counts": {
+      "dont_know": 5,
+      "observed": 2788,
+      "refused": 4,
+      "structural_skip": 1783
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "eligible_baseline",
+    "feature": "alcohol_drinks_per_drinking_day",
+    "rows": 4580,
+    "observed": 2767,
+    "missing": 1813,
+    "availability_fraction": 0.6041484716157205,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 10,
+      "observed": 2767,
+      "refused": 4,
+      "structural_skip": 1799
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "labeled_cohort",
+    "feature": "age_band",
+    "rows": 4090,
+    "observed": 4089,
+    "missing": 1,
+    "availability_fraction": 0.9997555012224939,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 4089,
+      "refused": 1
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "labeled_cohort",
+    "feature": "sex_recorded",
+    "rows": 4090,
+    "observed": 4085,
+    "missing": 5,
+    "availability_fraction": 0.9987775061124694,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 4085,
+      "refused": 5
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "labeled_cohort",
+    "feature": "education_level",
+    "rows": 4090,
+    "observed": 4079,
+    "missing": 11,
+    "availability_fraction": 0.9973105134474327,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 2,
+      "observed": 4079,
+      "refused": 9
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "labeled_cohort",
+    "feature": "household_income_band",
+    "rows": 4090,
+    "observed": 3840,
+    "missing": 250,
+    "availability_fraction": 0.9388753056234719,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 62,
+      "observed": 3840,
+      "refused": 188
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "labeled_cohort",
+    "feature": "employment_status",
+    "rows": 4090,
+    "observed": 4073,
+    "missing": 17,
+    "availability_fraction": 0.9958435207823961,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 5,
+      "observed": 4073,
+      "refused": 12
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "labeled_cohort",
+    "feature": "last_cigarette_recency_days",
+    "rows": 4090,
+    "observed": 953,
+    "missing": 3137,
+    "availability_fraction": 0.23300733496332518,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "improbable_response_removed": 34,
+      "not_ascertained": 33,
+      "observed": 953,
+      "refused": 16,
+      "structural_skip": 3054
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "labeled_cohort",
+    "feature": "prior_regular_cigarettes_per_day",
+    "rows": 4090,
+    "observed": 256,
+    "missing": 3834,
+    "availability_fraction": 0.06259168704156479,
+    "valid_zero_values": 1,
+    "reason_counts": {
+      "observed": 256,
+      "structural_skip": 3834
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "labeled_cohort",
+    "feature": "regular_smoking_months",
+    "rows": 4090,
+    "observed": 253,
+    "missing": 3837,
+    "availability_fraction": 0.061858190709046454,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 253,
+      "refused": 3,
+      "structural_skip": 3834
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "labeled_cohort",
+    "feature": "electronic_nicotine_p30d",
+    "rows": 4090,
+    "observed": 4017,
+    "missing": 73,
+    "availability_fraction": 0.9821515892420538,
+    "valid_zero_values": 3611,
+    "reason_counts": {
+      "dont_know": 6,
+      "improbable_component": 4,
+      "not_ascertained": 57,
+      "observed": 4017,
+      "prior_wave_missing": 4,
+      "refused": 1,
+      "structural_skip": 1
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "labeled_cohort",
+    "feature": "traditional_cigar_p30d",
+    "rows": 4090,
+    "observed": 4090,
+    "missing": 0,
+    "availability_fraction": 1.0,
+    "valid_zero_values": 3859,
+    "reason_counts": {
+      "observed": 4090
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "labeled_cohort",
+    "feature": "cigarillo_p30d",
+    "rows": 4090,
+    "observed": 4089,
+    "missing": 1,
+    "availability_fraction": 0.9997555012224939,
+    "valid_zero_values": 3926,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 4089
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "labeled_cohort",
+    "feature": "filtered_cigar_p30d",
+    "rows": 4090,
+    "observed": 4089,
+    "missing": 1,
+    "availability_fraction": 0.9997555012224939,
+    "valid_zero_values": 4048,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 4089
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "labeled_cohort",
+    "feature": "hookah_p30d",
+    "rows": 4090,
+    "observed": 4090,
+    "missing": 0,
+    "availability_fraction": 1.0,
+    "valid_zero_values": 4000,
+    "reason_counts": {
+      "observed": 4090
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "labeled_cohort",
+    "feature": "smokeless_tobacco_p30d",
+    "rows": 4090,
+    "observed": 4089,
+    "missing": 1,
+    "availability_fraction": 0.9997555012224939,
+    "valid_zero_values": 3791,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 4089
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "labeled_cohort",
+    "feature": "snus_p30d",
+    "rows": 4090,
+    "observed": 4090,
+    "missing": 0,
+    "availability_fraction": 1.0,
+    "valid_zero_values": 4016,
+    "reason_counts": {
+      "observed": 4090
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "labeled_cohort",
+    "feature": "household_tobacco_any",
+    "rows": 4090,
+    "observed": 3456,
+    "missing": 634,
+    "availability_fraction": 0.8449877750611247,
+    "valid_zero_values": 2568,
+    "reason_counts": {
+      "dont_know": 5,
+      "observed": 3456,
+      "refused": 1,
+      "structural_skip": 628
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "labeled_cohort",
+    "feature": "home_combustible_smoking_rules",
+    "rows": 4090,
+    "observed": 4081,
+    "missing": 9,
+    "availability_fraction": 0.997799511002445,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 7,
+      "observed": 4081,
+      "refused": 2
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "labeled_cohort",
+    "feature": "physical_health",
+    "rows": 4090,
+    "observed": 4089,
+    "missing": 1,
+    "availability_fraction": 0.9997555012224939,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 4089,
+      "refused": 1
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "labeled_cohort",
+    "feature": "mental_health",
+    "rows": 4090,
+    "observed": 4087,
+    "missing": 3,
+    "availability_fraction": 0.9992665036674817,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 4087,
+      "refused": 2
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "labeled_cohort",
+    "feature": "social_satisfaction",
+    "rows": 4090,
+    "observed": 4087,
+    "missing": 3,
+    "availability_fraction": 0.9992665036674817,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 4087,
+      "refused": 2
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "labeled_cohort",
+    "feature": "emotional_problems_7d",
+    "rows": 4090,
+    "observed": 4086,
+    "missing": 4,
+    "availability_fraction": 0.9990220048899755,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 4086,
+      "refused": 3
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "labeled_cohort",
+    "feature": "depressive_problem_recency",
+    "rows": 4090,
+    "observed": 4069,
+    "missing": 21,
+    "availability_fraction": 0.9948655256723716,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 6,
+      "observed": 4069,
+      "refused": 15
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "labeled_cohort",
+    "feature": "anxiety_problem_recency",
+    "rows": 4090,
+    "observed": 4074,
+    "missing": 16,
+    "availability_fraction": 0.9960880195599022,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 4,
+      "observed": 4074,
+      "refused": 12
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "labeled_cohort",
+    "feature": "alcohol_days_30d",
+    "rows": 4090,
+    "observed": 2522,
+    "missing": 1568,
+    "availability_fraction": 0.6166259168704157,
+    "valid_zero_values": 16,
+    "reason_counts": {
+      "dont_know": 4,
+      "observed": 2522,
+      "refused": 4,
+      "structural_skip": 1560
+    }
+  },
+  {
+    "pair": "2-3",
+    "population": "labeled_cohort",
+    "feature": "alcohol_drinks_per_drinking_day",
+    "rows": 4090,
+    "observed": 2504,
+    "missing": 1586,
+    "availability_fraction": 0.6122249388753056,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 6,
+      "observed": 2504,
+      "refused": 4,
+      "structural_skip": 1576
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "eligible_baseline",
+    "feature": "age_band",
+    "rows": 4685,
+    "observed": 4684,
+    "missing": 1,
+    "availability_fraction": 0.9997865528281751,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 4684
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "eligible_baseline",
+    "feature": "sex_recorded",
+    "rows": 4685,
+    "observed": 4680,
+    "missing": 5,
+    "availability_fraction": 0.9989327641408752,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 4680,
+      "refused": 4
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "eligible_baseline",
+    "feature": "education_level",
+    "rows": 4685,
+    "observed": 4673,
+    "missing": 12,
+    "availability_fraction": 0.9974386339381003,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 3,
+      "observed": 4673,
+      "refused": 9
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "eligible_baseline",
+    "feature": "household_income_band",
+    "rows": 4685,
+    "observed": 4358,
+    "missing": 327,
+    "availability_fraction": 0.9302027748132338,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 84,
+      "observed": 4358,
+      "refused": 243
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "eligible_baseline",
+    "feature": "employment_status",
+    "rows": 4685,
+    "observed": 4663,
+    "missing": 22,
+    "availability_fraction": 0.9953041622198506,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 8,
+      "observed": 4663,
+      "refused": 14
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "eligible_baseline",
+    "feature": "last_cigarette_recency_days",
+    "rows": 4685,
+    "observed": 1050,
+    "missing": 3635,
+    "availability_fraction": 0.22411953041622198,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 7,
+      "improbable_response_removed": 14,
+      "observed": 1050,
+      "refused": 2,
+      "structural_skip": 3612
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "eligible_baseline",
+    "feature": "prior_regular_cigarettes_per_day",
+    "rows": 4685,
+    "observed": 118,
+    "missing": 4567,
+    "availability_fraction": 0.025186766275346852,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 118,
+      "structural_skip": 4567
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "eligible_baseline",
+    "feature": "regular_smoking_months",
+    "rows": 4685,
+    "observed": 195,
+    "missing": 4490,
+    "availability_fraction": 0.0416221985058698,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 2,
+      "observed": 195,
+      "structural_skip": 4488
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "eligible_baseline",
+    "feature": "electronic_nicotine_p30d",
+    "rows": 4685,
+    "observed": 4684,
+    "missing": 1,
+    "availability_fraction": 0.9997865528281751,
+    "valid_zero_values": 4167,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 4684
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "eligible_baseline",
+    "feature": "traditional_cigar_p30d",
+    "rows": 4685,
+    "observed": 4684,
+    "missing": 1,
+    "availability_fraction": 0.9997865528281751,
+    "valid_zero_values": 4454,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 4684
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "eligible_baseline",
+    "feature": "cigarillo_p30d",
+    "rows": 4685,
+    "observed": 4685,
+    "missing": 0,
+    "availability_fraction": 1.0,
+    "valid_zero_values": 4504,
+    "reason_counts": {
+      "observed": 4685
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "eligible_baseline",
+    "feature": "filtered_cigar_p30d",
+    "rows": 4685,
+    "observed": 4685,
+    "missing": 0,
+    "availability_fraction": 1.0,
+    "valid_zero_values": 4633,
+    "reason_counts": {
+      "observed": 4685
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "eligible_baseline",
+    "feature": "hookah_p30d",
+    "rows": 4685,
+    "observed": 4684,
+    "missing": 1,
+    "availability_fraction": 0.9997865528281751,
+    "valid_zero_values": 4595,
+    "reason_counts": {
+      "observed": 4684,
+      "refused": 1
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "eligible_baseline",
+    "feature": "smokeless_tobacco_p30d",
+    "rows": 4685,
+    "observed": 4684,
+    "missing": 1,
+    "availability_fraction": 0.9997865528281751,
+    "valid_zero_values": 4365,
+    "reason_counts": {
+      "observed": 4684,
+      "refused": 1
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "eligible_baseline",
+    "feature": "snus_p30d",
+    "rows": 4685,
+    "observed": 4685,
+    "missing": 0,
+    "availability_fraction": 1.0,
+    "valid_zero_values": 4625,
+    "reason_counts": {
+      "observed": 4685
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "eligible_baseline",
+    "feature": "household_tobacco_any",
+    "rows": 4685,
+    "observed": 3937,
+    "missing": 748,
+    "availability_fraction": 0.84034151547492,
+    "valid_zero_values": 2835,
+    "reason_counts": {
+      "dont_know": 9,
+      "observed": 3937,
+      "refused": 6,
+      "structural_skip": 733
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "eligible_baseline",
+    "feature": "home_combustible_smoking_rules",
+    "rows": 4685,
+    "observed": 4671,
+    "missing": 14,
+    "availability_fraction": 0.9970117395944503,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 9,
+      "observed": 4671,
+      "refused": 5
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "eligible_baseline",
+    "feature": "physical_health",
+    "rows": 4685,
+    "observed": 4679,
+    "missing": 6,
+    "availability_fraction": 0.9987193169690501,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 3,
+      "observed": 4679,
+      "refused": 3
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "eligible_baseline",
+    "feature": "mental_health",
+    "rows": 4685,
+    "observed": 4677,
+    "missing": 8,
+    "availability_fraction": 0.9982924226254002,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 5,
+      "observed": 4677,
+      "refused": 3
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "eligible_baseline",
+    "feature": "social_satisfaction",
+    "rows": 4685,
+    "observed": 4676,
+    "missing": 9,
+    "availability_fraction": 0.9980789754535753,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 2,
+      "observed": 4676,
+      "refused": 7
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "eligible_baseline",
+    "feature": "emotional_problems_7d",
+    "rows": 4685,
+    "observed": 4670,
+    "missing": 15,
+    "availability_fraction": 0.9967982924226254,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 4,
+      "observed": 4670,
+      "refused": 11
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "eligible_baseline",
+    "feature": "depressive_problem_recency",
+    "rows": 4685,
+    "observed": 4657,
+    "missing": 28,
+    "availability_fraction": 0.9940234791889008,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 13,
+      "observed": 4657,
+      "refused": 15
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "eligible_baseline",
+    "feature": "anxiety_problem_recency",
+    "rows": 4685,
+    "observed": 4657,
+    "missing": 28,
+    "availability_fraction": 0.9940234791889008,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 15,
+      "observed": 4657,
+      "refused": 13
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "eligible_baseline",
+    "feature": "alcohol_days_30d",
+    "rows": 4685,
+    "observed": 2895,
+    "missing": 1790,
+    "availability_fraction": 0.6179295624332978,
+    "valid_zero_values": 21,
+    "reason_counts": {
+      "dont_know": 4,
+      "observed": 2895,
+      "refused": 1,
+      "structural_skip": 1785
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "eligible_baseline",
+    "feature": "alcohol_drinks_per_drinking_day",
+    "rows": 4685,
+    "observed": 2875,
+    "missing": 1810,
+    "availability_fraction": 0.6136606189967982,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 2,
+      "observed": 2875,
+      "refused": 2,
+      "structural_skip": 1806
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "labeled_cohort",
+    "feature": "age_band",
+    "rows": 4164,
+    "observed": 4163,
+    "missing": 1,
+    "availability_fraction": 0.9997598463016331,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 4163
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "labeled_cohort",
+    "feature": "sex_recorded",
+    "rows": 4164,
+    "observed": 4159,
+    "missing": 5,
+    "availability_fraction": 0.9987992315081652,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 4159,
+      "refused": 4
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "labeled_cohort",
+    "feature": "education_level",
+    "rows": 4164,
+    "observed": 4156,
+    "missing": 8,
+    "availability_fraction": 0.9980787704130644,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 2,
+      "observed": 4156,
+      "refused": 6
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "labeled_cohort",
+    "feature": "household_income_band",
+    "rows": 4164,
+    "observed": 3895,
+    "missing": 269,
+    "availability_fraction": 0.9353986551392891,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 73,
+      "observed": 3895,
+      "refused": 196
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "labeled_cohort",
+    "feature": "employment_status",
+    "rows": 4164,
+    "observed": 4145,
+    "missing": 19,
+    "availability_fraction": 0.9954370797310279,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 7,
+      "observed": 4145,
+      "refused": 12
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "labeled_cohort",
+    "feature": "last_cigarette_recency_days",
+    "rows": 4164,
+    "observed": 912,
+    "missing": 3252,
+    "availability_fraction": 0.21902017291066284,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 5,
+      "improbable_response_removed": 13,
+      "observed": 912,
+      "refused": 2,
+      "structural_skip": 3232
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "labeled_cohort",
+    "feature": "prior_regular_cigarettes_per_day",
+    "rows": 4164,
+    "observed": 105,
+    "missing": 4059,
+    "availability_fraction": 0.02521613832853026,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 105,
+      "structural_skip": 4059
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "labeled_cohort",
+    "feature": "regular_smoking_months",
+    "rows": 4164,
+    "observed": 170,
+    "missing": 3994,
+    "availability_fraction": 0.040826128722382324,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 2,
+      "observed": 170,
+      "structural_skip": 3992
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "labeled_cohort",
+    "feature": "electronic_nicotine_p30d",
+    "rows": 4164,
+    "observed": 4163,
+    "missing": 1,
+    "availability_fraction": 0.9997598463016331,
+    "valid_zero_values": 3713,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 4163
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "labeled_cohort",
+    "feature": "traditional_cigar_p30d",
+    "rows": 4164,
+    "observed": 4163,
+    "missing": 1,
+    "availability_fraction": 0.9997598463016331,
+    "valid_zero_values": 3961,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 4163
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "labeled_cohort",
+    "feature": "cigarillo_p30d",
+    "rows": 4164,
+    "observed": 4164,
+    "missing": 0,
+    "availability_fraction": 1.0,
+    "valid_zero_values": 4011,
+    "reason_counts": {
+      "observed": 4164
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "labeled_cohort",
+    "feature": "filtered_cigar_p30d",
+    "rows": 4164,
+    "observed": 4164,
+    "missing": 0,
+    "availability_fraction": 1.0,
+    "valid_zero_values": 4118,
+    "reason_counts": {
+      "observed": 4164
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "labeled_cohort",
+    "feature": "hookah_p30d",
+    "rows": 4164,
+    "observed": 4164,
+    "missing": 0,
+    "availability_fraction": 1.0,
+    "valid_zero_values": 4090,
+    "reason_counts": {
+      "observed": 4164
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "labeled_cohort",
+    "feature": "smokeless_tobacco_p30d",
+    "rows": 4164,
+    "observed": 4163,
+    "missing": 1,
+    "availability_fraction": 0.9997598463016331,
+    "valid_zero_values": 3882,
+    "reason_counts": {
+      "observed": 4163,
+      "refused": 1
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "labeled_cohort",
+    "feature": "snus_p30d",
+    "rows": 4164,
+    "observed": 4164,
+    "missing": 0,
+    "availability_fraction": 1.0,
+    "valid_zero_values": 4112,
+    "reason_counts": {
+      "observed": 4164
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "labeled_cohort",
+    "feature": "household_tobacco_any",
+    "rows": 4164,
+    "observed": 3512,
+    "missing": 652,
+    "availability_fraction": 0.8434197886647454,
+    "valid_zero_values": 2529,
+    "reason_counts": {
+      "dont_know": 8,
+      "observed": 3512,
+      "refused": 6,
+      "structural_skip": 638
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "labeled_cohort",
+    "feature": "home_combustible_smoking_rules",
+    "rows": 4164,
+    "observed": 4151,
+    "missing": 13,
+    "availability_fraction": 0.9968780019212296,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 8,
+      "observed": 4151,
+      "refused": 5
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "labeled_cohort",
+    "feature": "physical_health",
+    "rows": 4164,
+    "observed": 4158,
+    "missing": 6,
+    "availability_fraction": 0.9985590778097982,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 3,
+      "observed": 4158,
+      "refused": 3
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "labeled_cohort",
+    "feature": "mental_health",
+    "rows": 4164,
+    "observed": 4157,
+    "missing": 7,
+    "availability_fraction": 0.9983189241114313,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 4,
+      "observed": 4157,
+      "refused": 3
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "labeled_cohort",
+    "feature": "social_satisfaction",
+    "rows": 4164,
+    "observed": 4157,
+    "missing": 7,
+    "availability_fraction": 0.9983189241114313,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 4157,
+      "refused": 6
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "labeled_cohort",
+    "feature": "emotional_problems_7d",
+    "rows": 4164,
+    "observed": 4151,
+    "missing": 13,
+    "availability_fraction": 0.9968780019212296,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 4,
+      "observed": 4151,
+      "refused": 9
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "labeled_cohort",
+    "feature": "depressive_problem_recency",
+    "rows": 4164,
+    "observed": 4144,
+    "missing": 20,
+    "availability_fraction": 0.9951969260326609,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 10,
+      "observed": 4144,
+      "refused": 10
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "labeled_cohort",
+    "feature": "anxiety_problem_recency",
+    "rows": 4164,
+    "observed": 4139,
+    "missing": 25,
+    "availability_fraction": 0.9939961575408262,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 14,
+      "observed": 4139,
+      "refused": 11
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "labeled_cohort",
+    "feature": "alcohol_days_30d",
+    "rows": 4164,
+    "observed": 2597,
+    "missing": 1567,
+    "availability_fraction": 0.6236791546589817,
+    "valid_zero_values": 18,
+    "reason_counts": {
+      "dont_know": 4,
+      "observed": 2597,
+      "refused": 1,
+      "structural_skip": 1562
+    }
+  },
+  {
+    "pair": "3-4",
+    "population": "labeled_cohort",
+    "feature": "alcohol_drinks_per_drinking_day",
+    "rows": 4164,
+    "observed": 2580,
+    "missing": 1584,
+    "availability_fraction": 0.6195965417867435,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 2,
+      "observed": 2580,
+      "refused": 2,
+      "structural_skip": 1580
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "eligible_baseline",
+    "feature": "age_band",
+    "rows": 5470,
+    "observed": 5469,
+    "missing": 1,
+    "availability_fraction": 0.9998171846435101,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 5469,
+      "refused": 1
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "eligible_baseline",
+    "feature": "sex_recorded",
+    "rows": 5470,
+    "observed": 5464,
+    "missing": 6,
+    "availability_fraction": 0.9989031078610603,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 5464,
+      "refused": 5
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "eligible_baseline",
+    "feature": "education_level",
+    "rows": 5470,
+    "observed": 5456,
+    "missing": 14,
+    "availability_fraction": 0.9974405850091408,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 3,
+      "observed": 5456,
+      "refused": 11
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "eligible_baseline",
+    "feature": "household_income_band",
+    "rows": 5470,
+    "observed": 5174,
+    "missing": 296,
+    "availability_fraction": 0.9458866544789762,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 83,
+      "observed": 5174,
+      "refused": 213
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "eligible_baseline",
+    "feature": "employment_status",
+    "rows": 5470,
+    "observed": 5450,
+    "missing": 20,
+    "availability_fraction": 0.9963436928702011,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 7,
+      "observed": 5450,
+      "refused": 13
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "eligible_baseline",
+    "feature": "last_cigarette_recency_days",
+    "rows": 5470,
+    "observed": 1748,
+    "missing": 3722,
+    "availability_fraction": 0.31956124314442413,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 7,
+      "improbable_response_removed": 29,
+      "observed": 1748,
+      "refused": 4,
+      "structural_skip": 3682
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "eligible_baseline",
+    "feature": "prior_regular_cigarettes_per_day",
+    "rows": 5470,
+    "observed": 757,
+    "missing": 4713,
+    "availability_fraction": 0.1383912248628885,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 757,
+      "structural_skip": 4713
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "eligible_baseline",
+    "feature": "regular_smoking_months",
+    "rows": 5470,
+    "observed": 817,
+    "missing": 4653,
+    "availability_fraction": 0.1493601462522852,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 817,
+      "structural_skip": 4653
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "eligible_baseline",
+    "feature": "electronic_nicotine_p30d",
+    "rows": 5470,
+    "observed": 5469,
+    "missing": 1,
+    "availability_fraction": 0.9998171846435101,
+    "valid_zero_values": 4883,
+    "reason_counts": {
+      "observed": 5469,
+      "refused": 1
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "eligible_baseline",
+    "feature": "traditional_cigar_p30d",
+    "rows": 5470,
+    "observed": 5467,
+    "missing": 3,
+    "availability_fraction": 0.9994515539305302,
+    "valid_zero_values": 5221,
+    "reason_counts": {
+      "dont_know": 3,
+      "observed": 5467
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "eligible_baseline",
+    "feature": "cigarillo_p30d",
+    "rows": 5470,
+    "observed": 5467,
+    "missing": 3,
+    "availability_fraction": 0.9994515539305302,
+    "valid_zero_values": 5263,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 5467,
+      "refused": 2
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "eligible_baseline",
+    "feature": "filtered_cigar_p30d",
+    "rows": 5470,
+    "observed": 5468,
+    "missing": 2,
+    "availability_fraction": 0.9996343692870201,
+    "valid_zero_values": 5408,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 5468,
+      "refused": 1
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "eligible_baseline",
+    "feature": "hookah_p30d",
+    "rows": 5470,
+    "observed": 5469,
+    "missing": 1,
+    "availability_fraction": 0.9998171846435101,
+    "valid_zero_values": 5385,
+    "reason_counts": {
+      "observed": 5469,
+      "refused": 1
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "eligible_baseline",
+    "feature": "smokeless_tobacco_p30d",
+    "rows": 5470,
+    "observed": 5469,
+    "missing": 1,
+    "availability_fraction": 0.9998171846435101,
+    "valid_zero_values": 5110,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 5469
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "eligible_baseline",
+    "feature": "snus_p30d",
+    "rows": 5470,
+    "observed": 5466,
+    "missing": 4,
+    "availability_fraction": 0.9992687385740402,
+    "valid_zero_values": 5374,
+    "reason_counts": {
+      "dont_know": 3,
+      "observed": 5466,
+      "refused": 1
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "eligible_baseline",
+    "feature": "household_tobacco_any",
+    "rows": 5470,
+    "observed": 4563,
+    "missing": 907,
+    "availability_fraction": 0.8341864716636197,
+    "valid_zero_values": 3332,
+    "reason_counts": {
+      "dont_know": 6,
+      "observed": 4563,
+      "refused": 10,
+      "structural_skip": 891
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "eligible_baseline",
+    "feature": "home_combustible_smoking_rules",
+    "rows": 5470,
+    "observed": 5460,
+    "missing": 10,
+    "availability_fraction": 0.9981718464351006,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 6,
+      "observed": 5460,
+      "refused": 4
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "eligible_baseline",
+    "feature": "physical_health",
+    "rows": 5470,
+    "observed": 5467,
+    "missing": 3,
+    "availability_fraction": 0.9994515539305302,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 1,
+      "not_ascertained": 1,
+      "observed": 5467,
+      "refused": 1
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "eligible_baseline",
+    "feature": "mental_health",
+    "rows": 5470,
+    "observed": 5465,
+    "missing": 5,
+    "availability_fraction": 0.9990859232175503,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "not_ascertained": 1,
+      "observed": 5465,
+      "refused": 4
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "eligible_baseline",
+    "feature": "social_satisfaction",
+    "rows": 5470,
+    "observed": 5459,
+    "missing": 11,
+    "availability_fraction": 0.9979890310786106,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 5,
+      "observed": 5459,
+      "refused": 6
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "eligible_baseline",
+    "feature": "emotional_problems_7d",
+    "rows": 5470,
+    "observed": 5457,
+    "missing": 13,
+    "availability_fraction": 0.9976234003656307,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 5,
+      "observed": 5457,
+      "refused": 8
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "eligible_baseline",
+    "feature": "depressive_problem_recency",
+    "rows": 5470,
+    "observed": 5452,
+    "missing": 18,
+    "availability_fraction": 0.996709323583181,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 8,
+      "observed": 5452,
+      "refused": 10
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "eligible_baseline",
+    "feature": "anxiety_problem_recency",
+    "rows": 5470,
+    "observed": 5453,
+    "missing": 17,
+    "availability_fraction": 0.9968921389396709,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 6,
+      "observed": 5453,
+      "refused": 11
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "eligible_baseline",
+    "feature": "alcohol_days_30d",
+    "rows": 5470,
+    "observed": 3340,
+    "missing": 2130,
+    "availability_fraction": 0.6106032906764168,
+    "valid_zero_values": 37,
+    "reason_counts": {
+      "dont_know": 4,
+      "observed": 3340,
+      "refused": 1,
+      "structural_skip": 2125
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "eligible_baseline",
+    "feature": "alcohol_drinks_per_drinking_day",
+    "rows": 5470,
+    "observed": 3304,
+    "missing": 2166,
+    "availability_fraction": 0.6040219378427788,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 2,
+      "observed": 3304,
+      "refused": 2,
+      "structural_skip": 2162
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "labeled_cohort",
+    "feature": "age_band",
+    "rows": 4722,
+    "observed": 4721,
+    "missing": 1,
+    "availability_fraction": 0.9997882253282507,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 4721,
+      "refused": 1
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "labeled_cohort",
+    "feature": "sex_recorded",
+    "rows": 4722,
+    "observed": 4717,
+    "missing": 5,
+    "availability_fraction": 0.9989411266412537,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 4717,
+      "refused": 4
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "labeled_cohort",
+    "feature": "education_level",
+    "rows": 4722,
+    "observed": 4713,
+    "missing": 9,
+    "availability_fraction": 0.9980940279542567,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 3,
+      "observed": 4713,
+      "refused": 6
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "labeled_cohort",
+    "feature": "household_income_band",
+    "rows": 4722,
+    "observed": 4495,
+    "missing": 227,
+    "availability_fraction": 0.9519271495129182,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 69,
+      "observed": 4495,
+      "refused": 158
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "labeled_cohort",
+    "feature": "employment_status",
+    "rows": 4722,
+    "observed": 4706,
+    "missing": 16,
+    "availability_fraction": 0.9966116052520119,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 7,
+      "observed": 4706,
+      "refused": 9
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "labeled_cohort",
+    "feature": "last_cigarette_recency_days",
+    "rows": 4722,
+    "observed": 1429,
+    "missing": 3293,
+    "availability_fraction": 0.3026260059296908,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 6,
+      "improbable_response_removed": 21,
+      "observed": 1429,
+      "refused": 4,
+      "structural_skip": 3262
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "labeled_cohort",
+    "feature": "prior_regular_cigarettes_per_day",
+    "rows": 4722,
+    "observed": 592,
+    "missing": 4130,
+    "availability_fraction": 0.12537060567556121,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 592,
+      "structural_skip": 4130
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "labeled_cohort",
+    "feature": "regular_smoking_months",
+    "rows": 4722,
+    "observed": 645,
+    "missing": 4077,
+    "availability_fraction": 0.1365946632782719,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 645,
+      "structural_skip": 4077
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "labeled_cohort",
+    "feature": "electronic_nicotine_p30d",
+    "rows": 4722,
+    "observed": 4722,
+    "missing": 0,
+    "availability_fraction": 1.0,
+    "valid_zero_values": 4225,
+    "reason_counts": {
+      "observed": 4722
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "labeled_cohort",
+    "feature": "traditional_cigar_p30d",
+    "rows": 4722,
+    "observed": 4720,
+    "missing": 2,
+    "availability_fraction": 0.9995764506565015,
+    "valid_zero_values": 4511,
+    "reason_counts": {
+      "dont_know": 2,
+      "observed": 4720
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "labeled_cohort",
+    "feature": "cigarillo_p30d",
+    "rows": 4722,
+    "observed": 4719,
+    "missing": 3,
+    "availability_fraction": 0.9993646759847522,
+    "valid_zero_values": 4545,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 4719,
+      "refused": 2
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "labeled_cohort",
+    "feature": "filtered_cigar_p30d",
+    "rows": 4722,
+    "observed": 4720,
+    "missing": 2,
+    "availability_fraction": 0.9995764506565015,
+    "valid_zero_values": 4673,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 4720,
+      "refused": 1
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "labeled_cohort",
+    "feature": "hookah_p30d",
+    "rows": 4722,
+    "observed": 4721,
+    "missing": 1,
+    "availability_fraction": 0.9997882253282507,
+    "valid_zero_values": 4656,
+    "reason_counts": {
+      "observed": 4721,
+      "refused": 1
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "labeled_cohort",
+    "feature": "smokeless_tobacco_p30d",
+    "rows": 4722,
+    "observed": 4721,
+    "missing": 1,
+    "availability_fraction": 0.9997882253282507,
+    "valid_zero_values": 4418,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 4721
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "labeled_cohort",
+    "feature": "snus_p30d",
+    "rows": 4722,
+    "observed": 4719,
+    "missing": 3,
+    "availability_fraction": 0.9993646759847522,
+    "valid_zero_values": 4647,
+    "reason_counts": {
+      "dont_know": 2,
+      "observed": 4719,
+      "refused": 1
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "labeled_cohort",
+    "feature": "household_tobacco_any",
+    "rows": 4722,
+    "observed": 3958,
+    "missing": 764,
+    "availability_fraction": 0.8382041507835662,
+    "valid_zero_values": 2890,
+    "reason_counts": {
+      "dont_know": 5,
+      "observed": 3958,
+      "refused": 8,
+      "structural_skip": 751
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "labeled_cohort",
+    "feature": "home_combustible_smoking_rules",
+    "rows": 4722,
+    "observed": 4714,
+    "missing": 8,
+    "availability_fraction": 0.9983058026260059,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 5,
+      "observed": 4714,
+      "refused": 3
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "labeled_cohort",
+    "feature": "physical_health",
+    "rows": 4722,
+    "observed": 4721,
+    "missing": 1,
+    "availability_fraction": 0.9997882253282507,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 4721,
+      "refused": 1
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "labeled_cohort",
+    "feature": "mental_health",
+    "rows": 4722,
+    "observed": 4718,
+    "missing": 4,
+    "availability_fraction": 0.9991529013130029,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 4718,
+      "refused": 4
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "labeled_cohort",
+    "feature": "social_satisfaction",
+    "rows": 4722,
+    "observed": 4719,
+    "missing": 3,
+    "availability_fraction": 0.9993646759847522,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 4719,
+      "refused": 3
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "labeled_cohort",
+    "feature": "emotional_problems_7d",
+    "rows": 4722,
+    "observed": 4712,
+    "missing": 10,
+    "availability_fraction": 0.9978822532825075,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 3,
+      "observed": 4712,
+      "refused": 7
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "labeled_cohort",
+    "feature": "depressive_problem_recency",
+    "rows": 4722,
+    "observed": 4710,
+    "missing": 12,
+    "availability_fraction": 0.9974587039390089,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 5,
+      "observed": 4710,
+      "refused": 7
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "labeled_cohort",
+    "feature": "anxiety_problem_recency",
+    "rows": 4722,
+    "observed": 4710,
+    "missing": 12,
+    "availability_fraction": 0.9974587039390089,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 3,
+      "observed": 4710,
+      "refused": 9
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "labeled_cohort",
+    "feature": "alcohol_days_30d",
+    "rows": 4722,
+    "observed": 2907,
+    "missing": 1815,
+    "availability_fraction": 0.6156289707750953,
+    "valid_zero_values": 33,
+    "reason_counts": {
+      "dont_know": 3,
+      "observed": 2907,
+      "refused": 1,
+      "structural_skip": 1811
+    }
+  },
+  {
+    "pair": "4-5",
+    "population": "labeled_cohort",
+    "feature": "alcohol_drinks_per_drinking_day",
+    "rows": 4722,
+    "observed": 2875,
+    "missing": 1847,
+    "availability_fraction": 0.608852181279119,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 2,
+      "observed": 2875,
+      "refused": 1,
+      "structural_skip": 1844
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "eligible_baseline",
+    "feature": "age_band",
+    "rows": 5847,
+    "observed": 5847,
+    "missing": 0,
+    "availability_fraction": 1.0,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 5847
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "eligible_baseline",
+    "feature": "sex_recorded",
+    "rows": 5847,
+    "observed": 5842,
+    "missing": 5,
+    "availability_fraction": 0.9991448606122798,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 5842,
+      "refused": 4
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "eligible_baseline",
+    "feature": "education_level",
+    "rows": 5847,
+    "observed": 5835,
+    "missing": 12,
+    "availability_fraction": 0.9979476654694716,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 3,
+      "observed": 5835,
+      "refused": 9
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "eligible_baseline",
+    "feature": "household_income_band",
+    "rows": 5847,
+    "observed": 5565,
+    "missing": 282,
+    "availability_fraction": 0.9517701385325809,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 80,
+      "observed": 5565,
+      "refused": 202
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "eligible_baseline",
+    "feature": "employment_status",
+    "rows": 5847,
+    "observed": 5822,
+    "missing": 25,
+    "availability_fraction": 0.995724303061399,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 12,
+      "observed": 5822,
+      "refused": 13
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "eligible_baseline",
+    "feature": "last_cigarette_recency_days",
+    "rows": 5847,
+    "observed": 1584,
+    "missing": 4263,
+    "availability_fraction": 0.27090815802975887,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 7,
+      "improbable_response_removed": 39,
+      "observed": 1584,
+      "refused": 8,
+      "structural_skip": 4209
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "eligible_baseline",
+    "feature": "prior_regular_cigarettes_per_day",
+    "rows": 5847,
+    "observed": 149,
+    "missing": 5698,
+    "availability_fraction": 0.02548315375406191,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 2,
+      "observed": 149,
+      "structural_skip": 5696
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "eligible_baseline",
+    "feature": "regular_smoking_months",
+    "rows": 5847,
+    "observed": 202,
+    "missing": 5645,
+    "availability_fraction": 0.03454763126389602,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 2,
+      "observed": 202,
+      "structural_skip": 5643
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "eligible_baseline",
+    "feature": "electronic_nicotine_p30d",
+    "rows": 5847,
+    "observed": 5845,
+    "missing": 2,
+    "availability_fraction": 0.999657944244912,
+    "valid_zero_values": 4962,
+    "reason_counts": {
+      "observed": 5845,
+      "refused": 2
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "eligible_baseline",
+    "feature": "traditional_cigar_p30d",
+    "rows": 5847,
+    "observed": 5846,
+    "missing": 1,
+    "availability_fraction": 0.9998289721224559,
+    "valid_zero_values": 5575,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 5846
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "eligible_baseline",
+    "feature": "cigarillo_p30d",
+    "rows": 5847,
+    "observed": 5847,
+    "missing": 0,
+    "availability_fraction": 1.0,
+    "valid_zero_values": 5605,
+    "reason_counts": {
+      "observed": 5847
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "eligible_baseline",
+    "feature": "filtered_cigar_p30d",
+    "rows": 5847,
+    "observed": 5847,
+    "missing": 0,
+    "availability_fraction": 1.0,
+    "valid_zero_values": 5782,
+    "reason_counts": {
+      "observed": 5847
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "eligible_baseline",
+    "feature": "hookah_p30d",
+    "rows": 5847,
+    "observed": 5847,
+    "missing": 0,
+    "availability_fraction": 1.0,
+    "valid_zero_values": 5760,
+    "reason_counts": {
+      "observed": 5847
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "eligible_baseline",
+    "feature": "smokeless_tobacco_p30d",
+    "rows": 5847,
+    "observed": 5845,
+    "missing": 2,
+    "availability_fraction": 0.999657944244912,
+    "valid_zero_values": 5495,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 5845,
+      "refused": 1
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "eligible_baseline",
+    "feature": "snus_p30d",
+    "rows": 5847,
+    "observed": 5845,
+    "missing": 2,
+    "availability_fraction": 0.999657944244912,
+    "valid_zero_values": 5750,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 5845,
+      "refused": 1
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "eligible_baseline",
+    "feature": "household_tobacco_any",
+    "rows": 5847,
+    "observed": 4828,
+    "missing": 1019,
+    "availability_fraction": 0.8257225927826236,
+    "valid_zero_values": 3459,
+    "reason_counts": {
+      "dont_know": 9,
+      "observed": 4828,
+      "refused": 16,
+      "structural_skip": 994
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "eligible_baseline",
+    "feature": "home_combustible_smoking_rules",
+    "rows": 5847,
+    "observed": 5829,
+    "missing": 18,
+    "availability_fraction": 0.9969214982042073,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 8,
+      "observed": 5829,
+      "refused": 10
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "eligible_baseline",
+    "feature": "physical_health",
+    "rows": 5847,
+    "observed": 5835,
+    "missing": 12,
+    "availability_fraction": 0.9979476654694716,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 4,
+      "observed": 5835,
+      "refused": 8
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "eligible_baseline",
+    "feature": "mental_health",
+    "rows": 5847,
+    "observed": 5832,
+    "missing": 15,
+    "availability_fraction": 0.9974345818368394,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 8,
+      "observed": 5832,
+      "refused": 7
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "eligible_baseline",
+    "feature": "social_satisfaction",
+    "rows": 5847,
+    "observed": 5836,
+    "missing": 11,
+    "availability_fraction": 0.9981186933470155,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 5,
+      "observed": 5836,
+      "refused": 6
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "eligible_baseline",
+    "feature": "emotional_problems_7d",
+    "rows": 5847,
+    "observed": 5838,
+    "missing": 9,
+    "availability_fraction": 0.9984607491021037,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 2,
+      "observed": 5838,
+      "refused": 7
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "eligible_baseline",
+    "feature": "depressive_problem_recency",
+    "rows": 5847,
+    "observed": 5822,
+    "missing": 25,
+    "availability_fraction": 0.995724303061399,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 5,
+      "observed": 5822,
+      "refused": 20
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "eligible_baseline",
+    "feature": "anxiety_problem_recency",
+    "rows": 5847,
+    "observed": 5826,
+    "missing": 21,
+    "availability_fraction": 0.9964084145715751,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 4,
+      "not_ascertained": 1,
+      "observed": 5826,
+      "refused": 16
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "eligible_baseline",
+    "feature": "alcohol_days_30d",
+    "rows": 5847,
+    "observed": 3415,
+    "missing": 2432,
+    "availability_fraction": 0.5840602018128955,
+    "valid_zero_values": 31,
+    "reason_counts": {
+      "dont_know": 3,
+      "observed": 3415,
+      "refused": 3,
+      "structural_skip": 2426
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "eligible_baseline",
+    "feature": "alcohol_drinks_per_drinking_day",
+    "rows": 5847,
+    "observed": 3380,
+    "missing": 2467,
+    "availability_fraction": 0.5780742260988541,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 2,
+      "observed": 3380,
+      "refused": 8,
+      "structural_skip": 2457
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "labeled_cohort",
+    "feature": "age_band",
+    "rows": 4463,
+    "observed": 4463,
+    "missing": 0,
+    "availability_fraction": 1.0,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 4463
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "labeled_cohort",
+    "feature": "sex_recorded",
+    "rows": 4463,
+    "observed": 4460,
+    "missing": 3,
+    "availability_fraction": 0.9993278064082456,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 4460,
+      "refused": 3
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "labeled_cohort",
+    "feature": "education_level",
+    "rows": 4463,
+    "observed": 4457,
+    "missing": 6,
+    "availability_fraction": 0.9986556128164912,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 2,
+      "observed": 4457,
+      "refused": 4
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "labeled_cohort",
+    "feature": "household_income_band",
+    "rows": 4463,
+    "observed": 4262,
+    "missing": 201,
+    "availability_fraction": 0.9549630293524535,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 54,
+      "observed": 4262,
+      "refused": 147
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "labeled_cohort",
+    "feature": "employment_status",
+    "rows": 4463,
+    "observed": 4445,
+    "missing": 18,
+    "availability_fraction": 0.9959668384494734,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 7,
+      "observed": 4445,
+      "refused": 11
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "labeled_cohort",
+    "feature": "last_cigarette_recency_days",
+    "rows": 4463,
+    "observed": 1069,
+    "missing": 3394,
+    "availability_fraction": 0.23952498319516022,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 7,
+      "improbable_response_removed": 23,
+      "observed": 1069,
+      "refused": 4,
+      "structural_skip": 3360
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "labeled_cohort",
+    "feature": "prior_regular_cigarettes_per_day",
+    "rows": 4463,
+    "observed": 98,
+    "missing": 4365,
+    "availability_fraction": 0.021958323997311225,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 98,
+      "structural_skip": 4364
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "labeled_cohort",
+    "feature": "regular_smoking_months",
+    "rows": 4463,
+    "observed": 133,
+    "missing": 4330,
+    "availability_fraction": 0.02980058256777952,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 2,
+      "observed": 133,
+      "structural_skip": 4328
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "labeled_cohort",
+    "feature": "electronic_nicotine_p30d",
+    "rows": 4463,
+    "observed": 4461,
+    "missing": 2,
+    "availability_fraction": 0.9995518709388304,
+    "valid_zero_values": 3857,
+    "reason_counts": {
+      "observed": 4461,
+      "refused": 2
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "labeled_cohort",
+    "feature": "traditional_cigar_p30d",
+    "rows": 4463,
+    "observed": 4462,
+    "missing": 1,
+    "availability_fraction": 0.9997759354694152,
+    "valid_zero_values": 4263,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 4462
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "labeled_cohort",
+    "feature": "cigarillo_p30d",
+    "rows": 4463,
+    "observed": 4463,
+    "missing": 0,
+    "availability_fraction": 1.0,
+    "valid_zero_values": 4288,
+    "reason_counts": {
+      "observed": 4463
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "labeled_cohort",
+    "feature": "filtered_cigar_p30d",
+    "rows": 4463,
+    "observed": 4463,
+    "missing": 0,
+    "availability_fraction": 1.0,
+    "valid_zero_values": 4419,
+    "reason_counts": {
+      "observed": 4463
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "labeled_cohort",
+    "feature": "hookah_p30d",
+    "rows": 4463,
+    "observed": 4463,
+    "missing": 0,
+    "availability_fraction": 1.0,
+    "valid_zero_values": 4406,
+    "reason_counts": {
+      "observed": 4463
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "labeled_cohort",
+    "feature": "smokeless_tobacco_p30d",
+    "rows": 4463,
+    "observed": 4463,
+    "missing": 0,
+    "availability_fraction": 1.0,
+    "valid_zero_values": 4222,
+    "reason_counts": {
+      "observed": 4463
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "labeled_cohort",
+    "feature": "snus_p30d",
+    "rows": 4463,
+    "observed": 4461,
+    "missing": 2,
+    "availability_fraction": 0.9995518709388304,
+    "valid_zero_values": 4395,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 4461,
+      "refused": 1
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "labeled_cohort",
+    "feature": "household_tobacco_any",
+    "rows": 4463,
+    "observed": 3691,
+    "missing": 772,
+    "availability_fraction": 0.8270221823885279,
+    "valid_zero_values": 2673,
+    "reason_counts": {
+      "dont_know": 6,
+      "observed": 3691,
+      "refused": 11,
+      "structural_skip": 755
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "labeled_cohort",
+    "feature": "home_combustible_smoking_rules",
+    "rows": 4463,
+    "observed": 4449,
+    "missing": 14,
+    "availability_fraction": 0.9968630965718127,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 6,
+      "observed": 4449,
+      "refused": 8
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "labeled_cohort",
+    "feature": "physical_health",
+    "rows": 4463,
+    "observed": 4455,
+    "missing": 8,
+    "availability_fraction": 0.9982074837553215,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 2,
+      "observed": 4455,
+      "refused": 6
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "labeled_cohort",
+    "feature": "mental_health",
+    "rows": 4463,
+    "observed": 4457,
+    "missing": 6,
+    "availability_fraction": 0.9986556128164912,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 4,
+      "observed": 4457,
+      "refused": 2
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "labeled_cohort",
+    "feature": "social_satisfaction",
+    "rows": 4463,
+    "observed": 4457,
+    "missing": 6,
+    "availability_fraction": 0.9986556128164912,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 4457,
+      "refused": 5
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "labeled_cohort",
+    "feature": "emotional_problems_7d",
+    "rows": 4463,
+    "observed": 4457,
+    "missing": 6,
+    "availability_fraction": 0.9986556128164912,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 2,
+      "observed": 4457,
+      "refused": 4
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "labeled_cohort",
+    "feature": "depressive_problem_recency",
+    "rows": 4463,
+    "observed": 4448,
+    "missing": 15,
+    "availability_fraction": 0.9966390320412278,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 5,
+      "observed": 4448,
+      "refused": 10
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "labeled_cohort",
+    "feature": "anxiety_problem_recency",
+    "rows": 4463,
+    "observed": 4454,
+    "missing": 9,
+    "availability_fraction": 0.9979834192247368,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 2,
+      "not_ascertained": 1,
+      "observed": 4454,
+      "refused": 6
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "labeled_cohort",
+    "feature": "alcohol_days_30d",
+    "rows": 4463,
+    "observed": 2711,
+    "missing": 1752,
+    "availability_fraction": 0.6074389424154156,
+    "valid_zero_values": 21,
+    "reason_counts": {
+      "dont_know": 2,
+      "observed": 2711,
+      "refused": 3,
+      "structural_skip": 1747
+    }
+  },
+  {
+    "pair": "5-6",
+    "population": "labeled_cohort",
+    "feature": "alcohol_drinks_per_drinking_day",
+    "rows": 4463,
+    "observed": 2688,
+    "missing": 1775,
+    "availability_fraction": 0.602285458211965,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 2688,
+      "refused": 6,
+      "structural_skip": 1768
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "eligible_baseline",
+    "feature": "age_band",
+    "rows": 5854,
+    "observed": 5854,
+    "missing": 0,
+    "availability_fraction": 1.0,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 5854
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "eligible_baseline",
+    "feature": "sex_recorded",
+    "rows": 5854,
+    "observed": 5851,
+    "missing": 3,
+    "availability_fraction": 0.9994875298940895,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 5851,
+      "system_missing": 3
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "eligible_baseline",
+    "feature": "education_level",
+    "rows": 5854,
+    "observed": 5843,
+    "missing": 11,
+    "availability_fraction": 0.9981209429449949,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 5843,
+      "system_missing": 11
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "eligible_baseline",
+    "feature": "household_income_band",
+    "rows": 5854,
+    "observed": 5622,
+    "missing": 232,
+    "availability_fraction": 0.9603689784762556,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 5622,
+      "system_missing": 232
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "eligible_baseline",
+    "feature": "employment_status",
+    "rows": 5854,
+    "observed": 5848,
+    "missing": 6,
+    "availability_fraction": 0.998975059788179,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 5,
+      "observed": 5848,
+      "refused": 1
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "eligible_baseline",
+    "feature": "last_cigarette_recency_days",
+    "rows": 5854,
+    "observed": 1319,
+    "missing": 4535,
+    "availability_fraction": 0.22531602323197814,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 9,
+      "observed": 1319,
+      "outside_analytic_range": 19,
+      "refused": 2,
+      "structural_skip": 4505
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "eligible_baseline",
+    "feature": "prior_regular_cigarettes_per_day",
+    "rows": 5854,
+    "observed": 47,
+    "missing": 5807,
+    "availability_fraction": 0.008028698325930988,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 47,
+      "structural_skip": 5807
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "eligible_baseline",
+    "feature": "regular_smoking_months",
+    "rows": 5854,
+    "observed": 134,
+    "missing": 5720,
+    "availability_fraction": 0.022890331397335154,
+    "valid_zero_values": 1,
+    "reason_counts": {
+      "observed": 134,
+      "system_missing": 5720
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "eligible_baseline",
+    "feature": "electronic_nicotine_p30d",
+    "rows": 5854,
+    "observed": 5854,
+    "missing": 0,
+    "availability_fraction": 1.0,
+    "valid_zero_values": 4913,
+    "reason_counts": {
+      "observed": 5854
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "eligible_baseline",
+    "feature": "traditional_cigar_p30d",
+    "rows": 5854,
+    "observed": 5851,
+    "missing": 3,
+    "availability_fraction": 0.9994875298940895,
+    "valid_zero_values": 5634,
+    "reason_counts": {
+      "observed": 5851,
+      "system_missing": 3
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "eligible_baseline",
+    "feature": "cigarillo_p30d",
+    "rows": 5854,
+    "observed": 5848,
+    "missing": 6,
+    "availability_fraction": 0.998975059788179,
+    "valid_zero_values": 5650,
+    "reason_counts": {
+      "observed": 5848,
+      "system_missing": 6
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "eligible_baseline",
+    "feature": "filtered_cigar_p30d",
+    "rows": 5854,
+    "observed": 5848,
+    "missing": 6,
+    "availability_fraction": 0.998975059788179,
+    "valid_zero_values": 5779,
+    "reason_counts": {
+      "observed": 5848,
+      "system_missing": 6
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "eligible_baseline",
+    "feature": "hookah_p30d",
+    "rows": 5854,
+    "observed": 5852,
+    "missing": 2,
+    "availability_fraction": 0.9996583532627263,
+    "valid_zero_values": 5773,
+    "reason_counts": {
+      "observed": 5852,
+      "system_missing": 2
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "eligible_baseline",
+    "feature": "smokeless_tobacco_p30d",
+    "rows": 5854,
+    "observed": 5851,
+    "missing": 3,
+    "availability_fraction": 0.9994875298940895,
+    "valid_zero_values": 5595,
+    "reason_counts": {
+      "observed": 5851,
+      "system_missing": 3
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "eligible_baseline",
+    "feature": "snus_p30d",
+    "rows": 5854,
+    "observed": 5852,
+    "missing": 2,
+    "availability_fraction": 0.9996583532627263,
+    "valid_zero_values": 5778,
+    "reason_counts": {
+      "observed": 5852,
+      "system_missing": 2
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "eligible_baseline",
+    "feature": "household_tobacco_any",
+    "rows": 5854,
+    "observed": 4764,
+    "missing": 1090,
+    "availability_fraction": 0.8138025281858559,
+    "valid_zero_values": 3431,
+    "reason_counts": {
+      "observed": 4764,
+      "system_missing": 1090
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "eligible_baseline",
+    "feature": "home_combustible_smoking_rules",
+    "rows": 5854,
+    "observed": 5843,
+    "missing": 11,
+    "availability_fraction": 0.9981209429449949,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 6,
+      "observed": 5843,
+      "refused": 5
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "eligible_baseline",
+    "feature": "physical_health",
+    "rows": 5854,
+    "observed": 5847,
+    "missing": 7,
+    "availability_fraction": 0.9988042364195422,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 1,
+      "not_ascertained": 1,
+      "observed": 5847,
+      "refused": 5
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "eligible_baseline",
+    "feature": "mental_health",
+    "rows": 5854,
+    "observed": 5849,
+    "missing": 5,
+    "availability_fraction": 0.9991458831568159,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 2,
+      "not_ascertained": 1,
+      "observed": 5849,
+      "refused": 2
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "eligible_baseline",
+    "feature": "social_satisfaction",
+    "rows": 5854,
+    "observed": 5849,
+    "missing": 5,
+    "availability_fraction": 0.9991458831568159,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 2,
+      "observed": 5849,
+      "refused": 3
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "eligible_baseline",
+    "feature": "emotional_problems_7d",
+    "rows": 5854,
+    "observed": 5844,
+    "missing": 10,
+    "availability_fraction": 0.9982917663136317,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 4,
+      "observed": 5844,
+      "refused": 6
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "eligible_baseline",
+    "feature": "depressive_problem_recency",
+    "rows": 5854,
+    "observed": 5838,
+    "missing": 16,
+    "availability_fraction": 0.9972668261018107,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 5,
+      "not_ascertained": 4,
+      "observed": 5838,
+      "refused": 7
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "eligible_baseline",
+    "feature": "anxiety_problem_recency",
+    "rows": 5854,
+    "observed": 5838,
+    "missing": 16,
+    "availability_fraction": 0.9972668261018107,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 7,
+      "not_ascertained": 4,
+      "observed": 5838,
+      "refused": 5
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "eligible_baseline",
+    "feature": "alcohol_days_30d",
+    "rows": 5854,
+    "observed": 3420,
+    "missing": 2434,
+    "availability_fraction": 0.5842159207379569,
+    "valid_zero_values": 18,
+    "reason_counts": {
+      "dont_know": 3,
+      "observed": 3420,
+      "refused": 1,
+      "structural_skip": 2430
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "eligible_baseline",
+    "feature": "alcohol_drinks_per_drinking_day",
+    "rows": 5854,
+    "observed": 3400,
+    "missing": 2454,
+    "availability_fraction": 0.5807994533652203,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 5,
+      "observed": 3400,
+      "refused": 1,
+      "structural_skip": 2448
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "labeled_cohort",
+    "feature": "age_band",
+    "rows": 4861,
+    "observed": 4861,
+    "missing": 0,
+    "availability_fraction": 1.0,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 4861
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "labeled_cohort",
+    "feature": "sex_recorded",
+    "rows": 4861,
+    "observed": 4858,
+    "missing": 3,
+    "availability_fraction": 0.9993828430364122,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 4858,
+      "system_missing": 3
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "labeled_cohort",
+    "feature": "education_level",
+    "rows": 4861,
+    "observed": 4855,
+    "missing": 6,
+    "availability_fraction": 0.9987656860728246,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 4855,
+      "system_missing": 6
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "labeled_cohort",
+    "feature": "household_income_band",
+    "rows": 4861,
+    "observed": 4684,
+    "missing": 177,
+    "availability_fraction": 0.9635877391483234,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 4684,
+      "system_missing": 177
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "labeled_cohort",
+    "feature": "employment_status",
+    "rows": 4861,
+    "observed": 4855,
+    "missing": 6,
+    "availability_fraction": 0.9987656860728246,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 5,
+      "observed": 4855,
+      "refused": 1
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "labeled_cohort",
+    "feature": "last_cigarette_recency_days",
+    "rows": 4861,
+    "observed": 1034,
+    "missing": 3827,
+    "availability_fraction": 0.21271343344990742,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 7,
+      "observed": 1034,
+      "outside_analytic_range": 14,
+      "refused": 1,
+      "structural_skip": 3805
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "labeled_cohort",
+    "feature": "prior_regular_cigarettes_per_day",
+    "rows": 4861,
+    "observed": 32,
+    "missing": 4829,
+    "availability_fraction": 0.006583007611602551,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 32,
+      "structural_skip": 4829
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "labeled_cohort",
+    "feature": "regular_smoking_months",
+    "rows": 4861,
+    "observed": 102,
+    "missing": 4759,
+    "availability_fraction": 0.02098333676198313,
+    "valid_zero_values": 1,
+    "reason_counts": {
+      "observed": 102,
+      "system_missing": 4759
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "labeled_cohort",
+    "feature": "electronic_nicotine_p30d",
+    "rows": 4861,
+    "observed": 4861,
+    "missing": 0,
+    "availability_fraction": 1.0,
+    "valid_zero_values": 4127,
+    "reason_counts": {
+      "observed": 4861
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "labeled_cohort",
+    "feature": "traditional_cigar_p30d",
+    "rows": 4861,
+    "observed": 4858,
+    "missing": 3,
+    "availability_fraction": 0.9993828430364122,
+    "valid_zero_values": 4679,
+    "reason_counts": {
+      "observed": 4858,
+      "system_missing": 3
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "labeled_cohort",
+    "feature": "cigarillo_p30d",
+    "rows": 4861,
+    "observed": 4855,
+    "missing": 6,
+    "availability_fraction": 0.9987656860728246,
+    "valid_zero_values": 4700,
+    "reason_counts": {
+      "observed": 4855,
+      "system_missing": 6
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "labeled_cohort",
+    "feature": "filtered_cigar_p30d",
+    "rows": 4861,
+    "observed": 4855,
+    "missing": 6,
+    "availability_fraction": 0.9987656860728246,
+    "valid_zero_values": 4799,
+    "reason_counts": {
+      "observed": 4855,
+      "system_missing": 6
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "labeled_cohort",
+    "feature": "hookah_p30d",
+    "rows": 4861,
+    "observed": 4859,
+    "missing": 2,
+    "availability_fraction": 0.9995885620242748,
+    "valid_zero_values": 4800,
+    "reason_counts": {
+      "observed": 4859,
+      "system_missing": 2
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "labeled_cohort",
+    "feature": "smokeless_tobacco_p30d",
+    "rows": 4861,
+    "observed": 4858,
+    "missing": 3,
+    "availability_fraction": 0.9993828430364122,
+    "valid_zero_values": 4651,
+    "reason_counts": {
+      "observed": 4858,
+      "system_missing": 3
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "labeled_cohort",
+    "feature": "snus_p30d",
+    "rows": 4861,
+    "observed": 4859,
+    "missing": 2,
+    "availability_fraction": 0.9995885620242748,
+    "valid_zero_values": 4795,
+    "reason_counts": {
+      "observed": 4859,
+      "system_missing": 2
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "labeled_cohort",
+    "feature": "household_tobacco_any",
+    "rows": 4861,
+    "observed": 3976,
+    "missing": 885,
+    "availability_fraction": 0.8179386957416169,
+    "valid_zero_values": 2862,
+    "reason_counts": {
+      "observed": 3976,
+      "system_missing": 885
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "labeled_cohort",
+    "feature": "home_combustible_smoking_rules",
+    "rows": 4861,
+    "observed": 4850,
+    "missing": 11,
+    "availability_fraction": 0.9977370911335116,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 6,
+      "observed": 4850,
+      "refused": 5
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "labeled_cohort",
+    "feature": "physical_health",
+    "rows": 4861,
+    "observed": 4857,
+    "missing": 4,
+    "availability_fraction": 0.9991771240485496,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 1,
+      "not_ascertained": 1,
+      "observed": 4857,
+      "refused": 2
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "labeled_cohort",
+    "feature": "mental_health",
+    "rows": 4861,
+    "observed": 4856,
+    "missing": 5,
+    "availability_fraction": 0.9989714050606872,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 2,
+      "not_ascertained": 1,
+      "observed": 4856,
+      "refused": 2
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "labeled_cohort",
+    "feature": "social_satisfaction",
+    "rows": 4861,
+    "observed": 4859,
+    "missing": 2,
+    "availability_fraction": 0.9995885620242748,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 4859,
+      "refused": 2
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "labeled_cohort",
+    "feature": "emotional_problems_7d",
+    "rows": 4861,
+    "observed": 4854,
+    "missing": 7,
+    "availability_fraction": 0.998559967084962,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 2,
+      "observed": 4854,
+      "refused": 5
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "labeled_cohort",
+    "feature": "depressive_problem_recency",
+    "rows": 4861,
+    "observed": 4851,
+    "missing": 10,
+    "availability_fraction": 0.9979428101213742,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 1,
+      "not_ascertained": 2,
+      "observed": 4851,
+      "refused": 7
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "labeled_cohort",
+    "feature": "anxiety_problem_recency",
+    "rows": 4861,
+    "observed": 4851,
+    "missing": 10,
+    "availability_fraction": 0.9979428101213742,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 4,
+      "not_ascertained": 2,
+      "observed": 4851,
+      "refused": 4
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "labeled_cohort",
+    "feature": "alcohol_days_30d",
+    "rows": 4861,
+    "observed": 2852,
+    "missing": 2009,
+    "availability_fraction": 0.5867105533840774,
+    "valid_zero_values": 14,
+    "reason_counts": {
+      "dont_know": 3,
+      "observed": 2852,
+      "refused": 1,
+      "structural_skip": 2005
+    }
+  },
+  {
+    "pair": "6-7",
+    "population": "labeled_cohort",
+    "feature": "alcohol_drinks_per_drinking_day",
+    "rows": 4861,
+    "observed": 2837,
+    "missing": 2024,
+    "availability_fraction": 0.5836247685661387,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 4,
+      "observed": 2837,
+      "refused": 1,
+      "structural_skip": 2019
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "eligible_baseline",
+    "feature": "age_band",
+    "rows": 5802,
+    "observed": 5802,
+    "missing": 0,
+    "availability_fraction": 1.0,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 5802
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "eligible_baseline",
+    "feature": "sex_recorded",
+    "rows": 5802,
+    "observed": 5797,
+    "missing": 5,
+    "availability_fraction": 0.9991382281971734,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 5797,
+      "system_missing": 5
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "eligible_baseline",
+    "feature": "education_level",
+    "rows": 5802,
+    "observed": 5776,
+    "missing": 26,
+    "availability_fraction": 0.9955187866253016,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 5776,
+      "system_missing": 26
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "eligible_baseline",
+    "feature": "household_income_band",
+    "rows": 5802,
+    "observed": 5539,
+    "missing": 263,
+    "availability_fraction": 0.9546708031713202,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 5539,
+      "system_missing": 263
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "eligible_baseline",
+    "feature": "employment_status",
+    "rows": 5802,
+    "observed": 5782,
+    "missing": 20,
+    "availability_fraction": 0.9965529127886935,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 7,
+      "observed": 5782,
+      "refused": 13
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "eligible_baseline",
+    "feature": "last_cigarette_recency_days",
+    "rows": 5802,
+    "observed": 1382,
+    "missing": 4420,
+    "availability_fraction": 0.23819372630127542,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 7,
+      "observed": 1382,
+      "outside_analytic_range": 43,
+      "refused": 8,
+      "structural_skip": 4362
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "eligible_baseline",
+    "feature": "prior_regular_cigarettes_per_day",
+    "rows": 5802,
+    "observed": 253,
+    "missing": 5549,
+    "availability_fraction": 0.04360565322302654,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 253,
+      "structural_skip": 5549
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "eligible_baseline",
+    "feature": "regular_smoking_months",
+    "rows": 5802,
+    "observed": 312,
+    "missing": 5490,
+    "availability_fraction": 0.05377456049638056,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 312,
+      "system_missing": 5490
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "eligible_baseline",
+    "feature": "electronic_nicotine_p30d",
+    "rows": 5802,
+    "observed": 5800,
+    "missing": 2,
+    "availability_fraction": 0.9996552912788693,
+    "valid_zero_values": 4684,
+    "reason_counts": {
+      "observed": 5800,
+      "system_missing": 2
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "eligible_baseline",
+    "feature": "traditional_cigar_p30d",
+    "rows": 5802,
+    "observed": 5802,
+    "missing": 0,
+    "availability_fraction": 1.0,
+    "valid_zero_values": 5577,
+    "reason_counts": {
+      "observed": 5802
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "eligible_baseline",
+    "feature": "cigarillo_p30d",
+    "rows": 5802,
+    "observed": 5800,
+    "missing": 2,
+    "availability_fraction": 0.9996552912788693,
+    "valid_zero_values": 5584,
+    "reason_counts": {
+      "observed": 5800,
+      "system_missing": 2
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "eligible_baseline",
+    "feature": "filtered_cigar_p30d",
+    "rows": 5802,
+    "observed": 5800,
+    "missing": 2,
+    "availability_fraction": 0.9996552912788693,
+    "valid_zero_values": 5741,
+    "reason_counts": {
+      "observed": 5800,
+      "system_missing": 2
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "eligible_baseline",
+    "feature": "hookah_p30d",
+    "rows": 5802,
+    "observed": 5801,
+    "missing": 1,
+    "availability_fraction": 0.9998276456394347,
+    "valid_zero_values": 5707,
+    "reason_counts": {
+      "observed": 5801,
+      "system_missing": 1
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "eligible_baseline",
+    "feature": "smokeless_tobacco_p30d",
+    "rows": 5802,
+    "observed": 5801,
+    "missing": 1,
+    "availability_fraction": 0.9998276456394347,
+    "valid_zero_values": 5579,
+    "reason_counts": {
+      "observed": 5801,
+      "system_missing": 1
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "eligible_baseline",
+    "feature": "snus_p30d",
+    "rows": 5802,
+    "observed": 5802,
+    "missing": 0,
+    "availability_fraction": 1.0,
+    "valid_zero_values": 5748,
+    "reason_counts": {
+      "observed": 5802
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "eligible_baseline",
+    "feature": "household_tobacco_any",
+    "rows": 5802,
+    "observed": 4733,
+    "missing": 1069,
+    "availability_fraction": 0.8157531885556705,
+    "valid_zero_values": 3381,
+    "reason_counts": {
+      "observed": 4733,
+      "system_missing": 1069
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "eligible_baseline",
+    "feature": "home_combustible_smoking_rules",
+    "rows": 5802,
+    "observed": 5786,
+    "missing": 16,
+    "availability_fraction": 0.9972423302309549,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 9,
+      "observed": 5786,
+      "refused": 7
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "eligible_baseline",
+    "feature": "physical_health",
+    "rows": 5802,
+    "observed": 5795,
+    "missing": 7,
+    "availability_fraction": 0.9987935194760428,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 2,
+      "observed": 5795,
+      "refused": 5
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "eligible_baseline",
+    "feature": "mental_health",
+    "rows": 5802,
+    "observed": 5785,
+    "missing": 17,
+    "availability_fraction": 0.9970699758703895,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 3,
+      "observed": 5785,
+      "refused": 14
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "eligible_baseline",
+    "feature": "social_satisfaction",
+    "rows": 5802,
+    "observed": 5790,
+    "missing": 12,
+    "availability_fraction": 0.9979317476732161,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 4,
+      "observed": 5790,
+      "refused": 8
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "eligible_baseline",
+    "feature": "emotional_problems_7d",
+    "rows": 5802,
+    "observed": 5789,
+    "missing": 13,
+    "availability_fraction": 0.9977593933126508,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 5789,
+      "refused": 12
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "eligible_baseline",
+    "feature": "depressive_problem_recency",
+    "rows": 5802,
+    "observed": 5784,
+    "missing": 18,
+    "availability_fraction": 0.9968976215098242,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 6,
+      "observed": 5784,
+      "refused": 12
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "eligible_baseline",
+    "feature": "anxiety_problem_recency",
+    "rows": 5802,
+    "observed": 5783,
+    "missing": 19,
+    "availability_fraction": 0.9967252671492589,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 6,
+      "observed": 5783,
+      "refused": 13
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "eligible_baseline",
+    "feature": "alcohol_days_30d",
+    "rows": 5802,
+    "observed": 3227,
+    "missing": 2575,
+    "availability_fraction": 0.5561875215442951,
+    "valid_zero_values": 23,
+    "reason_counts": {
+      "dont_know": 3,
+      "observed": 3227,
+      "refused": 3,
+      "structural_skip": 2569
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "eligible_baseline",
+    "feature": "alcohol_drinks_per_drinking_day",
+    "rows": 5802,
+    "observed": 3194,
+    "missing": 2608,
+    "availability_fraction": 0.5504998276456394,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 6,
+      "improbable_response_removed": 8,
+      "observed": 3194,
+      "refused": 2,
+      "structural_skip": 2592
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "labeled_cohort",
+    "feature": "age_band",
+    "rows": 4906,
+    "observed": 4906,
+    "missing": 0,
+    "availability_fraction": 1.0,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 4906
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "labeled_cohort",
+    "feature": "sex_recorded",
+    "rows": 4906,
+    "observed": 4901,
+    "missing": 5,
+    "availability_fraction": 0.9989808397880147,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 4901,
+      "system_missing": 5
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "labeled_cohort",
+    "feature": "education_level",
+    "rows": 4906,
+    "observed": 4888,
+    "missing": 18,
+    "availability_fraction": 0.9963310232368529,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 4888,
+      "system_missing": 18
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "labeled_cohort",
+    "feature": "household_income_band",
+    "rows": 4906,
+    "observed": 4702,
+    "missing": 204,
+    "availability_fraction": 0.9584182633509988,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 4702,
+      "system_missing": 204
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "labeled_cohort",
+    "feature": "employment_status",
+    "rows": 4906,
+    "observed": 4892,
+    "missing": 14,
+    "availability_fraction": 0.9971463514064411,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 4,
+      "observed": 4892,
+      "refused": 10
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "labeled_cohort",
+    "feature": "last_cigarette_recency_days",
+    "rows": 4906,
+    "observed": 1078,
+    "missing": 3828,
+    "availability_fraction": 0.21973094170403587,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 6,
+      "observed": 1078,
+      "outside_analytic_range": 32,
+      "refused": 7,
+      "structural_skip": 3783
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "labeled_cohort",
+    "feature": "prior_regular_cigarettes_per_day",
+    "rows": 4906,
+    "observed": 176,
+    "missing": 4730,
+    "availability_fraction": 0.03587443946188341,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 176,
+      "structural_skip": 4730
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "labeled_cohort",
+    "feature": "regular_smoking_months",
+    "rows": 4906,
+    "observed": 225,
+    "missing": 4681,
+    "availability_fraction": 0.04586220953933958,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "observed": 225,
+      "system_missing": 4681
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "labeled_cohort",
+    "feature": "electronic_nicotine_p30d",
+    "rows": 4906,
+    "observed": 4905,
+    "missing": 1,
+    "availability_fraction": 0.999796167957603,
+    "valid_zero_values": 4019,
+    "reason_counts": {
+      "observed": 4905,
+      "system_missing": 1
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "labeled_cohort",
+    "feature": "traditional_cigar_p30d",
+    "rows": 4906,
+    "observed": 4906,
+    "missing": 0,
+    "availability_fraction": 1.0,
+    "valid_zero_values": 4726,
+    "reason_counts": {
+      "observed": 4906
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "labeled_cohort",
+    "feature": "cigarillo_p30d",
+    "rows": 4906,
+    "observed": 4905,
+    "missing": 1,
+    "availability_fraction": 0.999796167957603,
+    "valid_zero_values": 4724,
+    "reason_counts": {
+      "observed": 4905,
+      "system_missing": 1
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "labeled_cohort",
+    "feature": "filtered_cigar_p30d",
+    "rows": 4906,
+    "observed": 4905,
+    "missing": 1,
+    "availability_fraction": 0.999796167957603,
+    "valid_zero_values": 4858,
+    "reason_counts": {
+      "observed": 4905,
+      "system_missing": 1
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "labeled_cohort",
+    "feature": "hookah_p30d",
+    "rows": 4906,
+    "observed": 4905,
+    "missing": 1,
+    "availability_fraction": 0.999796167957603,
+    "valid_zero_values": 4826,
+    "reason_counts": {
+      "observed": 4905,
+      "system_missing": 1
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "labeled_cohort",
+    "feature": "smokeless_tobacco_p30d",
+    "rows": 4906,
+    "observed": 4906,
+    "missing": 0,
+    "availability_fraction": 1.0,
+    "valid_zero_values": 4733,
+    "reason_counts": {
+      "observed": 4906
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "labeled_cohort",
+    "feature": "snus_p30d",
+    "rows": 4906,
+    "observed": 4906,
+    "missing": 0,
+    "availability_fraction": 1.0,
+    "valid_zero_values": 4862,
+    "reason_counts": {
+      "observed": 4906
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "labeled_cohort",
+    "feature": "household_tobacco_any",
+    "rows": 4906,
+    "observed": 4016,
+    "missing": 890,
+    "availability_fraction": 0.8185894822666123,
+    "valid_zero_values": 2887,
+    "reason_counts": {
+      "observed": 4016,
+      "system_missing": 890
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "labeled_cohort",
+    "feature": "home_combustible_smoking_rules",
+    "rows": 4906,
+    "observed": 4896,
+    "missing": 10,
+    "availability_fraction": 0.9979616795760293,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 5,
+      "observed": 4896,
+      "refused": 5
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "labeled_cohort",
+    "feature": "physical_health",
+    "rows": 4906,
+    "observed": 4900,
+    "missing": 6,
+    "availability_fraction": 0.9987770077456176,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 2,
+      "observed": 4900,
+      "refused": 4
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "labeled_cohort",
+    "feature": "mental_health",
+    "rows": 4906,
+    "observed": 4892,
+    "missing": 14,
+    "availability_fraction": 0.9971463514064411,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 3,
+      "observed": 4892,
+      "refused": 11
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "labeled_cohort",
+    "feature": "social_satisfaction",
+    "rows": 4906,
+    "observed": 4897,
+    "missing": 9,
+    "availability_fraction": 0.9981655116184264,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 3,
+      "observed": 4897,
+      "refused": 6
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "labeled_cohort",
+    "feature": "emotional_problems_7d",
+    "rows": 4906,
+    "observed": 4894,
+    "missing": 12,
+    "availability_fraction": 0.9975540154912352,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 1,
+      "observed": 4894,
+      "refused": 11
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "labeled_cohort",
+    "feature": "depressive_problem_recency",
+    "rows": 4906,
+    "observed": 4891,
+    "missing": 15,
+    "availability_fraction": 0.996942519364044,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 4,
+      "observed": 4891,
+      "refused": 11
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "labeled_cohort",
+    "feature": "anxiety_problem_recency",
+    "rows": 4906,
+    "observed": 4889,
+    "missing": 17,
+    "availability_fraction": 0.9965348552792499,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 5,
+      "observed": 4889,
+      "refused": 12
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "labeled_cohort",
+    "feature": "alcohol_days_30d",
+    "rows": 4906,
+    "observed": 2789,
+    "missing": 2117,
+    "availability_fraction": 0.5684875662454137,
+    "valid_zero_values": 21,
+    "reason_counts": {
+      "dont_know": 2,
+      "observed": 2789,
+      "refused": 3,
+      "structural_skip": 2112
+    }
+  },
+  {
+    "pair": "7-8",
+    "population": "labeled_cohort",
+    "feature": "alcohol_drinks_per_drinking_day",
+    "rows": 4906,
+    "observed": 2759,
+    "missing": 2147,
+    "availability_fraction": 0.5623726049735018,
+    "valid_zero_values": 0,
+    "reason_counts": {
+      "dont_know": 5,
+      "improbable_response_removed": 7,
+      "observed": 2759,
+      "refused": 2,
+      "structural_skip": 2133
+    }
+  }
+]

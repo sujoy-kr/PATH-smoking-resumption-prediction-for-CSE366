@@ -1,0 +1,447 @@
+[
+  {
+    "feature": "age_band",
+    "label": "18–24",
+    "count": 1150
+  },
+  {
+    "feature": "age_band",
+    "label": "25–34",
+    "count": 2518
+  },
+  {
+    "feature": "age_band",
+    "label": "35–44",
+    "count": 2409
+  },
+  {
+    "feature": "age_band",
+    "label": "45–54",
+    "count": 2160
+  },
+  {
+    "feature": "age_band",
+    "label": "55–64",
+    "count": 2620
+  },
+  {
+    "feature": "age_band",
+    "label": "65+",
+    "count": 2899
+  },
+  {
+    "feature": "age_band",
+    "label": "Unknown / skipped",
+    "count": 1
+  },
+  {
+    "feature": "sex_recorded",
+    "label": "Male",
+    "count": 7273
+  },
+  {
+    "feature": "sex_recorded",
+    "label": "Female",
+    "count": 6479
+  },
+  {
+    "feature": "sex_recorded",
+    "label": "Unknown / skipped",
+    "count": 5
+  },
+  {
+    "feature": "education_level",
+    "label": "Less than high school",
+    "count": 1259
+  },
+  {
+    "feature": "education_level",
+    "label": "GED",
+    "count": 789
+  },
+  {
+    "feature": "education_level",
+    "label": "High school graduate",
+    "count": 2340
+  },
+  {
+    "feature": "education_level",
+    "label": "Some college or associate degree",
+    "count": 5211
+  },
+  {
+    "feature": "education_level",
+    "label": "Bachelor or advanced degree",
+    "count": 4136
+  },
+  {
+    "feature": "education_level",
+    "label": "Unknown / skipped",
+    "count": 22
+  },
+  {
+    "feature": "household_income_band",
+    "label": "Less than $10,000",
+    "count": 1088
+  },
+  {
+    "feature": "household_income_band",
+    "label": "$10,000–$24,999",
+    "count": 2256
+  },
+  {
+    "feature": "household_income_band",
+    "label": "$25,000–$49,999",
+    "count": 3164
+  },
+  {
+    "feature": "household_income_band",
+    "label": "$50,000–$99,999",
+    "count": 3733
+  },
+  {
+    "feature": "household_income_band",
+    "label": "$100,000 or more",
+    "count": 2758
+  },
+  {
+    "feature": "household_income_band",
+    "label": "Unknown / skipped",
+    "count": 758
+  },
+  {
+    "feature": "employment_status",
+    "label": "Full-time, at least 35 hours/week",
+    "count": 6826
+  },
+  {
+    "feature": "employment_status",
+    "label": "Part-time, 15–34 hours/week",
+    "count": 1333
+  },
+  {
+    "feature": "employment_status",
+    "label": "Part-time, under 15 hours/week",
+    "count": 574
+  },
+  {
+    "feature": "employment_status",
+    "label": "Not currently working for pay",
+    "count": 4977
+  },
+  {
+    "feature": "employment_status",
+    "label": "Unknown / skipped",
+    "count": 47
+  },
+  {
+    "feature": "electronic_nicotine_p30d",
+    "label": "No",
+    "count": 12116
+  },
+  {
+    "feature": "electronic_nicotine_p30d",
+    "label": "Yes",
+    "count": 1597
+  },
+  {
+    "feature": "electronic_nicotine_p30d",
+    "label": "Unknown / skipped",
+    "count": 44
+  },
+  {
+    "feature": "traditional_cigar_p30d",
+    "label": "No",
+    "count": 13104
+  },
+  {
+    "feature": "traditional_cigar_p30d",
+    "label": "Yes",
+    "count": 637
+  },
+  {
+    "feature": "traditional_cigar_p30d",
+    "label": "Unknown / skipped",
+    "count": 16
+  },
+  {
+    "feature": "cigarillo_p30d",
+    "label": "No",
+    "count": 13189
+  },
+  {
+    "feature": "cigarillo_p30d",
+    "label": "Yes",
+    "count": 507
+  },
+  {
+    "feature": "cigarillo_p30d",
+    "label": "Unknown / skipped",
+    "count": 61
+  },
+  {
+    "feature": "filtered_cigar_p30d",
+    "label": "No",
+    "count": 13558
+  },
+  {
+    "feature": "filtered_cigar_p30d",
+    "label": "Yes",
+    "count": 139
+  },
+  {
+    "feature": "filtered_cigar_p30d",
+    "label": "Unknown / skipped",
+    "count": 60
+  },
+  {
+    "feature": "hookah_p30d",
+    "label": "No",
+    "count": 13528
+  },
+  {
+    "feature": "hookah_p30d",
+    "label": "Yes",
+    "count": 227
+  },
+  {
+    "feature": "hookah_p30d",
+    "label": "Unknown / skipped",
+    "count": 2
+  },
+  {
+    "feature": "smokeless_tobacco_p30d",
+    "label": "No",
+    "count": 12897
+  },
+  {
+    "feature": "smokeless_tobacco_p30d",
+    "label": "Yes",
+    "count": 841
+  },
+  {
+    "feature": "smokeless_tobacco_p30d",
+    "label": "Unknown / skipped",
+    "count": 19
+  },
+  {
+    "feature": "snus_p30d",
+    "label": "No",
+    "count": 13547
+  },
+  {
+    "feature": "snus_p30d",
+    "label": "Yes",
+    "count": 197
+  },
+  {
+    "feature": "snus_p30d",
+    "label": "Unknown / skipped",
+    "count": 13
+  },
+  {
+    "feature": "household_tobacco_any",
+    "label": "No",
+    "count": 8410
+  },
+  {
+    "feature": "household_tobacco_any",
+    "label": "Yes",
+    "count": 3124
+  },
+  {
+    "feature": "household_tobacco_any",
+    "label": "Unknown / skipped",
+    "count": 2223
+  },
+  {
+    "feature": "home_combustible_smoking_rules",
+    "label": "Not allowed anywhere or at any time",
+    "count": 11888
+  },
+  {
+    "feature": "home_combustible_smoking_rules",
+    "label": "Allowed in some places or at some times",
+    "count": 1079
+  },
+  {
+    "feature": "home_combustible_smoking_rules",
+    "label": "Allowed anywhere and at any time",
+    "count": 760
+  },
+  {
+    "feature": "home_combustible_smoking_rules",
+    "label": "Unknown / skipped",
+    "count": 30
+  },
+  {
+    "feature": "physical_health",
+    "label": "Excellent",
+    "count": 2113
+  },
+  {
+    "feature": "physical_health",
+    "label": "Very good",
+    "count": 4863
+  },
+  {
+    "feature": "physical_health",
+    "label": "Good",
+    "count": 4664
+  },
+  {
+    "feature": "physical_health",
+    "label": "Fair",
+    "count": 1740
+  },
+  {
+    "feature": "physical_health",
+    "label": "Poor",
+    "count": 365
+  },
+  {
+    "feature": "physical_health",
+    "label": "Unknown / skipped",
+    "count": 12
+  },
+  {
+    "feature": "mental_health",
+    "label": "Excellent",
+    "count": 2918
+  },
+  {
+    "feature": "mental_health",
+    "label": "Very good",
+    "count": 4797
+  },
+  {
+    "feature": "mental_health",
+    "label": "Good",
+    "count": 3975
+  },
+  {
+    "feature": "mental_health",
+    "label": "Fair",
+    "count": 1688
+  },
+  {
+    "feature": "mental_health",
+    "label": "Poor",
+    "count": 365
+  },
+  {
+    "feature": "mental_health",
+    "label": "Unknown / skipped",
+    "count": 14
+  },
+  {
+    "feature": "social_satisfaction",
+    "label": "Extremely satisfied",
+    "count": 2856
+  },
+  {
+    "feature": "social_satisfaction",
+    "label": "Very satisfied",
+    "count": 5964
+  },
+  {
+    "feature": "social_satisfaction",
+    "label": "Moderately satisfied",
+    "count": 3582
+  },
+  {
+    "feature": "social_satisfaction",
+    "label": "A little satisfied",
+    "count": 960
+  },
+  {
+    "feature": "social_satisfaction",
+    "label": "Not at all satisfied",
+    "count": 383
+  },
+  {
+    "feature": "social_satisfaction",
+    "label": "Unknown / skipped",
+    "count": 12
+  },
+  {
+    "feature": "emotional_problems_7d",
+    "label": "Never",
+    "count": 4019
+  },
+  {
+    "feature": "emotional_problems_7d",
+    "label": "Rarely",
+    "count": 4606
+  },
+  {
+    "feature": "emotional_problems_7d",
+    "label": "Sometimes",
+    "count": 3565
+  },
+  {
+    "feature": "emotional_problems_7d",
+    "label": "Often",
+    "count": 1041
+  },
+  {
+    "feature": "emotional_problems_7d",
+    "label": "Very often",
+    "count": 501
+  },
+  {
+    "feature": "emotional_problems_7d",
+    "label": "Unknown / skipped",
+    "count": 25
+  },
+  {
+    "feature": "depressive_problem_recency",
+    "label": "Past month",
+    "count": 2017
+  },
+  {
+    "feature": "depressive_problem_recency",
+    "label": "2–12 months ago",
+    "count": 1874
+  },
+  {
+    "feature": "depressive_problem_recency",
+    "label": "Over a year ago",
+    "count": 2911
+  },
+  {
+    "feature": "depressive_problem_recency",
+    "label": "Never",
+    "count": 6903
+  },
+  {
+    "feature": "depressive_problem_recency",
+    "label": "Unknown / skipped",
+    "count": 52
+  },
+  {
+    "feature": "anxiety_problem_recency",
+    "label": "Past month",
+    "count": 2516
+  },
+  {
+    "feature": "anxiety_problem_recency",
+    "label": "2–12 months ago",
+    "count": 2028
+  },
+  {
+    "feature": "anxiety_problem_recency",
+    "label": "Over a year ago",
+    "count": 2376
+  },
+  {
+    "feature": "anxiety_problem_recency",
+    "label": "Never",
+    "count": 6786
+  },
+  {
+    "feature": "anxiety_problem_recency",
+    "label": "Unknown / skipped",
+    "count": 51
+  }
+]

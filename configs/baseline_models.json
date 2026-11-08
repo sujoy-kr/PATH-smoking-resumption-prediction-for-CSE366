@@ -1,0 +1,82 @@
+{
+  "version": "1.0",
+  "run_name": "baselines_v1",
+  "output_dir": "artifacts/baselines_v1",
+  "report_dir": "reports/baselines_v1",
+  "seed": 366,
+  "models_in_simplicity_order": [
+    {
+      "name": "training_prevalence",
+      "kind": "prevalence",
+      "profile": "minimal",
+      "class_weight": null
+    },
+    {
+      "name": "minimal_logistic",
+      "kind": "logistic",
+      "profile": "minimal",
+      "class_weight": null
+    },
+    {
+      "name": "minimal_logistic_balanced",
+      "kind": "logistic",
+      "profile": "minimal",
+      "class_weight": "balanced"
+    },
+    {
+      "name": "app_logistic",
+      "kind": "logistic",
+      "profile": "app",
+      "class_weight": null
+    },
+    {
+      "name": "app_logistic_balanced",
+      "kind": "logistic",
+      "profile": "app",
+      "class_weight": "balanced"
+    }
+  ],
+  "logistic": {
+    "C": 1.0,
+    "solver": "lbfgs",
+    "max_iter": 2000,
+    "tol": 0.0001
+  },
+  "numeric_imputation": "median, plus training-learned missingness indicator",
+  "categorical_imputation_value": -1,
+  "encoder": "OneHotEncoder(handle_unknown='ignore'); learned categories from training only",
+  "fixed_diagnostic_threshold": 0.5,
+  "calibration_bin_edges": [
+    0,
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1
+  ],
+  "calibrator": {
+    "C": 1000000.0,
+    "solver": "lbfgs",
+    "max_iter": 2000,
+    "tol": 1e-06,
+    "input": "clipped raw-probability logit",
+    "clip_epsilon": 1e-06
+  },
+  "calibrate": "Only the CV-selected baseline candidate; calibration participants only, base model frozen",
+  "threshold": "Locked participant-weighted F1 rule on threshold-selection participants; largest threshold on ties",
+  "full_selected_definition": "All 11 finalized app-compatible features. The 25-feature research-only comparison is not trained in this baseline stage.",
+  "fit_weights": "Unweighted records, or training-only balanced class weights. Participant-equal weights are used for selection metrics/calibration/thresholds, not for base-model fitting.",
+  "code_inputs": [
+    "src/path_project/baselines.py",
+    "scripts/train_baselines.py",
+    "src/path_project/training_boundaries.py",
+    "src/path_project/final_inputs.py",
+    "src/path_project/evaluation.py"
+  ],
+  "cpu_threads": 1
+}

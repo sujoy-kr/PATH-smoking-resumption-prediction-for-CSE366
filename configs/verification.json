@@ -1,0 +1,34 @@
+{
+  "version": "1.0",
+  "report": "reports/verification_evidence.json",
+  "cache": ".cache/stage13",
+  "protected_directories": ["data/processed", "artifacts", "reports/cohort_v1", "reports/development_v1", "reports/baselines_v1", "reports/trees_v1", "reports/outputs_v1", "reports/final_evaluation_v1"],
+  "checks": [
+    ["-m", "pytest", "-q", "-p", "no:cacheprovider"],
+    ["scripts/validate_feature_mapping.py", "--no-write"],
+    ["scripts/validate_prediction_specification.py"],
+    ["scripts/verify_cohort.py"],
+    ["scripts/verify_evaluation_splits.py"],
+    ["scripts/verify_development.py"],
+    ["scripts/verify_baselines.py"],
+    ["scripts/verify_tree_models.py"],
+    ["scripts/verify_timing.py"],
+    ["scripts/verify_outputs.py"],
+    ["scripts/verify_final_evaluation.py"]
+  ],
+  "isolated_build_order": [
+    ["scripts/inspect_prediction_sources.py"],
+    ["scripts/build_feature_mapping.py"],
+    ["scripts/validate_feature_mapping.py", "--no-write"],
+    ["scripts/validate_prediction_specification.py"],
+    ["scripts/build_cohort.py"],
+    ["scripts/verify_cohort.py"],
+    ["scripts/create_evaluation_splits.py"],
+    ["scripts/verify_evaluation_splits.py"],
+    ["scripts/finalize_inputs.py"]
+  ],
+  "rebuild_compare": ["reports/prediction_source_evidence.json", "configs/feature_mapping.json", "docs/feature_dictionary.csv", "configs/feature_mapping_final.json", "configs/app_questions.json", "data/processed/cohort_v1/cohort.parquet", "data/processed/cohort_v1/eligible_interval_ledger.parquet", "artifacts/evaluation_v1/participants.parquet", "artifacts/evaluation_v1/records.parquet"],
+  "intentional_original_exceptions": {
+    "run_prompts.py": {"sha256": "4b1f3b9ab1f5efb827bf4a565fffe8051d87ac7d48ec10e8a1fcfa968b7e242e", "reason": "User-confirmed runner-instruction edit, documented in PROJECT_STATUS.md. Original checksum baseline preserved."}
+  }
+}

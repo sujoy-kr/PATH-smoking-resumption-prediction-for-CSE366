@@ -1,0 +1,35 @@
+{
+  "signature": "da0b2d5bed66345a66c93393bbcafd8f6e36ff3bddc925b585b331c895492965",
+  "canonical_inputs_sha256": {
+    "PATH/DS1001/36498-1001-Data.tsv": "82934e96cca68fa8fa84abf18938fd58f6ea6559082a2f205744cd9156baf4ac",
+    "PATH/DS2001/36498-2001-Data.tsv": "97111dbfcc48573b66d650ef9abf2affc5f9f6d2992642ab7f118d06f758dca7",
+    "PATH/DS3001/36498-3001-Data.tsv": "00abb51d75d2eec6675a4d5679532b380b9ce072e5e29e43ac649225b3159b30",
+    "PATH/DS4001/36498-4001-Data.tsv": "569fb5f5d8cd5e2bf3f7a408afc4ef5ea2d763cffa74fd7c758377bda28346dd",
+    "PATH/DS5001/36498-5001-Data.tsv": "dbbdeec57131cccd4f1e4e62f8c14820d91b2e1cd1dbefe85d0e63093f02e04e",
+    "PATH/DS6001/36498-6001-Data.tsv": "b51cfa4fa1d1397b9cb7990506cdca575c4f0de9c5b7ea46bb1f22cc5e624a50",
+    "PATH/DS7001/36498-7001-Data.tsv": "37c4fe9dc12366d0c989b4ea766432a2eb77f2aa5a96f2573c8fdd4231423109",
+    "PATH/DS8001/36498-8001-Data.tsv": "57ae5e526235997f4d9e32e5cc48bc42d3cfa75b9f34751951fe4c70f5940479"
+  },
+  "configuration_sha256": {
+    "configs/cohort.json": "dd4adde37bbd5b0394b15505625cb25186c7a0f20dbd55b32e7385dae0a51df1",
+    "configs/project.json": "8c3c4ed8bc07b0710996b6142fdb67eda12fb3fb3d62afa87cadcb38fbf3bd16",
+    "configs/prediction_specification.json": "67ff7d9f0984c04db0e19eb598ad01838b285d87f64b26e230d885d13199cc6a",
+    "configs/feature_mapping.json": "8c1c2b435a6edfde431dd483ec5f81a95a6eab3f6b596133d43ac0136d194ba3",
+    "docs/original_inputs.sha256.json": "09f752bb3f452be6538546cdaa32eaa2888146a8380e3dc7e5b8ce87cd749d1a",
+    ".analysis/cohort_counts.json": "70a2f11e29048422a6a70a623bfea0d1016efad3042ea97bda397038fa588d4d"
+  },
+  "code_sha256": {
+    "scripts/build_cohort.py": "2348554cf5518df8b5b3c6e603177ae6838c163b6452a6ef7f6e9ec38677c7e0",
+    "src/path_project/cohort.py": "f7725d973c4bd91bfca2564f7f3d7feb01c64b55d3ff8d93b8456d9222325f60",
+    "src/path_project/features.py": "79a186b7915ed36e84b72c5304a50321ab8b5753e328f74ecef81f0a9f360d2f",
+    "src/path_project/documentation.py": "5c2c61c9f241652faaae4e87ca6db72427d20261bfe4e2e5d1410769bbe8cc9c",
+    "src/path_project/feature_validation.py": "666b313733c3660a15d6d224559710ff3ca3586a69855995eebd6d9b52224271"
+  },
+  "versions": {
+    "pandas": "3.1.1",
+    "pyarrow": "26.0.1"
+  },
+  "python": "3.13.5 (main, Aug 10 2026, 12:06:59) [GCC 14.2.0]",
+  "identifier_values_emitted": false,
+  "participant_records_emitted": false
+}

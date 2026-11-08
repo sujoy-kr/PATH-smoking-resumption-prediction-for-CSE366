@@ -1,0 +1,26 @@
+[
+  {
+    "feature": "last_cigarette_recency_days",
+    "question": "Approximate time since completely quitting (Wave 1) or last cigarette (Waves 2–8).",
+    "mean_absolute_probability_contribution": 0.12283633296757498,
+    "mean_signed_probability_contribution": 0.01471752689629242
+  },
+  {
+    "feature": "age_band",
+    "question": "Age category at the starting interview.",
+    "mean_absolute_probability_contribution": 0.04492074422467911,
+    "mean_signed_probability_contribution": 0.00774901618907441
+  },
+  {
+    "feature": "education_level",
+    "question": "Highest completed education, harmonized to five categories.",
+    "mean_absolute_probability_contribution": 0.01590461541793188,
+    "mean_signed_probability_contribution": -0.0008327146280395676
+  },
+  {
+    "feature": "employment_status",
+    "question": "Current paid employment status and weekly hours category.",
+    "mean_absolute_probability_contribution": 0.012736675536814278,
+    "mean_signed_probability_contribution": 0.0016789207311093289
+  }
+]

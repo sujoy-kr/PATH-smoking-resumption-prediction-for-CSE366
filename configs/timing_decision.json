@@ -1,0 +1,31 @@
+{
+  "version": "1.0",
+  "decision": "C",
+  "analysis": "next_survey_classification_only",
+  "timing_analysis_omitted": true,
+  "timing_feasibility": "docs/timing_feasibility.md",
+  "prediction_specification": "configs/prediction_specification_final.json",
+  "source_evidence": "reports/prediction_source_evidence.json",
+  "output_evidence": "reports/timing_confirmation_v1.json",
+  "app_metadata": "configs/app_metadata.json",
+  "clock_header_pattern": "INTVDATE|INTDATE|INTERVIEW.*DATE|DATE.*INTERVIEW|INTV.*(MONTH|YEAR|DAY)|INTERVAL|ELAPSED|LASTINT",
+  "clock_title_pattern": "interview.{0,30}date|date.{0,30}interview|interview.{0,30}interval|elapsed",
+  "classifier_artifact": "artifacts/trees_v1/selected_calibrated.joblib",
+  "classifier_result": "reports/trees_v1/results.json",
+  "unsupported_reasons": ["No usable released individual interview dates or elapsed interview interval for this cohort", "Approximate last-quit-attempt end dates are conditional, potentially product-mixed and not the first cigarette resumption after baseline", "Negative 30-day follow-up status cannot establish an event-free interval", "Unknown follow-up/attrition does not identify an event or censoring time"],
+  "elapsed_time_estimates_available": false,
+  "survival_model_available": false,
+  "fixed_horizon_probabilities_available": false,
+  "estimated_relapse_date_available": false,
+  "supported_elapsed_time_horizons": [],
+  "endpoint_label": "Past-30-day cigarette smoking reported at the next scheduled PATH survey",
+  "interval_description": "Next scheduled interview; individual elapsed time is unavailable and survey intervals vary.",
+  "timing_unavailable_message": "Elapsed-time risks and estimated relapse dates are unavailable. This research classifier predicts smoking reported at the next survey, not when smoking will resume.",
+  "claim_limits": ["No one-, two- or three-year risks from wave labels or classification probabilities", "No exact, midpoint or interview-endpoint relapse dates", "No time-since-quitting substituted as future event time", "No continuous abstinence or persistent-relapse conclusion from a follow-up snapshot", "No personal confidence percentage, causal effect, clinical validity or national representativeness claim"],
+  "source_rechecks": [
+    {"file": "PATH/DS1001/36498-1001-Questionnaire.pdf", "first_page": 24, "last_page": 24, "required_text": ["INTVDATE", "date that the interview"]},
+    {"file": "PATH/DS1001/36498-1001-Codebook.pdf", "first_page": 692, "last_page": 693, "required_text": ["R01_AN0135", "approximate end date", "Current users"]},
+    {"file": "PATH/DS8001/36498-8001-Codebook.pdf", "first_page": 1389, "last_page": 1390, "required_text": ["R08_AN0135", "approximate end date"]},
+    {"file": "PATH/DS8001/36498-8001-Documentation-Nonresponse_Report.pdf", "first_page": 18, "last_page": 19, "required_text": ["Table 2.1", "2013", "2024"]}
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "evaluation_signature": "0b301df0a9a28468b25d24c5b9e478a4df8859bdbc350cf73a3da90cf04b5e30",
+  "original_cohort_split_model_output_files_hash_and_mtime_unchanged": 174,
+  "final_files_hash_and_mtime_unchanged_on_retry": 38,
+  "retry_command": ".venv/bin/python scripts/evaluate_final.py",
+  "retry_exit_code": 0,
+  "retry_mode": "reused_saved_final_evaluation",
+  "sole_recorded_test_answer_access_count": 1,
+  "failures_or_bugfix_evaluations": 0,
+  "model_predictions_or_bootstrap_recomputed_by_verification": false,
+  "saved_aggregate_render_identical": {
+    "reports/final_evaluation.md": true,
+    "reports/final_evaluation_v1/calibration.png": true,
+    "reports/final_evaluation_v1/confusion_matrix.png": true,
+    "reports/final_evaluation_v1/risk_categories.png": true
+  },
+  "read_only_verifier_sha256": "c9e339ae71d20d0153629d5add9dad45481a240c069a3e4acfdaa0fe53a3b436"
+}

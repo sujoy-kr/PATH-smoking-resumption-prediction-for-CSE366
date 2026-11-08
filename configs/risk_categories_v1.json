@@ -1,0 +1,20 @@
+{
+  "version": "1.0",
+  "cuts": [
+    0.0750747765280418,
+    0.2590049599706509
+  ],
+  "labels": {
+    "lower": "Lower estimated risk",
+    "moderate": "Moderate estimated risk",
+    "higher": "Higher estimated risk"
+  },
+  "source": "Reserved threshold-selection participants, starting waves 1–6, observed valid next-survey outcome; saved stage 8 calibrated predictions",
+  "selection_rule": "First score at which cumulative participant-equal weight reaches 1/3 and 2/3; thresholds use scores/weights only, never outcome optimization. Equal scores stay together. Lower <= cut1; moderate cut1 < p <= cut2; higher p > cut2.",
+  "boundary_rule": "lower: p<=cut1; moderate: cut1<p<=cut2; higher: p>cut2",
+  "caution": "Project-defined relative groups in development data; not established medical cutoffs or independently validated risk categories.",
+  "source_prediction_sha256": "d7c095795168573a2e518f555c05aa0d258f1b450a597ac73e805f715f44aef2",
+  "source_records": 2910,
+  "source_people": 990,
+  "model_sha256": "9b46cdb1783302c05c3b56b83d5695a1ad58b90da0614f04188ee687170eae36"
+}

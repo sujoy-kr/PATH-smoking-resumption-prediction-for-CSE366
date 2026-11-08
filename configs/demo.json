@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "title": "A snapshot of smoking risk",
+  "wave_context": 7,
+  "questions": "configs/app_questions.json",
+  "metadata": "configs/app_metadata.json",
+  "final_status": "configs/final_evaluation_status.json",
+  "final_results": "reports/final_evaluation_v1/results.json",
+  "presets": {
+    "Blank form": null,
+    "Fictional example · recent last use": {"age_band": "1", "education_level": "3", "employment_status": "2", "last_cigarette_recency_days": {"number": 2, "unit": "2"}},
+    "Fictional example · longer last use": {"age_band": "6", "education_level": "4", "employment_status": "4", "last_cigarette_recency_days": {"number": 10, "unit": "3"}},
+    "Fictional example · some unknown answers": {"age_band": "3", "education_level": "2", "employment_status": "prefer_not_to_answer", "last_cigarette_recency_days": "dont_know"}
+  }
+}

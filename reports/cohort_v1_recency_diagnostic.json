@@ -1,0 +1,104 @@
+{
+  "cohort_signature": "da0b2d5bed66345a66c93393bbcafd8f6e36ff3bddc925b585b331c895492965",
+  "diagnostic_code_sha256": "2ef24e8192084d8d81fcb624ef99967e709d0b9bfd0adfe1d010f6c2d36cf2e0",
+  "rows": [
+    {
+      "pair": "2-3",
+      "legacy_deltas": [
+        {
+          "pair": "2-3",
+          "metric": "recent_recency_observed_records",
+          "actual": 812,
+          "legacy": 0,
+          "difference": 812
+        },
+        {
+          "pair": "2-3",
+          "metric": "recent_recency_positive_outcomes",
+          "actual": 278,
+          "legacy": 0,
+          "difference": 278
+        }
+      ],
+      "reason": "Derived DAYSQUIT absent. Legacy findIndex=-1 yields undefined/NaN, not evidence of no recent quitters.",
+      "new_recent_records": 812,
+      "new_recent_positive_outcomes": 278,
+      "no_person_level_comparison_possible_for_absent_field": true
+    },
+    {
+      "pair": "6-7",
+      "legacy_deltas": [
+        {
+          "pair": "6-7",
+          "metric": "recent_recency_observed_records",
+          "actual": 753,
+          "legacy": 644,
+          "difference": 109
+        },
+        {
+          "pair": "6-7",
+          "metric": "recent_recency_positive_outcomes",
+          "actual": 231,
+          "legacy": 201,
+          "difference": 30
+        }
+      ],
+      "reason": "Raw 12-month/1-year reports convert to 365.25 days (included); the released derived field is rounded above the 365.25 cutoff and is excluded by the legacy rule.",
+      "source_file": "PATH/DS6001/36498-6001-Data.tsv",
+      "source_sha256": "b51cfa4fa1d1397b9cb7990506cdca575c4f0de9c5b7ea46bb1f22cc5e624a50",
+      "source_codebook": "PATH/DS6001/36498-6001-Codebook.pdf",
+      "source_variable": "R06R_A_DAYSQUIT_CIGS",
+      "physical_pdf_page": 1844,
+      "declared_derived_decimal_places": 1,
+      "analytic_upper_boundary_days": 365.25,
+      "released_rounded_upper_boundary_days": 365.3,
+      "extras_matching_exact_released_rounded_boundary": 109,
+      "new_recent_records": 753,
+      "legacy_recomputed_recent_records": 644,
+      "new_recent_extra_records": 109,
+      "new_recent_lost_records": 0,
+      "extra_positive_outcomes": 30,
+      "extras_at_documented_raw_upper_boundary": 109,
+      "all_extras_explained_by_upper_boundary_rounding": true
+    },
+    {
+      "pair": "7-8",
+      "legacy_deltas": [
+        {
+          "pair": "7-8",
+          "metric": "recent_recency_observed_records",
+          "actual": 698,
+          "legacy": 585,
+          "difference": 113
+        },
+        {
+          "pair": "7-8",
+          "metric": "recent_recency_positive_outcomes",
+          "actual": 182,
+          "legacy": 150,
+          "difference": 32
+        }
+      ],
+      "reason": "Raw 12-month/1-year reports convert to 365.25 days (included); the released derived field is rounded above the 365.25 cutoff and is excluded by the legacy rule.",
+      "source_file": "PATH/DS7001/36498-7001-Data.tsv",
+      "source_sha256": "37c4fe9dc12366d0c989b4ea766432a2eb77f2aa5a96f2573c8fdd4231423109",
+      "source_codebook": "PATH/DS7001/36498-7001-Codebook.pdf",
+      "source_variable": "R07R_A_DAYSQUIT_CIGS",
+      "physical_pdf_page": 2179,
+      "declared_derived_decimal_places": 1,
+      "analytic_upper_boundary_days": 365.25,
+      "released_rounded_upper_boundary_days": 365.3,
+      "extras_matching_exact_released_rounded_boundary": 113,
+      "new_recent_records": 698,
+      "legacy_recomputed_recent_records": 585,
+      "new_recent_extra_records": 113,
+      "new_recent_lost_records": 0,
+      "extra_positive_outcomes": 32,
+      "extras_at_documented_raw_upper_boundary": 113,
+      "all_extras_explained_by_upper_boundary_rounding": true
+    }
+  ],
+  "no_participant_records_or_ids_emitted": true,
+  "scope": "Descriptive preparation diagnostic only. Main cohort remains unchanged. Approximate history cutoffs are not elapsed event times or fixed-year predicted risks.",
+  "rounding_sensitivity": "The prespecified subgroup sensitivity excludes raw 1-month, 12-month and 1-year boundary reports; it is stored separately and never changes core eligibility."
+}

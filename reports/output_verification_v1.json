@@ -1,0 +1,23 @@
+{
+  "output_signature": "9609ffb3be7f7feda868db0eb25acb0a06ce80fb3150c1d847505b553afb808c",
+  "prior_files_hash_and_mtime_unchanged": 158,
+  "frozen_output_files_hash_and_mtime_unchanged_on_retry": 11,
+  "retry_command": ".venv/bin/python scripts/build_outputs.py",
+  "retry_exit_code": 0,
+  "retry_mode": "reused_verified_run",
+  "documentation_and_figures_byte_identical_on_rebuild": true,
+  "public_reports_contain_no_participant_id_tokens": true,
+  "models_refitted": false,
+  "final_test_features_or_outcomes_read": false,
+  "verification_sources_sha256": {
+    "scripts/verify_outputs.py": "bd83176820d8b4d7bcd01e974b37f719c87332df15257a81a7d567989df5b63d",
+    "scripts/write_output_report.py": "83c1b12dd65393500b2d56a8c5eaf2f9f0c577f7777f01c0fc5069e74e323213",
+    "tests/test_outputs.py": "4157abfadc5ebf88e5d0f66046b20d4c4d2a8660ee8d76b3e66a2773cbbd6cc1"
+  },
+  "documentation_and_figure_sha256": {
+    "docs/model_outputs.md": "7b902081421e14326a529d6db21f42efd06e65862f2a0e241b313975e4d7cd7a",
+    "docs/output_contract.md": "07d407aae597405ab9896ca45a39d4fa7315e4979cdb03f2a9b1f97a7e41d592",
+    "reports/output_global_explanations.png": "7a58b5b449a746c1fef8452492b0ae188721f580dc7eb20b8f6b0c0934f0b5db",
+    "reports/output_risk_categories.png": "dbd2f6df871f497572cbd2300ab58d609bf65afb9520bcf02db2055be05445af"
+  }
+}

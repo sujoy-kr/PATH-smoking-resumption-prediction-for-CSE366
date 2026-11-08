@@ -1,0 +1,2727 @@
+{
+  "version": "1.0",
+  "purpose": "Question specification only; no trained app or validated risk estimates yet",
+  "eligibility_questions": [
+    {
+      "question": "Are you age 18 or older?",
+      "options": [
+        "Yes",
+        "No",
+        "Don't know / prefer not to answer"
+      ],
+      "required_answer": "Yes"
+    },
+    {
+      "question": "Have you smoked at least 100 cigarettes in your entire life?",
+      "options": [
+        "Yes",
+        "No",
+        "Don't know / prefer not to answer"
+      ],
+      "required_answer": "Yes"
+    },
+    {
+      "question": "Do you now smoke cigarettes every day, some days, or not at all?",
+      "options": [
+        "Every day",
+        "Some days",
+        "Not at all",
+        "Don't know / prefer not to answer"
+      ],
+      "required_answer": "Not at all"
+    },
+    {
+      "question": "Have you smoked a cigarette, even one or two puffs, in the past 30 days?",
+      "options": [
+        "Yes",
+        "No",
+        "Don't know / prefer not to answer"
+      ],
+      "required_answer": "No"
+    }
+  ],
+  "eligibility_behavior": "If any required answer is absent or differs, explain outside/unknown cohort eligibility and do not issue a prediction. These gates approximate official survey-derived eligibility; they are not model features.",
+  "context": "Starting-wave context 1–7 selects wording/units only, never a predictor or a calendar-time guarantee. No automatic claim that a modern user matches a historical wave.",
+  "questions": [
+    {
+      "feature": "age_band",
+      "kind": "category",
+      "options": {
+        "1": "18–24",
+        "2": "25–34",
+        "3": "35–44",
+        "4": "45–54",
+        "5": "55–64",
+        "6": "65+"
+      },
+      "units": "category",
+      "missing_options": {
+        "unanswered": "Not answered (default)",
+        "dont_know": "Don't know",
+        "prefer_not_to_answer": "Prefer not to answer",
+        "not_applicable": "Not applicable",
+        "not_previously_asked": "Not previously asked/recorded"
+      },
+      "missing_behavior": "All optional model questions permit don't know, prefer not to answer, and not applicable/not previously asked; encode null plus distinct reason, never zero. No invented historical responses or fixed imputation values. Later preprocessing learns from tuning training folds only.",
+      "waves": {
+        "1": {
+          "prompt": "What is your age group at the starting interview?",
+          "source_columns": [
+            "R01R_A_AGECAT7"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS1001/36498-1001-Codebook.pdf",
+              "variable": "R01R_A_AGECAT7",
+              "pdf_page_start": 1084,
+              "pdf_page_end": 1085
+            },
+            {
+              "file": "PATH/DS1001/36498-1001-Questionnaire.pdf",
+              "variable": "R01_AM0001",
+              "pdf_page_start": 23,
+              "pdf_page_end": 23
+            },
+            {
+              "file": "PATH/DS1001/36498-1001-Questionnaire.pdf",
+              "variable": "R01_AM0002",
+              "pdf_page_start": 23,
+              "pdf_page_end": 24
+            },
+            {
+              "file": "PATH/DS1001/36498-1001-Questionnaire.pdf",
+              "variable": "R01_AM0003",
+              "pdf_page_start": 24,
+              "pdf_page_end": 25
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "2": {
+          "prompt": "What is your age group at the starting interview?",
+          "source_columns": [
+            "R02R_A_AGECAT7"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS2001/36498-2001-Codebook.pdf",
+              "variable": "R02R_A_AGECAT7",
+              "pdf_page_start": 1639,
+              "pdf_page_end": 1640
+            },
+            {
+              "file": "PATH/DS2001/36498-2001-Questionnaire.pdf",
+              "variable": "R02_AM0001",
+              "pdf_page_start": 21,
+              "pdf_page_end": 22
+            },
+            {
+              "file": "PATH/DS2001/36498-2001-Questionnaire.pdf",
+              "variable": "R02_AM0002",
+              "pdf_page_start": 22,
+              "pdf_page_end": 22
+            },
+            {
+              "file": "PATH/DS2001/36498-2001-Questionnaire.pdf",
+              "variable": "R02_AM0003",
+              "pdf_page_start": 22,
+              "pdf_page_end": 24
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "3": {
+          "prompt": "What is your age group at the starting interview?",
+          "source_columns": [
+            "R03R_A_AGECAT7"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS3001/36498-3001-Codebook.pdf",
+              "variable": "R03R_A_AGECAT7",
+              "pdf_page_start": 1649,
+              "pdf_page_end": 1650
+            },
+            {
+              "file": "PATH/DS3001/36498-3001-Questionnaire.pdf",
+              "variable": "R03_AM0001",
+              "pdf_page_start": 21,
+              "pdf_page_end": 22
+            },
+            {
+              "file": "PATH/DS3001/36498-3001-Questionnaire.pdf",
+              "variable": "R03_AM0002",
+              "pdf_page_start": 22,
+              "pdf_page_end": 22
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "4": {
+          "prompt": "What is your age group at the starting interview?",
+          "source_columns": [
+            "R04R_A_AGECAT6"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS4001/36498-4001-Codebook.pdf",
+              "variable": "R04R_A_AGECAT6",
+              "pdf_page_start": 1498,
+              "pdf_page_end": 1499
+            },
+            {
+              "file": "PATH/DS4001/36498-4001-Questionnaire.pdf",
+              "variable": "R04_AM0001",
+              "pdf_page_start": 24,
+              "pdf_page_end": 25
+            },
+            {
+              "file": "PATH/DS4001/36498-4001-Questionnaire.pdf",
+              "variable": "R04_AM0002",
+              "pdf_page_start": 25,
+              "pdf_page_end": 27
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "5": {
+          "prompt": "What is your age group at the starting interview?",
+          "source_columns": [
+            "R05R_A_AGECAT6"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS5001/36498-5001-Codebook.pdf",
+              "variable": "R05R_A_AGECAT6",
+              "pdf_page_start": 10,
+              "pdf_page_end": 11
+            },
+            {
+              "file": "PATH/DS5001/36498-5001-Questionnaire.pdf",
+              "variable": "R05_AM0001",
+              "pdf_page_start": 23,
+              "pdf_page_end": 24
+            },
+            {
+              "file": "PATH/DS5001/36498-5001-Questionnaire.pdf",
+              "variable": "R05_AM0002",
+              "pdf_page_start": 24,
+              "pdf_page_end": 24
+            },
+            {
+              "file": "PATH/DS5001/36498-5001-Questionnaire.pdf",
+              "variable": "R05_AM0003",
+              "pdf_page_start": 24,
+              "pdf_page_end": 26
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "6": {
+          "prompt": "What is your age group at the starting interview?",
+          "source_columns": [
+            "R06R_A_AGECAT6"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS6001/36498-6001-Codebook.pdf",
+              "variable": "R06R_A_AGECAT6",
+              "pdf_page_start": 1827,
+              "pdf_page_end": 1828
+            },
+            {
+              "file": "PATH/DS6001/36498-6001-Questionnaire-English.pdf",
+              "variable": "R06_AM0001",
+              "pdf_page_start": 25,
+              "pdf_page_end": 26
+            },
+            {
+              "file": "PATH/DS6001/36498-6001-Questionnaire-English.pdf",
+              "variable": "R06_AM0002",
+              "pdf_page_start": 26,
+              "pdf_page_end": 26
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "7": {
+          "prompt": "What is your age group at the starting interview?",
+          "source_columns": [
+            "R07R_A_AGECAT6"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS7001/36498-7001-Codebook.pdf",
+              "variable": "R07R_A_AGECAT6",
+              "pdf_page_start": 2156,
+              "pdf_page_end": 2157
+            },
+            {
+              "file": "PATH/DS7001/36498-7001-Questionnaire-English.pdf",
+              "variable": "R07_AM0001",
+              "pdf_page_start": 27,
+              "pdf_page_end": 28
+            },
+            {
+              "file": "PATH/DS7001/36498-7001-Questionnaire-English.pdf",
+              "variable": "R07_AM0002",
+              "pdf_page_start": 28,
+              "pdf_page_end": 28
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        }
+      }
+    },
+    {
+      "feature": "education_level",
+      "kind": "category",
+      "options": {
+        "1": "Less than high school",
+        "2": "GED",
+        "3": "High school graduate",
+        "4": "Some college or associate degree",
+        "5": "Bachelor or advanced degree"
+      },
+      "units": "category",
+      "missing_options": {
+        "unanswered": "Not answered (default)",
+        "dont_know": "Don't know",
+        "prefer_not_to_answer": "Prefer not to answer",
+        "not_applicable": "Not applicable",
+        "not_previously_asked": "Not previously asked/recorded"
+      },
+      "missing_behavior": "All optional model questions permit don't know, prefer not to answer, and not applicable/not previously asked; encode null plus distinct reason, never zero. No invented historical responses or fixed imputation values. Later preprocessing learns from tuning training folds only.",
+      "waves": {
+        "1": {
+          "prompt": "What is the highest level of education you have completed?",
+          "source_columns": [
+            "R01R_A_AM0018"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS1001/36498-1001-Codebook.pdf",
+              "variable": "R01R_A_AM0018",
+              "pdf_page_start": 1065,
+              "pdf_page_end": 1066
+            },
+            {
+              "file": "PATH/DS1001/36498-1001-Questionnaire.pdf",
+              "variable": "R01_AM0018",
+              "pdf_page_start": 447,
+              "pdf_page_end": 447
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "2": {
+          "prompt": "What is the highest level of education you have completed?",
+          "source_columns": [
+            "R02R_A_AM0018"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS2001/36498-2001-Codebook.pdf",
+              "variable": "R02R_A_AM0018",
+              "pdf_page_start": 1605,
+              "pdf_page_end": 1606
+            },
+            {
+              "file": "PATH/DS2001/36498-2001-Questionnaire.pdf",
+              "variable": "R02_AM0018",
+              "pdf_page_start": 626,
+              "pdf_page_end": 626
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "3": {
+          "prompt": "What is the highest level of education you have completed?",
+          "source_columns": [
+            "R03R_A_AM0018"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS3001/36498-3001-Codebook.pdf",
+              "variable": "R03R_A_AM0018",
+              "pdf_page_start": 1617,
+              "pdf_page_end": 1618
+            },
+            {
+              "file": "PATH/DS3001/36498-3001-Questionnaire.pdf",
+              "variable": "R03_AM0018",
+              "pdf_page_start": 865,
+              "pdf_page_end": 865
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "4": {
+          "prompt": "What is the highest level of education you have completed?",
+          "source_columns": [
+            "R04R_A_AM0018_V2"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS4001/36498-4001-Codebook.pdf",
+              "variable": "R04R_A_AM0018_V2",
+              "pdf_page_start": 1471,
+              "pdf_page_end": 1472
+            },
+            {
+              "file": "PATH/DS4001/36498-4001-Questionnaire.pdf",
+              "variable": "R04_AM0018",
+              "pdf_page_start": 990,
+              "pdf_page_end": 990
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "5": {
+          "prompt": "What is the highest level of education you have completed?",
+          "source_columns": [
+            "R05R_A_AM0018_V2"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS5001/36498-5001-Codebook.pdf",
+              "variable": "R05R_A_AM0018_V2",
+              "pdf_page_start": 1606,
+              "pdf_page_end": 1607
+            },
+            {
+              "file": "PATH/DS5001/36498-5001-Questionnaire.pdf",
+              "variable": "R05_AM0018",
+              "pdf_page_start": 940,
+              "pdf_page_end": 940
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "6": {
+          "prompt": "What is the highest level of education you have completed?",
+          "source_columns": [
+            "R06R_A_AM0018_V2"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS6001/36498-6001-Codebook.pdf",
+              "variable": "R06R_A_AM0018_V2",
+              "pdf_page_start": 1748,
+              "pdf_page_end": 1749
+            },
+            {
+              "file": "PATH/DS6001/36498-6001-Questionnaire-English.pdf",
+              "variable": "R06_AM0018",
+              "pdf_page_start": 1084,
+              "pdf_page_end": 1084
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "7": {
+          "prompt": "What is the highest level of education you have completed?",
+          "source_columns": [
+            "R07R_A_AM0018_V2"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS7001/36498-7001-Codebook.pdf",
+              "variable": "R07R_A_AM0018_V2",
+              "pdf_page_start": 2111,
+              "pdf_page_end": 2112
+            },
+            {
+              "file": "PATH/DS7001/36498-7001-Questionnaire-English.pdf",
+              "variable": "R07_AM0018",
+              "pdf_page_start": 1108,
+              "pdf_page_end": 1108
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        }
+      }
+    },
+    {
+      "feature": "employment_status",
+      "kind": "category",
+      "options": {
+        "1": "Full-time, at least 35 hours/week",
+        "2": "Part-time, 15–34 hours/week",
+        "3": "Part-time, under 15 hours/week",
+        "4": "Not currently working for pay"
+      },
+      "units": "category",
+      "missing_options": {
+        "unanswered": "Not answered (default)",
+        "dont_know": "Don't know",
+        "prefer_not_to_answer": "Prefer not to answer",
+        "not_applicable": "Not applicable",
+        "not_previously_asked": "Not previously asked/recorded"
+      },
+      "missing_behavior": "All optional model questions permit don't know, prefer not to answer, and not applicable/not previously asked; encode null plus distinct reason, never zero. No invented historical responses or fixed imputation values. Later preprocessing learns from tuning training folds only.",
+      "waves": {
+        "1": {
+          "prompt": "What is your current paid employment status and usual weekly hours category?",
+          "source_columns": [
+            "R01_AM0014"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS1001/36498-1001-Codebook.pdf",
+              "variable": "R01_AM0014",
+              "pdf_page_start": 867,
+              "pdf_page_end": 868
+            },
+            {
+              "file": "PATH/DS1001/36498-1001-Questionnaire.pdf",
+              "variable": "R01_AM0014",
+              "pdf_page_start": 368,
+              "pdf_page_end": 368
+            },
+            {
+              "file": "PATH/DS1001/36498-1001-Questionnaire.pdf",
+              "variable": "R01_AR0144",
+              "pdf_page_start": 369,
+              "pdf_page_end": 369
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "2": {
+          "prompt": "What is your current paid employment status and usual weekly hours category?",
+          "source_columns": [
+            "R02_AM0014"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS2001/36498-2001-Codebook.pdf",
+              "variable": "R02_AM0014",
+              "pdf_page_start": 1379,
+              "pdf_page_end": 1380
+            },
+            {
+              "file": "PATH/DS2001/36498-2001-Questionnaire.pdf",
+              "variable": "R02_AM0014",
+              "pdf_page_start": 510,
+              "pdf_page_end": 510
+            },
+            {
+              "file": "PATH/DS2001/36498-2001-Questionnaire.pdf",
+              "variable": "R02_AR0144",
+              "pdf_page_start": 511,
+              "pdf_page_end": 511
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "3": {
+          "prompt": "What is your current paid employment status and usual weekly hours category?",
+          "source_columns": [
+            "R03_AM0014"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS3001/36498-3001-Codebook.pdf",
+              "variable": "R03_AM0014",
+              "pdf_page_start": 1317,
+              "pdf_page_end": 1317
+            },
+            {
+              "file": "PATH/DS3001/36498-3001-Questionnaire.pdf",
+              "variable": "R03_AM0014",
+              "pdf_page_start": 691,
+              "pdf_page_end": 691
+            },
+            {
+              "file": "PATH/DS3001/36498-3001-Questionnaire.pdf",
+              "variable": "R03_AR0144",
+              "pdf_page_start": 693,
+              "pdf_page_end": 693
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "4": {
+          "prompt": "What is your current paid employment status and usual weekly hours category?",
+          "source_columns": [
+            "R04_AM0014"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS4001/36498-4001-Codebook.pdf",
+              "variable": "R04_AM0014",
+              "pdf_page_start": 1165,
+              "pdf_page_end": 1165
+            },
+            {
+              "file": "PATH/DS4001/36498-4001-Questionnaire.pdf",
+              "variable": "R04_AM0014",
+              "pdf_page_start": 773,
+              "pdf_page_end": 773
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "5": {
+          "prompt": "What is your current paid employment status and usual weekly hours category?",
+          "source_columns": [
+            "R05_AM0014"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS5001/36498-5001-Codebook.pdf",
+              "variable": "R05_AM0014",
+              "pdf_page_start": 1277,
+              "pdf_page_end": 1277
+            },
+            {
+              "file": "PATH/DS5001/36498-5001-Questionnaire.pdf",
+              "variable": "R05_AM0014",
+              "pdf_page_start": 735,
+              "pdf_page_end": 735
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "6": {
+          "prompt": "What is your current paid employment status and usual weekly hours category?",
+          "source_columns": [
+            "R06_AM0014"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS6001/36498-6001-Codebook.pdf",
+              "variable": "R06_AM0014",
+              "pdf_page_start": 1325,
+              "pdf_page_end": 1325
+            },
+            {
+              "file": "PATH/DS6001/36498-6001-Questionnaire-English.pdf",
+              "variable": "R06_AM0014",
+              "pdf_page_start": 786,
+              "pdf_page_end": 786
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "7": {
+          "prompt": "What is your current paid employment status and usual weekly hours category?",
+          "source_columns": [
+            "R07_AM0014"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS7001/36498-7001-Codebook.pdf",
+              "variable": "R07_AM0014",
+              "pdf_page_start": 1581,
+              "pdf_page_end": 1582
+            },
+            {
+              "file": "PATH/DS7001/36498-7001-Questionnaire-English.pdf",
+              "variable": "R07_AM0014",
+              "pdf_page_start": 820,
+              "pdf_page_end": 820
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        }
+      }
+    },
+    {
+      "feature": "last_cigarette_recency_days",
+      "kind": "number_unit",
+      "options": {},
+      "units": "approximate days",
+      "missing_options": {
+        "unanswered": "Not answered (default)",
+        "dont_know": "Don't know",
+        "prefer_not_to_answer": "Prefer not to answer",
+        "not_applicable": "Not applicable",
+        "not_previously_asked": "Not previously asked/recorded"
+      },
+      "missing_behavior": "All optional model questions permit don't know, prefer not to answer, and not applicable/not previously asked; encode null plus distinct reason, never zero. No invented historical responses or fixed imputation values. Later preprocessing learns from tuning training folds only.",
+      "waves": {
+        "1": {
+          "prompt": "About how long has it been since you completely quit smoking cigarettes?",
+          "source_columns": [
+            "R01_AC1009_NN",
+            "R01_AC1009_UN"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS1001/36498-1001-Codebook.pdf",
+              "variable": "R01_AC1009_NN",
+              "pdf_page_start": 67,
+              "pdf_page_end": 68
+            },
+            {
+              "file": "PATH/DS1001/36498-1001-Codebook.pdf",
+              "variable": "R01_AC1009_UN",
+              "pdf_page_start": 68,
+              "pdf_page_end": 69
+            },
+            {
+              "file": "PATH/DS1001/36498-1001-Questionnaire.pdf",
+              "variable": "R01_AC1009_NN",
+              "pdf_page_start": 64,
+              "pdf_page_end": 65
+            },
+            {
+              "file": "PATH/DS1001/36498-1001-Questionnaire.pdf",
+              "variable": "R01_AC1009_UN",
+              "pdf_page_start": 64,
+              "pdf_page_end": 65
+            }
+          ],
+          "former_smoker_applicability": "Conditional: former/noncurrent respondents under the raw AC1009 history and smoking-status routing. Persistent former smokers often skip this item; Wave 2 has a documented skip/data error.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing.",
+          "unit_multipliers": {
+            "1": 1,
+            "2": 30.4375,
+            "3": 365.25
+          },
+          "unit_options": {
+            "1": "Days",
+            "2": "Months",
+            "3": "Years"
+          },
+          "quantity_constraints_verbatim": [],
+          "quantity_entry_width_limit_by_unit": {}
+        },
+        "2": {
+          "prompt": "About how long has it been since you last smoked a cigarette?",
+          "source_columns": [
+            "R02_AC1009_NN",
+            "R02_AC1009_UN"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS2001/36498-2001-Codebook.pdf",
+              "variable": "R02_AC1009_NN",
+              "pdf_page_start": 17,
+              "pdf_page_end": 18
+            },
+            {
+              "file": "PATH/DS2001/36498-2001-Codebook.pdf",
+              "variable": "R02_AC1009_UN",
+              "pdf_page_start": 18,
+              "pdf_page_end": 18
+            },
+            {
+              "file": "PATH/DS2001/36498-2001-Questionnaire.pdf",
+              "variable": "R02_AC1002_12M",
+              "pdf_page_start": 27,
+              "pdf_page_end": 28
+            },
+            {
+              "file": "PATH/DS2001/36498-2001-Questionnaire.pdf",
+              "variable": "R02_AC1003",
+              "pdf_page_start": 28,
+              "pdf_page_end": 28
+            },
+            {
+              "file": "PATH/DS2001/36498-2001-Questionnaire.pdf",
+              "variable": "R02_AC1009_NN",
+              "pdf_page_start": 30,
+              "pdf_page_end": 30
+            },
+            {
+              "file": "PATH/DS2001/36498-2001-Questionnaire.pdf",
+              "variable": "R02_AC1009_UN",
+              "pdf_page_start": 30,
+              "pdf_page_end": 30
+            }
+          ],
+          "former_smoker_applicability": "Conditional: former/noncurrent respondents under the raw AC1009 history and smoking-status routing. Persistent former smokers often skip this item; Wave 2 has a documented skip/data error.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing.",
+          "unit_multipliers": {
+            "1": 1,
+            "2": 30.4375
+          },
+          "unit_options": {
+            "1": "Days",
+            "2": "Months"
+          },
+          "quantity_constraints_verbatim": [
+            "PROGRAM: Display as Quantity/Units. Allow only 2 digits for days and 2 digits for months."
+          ],
+          "quantity_entry_width_limit_by_unit": {
+            "1": 99,
+            "2": 99
+          }
+        },
+        "3": {
+          "prompt": "About how long has it been since you last smoked a cigarette?",
+          "source_columns": [
+            "R03_AC1009_NN",
+            "R03_AC1009_UN"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS3001/36498-3001-Codebook.pdf",
+              "variable": "R03_AC1009_NN",
+              "pdf_page_start": 19,
+              "pdf_page_end": 20
+            },
+            {
+              "file": "PATH/DS3001/36498-3001-Codebook.pdf",
+              "variable": "R03_AC1009_UN",
+              "pdf_page_start": 20,
+              "pdf_page_end": 21
+            },
+            {
+              "file": "PATH/DS3001/36498-3001-Questionnaire.pdf",
+              "variable": "R03_AC1002_12M",
+              "pdf_page_start": 31,
+              "pdf_page_end": 32
+            },
+            {
+              "file": "PATH/DS3001/36498-3001-Questionnaire.pdf",
+              "variable": "R03_AC1003",
+              "pdf_page_start": 32,
+              "pdf_page_end": 32
+            },
+            {
+              "file": "PATH/DS3001/36498-3001-Questionnaire.pdf",
+              "variable": "R03_AC1004",
+              "pdf_page_start": 31,
+              "pdf_page_end": 31
+            },
+            {
+              "file": "PATH/DS3001/36498-3001-Questionnaire.pdf",
+              "variable": "R03_AC1009_NN",
+              "pdf_page_start": 32,
+              "pdf_page_end": 34
+            },
+            {
+              "file": "PATH/DS3001/36498-3001-Questionnaire.pdf",
+              "variable": "R03_AC1009_UN",
+              "pdf_page_start": 32,
+              "pdf_page_end": 34
+            },
+            {
+              "file": "PATH/DS3001/36498-3001-Questionnaire.pdf",
+              "variable": "R03_AC1010",
+              "pdf_page_start": 34,
+              "pdf_page_end": 35
+            }
+          ],
+          "former_smoker_applicability": "Conditional: former/noncurrent respondents under the raw AC1009 history and smoking-status routing. Persistent former smokers often skip this item; Wave 2 has a documented skip/data error.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing.",
+          "unit_multipliers": {
+            "1": 1,
+            "2": 30.4375,
+            "3": 365.25
+          },
+          "unit_options": {
+            "1": "Days",
+            "2": "Months",
+            "3": "Years"
+          },
+          "quantity_constraints_verbatim": [
+            "PROGRAM: Display as Quantity/Units. Allow only 2 digits for days and 2 digits for months."
+          ],
+          "quantity_entry_width_limit_by_unit": {
+            "1": 99,
+            "2": 99
+          }
+        },
+        "4": {
+          "prompt": "About how long has it been since you last smoked a cigarette?",
+          "source_columns": [
+            "R04_AC1009_NN",
+            "R04_AC1009_UN"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS4001/36498-4001-Codebook.pdf",
+              "variable": "R04_AC1009_NN",
+              "pdf_page_start": 20,
+              "pdf_page_end": 21
+            },
+            {
+              "file": "PATH/DS4001/36498-4001-Codebook.pdf",
+              "variable": "R04_AC1009_UN",
+              "pdf_page_start": 21,
+              "pdf_page_end": 22
+            },
+            {
+              "file": "PATH/DS4001/36498-4001-Questionnaire.pdf",
+              "variable": "R04_AC1002_12M",
+              "pdf_page_start": 43,
+              "pdf_page_end": 44
+            },
+            {
+              "file": "PATH/DS4001/36498-4001-Questionnaire.pdf",
+              "variable": "R04_AC1002_RS",
+              "pdf_page_start": 42,
+              "pdf_page_end": 42
+            },
+            {
+              "file": "PATH/DS4001/36498-4001-Questionnaire.pdf",
+              "variable": "R04_AC1003",
+              "pdf_page_start": 44,
+              "pdf_page_end": 45
+            },
+            {
+              "file": "PATH/DS4001/36498-4001-Questionnaire.pdf",
+              "variable": "R04_AC1004",
+              "pdf_page_start": 42,
+              "pdf_page_end": 43
+            },
+            {
+              "file": "PATH/DS4001/36498-4001-Questionnaire.pdf",
+              "variable": "R04_AC1009_NN",
+              "pdf_page_start": 45,
+              "pdf_page_end": 47
+            },
+            {
+              "file": "PATH/DS4001/36498-4001-Questionnaire.pdf",
+              "variable": "R04_AC1009_UN",
+              "pdf_page_start": 45,
+              "pdf_page_end": 47
+            },
+            {
+              "file": "PATH/DS4001/36498-4001-Questionnaire.pdf",
+              "variable": "R04_AC1010",
+              "pdf_page_start": 47,
+              "pdf_page_end": 49
+            }
+          ],
+          "former_smoker_applicability": "Conditional: former/noncurrent respondents under the raw AC1009 history and smoking-status routing. Persistent former smokers often skip this item; Wave 2 has a documented skip/data error.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing.",
+          "unit_multipliers": {
+            "1": 1,
+            "2": 30.4375,
+            "3": 365.25
+          },
+          "unit_options": {
+            "1": "Days",
+            "2": "Months",
+            "3": "Years"
+          },
+          "quantity_constraints_verbatim": [
+            "[PROGRAM NOTE: Display as Quantity/Units. Allow only 2 digits for days and 2 digits for months. ]",
+            "PROGRAM: Display as Quantity/Units. Allow only 2 digits for days and 2 digits for months."
+          ],
+          "quantity_entry_width_limit_by_unit": {
+            "1": 99,
+            "2": 99
+          }
+        },
+        "5": {
+          "prompt": "About how long has it been since you last smoked a cigarette?",
+          "source_columns": [
+            "R05_AC1009_NN",
+            "R05_AC1009_UN"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS5001/36498-5001-Codebook.pdf",
+              "variable": "R05_AC1009_NN",
+              "pdf_page_start": 20,
+              "pdf_page_end": 21
+            },
+            {
+              "file": "PATH/DS5001/36498-5001-Codebook.pdf",
+              "variable": "R05_AC1009_UN",
+              "pdf_page_start": 21,
+              "pdf_page_end": 22
+            },
+            {
+              "file": "PATH/DS5001/36498-5001-Questionnaire.pdf",
+              "variable": "R05_AC1002",
+              "pdf_page_start": 35,
+              "pdf_page_end": 35
+            },
+            {
+              "file": "PATH/DS5001/36498-5001-Questionnaire.pdf",
+              "variable": "R05_AC1002_12M",
+              "pdf_page_start": 36,
+              "pdf_page_end": 37
+            },
+            {
+              "file": "PATH/DS5001/36498-5001-Questionnaire.pdf",
+              "variable": "R05_AC1003",
+              "pdf_page_start": 37,
+              "pdf_page_end": 38
+            },
+            {
+              "file": "PATH/DS5001/36498-5001-Questionnaire.pdf",
+              "variable": "R05_AC1004",
+              "pdf_page_start": 35,
+              "pdf_page_end": 36
+            },
+            {
+              "file": "PATH/DS5001/36498-5001-Questionnaire.pdf",
+              "variable": "R05_AC1009_NN",
+              "pdf_page_start": 38,
+              "pdf_page_end": 40
+            },
+            {
+              "file": "PATH/DS5001/36498-5001-Questionnaire.pdf",
+              "variable": "R05_AC1009_UN",
+              "pdf_page_start": 38,
+              "pdf_page_end": 40
+            }
+          ],
+          "former_smoker_applicability": "Conditional: former/noncurrent respondents under the raw AC1009 history and smoking-status routing. Persistent former smokers often skip this item; Wave 2 has a documented skip/data error.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing.",
+          "unit_multipliers": {
+            "1": 1,
+            "2": 30.4375,
+            "3": 365.25
+          },
+          "unit_options": {
+            "1": "Days",
+            "2": "Months",
+            "3": "Years"
+          },
+          "quantity_constraints_verbatim": [
+            "[PROGRAM NOTE: Display as Quantity/Units. Allow 2 digits. ]",
+            "Allow 2 digits."
+          ],
+          "quantity_entry_width_limit_by_unit": {
+            "1": 99,
+            "2": 99,
+            "3": 99
+          }
+        },
+        "6": {
+          "prompt": "About how long has it been since you last smoked a cigarette?",
+          "source_columns": [
+            "R06_AC1009_NN",
+            "R06_AC1009_UN"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS6001/36498-6001-Codebook.pdf",
+              "variable": "R06_AC1009_NN",
+              "pdf_page_start": 19,
+              "pdf_page_end": 20
+            },
+            {
+              "file": "PATH/DS6001/36498-6001-Codebook.pdf",
+              "variable": "R06_AC1009_UN",
+              "pdf_page_start": 20,
+              "pdf_page_end": 21
+            },
+            {
+              "file": "PATH/DS6001/36498-6001-Questionnaire-English.pdf",
+              "variable": "R06_AC1002",
+              "pdf_page_start": 39,
+              "pdf_page_end": 39
+            },
+            {
+              "file": "PATH/DS6001/36498-6001-Questionnaire-English.pdf",
+              "variable": "R06_AC1002_12M",
+              "pdf_page_start": 40,
+              "pdf_page_end": 41
+            },
+            {
+              "file": "PATH/DS6001/36498-6001-Questionnaire-English.pdf",
+              "variable": "R06_AC1003",
+              "pdf_page_start": 41,
+              "pdf_page_end": 42
+            },
+            {
+              "file": "PATH/DS6001/36498-6001-Questionnaire-English.pdf",
+              "variable": "R06_AC1004",
+              "pdf_page_start": 39,
+              "pdf_page_end": 40
+            },
+            {
+              "file": "PATH/DS6001/36498-6001-Questionnaire-English.pdf",
+              "variable": "R06_AC1009_NN",
+              "pdf_page_start": 42,
+              "pdf_page_end": 44
+            },
+            {
+              "file": "PATH/DS6001/36498-6001-Questionnaire-English.pdf",
+              "variable": "R06_AC1009_UN",
+              "pdf_page_start": 42,
+              "pdf_page_end": 44
+            },
+            {
+              "file": "PATH/DS6001/36498-6001-Questionnaire-English.pdf",
+              "variable": "R06_AC1010",
+              "pdf_page_start": 44,
+              "pdf_page_end": 46
+            }
+          ],
+          "former_smoker_applicability": "Conditional: former/noncurrent respondents under the raw AC1009 history and smoking-status routing. Persistent former smokers often skip this item; Wave 2 has a documented skip/data error.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing.",
+          "unit_multipliers": {
+            "1": 1,
+            "2": 30.4375,
+            "3": 365.25
+          },
+          "unit_options": {
+            "1": "Days",
+            "2": "Months",
+            "3": "Years"
+          },
+          "quantity_constraints_verbatim": [
+            "Allow 2 digits.]",
+            "Allow 2 digits."
+          ],
+          "quantity_entry_width_limit_by_unit": {
+            "1": 99,
+            "2": 99,
+            "3": 99
+          }
+        },
+        "7": {
+          "prompt": "About how long has it been since you last smoked a cigarette?",
+          "source_columns": [
+            "R07_AC1009_NN",
+            "R07_AC1009_UN"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS7001/36498-7001-Codebook.pdf",
+              "variable": "R07_AC1009_NN",
+              "pdf_page_start": 20,
+              "pdf_page_end": 21
+            },
+            {
+              "file": "PATH/DS7001/36498-7001-Codebook.pdf",
+              "variable": "R07_AC1009_UN",
+              "pdf_page_start": 21,
+              "pdf_page_end": 22
+            },
+            {
+              "file": "PATH/DS7001/36498-7001-Questionnaire-English.pdf",
+              "variable": "R07_AC1002",
+              "pdf_page_start": 47,
+              "pdf_page_end": 47
+            },
+            {
+              "file": "PATH/DS7001/36498-7001-Questionnaire-English.pdf",
+              "variable": "R07_AC1002_12M",
+              "pdf_page_start": 48,
+              "pdf_page_end": 50
+            },
+            {
+              "file": "PATH/DS7001/36498-7001-Questionnaire-English.pdf",
+              "variable": "R07_AC1003",
+              "pdf_page_start": 50,
+              "pdf_page_end": 51
+            },
+            {
+              "file": "PATH/DS7001/36498-7001-Questionnaire-English.pdf",
+              "variable": "R07_AC1004",
+              "pdf_page_start": 47,
+              "pdf_page_end": 48
+            },
+            {
+              "file": "PATH/DS7001/36498-7001-Questionnaire-English.pdf",
+              "variable": "R07_AC1009_NN",
+              "pdf_page_start": 51,
+              "pdf_page_end": 53
+            },
+            {
+              "file": "PATH/DS7001/36498-7001-Questionnaire-English.pdf",
+              "variable": "R07_AC1009_UN",
+              "pdf_page_start": 51,
+              "pdf_page_end": 53
+            },
+            {
+              "file": "PATH/DS7001/36498-7001-Questionnaire-English.pdf",
+              "variable": "R07_AC1010",
+              "pdf_page_start": 53,
+              "pdf_page_end": 54
+            }
+          ],
+          "former_smoker_applicability": "Conditional: former/noncurrent respondents under the raw AC1009 history and smoking-status routing. Persistent former smokers often skip this item; Wave 2 has a documented skip/data error.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing.",
+          "unit_multipliers": {
+            "1": 1,
+            "2": 30.4375,
+            "3": 365.25
+          },
+          "unit_options": {
+            "1": "Days",
+            "2": "Months",
+            "3": "Years"
+          },
+          "quantity_constraints_verbatim": [
+            "Enter a whole number and select one of the options below./IF EARLIER TODAY, ENTER 1 DAY.]",
+            "[PROGRAM NOTE: Display as Quantity/Units. Allow 2 digits.]",
+            "Enter a whole number and select one of the options below./IF EARLIER TODAY, ENTER 1 DAY.]",
+            "ELSE, DISPLAY \"(If it was earlier today, enter 1 day.) Enter a whole number and select one of the",
+            "Allow 2 digits."
+          ],
+          "quantity_entry_width_limit_by_unit": {
+            "1": 99,
+            "2": 99,
+            "3": 99
+          }
+        }
+      }
+    },
+    {
+      "feature": "electronic_nicotine_p30d",
+      "kind": "category",
+      "options": {
+        "0": "No",
+        "1": "Yes"
+      },
+      "units": "binary indicator",
+      "missing_options": {
+        "unanswered": "Not answered (default)",
+        "dont_know": "Don't know",
+        "prefer_not_to_answer": "Prefer not to answer",
+        "not_applicable": "Not applicable",
+        "not_previously_asked": "Not previously asked/recorded"
+      },
+      "missing_behavior": "All optional model questions permit don't know, prefer not to answer, and not applicable/not previously asked; encode null plus distinct reason, never zero. No invented historical responses or fixed imputation values. Later preprocessing learns from tuning training folds only.",
+      "waves": {
+        "1": {
+          "prompt": "Have you used an e-cigarette at all in the past 30 days?",
+          "source_columns": [
+            "R01R_A_P30D_ECIG"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS1001/36498-1001-Codebook.pdf",
+              "variable": "R01R_A_P30D_ECIG",
+              "pdf_page_start": 1107,
+              "pdf_page_end": 1108
+            },
+            {
+              "file": "PATH/DS1001/36498-1001-Questionnaire.pdf",
+              "variable": "R01_AE0100",
+              "pdf_page_start": 34,
+              "pdf_page_end": 34
+            },
+            {
+              "file": "PATH/DS1001/36498-1001-Questionnaire.pdf",
+              "variable": "R01_AE1001",
+              "pdf_page_start": 33,
+              "pdf_page_end": 33
+            },
+            {
+              "file": "PATH/DS1001/36498-1001-Questionnaire.pdf",
+              "variable": "R01_AE1002",
+              "pdf_page_start": 33,
+              "pdf_page_end": 33
+            },
+            {
+              "file": "PATH/DS1001/36498-1001-Questionnaire.pdf",
+              "variable": "R01_AE1003",
+              "pdf_page_start": 33,
+              "pdf_page_end": 34
+            },
+            {
+              "file": "PATH/DS1001/36498-1001-Questionnaire.pdf",
+              "variable": "R01_AE1004",
+              "pdf_page_start": 35,
+              "pdf_page_end": 35
+            },
+            {
+              "file": "PATH/DS1001/36498-1001-Questionnaire.pdf",
+              "variable": "R01_AE1009_NN",
+              "pdf_page_start": 93,
+              "pdf_page_end": 93
+            },
+            {
+              "file": "PATH/DS1001/36498-1001-Questionnaire.pdf",
+              "variable": "R01_AE1009_UN",
+              "pdf_page_start": 93,
+              "pdf_page_end": 93
+            },
+            {
+              "file": "PATH/DS1001/36498-1001-Questionnaire.pdf",
+              "variable": "R01_AE1022",
+              "pdf_page_start": 97,
+              "pdf_page_end": 98
+            }
+          ],
+          "former_smoker_applicability": "Applies to former cigarette smokers; product use is a separate status construct and does not require current cigarette smoking.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "2": {
+          "prompt": "Have you used an e-cigarette at all in the past 30 days?",
+          "source_columns": [
+            "R02R_A_P30D_ECIG"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS2001/36498-2001-Codebook.pdf",
+              "variable": "R02R_A_P30D_ECIG",
+              "pdf_page_start": 1670,
+              "pdf_page_end": 1671
+            },
+            {
+              "file": "PATH/DS2001/36498-2001-Questionnaire.pdf",
+              "variable": "R02_AE1004",
+              "pdf_page_start": 42,
+              "pdf_page_end": 43
+            },
+            {
+              "file": "PATH/DS2001/36498-2001-Questionnaire.pdf",
+              "variable": "R02_AE1009_NN",
+              "pdf_page_start": 42,
+              "pdf_page_end": 42
+            },
+            {
+              "file": "PATH/DS2001/36498-2001-Questionnaire.pdf",
+              "variable": "R02_AE1009_UN",
+              "pdf_page_start": 42,
+              "pdf_page_end": 42
+            },
+            {
+              "file": "PATH/DS2001/36498-2001-Questionnaire.pdf",
+              "variable": "R02_AE1022",
+              "pdf_page_start": 171,
+              "pdf_page_end": 172
+            },
+            {
+              "file": "PATH/DS2001/36498-2001-Questionnaire.pdf",
+              "variable": "R02_AO0100C",
+              "pdf_page_start": 39,
+              "pdf_page_end": 40
+            },
+            {
+              "file": "PATH/DS2001/36498-2001-Questionnaire.pdf",
+              "variable": "R02_AO1003C",
+              "pdf_page_start": 38,
+              "pdf_page_end": 39
+            }
+          ],
+          "former_smoker_applicability": "Applies to former cigarette smokers; product use is a separate status construct and does not require current cigarette smoking.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "3": {
+          "prompt": "Have you used any electronic nicotine product at all in the past 30 days?",
+          "source_columns": [
+            "R03R_A_P30D_EPRODS"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS3001/36498-3001-Codebook.pdf",
+              "variable": "R03R_A_P30D_EPRODS",
+              "pdf_page_start": 1677,
+              "pdf_page_end": 1678
+            },
+            {
+              "file": "PATH/DS3001/36498-3001-Questionnaire.pdf",
+              "variable": "R03_AV0100",
+              "pdf_page_start": 207,
+              "pdf_page_end": 208
+            },
+            {
+              "file": "PATH/DS3001/36498-3001-Questionnaire.pdf",
+              "variable": "R03_AV1004",
+              "pdf_page_start": 37,
+              "pdf_page_end": 37
+            },
+            {
+              "file": "PATH/DS3001/36498-3001-Questionnaire.pdf",
+              "variable": "R03_AV1009EC_NN",
+              "pdf_page_start": 41,
+              "pdf_page_end": 44
+            },
+            {
+              "file": "PATH/DS3001/36498-3001-Questionnaire.pdf",
+              "variable": "R03_AV1009EC_UN",
+              "pdf_page_start": 41,
+              "pdf_page_end": 44
+            },
+            {
+              "file": "PATH/DS3001/36498-3001-Questionnaire.pdf",
+              "variable": "R03_AV1009EG_NN",
+              "pdf_page_start": 41,
+              "pdf_page_end": 44
+            },
+            {
+              "file": "PATH/DS3001/36498-3001-Questionnaire.pdf",
+              "variable": "R03_AV1009EG_UN",
+              "pdf_page_start": 41,
+              "pdf_page_end": 44
+            },
+            {
+              "file": "PATH/DS3001/36498-3001-Questionnaire.pdf",
+              "variable": "R03_AV1022",
+              "pdf_page_start": 199,
+              "pdf_page_end": 200
+            }
+          ],
+          "former_smoker_applicability": "Applies to former cigarette smokers; product use is a separate status construct and does not require current cigarette smoking.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "4": {
+          "prompt": "Have you used any electronic nicotine product at all in the past 30 days?",
+          "source_columns": [
+            "R04R_A_P30D_EPRODS"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS4001/36498-4001-Codebook.pdf",
+              "variable": "R04R_A_P30D_EPRODS",
+              "pdf_page_start": 1536,
+              "pdf_page_end": 1537
+            },
+            {
+              "file": "PATH/DS4001/36498-4001-Questionnaire.pdf",
+              "variable": "R04_AV0100",
+              "pdf_page_start": 244,
+              "pdf_page_end": 245
+            },
+            {
+              "file": "PATH/DS4001/36498-4001-Questionnaire.pdf",
+              "variable": "R04_AV1004",
+              "pdf_page_start": 52,
+              "pdf_page_end": 53
+            },
+            {
+              "file": "PATH/DS4001/36498-4001-Questionnaire.pdf",
+              "variable": "R04_AV1009_NN",
+              "pdf_page_start": 56,
+              "pdf_page_end": 58
+            },
+            {
+              "file": "PATH/DS4001/36498-4001-Questionnaire.pdf",
+              "variable": "R04_AV1009_UN",
+              "pdf_page_start": 56,
+              "pdf_page_end": 58
+            },
+            {
+              "file": "PATH/DS4001/36498-4001-Questionnaire.pdf",
+              "variable": "R04_AV1022",
+              "pdf_page_start": 235,
+              "pdf_page_end": 236
+            }
+          ],
+          "former_smoker_applicability": "Applies to former cigarette smokers; product use is a separate status construct and does not require current cigarette smoking.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "5": {
+          "prompt": "Have you used any electronic nicotine product at all in the past 30 days?",
+          "source_columns": [
+            "R05R_A_P30D_EPRODS"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS5001/36498-5001-Codebook.pdf",
+              "variable": "R05R_A_P30D_EPRODS",
+              "pdf_page_start": 1668,
+              "pdf_page_end": 1669
+            },
+            {
+              "file": "PATH/DS5001/36498-5001-Questionnaire.pdf",
+              "variable": "R05_AV0100",
+              "pdf_page_start": 217,
+              "pdf_page_end": 218
+            },
+            {
+              "file": "PATH/DS5001/36498-5001-Questionnaire.pdf",
+              "variable": "R05_AV1002",
+              "pdf_page_start": 44,
+              "pdf_page_end": 44
+            },
+            {
+              "file": "PATH/DS5001/36498-5001-Questionnaire.pdf",
+              "variable": "R05_AV1004",
+              "pdf_page_start": 44,
+              "pdf_page_end": 45
+            },
+            {
+              "file": "PATH/DS5001/36498-5001-Questionnaire.pdf",
+              "variable": "R05_AV1009_NN",
+              "pdf_page_start": 47,
+              "pdf_page_end": 49
+            },
+            {
+              "file": "PATH/DS5001/36498-5001-Questionnaire.pdf",
+              "variable": "R05_AV1009_UN",
+              "pdf_page_start": 47,
+              "pdf_page_end": 49
+            },
+            {
+              "file": "PATH/DS5001/36498-5001-Questionnaire.pdf",
+              "variable": "R05_AV1022",
+              "pdf_page_start": 209,
+              "pdf_page_end": 210
+            }
+          ],
+          "former_smoker_applicability": "Applies to former cigarette smokers; product use is a separate status construct and does not require current cigarette smoking.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "6": {
+          "prompt": "Have you used any electronic nicotine product at all in the past 30 days?",
+          "source_columns": [
+            "R06R_A_P30D_EPRODS"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS6001/36498-6001-Codebook.pdf",
+              "variable": "R06R_A_P30D_EPRODS",
+              "pdf_page_start": 1849,
+              "pdf_page_end": 1850
+            },
+            {
+              "file": "PATH/DS6001/36498-6001-Questionnaire-English.pdf",
+              "variable": "R06_AV0100",
+              "pdf_page_start": 246,
+              "pdf_page_end": 246
+            },
+            {
+              "file": "PATH/DS6001/36498-6001-Questionnaire-English.pdf",
+              "variable": "R06_AV1002",
+              "pdf_page_start": 48,
+              "pdf_page_end": 49
+            },
+            {
+              "file": "PATH/DS6001/36498-6001-Questionnaire-English.pdf",
+              "variable": "R06_AV1004",
+              "pdf_page_start": 49,
+              "pdf_page_end": 50
+            },
+            {
+              "file": "PATH/DS6001/36498-6001-Questionnaire-English.pdf",
+              "variable": "R06_AV1009_NN",
+              "pdf_page_start": 54,
+              "pdf_page_end": 57
+            },
+            {
+              "file": "PATH/DS6001/36498-6001-Questionnaire-English.pdf",
+              "variable": "R06_AV1009_UN",
+              "pdf_page_start": 54,
+              "pdf_page_end": 57
+            },
+            {
+              "file": "PATH/DS6001/36498-6001-Questionnaire-English.pdf",
+              "variable": "R06_AV1022",
+              "pdf_page_start": 239,
+              "pdf_page_end": 240
+            }
+          ],
+          "former_smoker_applicability": "Applies to former cigarette smokers; product use is a separate status construct and does not require current cigarette smoking.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "7": {
+          "prompt": "Have you used any electronic nicotine product at all in the past 30 days?",
+          "source_columns": [
+            "R07R_A_P30D_EPRODS"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS7001/36498-7001-Codebook.pdf",
+              "variable": "R07R_A_P30D_EPRODS",
+              "pdf_page_start": 2184,
+              "pdf_page_end": 2185
+            },
+            {
+              "file": "PATH/DS7001/36498-7001-Questionnaire-English.pdf",
+              "variable": "R07_AV0100",
+              "pdf_page_start": 278,
+              "pdf_page_end": 279
+            },
+            {
+              "file": "PATH/DS7001/36498-7001-Questionnaire-English.pdf",
+              "variable": "R07_AV1002",
+              "pdf_page_start": 58,
+              "pdf_page_end": 59
+            },
+            {
+              "file": "PATH/DS7001/36498-7001-Questionnaire-English.pdf",
+              "variable": "R07_AV1004",
+              "pdf_page_start": 59,
+              "pdf_page_end": 60
+            },
+            {
+              "file": "PATH/DS7001/36498-7001-Questionnaire-English.pdf",
+              "variable": "R07_AV1009_NN",
+              "pdf_page_start": 64,
+              "pdf_page_end": 68
+            },
+            {
+              "file": "PATH/DS7001/36498-7001-Questionnaire-English.pdf",
+              "variable": "R07_AV1009_UN",
+              "pdf_page_start": 64,
+              "pdf_page_end": 68
+            },
+            {
+              "file": "PATH/DS7001/36498-7001-Questionnaire-English.pdf",
+              "variable": "R07_AV1022",
+              "pdf_page_start": 272,
+              "pdf_page_end": 273
+            }
+          ],
+          "former_smoker_applicability": "Applies to former cigarette smokers; product use is a separate status construct and does not require current cigarette smoking.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        }
+      }
+    },
+    {
+      "feature": "household_tobacco_any",
+      "kind": "category",
+      "options": {
+        "0": "No",
+        "1": "Yes"
+      },
+      "units": "binary indicator",
+      "missing_options": {
+        "unanswered": "Not answered (default)",
+        "dont_know": "Don't know",
+        "prefer_not_to_answer": "Prefer not to answer",
+        "not_applicable": "Not applicable",
+        "not_previously_asked": "Not previously asked/recorded"
+      },
+      "missing_behavior": "All optional model questions permit don't know, prefer not to answer, and not applicable/not previously asked; encode null plus distinct reason, never zero. No invented historical responses or fixed imputation values. Later preprocessing learns from tuning training folds only.",
+      "waves": {
+        "1": {
+          "prompt": "Not including yourself, does anyone who lives with you now use one of the listed tobacco/nicotine products? Products in this survey context: cigarettes; smokeless tobacco; cigars, cigarillos or filtered cigars; any other form of tobacco. If you live alone, choose not applicable.",
+          "source_columns": [
+            "R01_AX0066_01",
+            "R01_AX0066_02",
+            "R01_AX0066_03",
+            "R01_AX0066_04",
+            "R01_AX0066_05"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS1001/36498-1001-Codebook.pdf",
+              "variable": "R01_AX0066_01",
+              "pdf_page_start": 871,
+              "pdf_page_end": 871
+            },
+            {
+              "file": "PATH/DS1001/36498-1001-Codebook.pdf",
+              "variable": "R01_AX0066_02",
+              "pdf_page_start": 871,
+              "pdf_page_end": 872
+            },
+            {
+              "file": "PATH/DS1001/36498-1001-Codebook.pdf",
+              "variable": "R01_AX0066_03",
+              "pdf_page_start": 872,
+              "pdf_page_end": 873
+            },
+            {
+              "file": "PATH/DS1001/36498-1001-Codebook.pdf",
+              "variable": "R01_AX0066_04",
+              "pdf_page_start": 873,
+              "pdf_page_end": 873
+            },
+            {
+              "file": "PATH/DS1001/36498-1001-Codebook.pdf",
+              "variable": "R01_AX0066_05",
+              "pdf_page_start": 873,
+              "pdf_page_end": 874
+            }
+          ],
+          "former_smoker_applicability": "Conditional: respondent must live with other household members and satisfy parent-interview/prior-response routing where specified. Living alone/skipped is not inferred from missing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "2": {
+          "prompt": "Not including yourself, does anyone who lives with you now use one of the listed tobacco/nicotine products? Products in this survey context: cigarettes; smokeless tobacco; traditional cigars, cigarillos or filtered cigars; any other form of tobacco. If you live alone, choose not applicable.",
+          "source_columns": [
+            "R02_AX0066_01",
+            "R02_AX0066_02",
+            "R02_AX0066_03",
+            "R02_AX0066_04",
+            "R02_AX0066_05"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS2001/36498-2001-Codebook.pdf",
+              "variable": "R02_AX0066_01",
+              "pdf_page_start": 1385,
+              "pdf_page_end": 1385
+            },
+            {
+              "file": "PATH/DS2001/36498-2001-Codebook.pdf",
+              "variable": "R02_AX0066_02",
+              "pdf_page_start": 1385,
+              "pdf_page_end": 1386
+            },
+            {
+              "file": "PATH/DS2001/36498-2001-Codebook.pdf",
+              "variable": "R02_AX0066_03",
+              "pdf_page_start": 1386,
+              "pdf_page_end": 1387
+            },
+            {
+              "file": "PATH/DS2001/36498-2001-Codebook.pdf",
+              "variable": "R02_AX0066_04",
+              "pdf_page_start": 1387,
+              "pdf_page_end": 1387
+            },
+            {
+              "file": "PATH/DS2001/36498-2001-Codebook.pdf",
+              "variable": "R02_AX0066_05",
+              "pdf_page_start": 1388,
+              "pdf_page_end": 1388
+            },
+            {
+              "file": "PATH/DS2001/36498-2001-Questionnaire.pdf",
+              "variable": "R02_AX0690",
+              "pdf_page_start": 511,
+              "pdf_page_end": 512
+            }
+          ],
+          "former_smoker_applicability": "Conditional: respondent must live with other household members and satisfy parent-interview/prior-response routing where specified. Living alone/skipped is not inferred from missing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "3": {
+          "prompt": "Not including yourself, does anyone who lives with you now use one of the listed tobacco/nicotine products? Products in this survey context: cigarettes; e-cigarettes or other electronic nicotine products; snus pouches; other smokeless tobacco; traditional cigars, cigarillos or filtered cigars; hookah; any other form of tobacco. If you live alone, choose not applicable.",
+          "source_columns": [
+            "R03_AX0066_01",
+            "R03_AX0066_02",
+            "R03_AX0066_03",
+            "R03_AX0066_04",
+            "R03_AX0066_05",
+            "R03_AX0066_06",
+            "R03_AX0066_07",
+            "R03_AX0066_08"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS3001/36498-3001-Codebook.pdf",
+              "variable": "R03_AX0066_01",
+              "pdf_page_start": 1323,
+              "pdf_page_end": 1324
+            },
+            {
+              "file": "PATH/DS3001/36498-3001-Codebook.pdf",
+              "variable": "R03_AX0066_02",
+              "pdf_page_start": 1324,
+              "pdf_page_end": 1324
+            },
+            {
+              "file": "PATH/DS3001/36498-3001-Codebook.pdf",
+              "variable": "R03_AX0066_03",
+              "pdf_page_start": 1325,
+              "pdf_page_end": 1325
+            },
+            {
+              "file": "PATH/DS3001/36498-3001-Codebook.pdf",
+              "variable": "R03_AX0066_04",
+              "pdf_page_start": 1325,
+              "pdf_page_end": 1326
+            },
+            {
+              "file": "PATH/DS3001/36498-3001-Codebook.pdf",
+              "variable": "R03_AX0066_05",
+              "pdf_page_start": 1326,
+              "pdf_page_end": 1327
+            },
+            {
+              "file": "PATH/DS3001/36498-3001-Codebook.pdf",
+              "variable": "R03_AX0066_06",
+              "pdf_page_start": 1327,
+              "pdf_page_end": 1327
+            },
+            {
+              "file": "PATH/DS3001/36498-3001-Codebook.pdf",
+              "variable": "R03_AX0066_07",
+              "pdf_page_start": 1327,
+              "pdf_page_end": 1328
+            },
+            {
+              "file": "PATH/DS3001/36498-3001-Codebook.pdf",
+              "variable": "R03_AX0066_08",
+              "pdf_page_start": 1328,
+              "pdf_page_end": 1329
+            },
+            {
+              "file": "PATH/DS3001/36498-3001-Questionnaire.pdf",
+              "variable": "R03_AR1045",
+              "pdf_page_start": 694,
+              "pdf_page_end": 695
+            },
+            {
+              "file": "PATH/DS3001/36498-3001-Questionnaire.pdf",
+              "variable": "R03_AX0690",
+              "pdf_page_start": 693,
+              "pdf_page_end": 693
+            }
+          ],
+          "former_smoker_applicability": "Conditional: respondent must live with other household members and satisfy parent-interview/prior-response routing where specified. Living alone/skipped is not inferred from missing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "4": {
+          "prompt": "Not including yourself, does anyone who lives with you now use one of the listed tobacco/nicotine products? Products in this survey context: cigarettes, cigars/cigarillos/filtered cigars, pipe tobacco, electronic products, other tobacco including smokeless, snus and hookah. If you live alone, choose not applicable.",
+          "source_columns": [
+            "R04R_A_AX0066"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS4001/36498-4001-Codebook.pdf",
+              "variable": "R04R_A_AX0066",
+              "pdf_page_start": 1171,
+              "pdf_page_end": 1172
+            }
+          ],
+          "former_smoker_applicability": "Conditional: respondent must live with other household members and satisfy parent-interview/prior-response routing where specified. Living alone/skipped is not inferred from missing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "5": {
+          "prompt": "Not including yourself, does anyone who lives with you now use one of the listed tobacco/nicotine products? Products in this survey context: cigarettes, cigars/cigarillos/filtered cigars, pipe tobacco, electronic products, other tobacco including smokeless, snus and hookah. If you live alone, choose not applicable.",
+          "source_columns": [
+            "R05R_A_AX0066"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS5001/36498-5001-Codebook.pdf",
+              "variable": "R05R_A_AX0066",
+              "pdf_page_start": 1283,
+              "pdf_page_end": 1284
+            }
+          ],
+          "former_smoker_applicability": "Conditional: respondent must live with other household members and satisfy parent-interview/prior-response routing where specified. Living alone/skipped is not inferred from missing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "6": {
+          "prompt": "Not including yourself, does anyone who lives with you now use one of the listed tobacco/nicotine products? Products in this survey context: cigarettes, cigars/cigarillos/filtered cigars, pipe tobacco, electronic products, other tobacco including smokeless, snus, hookah and IQOS. If you live alone, choose not applicable.",
+          "source_columns": [
+            "R06R_A_AX0066_V2"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS6001/36498-6001-Codebook.pdf",
+              "variable": "R06R_A_AX0066_V2",
+              "pdf_page_start": 1334,
+              "pdf_page_end": 1335
+            }
+          ],
+          "former_smoker_applicability": "Conditional: respondent must live with other household members and satisfy parent-interview/prior-response routing where specified. Living alone/skipped is not inferred from missing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "7": {
+          "prompt": "Not including yourself, does anyone who lives with you now use one of the listed tobacco/nicotine products? Products in this survey context: cigarettes, cigars/cigarillos/filtered cigars, pipe tobacco, electronic products, other tobacco including smokeless, snus, hookah, IQOS, pouches and oral nicotine products. If you live alone, choose not applicable.",
+          "source_columns": [
+            "R07R_A_AX0066_V3"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS7001/36498-7001-Codebook.pdf",
+              "variable": "R07R_A_AX0066_V3",
+              "pdf_page_start": 1588,
+              "pdf_page_end": 1589
+            }
+          ],
+          "former_smoker_applicability": "Conditional: respondent must live with other household members and satisfy parent-interview/prior-response routing where specified. Living alone/skipped is not inferred from missing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        }
+      }
+    },
+    {
+      "feature": "home_combustible_smoking_rules",
+      "kind": "category",
+      "options": {
+        "1": "Not allowed anywhere or at any time",
+        "2": "Allowed in some places or at some times",
+        "3": "Allowed anywhere and at any time"
+      },
+      "units": "category",
+      "missing_options": {
+        "unanswered": "Not answered (default)",
+        "dont_know": "Don't know",
+        "prefer_not_to_answer": "Prefer not to answer",
+        "not_applicable": "Not applicable",
+        "not_previously_asked": "Not previously asked/recorded"
+      },
+      "missing_behavior": "All optional model questions permit don't know, prefer not to answer, and not applicable/not previously asked; encode null plus distinct reason, never zero. No invented historical responses or fixed imputation values. Later preprocessing learns from tuning training folds only.",
+      "waves": {
+        "1": {
+          "prompt": "Which statement best describes the rules about smoking products that are burned inside your home?",
+          "source_columns": [
+            "R01_AR1045"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS1001/36498-1001-Codebook.pdf",
+              "variable": "R01_AR1045",
+              "pdf_page_start": 874,
+              "pdf_page_end": 874
+            },
+            {
+              "file": "PATH/DS1001/36498-1001-Questionnaire.pdf",
+              "variable": "R01_AR1045",
+              "pdf_page_start": 369,
+              "pdf_page_end": 370
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "2": {
+          "prompt": "Which statement best describes the rules about smoking products that are burned inside your home?",
+          "source_columns": [
+            "R02_AR1045"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS2001/36498-2001-Codebook.pdf",
+              "variable": "R02_AR1045",
+              "pdf_page_start": 1388,
+              "pdf_page_end": 1389
+            },
+            {
+              "file": "PATH/DS2001/36498-2001-Questionnaire.pdf",
+              "variable": "R02_AR1045",
+              "pdf_page_start": 513,
+              "pdf_page_end": 513
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "3": {
+          "prompt": "Which statement best describes the rules about smoking products that are burned inside your home?",
+          "source_columns": [
+            "R03_AR1045"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS3001/36498-3001-Codebook.pdf",
+              "variable": "R03_AR1045",
+              "pdf_page_start": 1329,
+              "pdf_page_end": 1329
+            },
+            {
+              "file": "PATH/DS3001/36498-3001-Questionnaire.pdf",
+              "variable": "R03_AR1045",
+              "pdf_page_start": 694,
+              "pdf_page_end": 695
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "4": {
+          "prompt": "Which statement best describes the rules about smoking products that are burned inside your home?",
+          "source_columns": [
+            "R04_AR1045"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS4001/36498-4001-Codebook.pdf",
+              "variable": "R04_AR1045",
+              "pdf_page_start": 1172,
+              "pdf_page_end": 1173
+            },
+            {
+              "file": "PATH/DS4001/36498-4001-Questionnaire.pdf",
+              "variable": "R04_AR1045",
+              "pdf_page_start": 778,
+              "pdf_page_end": 778
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "5": {
+          "prompt": "Which statement best describes the rules about smoking products that are burned inside your home?",
+          "source_columns": [
+            "R05_AR1045"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS5001/36498-5001-Codebook.pdf",
+              "variable": "R05_AR1045",
+              "pdf_page_start": 1284,
+              "pdf_page_end": 1285
+            },
+            {
+              "file": "PATH/DS5001/36498-5001-Questionnaire.pdf",
+              "variable": "R05_AR1045",
+              "pdf_page_start": 739,
+              "pdf_page_end": 739
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "6": {
+          "prompt": "Which statement best describes the rules about smoking products that are burned inside your home?",
+          "source_columns": [
+            "R06_AR1045"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS6001/36498-6001-Codebook.pdf",
+              "variable": "R06_AR1045",
+              "pdf_page_start": 1332,
+              "pdf_page_end": 1333
+            },
+            {
+              "file": "PATH/DS6001/36498-6001-Questionnaire-English.pdf",
+              "variable": "R06_AR1045",
+              "pdf_page_start": 792,
+              "pdf_page_end": 792
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "7": {
+          "prompt": "Which statement best describes the rules about smoking products that are burned inside your home?",
+          "source_columns": [
+            "R07_AR1045"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS7001/36498-7001-Codebook.pdf",
+              "variable": "R07_AR1045",
+              "pdf_page_start": 1590,
+              "pdf_page_end": 1591
+            },
+            {
+              "file": "PATH/DS7001/36498-7001-Questionnaire-English.pdf",
+              "variable": "R07_AR1045",
+              "pdf_page_start": 825,
+              "pdf_page_end": 826
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        }
+      }
+    },
+    {
+      "feature": "physical_health",
+      "kind": "category",
+      "options": {
+        "1": "Excellent",
+        "2": "Very good",
+        "3": "Good",
+        "4": "Fair",
+        "5": "Poor"
+      },
+      "units": "category",
+      "missing_options": {
+        "unanswered": "Not answered (default)",
+        "dont_know": "Don't know",
+        "prefer_not_to_answer": "Prefer not to answer",
+        "not_applicable": "Not applicable",
+        "not_previously_asked": "Not previously asked/recorded"
+      },
+      "missing_behavior": "All optional model questions permit don't know, prefer not to answer, and not applicable/not previously asked; encode null plus distinct reason, never zero. No invented historical responses or fixed imputation values. Later preprocessing learns from tuning training folds only.",
+      "waves": {
+        "1": {
+          "prompt": "In general, how would you rate your physical health?",
+          "source_columns": [
+            "R01_AX0090"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS1001/36498-1001-Codebook.pdf",
+              "variable": "R01_AX0090",
+              "pdf_page_start": 878,
+              "pdf_page_end": 879
+            },
+            {
+              "file": "PATH/DS1001/36498-1001-Questionnaire.pdf",
+              "variable": "R01_AX0090",
+              "pdf_page_start": 373,
+              "pdf_page_end": 373
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "2": {
+          "prompt": "In general, how would you rate your physical health?",
+          "source_columns": [
+            "R02_AX0090"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS2001/36498-2001-Codebook.pdf",
+              "variable": "R02_AX0090",
+              "pdf_page_start": 1393,
+              "pdf_page_end": 1394
+            },
+            {
+              "file": "PATH/DS2001/36498-2001-Questionnaire.pdf",
+              "variable": "R02_AX0090",
+              "pdf_page_start": 516,
+              "pdf_page_end": 516
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "3": {
+          "prompt": "In general, how would you rate your physical health?",
+          "source_columns": [
+            "R03_AX0090"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS3001/36498-3001-Codebook.pdf",
+              "variable": "R03_AX0090",
+              "pdf_page_start": 1348,
+              "pdf_page_end": 1348
+            },
+            {
+              "file": "PATH/DS3001/36498-3001-Questionnaire.pdf",
+              "variable": "R03_AX0090",
+              "pdf_page_start": 704,
+              "pdf_page_end": 704
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "4": {
+          "prompt": "In general, how would you rate your physical health?",
+          "source_columns": [
+            "R04_AX0090"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS4001/36498-4001-Codebook.pdf",
+              "variable": "R04_AX0090",
+              "pdf_page_start": 1190,
+              "pdf_page_end": 1191
+            },
+            {
+              "file": "PATH/DS4001/36498-4001-Questionnaire.pdf",
+              "variable": "R04_AX0090",
+              "pdf_page_start": 788,
+              "pdf_page_end": 788
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "5": {
+          "prompt": "In general, how would you rate your physical health?",
+          "source_columns": [
+            "R05_AX0090"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS5001/36498-5001-Codebook.pdf",
+              "variable": "R05_AX0090",
+              "pdf_page_start": 1313,
+              "pdf_page_end": 1314
+            },
+            {
+              "file": "PATH/DS5001/36498-5001-Questionnaire.pdf",
+              "variable": "R05_AX0090",
+              "pdf_page_start": 753,
+              "pdf_page_end": 753
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "6": {
+          "prompt": "In general, how would you rate your physical health?",
+          "source_columns": [
+            "R06_AX0090"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS6001/36498-6001-Codebook.pdf",
+              "variable": "R06_AX0090",
+              "pdf_page_start": 1377,
+              "pdf_page_end": 1378
+            },
+            {
+              "file": "PATH/DS6001/36498-6001-Questionnaire-English.pdf",
+              "variable": "R06_AX0090",
+              "pdf_page_start": 813,
+              "pdf_page_end": 813
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "7": {
+          "prompt": "In general, how would you rate your physical health?",
+          "source_columns": [
+            "R07_AX0090"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS7001/36498-7001-Codebook.pdf",
+              "variable": "R07_AX0090",
+              "pdf_page_start": 1659,
+              "pdf_page_end": 1660
+            },
+            {
+              "file": "PATH/DS7001/36498-7001-Questionnaire-English.pdf",
+              "variable": "R07_AX0090",
+              "pdf_page_start": 855,
+              "pdf_page_end": 855
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        }
+      }
+    },
+    {
+      "feature": "mental_health",
+      "kind": "category",
+      "options": {
+        "1": "Excellent",
+        "2": "Very good",
+        "3": "Good",
+        "4": "Fair",
+        "5": "Poor"
+      },
+      "units": "category",
+      "missing_options": {
+        "unanswered": "Not answered (default)",
+        "dont_know": "Don't know",
+        "prefer_not_to_answer": "Prefer not to answer",
+        "not_applicable": "Not applicable",
+        "not_previously_asked": "Not previously asked/recorded"
+      },
+      "missing_behavior": "All optional model questions permit don't know, prefer not to answer, and not applicable/not previously asked; encode null plus distinct reason, never zero. No invented historical responses or fixed imputation values. Later preprocessing learns from tuning training folds only.",
+      "waves": {
+        "1": {
+          "prompt": "In general, how would you rate your mental health, which includes stress, depression, and problems with emotions?",
+          "source_columns": [
+            "R01_AX0091"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS1001/36498-1001-Codebook.pdf",
+              "variable": "R01_AX0091",
+              "pdf_page_start": 879,
+              "pdf_page_end": 879
+            },
+            {
+              "file": "PATH/DS1001/36498-1001-Questionnaire.pdf",
+              "variable": "R01_AX0091",
+              "pdf_page_start": 373,
+              "pdf_page_end": 373
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "2": {
+          "prompt": "In general, how would you rate your mental health, which includes stress, depression, and problems with emotions?",
+          "source_columns": [
+            "R02_AX0091"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS2001/36498-2001-Codebook.pdf",
+              "variable": "R02_AX0091",
+              "pdf_page_start": 1394,
+              "pdf_page_end": 1395
+            },
+            {
+              "file": "PATH/DS2001/36498-2001-Questionnaire.pdf",
+              "variable": "R02_AX0091",
+              "pdf_page_start": 516,
+              "pdf_page_end": 517
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "3": {
+          "prompt": "In general, how would you rate your mental health, which includes stress, depression, and problems with emotions?",
+          "source_columns": [
+            "R03_AX0091"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS3001/36498-3001-Codebook.pdf",
+              "variable": "R03_AX0091",
+              "pdf_page_start": 1349,
+              "pdf_page_end": 1350
+            },
+            {
+              "file": "PATH/DS3001/36498-3001-Questionnaire.pdf",
+              "variable": "R03_AX0091",
+              "pdf_page_start": 704,
+              "pdf_page_end": 705
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "4": {
+          "prompt": "In general, how would you rate your mental health, which includes stress, depression, and problems with emotions?",
+          "source_columns": [
+            "R04_AX0091"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS4001/36498-4001-Codebook.pdf",
+              "variable": "R04_AX0091",
+              "pdf_page_start": 1191,
+              "pdf_page_end": 1192
+            },
+            {
+              "file": "PATH/DS4001/36498-4001-Questionnaire.pdf",
+              "variable": "R04_AX0091",
+              "pdf_page_start": 788,
+              "pdf_page_end": 789
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "5": {
+          "prompt": "In general, how would you rate your mental health, which includes stress, depression, and problems with emotions?",
+          "source_columns": [
+            "R05_AX0091"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS5001/36498-5001-Codebook.pdf",
+              "variable": "R05_AX0091",
+              "pdf_page_start": 1314,
+              "pdf_page_end": 1315
+            },
+            {
+              "file": "PATH/DS5001/36498-5001-Questionnaire.pdf",
+              "variable": "R05_AX0091",
+              "pdf_page_start": 753,
+              "pdf_page_end": 754
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "6": {
+          "prompt": "In general, how would you rate your mental health, which includes stress, depression, and problems with emotions?",
+          "source_columns": [
+            "R06_AX0091"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS6001/36498-6001-Codebook.pdf",
+              "variable": "R06_AX0091",
+              "pdf_page_start": 1378,
+              "pdf_page_end": 1378
+            },
+            {
+              "file": "PATH/DS6001/36498-6001-Questionnaire-English.pdf",
+              "variable": "R06_AX0091",
+              "pdf_page_start": 813,
+              "pdf_page_end": 814
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "7": {
+          "prompt": "In general, how would you rate your mental health, which includes stress, depression, and problems with emotions?",
+          "source_columns": [
+            "R07_AX0091"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS7001/36498-7001-Codebook.pdf",
+              "variable": "R07_AX0091",
+              "pdf_page_start": 1660,
+              "pdf_page_end": 1661
+            },
+            {
+              "file": "PATH/DS7001/36498-7001-Questionnaire-English.pdf",
+              "variable": "R07_AX0091",
+              "pdf_page_start": 855,
+              "pdf_page_end": 856
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        }
+      }
+    },
+    {
+      "feature": "social_satisfaction",
+      "kind": "category",
+      "options": {
+        "1": "Extremely satisfied",
+        "2": "Very satisfied",
+        "3": "Moderately satisfied",
+        "4": "A little satisfied",
+        "5": "Not at all satisfied"
+      },
+      "units": "category",
+      "missing_options": {
+        "unanswered": "Not answered (default)",
+        "dont_know": "Don't know",
+        "prefer_not_to_answer": "Prefer not to answer",
+        "not_applicable": "Not applicable",
+        "not_previously_asked": "Not previously asked/recorded"
+      },
+      "missing_behavior": "All optional model questions permit don't know, prefer not to answer, and not applicable/not previously asked; encode null plus distinct reason, never zero. No invented historical responses or fixed imputation values. Later preprocessing learns from tuning training folds only.",
+      "waves": {
+        "1": {
+          "prompt": "In general, how satisfied are you with your social activities and relationships?",
+          "source_columns": [
+            "R01_AX0092"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS1001/36498-1001-Codebook.pdf",
+              "variable": "R01_AX0092",
+              "pdf_page_start": 881,
+              "pdf_page_end": 881
+            },
+            {
+              "file": "PATH/DS1001/36498-1001-Questionnaire.pdf",
+              "variable": "R01_AX0092",
+              "pdf_page_start": 374,
+              "pdf_page_end": 374
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "2": {
+          "prompt": "In general, how satisfied are you with your social activities and relationships?",
+          "source_columns": [
+            "R02_AX0092"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS2001/36498-2001-Codebook.pdf",
+              "variable": "R02_AX0092",
+              "pdf_page_start": 1396,
+              "pdf_page_end": 1397
+            },
+            {
+              "file": "PATH/DS2001/36498-2001-Questionnaire.pdf",
+              "variable": "R02_AX0092",
+              "pdf_page_start": 517,
+              "pdf_page_end": 518
+            },
+            {
+              "file": "PATH/DS2001/36498-2001-Questionnaire.pdf",
+              "variable": "R02_AX0313",
+              "pdf_page_start": 518,
+              "pdf_page_end": 518
+            },
+            {
+              "file": "PATH/DS2001/36498-2001-Questionnaire.pdf",
+              "variable": "R02_AX0314",
+              "pdf_page_start": 519,
+              "pdf_page_end": 519
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "3": {
+          "prompt": "In general, how satisfied are you with your social activities and relationships?",
+          "source_columns": [
+            "R03_AX0092"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS3001/36498-3001-Codebook.pdf",
+              "variable": "R03_AX0092",
+              "pdf_page_start": 1353,
+              "pdf_page_end": 1354
+            },
+            {
+              "file": "PATH/DS3001/36498-3001-Questionnaire.pdf",
+              "variable": "R03_AX0092",
+              "pdf_page_start": 706,
+              "pdf_page_end": 707
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "4": {
+          "prompt": "In general, how satisfied are you with your social activities and relationships?",
+          "source_columns": [
+            "R04_AX0092"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS4001/36498-4001-Codebook.pdf",
+              "variable": "R04_AX0092",
+              "pdf_page_start": 1196,
+              "pdf_page_end": 1196
+            },
+            {
+              "file": "PATH/DS4001/36498-4001-Questionnaire.pdf",
+              "variable": "R04_AX0092",
+              "pdf_page_start": 791,
+              "pdf_page_end": 791
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "5": {
+          "prompt": "In general, how satisfied are you with your social activities and relationships?",
+          "source_columns": [
+            "R05_AX0092"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS5001/36498-5001-Codebook.pdf",
+              "variable": "R05_AX0092",
+              "pdf_page_start": 1319,
+              "pdf_page_end": 1319
+            },
+            {
+              "file": "PATH/DS5001/36498-5001-Questionnaire.pdf",
+              "variable": "R05_AX0092",
+              "pdf_page_start": 756,
+              "pdf_page_end": 756
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "6": {
+          "prompt": "In general, how satisfied are you with your social activities and relationships?",
+          "source_columns": [
+            "R06_AX0092"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS6001/36498-6001-Codebook.pdf",
+              "variable": "R06_AX0092",
+              "pdf_page_start": 1383,
+              "pdf_page_end": 1383
+            },
+            {
+              "file": "PATH/DS6001/36498-6001-Questionnaire-English.pdf",
+              "variable": "R06_AX0092",
+              "pdf_page_start": 816,
+              "pdf_page_end": 816
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "7": {
+          "prompt": "In general, how satisfied are you with your social activities and relationships?",
+          "source_columns": [
+            "R07_AX0092"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS7001/36498-7001-Codebook.pdf",
+              "variable": "R07_AX0092",
+              "pdf_page_start": 1665,
+              "pdf_page_end": 1666
+            },
+            {
+              "file": "PATH/DS7001/36498-7001-Questionnaire-English.pdf",
+              "variable": "R07_AX0092",
+              "pdf_page_start": 858,
+              "pdf_page_end": 858
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        }
+      }
+    },
+    {
+      "feature": "emotional_problems_7d",
+      "kind": "category",
+      "options": {
+        "1": "Never",
+        "2": "Rarely",
+        "3": "Sometimes",
+        "4": "Often",
+        "5": "Very often"
+      },
+      "units": "category",
+      "missing_options": {
+        "unanswered": "Not answered (default)",
+        "dont_know": "Don't know",
+        "prefer_not_to_answer": "Prefer not to answer",
+        "not_applicable": "Not applicable",
+        "not_previously_asked": "Not previously asked/recorded"
+      },
+      "missing_behavior": "All optional model questions permit don't know, prefer not to answer, and not applicable/not previously asked; encode null plus distinct reason, never zero. No invented historical responses or fixed imputation values. Later preprocessing learns from tuning training folds only.",
+      "waves": {
+        "1": {
+          "prompt": "In the past 7 days, how often have you been bothered by emotional problems such as feeling anxious, depressed or irritable?",
+          "source_columns": [
+            "R01_AX0103"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS1001/36498-1001-Codebook.pdf",
+              "variable": "R01_AX0103",
+              "pdf_page_start": 899,
+              "pdf_page_end": 900
+            },
+            {
+              "file": "PATH/DS1001/36498-1001-Questionnaire.pdf",
+              "variable": "R01_AX0103",
+              "pdf_page_start": 385,
+              "pdf_page_end": 386
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "2": {
+          "prompt": "In the past 7 days, how often have you been bothered by emotional problems such as feeling anxious, depressed or irritable?",
+          "source_columns": [
+            "R02_AX0103"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS2001/36498-2001-Codebook.pdf",
+              "variable": "R02_AX0103",
+              "pdf_page_start": 1402,
+              "pdf_page_end": 1403
+            },
+            {
+              "file": "PATH/DS2001/36498-2001-Questionnaire.pdf",
+              "variable": "R02_AX0103",
+              "pdf_page_start": 522,
+              "pdf_page_end": 523
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "3": {
+          "prompt": "In the past 7 days, how often have you been bothered by emotional problems such as feeling anxious, depressed or irritable?",
+          "source_columns": [
+            "R03_AX0103"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS3001/36498-3001-Codebook.pdf",
+              "variable": "R03_AX0103",
+              "pdf_page_start": 1359,
+              "pdf_page_end": 1360
+            },
+            {
+              "file": "PATH/DS3001/36498-3001-Questionnaire.pdf",
+              "variable": "R03_AX0103",
+              "pdf_page_start": 713,
+              "pdf_page_end": 713
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "4": {
+          "prompt": "In the past 7 days, how often have you been bothered by emotional problems such as feeling anxious, depressed or irritable?",
+          "source_columns": [
+            "R04_AX0103"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS4001/36498-4001-Codebook.pdf",
+              "variable": "R04_AX0103",
+              "pdf_page_start": 1201,
+              "pdf_page_end": 1202
+            },
+            {
+              "file": "PATH/DS4001/36498-4001-Questionnaire.pdf",
+              "variable": "R04_AX0103",
+              "pdf_page_start": 798,
+              "pdf_page_end": 798
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "5": {
+          "prompt": "In the past 7 days, how often have you been bothered by emotional problems such as feeling anxious, depressed or irritable?",
+          "source_columns": [
+            "R05_AX0103"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS5001/36498-5001-Codebook.pdf",
+              "variable": "R05_AX0103",
+              "pdf_page_start": 1326,
+              "pdf_page_end": 1326
+            },
+            {
+              "file": "PATH/DS5001/36498-5001-Questionnaire.pdf",
+              "variable": "R05_AX0103",
+              "pdf_page_start": 762,
+              "pdf_page_end": 762
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "6": {
+          "prompt": "In the past 7 days, how often have you been bothered by emotional problems such as feeling anxious, depressed or irritable?",
+          "source_columns": [
+            "R06_AX0103"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS6001/36498-6001-Codebook.pdf",
+              "variable": "R06_AX0103",
+              "pdf_page_start": 1389,
+              "pdf_page_end": 1390
+            },
+            {
+              "file": "PATH/DS6001/36498-6001-Questionnaire-English.pdf",
+              "variable": "R06_AX0103",
+              "pdf_page_start": 823,
+              "pdf_page_end": 824
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        },
+        "7": {
+          "prompt": "In the past 7 days, how often have you been bothered by emotional problems such as feeling anxious, depressed or irritable?",
+          "source_columns": [
+            "R07_AX0103"
+          ],
+          "source_evidence": [
+            {
+              "file": "PATH/DS7001/36498-7001-Codebook.pdf",
+              "variable": "R07_AX0103",
+              "pdf_page_start": 1673,
+              "pdf_page_end": 1674
+            },
+            {
+              "file": "PATH/DS7001/36498-7001-Questionnaire-English.pdf",
+              "variable": "R07_AX0103",
+              "pdf_page_start": 865,
+              "pdf_page_end": 866
+            }
+          ],
+          "former_smoker_applicability": "Applies to adult former smokers under the item-specific questionnaire routing.",
+          "availability_warning": "A new self-report is not identical to a historically routed/derived survey value. Unknown and not-asked remain missing."
+        }
+      }
+    }
+  ],
+  "research_only_policy": "The research profile must use actual survey-available values. No made-up histories or proxy sex/gender answers are supplied to it.",
+  "recency_warning": "Supply a positive whole number and valid unit, or explicit missing. If converted recency <=30 days, clarify the no-past-30-day-use eligibility conflict; never change the answer to fit. Recency is approximate historical time, not time to resumption. Persistent former respondents often were not asked; answering today may shift the missingness distribution."
+}

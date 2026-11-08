@@ -1,0 +1,87 @@
+{
+  "protocol": "evaluation_v1",
+  "development": [
+    {
+      "partition": "tuning",
+      "records": 13757,
+      "people": 4692,
+      "positive": 1487,
+      "negative": 12270,
+      "prevalence": 0.10809042669186596
+    },
+    {
+      "partition": "calibration",
+      "records": 2801,
+      "people": 947,
+      "positive": 312,
+      "negative": 2489,
+      "prevalence": 0.11138878971795788
+    },
+    {
+      "partition": "threshold",
+      "records": 2910,
+      "people": 990,
+      "positive": 336,
+      "negative": 2574,
+      "prevalence": 0.1154639175257732
+    }
+  ],
+  "development_folds": [
+    {
+      "validation_fold": 0,
+      "records": 2799,
+      "people": 946,
+      "positive": 292,
+      "negative": 2507
+    },
+    {
+      "validation_fold": 1,
+      "records": 2619,
+      "people": 910,
+      "positive": 302,
+      "negative": 2317
+    },
+    {
+      "validation_fold": 2,
+      "records": 2537,
+      "people": 900,
+      "positive": 299,
+      "negative": 2238
+    },
+    {
+      "validation_fold": 3,
+      "records": 2861,
+      "people": 984,
+      "positive": 296,
+      "negative": 2565
+    },
+    {
+      "validation_fold": 4,
+      "records": 2941,
+      "people": 952,
+      "positive": 298,
+      "negative": 2643
+    }
+  ],
+  "test_records": 1243,
+  "test_people": 1243,
+  "test_outcomes_read": false,
+  "test_features_read": false,
+  "record_partition_counts": {
+    "tuning": 13757,
+    "heldout_excluded": 6516,
+    "development_later_excluded": 3663,
+    "threshold": 2910,
+    "calibration": 2801,
+    "test": 1243
+  },
+  "participant_role_counts": {
+    "tuning": 6212,
+    "heldout": 2929,
+    "threshold": 1308,
+    "calibration": 1268
+  },
+  "minimum_case_checks_passed": true,
+  "participant_and_temporal_assertions_passed": true,
+  "no_model_fit_or_final_evaluation": true
+}

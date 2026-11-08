@@ -1,0 +1,8 @@
+{
+  "synthetic": true,
+  "description": "Invented participants for boundary tests only; never combined with PATH.",
+  "identifiers": ["SYN_E01", "SYN_E02", "SYN_E03", "SYN_E04", "SYN_E05", "SYN_E06", "SYN_E07", "SYN_E08", "SYN_E09", "SYN_E10", "SYN_E11", "SYN_E12", "SYN_E13", "SYN_E14", "SYN_E15", "SYN_E16", "SYN_E17", "SYN_E18", "SYN_E19", "SYN_E20", "SYN_E21", "SYN_E22", "SYN_E23", "SYN_E24"],
+  "starting_waves": [1, 2, 7],
+  "feature": "synthetic_value",
+  "outcome_rule": "Alternating 0/1 by synthetic row index, solely for correctness tests"
+}

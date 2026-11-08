@@ -1,0 +1,1729 @@
+[
+  {
+    "starting_wave": 1,
+    "feature": "age_band",
+    "records": 1950,
+    "observed": 1949,
+    "missing_fraction": 0.0005128205128205332,
+    "reasons": {
+      "observed": 1949,
+      "refused": 1
+    }
+  },
+  {
+    "starting_wave": 1,
+    "feature": "sex_recorded",
+    "records": 1950,
+    "observed": 1949,
+    "missing_fraction": 0.0005128205128205332,
+    "reasons": {
+      "observed": 1949,
+      "refused": 1
+    }
+  },
+  {
+    "starting_wave": 1,
+    "feature": "education_level",
+    "records": 1950,
+    "observed": 1943,
+    "missing_fraction": 0.0035897435897436214,
+    "reasons": {
+      "observed": 1943,
+      "refused": 6,
+      "dont_know": 1
+    }
+  },
+  {
+    "starting_wave": 1,
+    "feature": "household_income_band",
+    "records": 1950,
+    "observed": 1788,
+    "missing_fraction": 0.08307692307692305,
+    "reasons": {
+      "observed": 1788,
+      "refused": 135,
+      "dont_know": 27
+    }
+  },
+  {
+    "starting_wave": 1,
+    "feature": "employment_status",
+    "records": 1950,
+    "observed": 1941,
+    "missing_fraction": 0.004615384615384577,
+    "reasons": {
+      "observed": 1941,
+      "refused": 7,
+      "dont_know": 2
+    }
+  },
+  {
+    "starting_wave": 1,
+    "feature": "last_cigarette_recency_days",
+    "records": 1950,
+    "observed": 1945,
+    "missing_fraction": 0.002564102564102555,
+    "reasons": {
+      "observed": 1945,
+      "improbable_response_removed": 3,
+      "refused": 2
+    }
+  },
+  {
+    "starting_wave": 1,
+    "feature": "prior_regular_cigarettes_per_day",
+    "records": 1950,
+    "observed": 1724,
+    "missing_fraction": 0.11589743589743595,
+    "reasons": {
+      "observed": 1724,
+      "structural_skip": 221,
+      "improbable_response_removed": 4,
+      "refused": 1
+    }
+  },
+  {
+    "starting_wave": 1,
+    "feature": "regular_smoking_months",
+    "records": 1950,
+    "observed": 1719,
+    "missing_fraction": 0.11846153846153851,
+    "reasons": {
+      "observed": 1719,
+      "structural_skip": 221,
+      "dont_know": 5,
+      "improbable_component": 4,
+      "refused": 1
+    }
+  },
+  {
+    "starting_wave": 1,
+    "feature": "electronic_nicotine_p30d",
+    "records": 1950,
+    "observed": 1948,
+    "missing_fraction": 0.0010256410256410664,
+    "reasons": {
+      "observed": 1948,
+      "dont_know": 2
+    }
+  },
+  {
+    "starting_wave": 1,
+    "feature": "traditional_cigar_p30d",
+    "records": 1950,
+    "observed": 1937,
+    "missing_fraction": 0.00666666666666671,
+    "reasons": {
+      "observed": 1937,
+      "dont_know": 8,
+      "refused": 5
+    }
+  },
+  {
+    "starting_wave": 1,
+    "feature": "cigarillo_p30d",
+    "records": 1950,
+    "observed": 1895,
+    "missing_fraction": 0.028205128205128216,
+    "reasons": {
+      "observed": 1895,
+      "dont_know": 41,
+      "refused": 14
+    }
+  },
+  {
+    "starting_wave": 1,
+    "feature": "filtered_cigar_p30d",
+    "records": 1950,
+    "observed": 1895,
+    "missing_fraction": 0.028205128205128216,
+    "reasons": {
+      "observed": 1895,
+      "dont_know": 41,
+      "refused": 14
+    }
+  },
+  {
+    "starting_wave": 1,
+    "feature": "hookah_p30d",
+    "records": 1950,
+    "observed": 1950,
+    "missing_fraction": 0.0,
+    "reasons": {
+      "observed": 1950
+    }
+  },
+  {
+    "starting_wave": 1,
+    "feature": "smokeless_tobacco_p30d",
+    "records": 1950,
+    "observed": 1936,
+    "missing_fraction": 0.007179487179487132,
+    "reasons": {
+      "observed": 1936,
+      "structural_skip": 9,
+      "dont_know": 4,
+      "refused": 1
+    }
+  },
+  {
+    "starting_wave": 1,
+    "feature": "snus_p30d",
+    "records": 1950,
+    "observed": 1940,
+    "missing_fraction": 0.00512820512820511,
+    "reasons": {
+      "observed": 1940,
+      "dont_know": 9,
+      "refused": 1
+    }
+  },
+  {
+    "starting_wave": 1,
+    "feature": "household_tobacco_any",
+    "records": 1950,
+    "observed": 1669,
+    "missing_fraction": 0.14410256410256406,
+    "reasons": {
+      "observed": 1669,
+      "structural_skip": 275,
+      "refused": 4,
+      "dont_know": 2
+    }
+  },
+  {
+    "starting_wave": 1,
+    "feature": "home_combustible_smoking_rules",
+    "records": 1950,
+    "observed": 1944,
+    "missing_fraction": 0.003076923076923088,
+    "reasons": {
+      "observed": 1944,
+      "refused": 3,
+      "dont_know": 3
+    }
+  },
+  {
+    "starting_wave": 1,
+    "feature": "physical_health",
+    "records": 1950,
+    "observed": 1947,
+    "missing_fraction": 0.0015384615384614886,
+    "reasons": {
+      "observed": 1947,
+      "refused": 2,
+      "dont_know": 1
+    }
+  },
+  {
+    "starting_wave": 1,
+    "feature": "mental_health",
+    "records": 1950,
+    "observed": 1947,
+    "missing_fraction": 0.0015384615384614886,
+    "reasons": {
+      "observed": 1947,
+      "refused": 3
+    }
+  },
+  {
+    "starting_wave": 1,
+    "feature": "social_satisfaction",
+    "records": 1950,
+    "observed": 1946,
+    "missing_fraction": 0.002051282051282022,
+    "reasons": {
+      "observed": 1946,
+      "refused": 4
+    }
+  },
+  {
+    "starting_wave": 1,
+    "feature": "emotional_problems_7d",
+    "records": 1950,
+    "observed": 1945,
+    "missing_fraction": 0.002564102564102555,
+    "reasons": {
+      "observed": 1945,
+      "refused": 5
+    }
+  },
+  {
+    "starting_wave": 1,
+    "feature": "depressive_problem_recency",
+    "records": 1950,
+    "observed": 1935,
+    "missing_fraction": 0.007692307692307665,
+    "reasons": {
+      "observed": 1935,
+      "refused": 13,
+      "dont_know": 2
+    }
+  },
+  {
+    "starting_wave": 1,
+    "feature": "anxiety_problem_recency",
+    "records": 1950,
+    "observed": 1937,
+    "missing_fraction": 0.00666666666666671,
+    "reasons": {
+      "observed": 1937,
+      "refused": 7,
+      "dont_know": 6
+    }
+  },
+  {
+    "starting_wave": 1,
+    "feature": "alcohol_days_30d",
+    "records": 1950,
+    "observed": 1183,
+    "missing_fraction": 0.3933333333333333,
+    "reasons": {
+      "observed": 1183,
+      "structural_skip": 766,
+      "refused": 1
+    }
+  },
+  {
+    "starting_wave": 1,
+    "feature": "alcohol_drinks_per_drinking_day",
+    "records": 1950,
+    "observed": 1180,
+    "missing_fraction": 0.3948717948717949,
+    "reasons": {
+      "observed": 1180,
+      "structural_skip": 769,
+      "refused": 1
+    }
+  },
+  {
+    "starting_wave": 2,
+    "feature": "age_band",
+    "records": 2159,
+    "observed": 2159,
+    "missing_fraction": 0.0,
+    "reasons": {
+      "observed": 2159
+    }
+  },
+  {
+    "starting_wave": 2,
+    "feature": "sex_recorded",
+    "records": 2159,
+    "observed": 2158,
+    "missing_fraction": 0.0004631773969430153,
+    "reasons": {
+      "observed": 2158,
+      "refused": 1
+    }
+  },
+  {
+    "starting_wave": 2,
+    "feature": "education_level",
+    "records": 2159,
+    "observed": 2152,
+    "missing_fraction": 0.003242241778601218,
+    "reasons": {
+      "observed": 2152,
+      "refused": 5,
+      "dont_know": 2
+    }
+  },
+  {
+    "starting_wave": 2,
+    "feature": "household_income_band",
+    "records": 2159,
+    "observed": 2024,
+    "missing_fraction": 0.06252894858730895,
+    "reasons": {
+      "observed": 2024,
+      "refused": 101,
+      "dont_know": 34
+    }
+  },
+  {
+    "starting_wave": 2,
+    "feature": "employment_status",
+    "records": 2159,
+    "observed": 2150,
+    "missing_fraction": 0.004168596572487249,
+    "reasons": {
+      "observed": 2150,
+      "refused": 5,
+      "dont_know": 4
+    }
+  },
+  {
+    "starting_wave": 2,
+    "feature": "last_cigarette_recency_days",
+    "records": 2159,
+    "observed": 498,
+    "missing_fraction": 0.7693376563223715,
+    "reasons": {
+      "structural_skip": 1622,
+      "observed": 498,
+      "not_ascertained": 18,
+      "improbable_response_removed": 13,
+      "refused": 8
+    }
+  },
+  {
+    "starting_wave": 2,
+    "feature": "prior_regular_cigarettes_per_day",
+    "records": 2159,
+    "observed": 131,
+    "missing_fraction": 0.9393237610004632,
+    "reasons": {
+      "structural_skip": 2028,
+      "observed": 131
+    }
+  },
+  {
+    "starting_wave": 2,
+    "feature": "regular_smoking_months",
+    "records": 2159,
+    "observed": 129,
+    "missing_fraction": 0.9402501157943493,
+    "reasons": {
+      "structural_skip": 2028,
+      "observed": 129,
+      "refused": 2
+    }
+  },
+  {
+    "starting_wave": 2,
+    "feature": "electronic_nicotine_p30d",
+    "records": 2159,
+    "observed": 2120,
+    "missing_fraction": 0.01806391848077815,
+    "reasons": {
+      "observed": 2120,
+      "not_ascertained": 30,
+      "prior_wave_missing": 4,
+      "dont_know": 3,
+      "structural_skip": 1,
+      "improbable_component": 1
+    }
+  },
+  {
+    "starting_wave": 2,
+    "feature": "traditional_cigar_p30d",
+    "records": 2159,
+    "observed": 2159,
+    "missing_fraction": 0.0,
+    "reasons": {
+      "observed": 2159
+    }
+  },
+  {
+    "starting_wave": 2,
+    "feature": "cigarillo_p30d",
+    "records": 2159,
+    "observed": 2159,
+    "missing_fraction": 0.0,
+    "reasons": {
+      "observed": 2159
+    }
+  },
+  {
+    "starting_wave": 2,
+    "feature": "filtered_cigar_p30d",
+    "records": 2159,
+    "observed": 2159,
+    "missing_fraction": 0.0,
+    "reasons": {
+      "observed": 2159
+    }
+  },
+  {
+    "starting_wave": 2,
+    "feature": "hookah_p30d",
+    "records": 2159,
+    "observed": 2159,
+    "missing_fraction": 0.0,
+    "reasons": {
+      "observed": 2159
+    }
+  },
+  {
+    "starting_wave": 2,
+    "feature": "smokeless_tobacco_p30d",
+    "records": 2159,
+    "observed": 2158,
+    "missing_fraction": 0.0004631773969430153,
+    "reasons": {
+      "observed": 2158,
+      "dont_know": 1
+    }
+  },
+  {
+    "starting_wave": 2,
+    "feature": "snus_p30d",
+    "records": 2159,
+    "observed": 2159,
+    "missing_fraction": 0.0,
+    "reasons": {
+      "observed": 2159
+    }
+  },
+  {
+    "starting_wave": 2,
+    "feature": "household_tobacco_any",
+    "records": 2159,
+    "observed": 1823,
+    "missing_fraction": 0.1556276053728578,
+    "reasons": {
+      "observed": 1823,
+      "structural_skip": 331,
+      "dont_know": 4,
+      "refused": 1
+    }
+  },
+  {
+    "starting_wave": 2,
+    "feature": "home_combustible_smoking_rules",
+    "records": 2159,
+    "observed": 2154,
+    "missing_fraction": 0.0023158869847151875,
+    "reasons": {
+      "observed": 2154,
+      "dont_know": 5
+    }
+  },
+  {
+    "starting_wave": 2,
+    "feature": "physical_health",
+    "records": 2159,
+    "observed": 2158,
+    "missing_fraction": 0.0004631773969430153,
+    "reasons": {
+      "observed": 2158,
+      "refused": 1
+    }
+  },
+  {
+    "starting_wave": 2,
+    "feature": "mental_health",
+    "records": 2159,
+    "observed": 2157,
+    "missing_fraction": 0.0009263547938860306,
+    "reasons": {
+      "observed": 2157,
+      "refused": 1,
+      "dont_know": 1
+    }
+  },
+  {
+    "starting_wave": 2,
+    "feature": "social_satisfaction",
+    "records": 2159,
+    "observed": 2156,
+    "missing_fraction": 0.0013895321908290459,
+    "reasons": {
+      "observed": 2156,
+      "refused": 2,
+      "dont_know": 1
+    }
+  },
+  {
+    "starting_wave": 2,
+    "feature": "emotional_problems_7d",
+    "records": 2159,
+    "observed": 2156,
+    "missing_fraction": 0.0013895321908290459,
+    "reasons": {
+      "observed": 2156,
+      "refused": 2,
+      "dont_know": 1
+    }
+  },
+  {
+    "starting_wave": 2,
+    "feature": "depressive_problem_recency",
+    "records": 2159,
+    "observed": 2148,
+    "missing_fraction": 0.005094951366373279,
+    "reasons": {
+      "observed": 2148,
+      "refused": 8,
+      "dont_know": 3
+    }
+  },
+  {
+    "starting_wave": 2,
+    "feature": "anxiety_problem_recency",
+    "records": 2159,
+    "observed": 2150,
+    "missing_fraction": 0.004168596572487249,
+    "reasons": {
+      "observed": 2150,
+      "refused": 5,
+      "dont_know": 4
+    }
+  },
+  {
+    "starting_wave": 2,
+    "feature": "alcohol_days_30d",
+    "records": 2159,
+    "observed": 1334,
+    "missing_fraction": 0.38212135247799905,
+    "reasons": {
+      "observed": 1334,
+      "structural_skip": 821,
+      "refused": 2,
+      "dont_know": 2
+    }
+  },
+  {
+    "starting_wave": 2,
+    "feature": "alcohol_drinks_per_drinking_day",
+    "records": 2159,
+    "observed": 1324,
+    "missing_fraction": 0.3867531264474293,
+    "reasons": {
+      "observed": 1324,
+      "structural_skip": 831,
+      "refused": 3,
+      "dont_know": 1
+    }
+  },
+  {
+    "starting_wave": 3,
+    "feature": "age_band",
+    "records": 2206,
+    "observed": 2206,
+    "missing_fraction": 0.0,
+    "reasons": {
+      "observed": 2206
+    }
+  },
+  {
+    "starting_wave": 3,
+    "feature": "sex_recorded",
+    "records": 2206,
+    "observed": 2206,
+    "missing_fraction": 0.0,
+    "reasons": {
+      "observed": 2206
+    }
+  },
+  {
+    "starting_wave": 3,
+    "feature": "education_level",
+    "records": 2206,
+    "observed": 2204,
+    "missing_fraction": 0.0009066183136899886,
+    "reasons": {
+      "observed": 2204,
+      "refused": 2
+    }
+  },
+  {
+    "starting_wave": 3,
+    "feature": "household_income_band",
+    "records": 2206,
+    "observed": 2068,
+    "missing_fraction": 0.06255666364460566,
+    "reasons": {
+      "observed": 2068,
+      "refused": 102,
+      "dont_know": 36
+    }
+  },
+  {
+    "starting_wave": 3,
+    "feature": "employment_status",
+    "records": 2206,
+    "observed": 2197,
+    "missing_fraction": 0.004079782411604671,
+    "reasons": {
+      "observed": 2197,
+      "dont_know": 5,
+      "refused": 4
+    }
+  },
+  {
+    "starting_wave": 3,
+    "feature": "last_cigarette_recency_days",
+    "records": 2206,
+    "observed": 487,
+    "missing_fraction": 0.7792384406165005,
+    "reasons": {
+      "structural_skip": 1707,
+      "observed": 487,
+      "improbable_response_removed": 10,
+      "dont_know": 2
+    }
+  },
+  {
+    "starting_wave": 3,
+    "feature": "prior_regular_cigarettes_per_day",
+    "records": 2206,
+    "observed": 59,
+    "missing_fraction": 0.9732547597461468,
+    "reasons": {
+      "structural_skip": 2147,
+      "observed": 59
+    }
+  },
+  {
+    "starting_wave": 3,
+    "feature": "regular_smoking_months",
+    "records": 2206,
+    "observed": 97,
+    "missing_fraction": 0.956029011786038,
+    "reasons": {
+      "structural_skip": 2108,
+      "observed": 97,
+      "dont_know": 1
+    }
+  },
+  {
+    "starting_wave": 3,
+    "feature": "electronic_nicotine_p30d",
+    "records": 2206,
+    "observed": 2205,
+    "missing_fraction": 0.0004533091568449388,
+    "reasons": {
+      "observed": 2205,
+      "dont_know": 1
+    }
+  },
+  {
+    "starting_wave": 3,
+    "feature": "traditional_cigar_p30d",
+    "records": 2206,
+    "observed": 2205,
+    "missing_fraction": 0.0004533091568449388,
+    "reasons": {
+      "observed": 2205,
+      "dont_know": 1
+    }
+  },
+  {
+    "starting_wave": 3,
+    "feature": "cigarillo_p30d",
+    "records": 2206,
+    "observed": 2206,
+    "missing_fraction": 0.0,
+    "reasons": {
+      "observed": 2206
+    }
+  },
+  {
+    "starting_wave": 3,
+    "feature": "filtered_cigar_p30d",
+    "records": 2206,
+    "observed": 2206,
+    "missing_fraction": 0.0,
+    "reasons": {
+      "observed": 2206
+    }
+  },
+  {
+    "starting_wave": 3,
+    "feature": "hookah_p30d",
+    "records": 2206,
+    "observed": 2206,
+    "missing_fraction": 0.0,
+    "reasons": {
+      "observed": 2206
+    }
+  },
+  {
+    "starting_wave": 3,
+    "feature": "smokeless_tobacco_p30d",
+    "records": 2206,
+    "observed": 2205,
+    "missing_fraction": 0.0004533091568449388,
+    "reasons": {
+      "observed": 2205,
+      "refused": 1
+    }
+  },
+  {
+    "starting_wave": 3,
+    "feature": "snus_p30d",
+    "records": 2206,
+    "observed": 2206,
+    "missing_fraction": 0.0,
+    "reasons": {
+      "observed": 2206
+    }
+  },
+  {
+    "starting_wave": 3,
+    "feature": "household_tobacco_any",
+    "records": 2206,
+    "observed": 1865,
+    "missing_fraction": 0.15457842248413423,
+    "reasons": {
+      "observed": 1865,
+      "structural_skip": 335,
+      "dont_know": 4,
+      "refused": 2
+    }
+  },
+  {
+    "starting_wave": 3,
+    "feature": "home_combustible_smoking_rules",
+    "records": 2206,
+    "observed": 2200,
+    "missing_fraction": 0.0027198549410698547,
+    "reasons": {
+      "observed": 2200,
+      "dont_know": 4,
+      "refused": 2
+    }
+  },
+  {
+    "starting_wave": 3,
+    "feature": "physical_health",
+    "records": 2206,
+    "observed": 2202,
+    "missing_fraction": 0.0018132366273798661,
+    "reasons": {
+      "observed": 2202,
+      "dont_know": 2,
+      "refused": 2
+    }
+  },
+  {
+    "starting_wave": 3,
+    "feature": "mental_health",
+    "records": 2206,
+    "observed": 2203,
+    "missing_fraction": 0.0013599274705349274,
+    "reasons": {
+      "observed": 2203,
+      "refused": 2,
+      "dont_know": 1
+    }
+  },
+  {
+    "starting_wave": 3,
+    "feature": "social_satisfaction",
+    "records": 2206,
+    "observed": 2204,
+    "missing_fraction": 0.0009066183136899886,
+    "reasons": {
+      "observed": 2204,
+      "refused": 2
+    }
+  },
+  {
+    "starting_wave": 3,
+    "feature": "emotional_problems_7d",
+    "records": 2206,
+    "observed": 2201,
+    "missing_fraction": 0.002266545784224805,
+    "reasons": {
+      "observed": 2201,
+      "refused": 3,
+      "dont_know": 2
+    }
+  },
+  {
+    "starting_wave": 3,
+    "feature": "depressive_problem_recency",
+    "records": 2206,
+    "observed": 2195,
+    "missing_fraction": 0.00498640072529466,
+    "reasons": {
+      "observed": 2195,
+      "dont_know": 7,
+      "refused": 4
+    }
+  },
+  {
+    "starting_wave": 3,
+    "feature": "anxiety_problem_recency",
+    "records": 2206,
+    "observed": 2194,
+    "missing_fraction": 0.005439709882139598,
+    "reasons": {
+      "observed": 2194,
+      "dont_know": 7,
+      "refused": 5
+    }
+  },
+  {
+    "starting_wave": 3,
+    "feature": "alcohol_days_30d",
+    "records": 2206,
+    "observed": 1383,
+    "missing_fraction": 0.3730734360834089,
+    "reasons": {
+      "observed": 1383,
+      "structural_skip": 818,
+      "dont_know": 4,
+      "refused": 1
+    }
+  },
+  {
+    "starting_wave": 3,
+    "feature": "alcohol_drinks_per_drinking_day",
+    "records": 2206,
+    "observed": 1374,
+    "missing_fraction": 0.3771532184950136,
+    "reasons": {
+      "observed": 1374,
+      "structural_skip": 829,
+      "dont_know": 2,
+      "refused": 1
+    }
+  },
+  {
+    "starting_wave": 4,
+    "feature": "age_band",
+    "records": 2509,
+    "observed": 2509,
+    "missing_fraction": 0.0,
+    "reasons": {
+      "observed": 2509
+    }
+  },
+  {
+    "starting_wave": 4,
+    "feature": "sex_recorded",
+    "records": 2509,
+    "observed": 2508,
+    "missing_fraction": 0.0003985651654045963,
+    "reasons": {
+      "observed": 2508,
+      "refused": 1
+    }
+  },
+  {
+    "starting_wave": 4,
+    "feature": "education_level",
+    "records": 2509,
+    "observed": 2505,
+    "missing_fraction": 0.0015942606616181632,
+    "reasons": {
+      "observed": 2505,
+      "refused": 3,
+      "dont_know": 1
+    }
+  },
+  {
+    "starting_wave": 4,
+    "feature": "household_income_band",
+    "records": 2509,
+    "observed": 2381,
+    "missing_fraction": 0.051016341171781554,
+    "reasons": {
+      "observed": 2381,
+      "refused": 97,
+      "dont_know": 31
+    }
+  },
+  {
+    "starting_wave": 4,
+    "feature": "employment_status",
+    "records": 2509,
+    "observed": 2499,
+    "missing_fraction": 0.003985651654045408,
+    "reasons": {
+      "observed": 2499,
+      "refused": 6,
+      "dont_know": 4
+    }
+  },
+  {
+    "starting_wave": 4,
+    "feature": "last_cigarette_recency_days",
+    "records": 2509,
+    "observed": 761,
+    "missing_fraction": 0.6966919091271423,
+    "reasons": {
+      "structural_skip": 1737,
+      "observed": 761,
+      "improbable_response_removed": 7,
+      "refused": 3,
+      "dont_know": 1
+    }
+  },
+  {
+    "starting_wave": 4,
+    "feature": "prior_regular_cigarettes_per_day",
+    "records": 2509,
+    "observed": 310,
+    "missing_fraction": 0.8764447987245915,
+    "reasons": {
+      "structural_skip": 2199,
+      "observed": 310
+    }
+  },
+  {
+    "starting_wave": 4,
+    "feature": "regular_smoking_months",
+    "records": 2509,
+    "observed": 339,
+    "missing_fraction": 0.8648864089278597,
+    "reasons": {
+      "structural_skip": 2170,
+      "observed": 339
+    }
+  },
+  {
+    "starting_wave": 4,
+    "feature": "electronic_nicotine_p30d",
+    "records": 2509,
+    "observed": 2509,
+    "missing_fraction": 0.0,
+    "reasons": {
+      "observed": 2509
+    }
+  },
+  {
+    "starting_wave": 4,
+    "feature": "traditional_cigar_p30d",
+    "records": 2509,
+    "observed": 2508,
+    "missing_fraction": 0.0003985651654045963,
+    "reasons": {
+      "observed": 2508,
+      "dont_know": 1
+    }
+  },
+  {
+    "starting_wave": 4,
+    "feature": "cigarillo_p30d",
+    "records": 2509,
+    "observed": 2507,
+    "missing_fraction": 0.0007971303308090816,
+    "reasons": {
+      "observed": 2507,
+      "dont_know": 1,
+      "refused": 1
+    }
+  },
+  {
+    "starting_wave": 4,
+    "feature": "filtered_cigar_p30d",
+    "records": 2509,
+    "observed": 2508,
+    "missing_fraction": 0.0003985651654045963,
+    "reasons": {
+      "observed": 2508,
+      "dont_know": 1
+    }
+  },
+  {
+    "starting_wave": 4,
+    "feature": "hookah_p30d",
+    "records": 2509,
+    "observed": 2508,
+    "missing_fraction": 0.0003985651654045963,
+    "reasons": {
+      "observed": 2508,
+      "refused": 1
+    }
+  },
+  {
+    "starting_wave": 4,
+    "feature": "smokeless_tobacco_p30d",
+    "records": 2509,
+    "observed": 2508,
+    "missing_fraction": 0.0003985651654045963,
+    "reasons": {
+      "observed": 2508,
+      "dont_know": 1
+    }
+  },
+  {
+    "starting_wave": 4,
+    "feature": "snus_p30d",
+    "records": 2509,
+    "observed": 2508,
+    "missing_fraction": 0.0003985651654045963,
+    "reasons": {
+      "observed": 2508,
+      "refused": 1
+    }
+  },
+  {
+    "starting_wave": 4,
+    "feature": "household_tobacco_any",
+    "records": 2509,
+    "observed": 2097,
+    "missing_fraction": 0.16420884814667203,
+    "reasons": {
+      "observed": 2097,
+      "structural_skip": 409,
+      "dont_know": 2,
+      "refused": 1
+    }
+  },
+  {
+    "starting_wave": 4,
+    "feature": "home_combustible_smoking_rules",
+    "records": 2509,
+    "observed": 2507,
+    "missing_fraction": 0.0007971303308090816,
+    "reasons": {
+      "observed": 2507,
+      "refused": 1,
+      "dont_know": 1
+    }
+  },
+  {
+    "starting_wave": 4,
+    "feature": "physical_health",
+    "records": 2509,
+    "observed": 2509,
+    "missing_fraction": 0.0,
+    "reasons": {
+      "observed": 2509
+    }
+  },
+  {
+    "starting_wave": 4,
+    "feature": "mental_health",
+    "records": 2509,
+    "observed": 2509,
+    "missing_fraction": 0.0,
+    "reasons": {
+      "observed": 2509
+    }
+  },
+  {
+    "starting_wave": 4,
+    "feature": "social_satisfaction",
+    "records": 2509,
+    "observed": 2507,
+    "missing_fraction": 0.0007971303308090816,
+    "reasons": {
+      "observed": 2507,
+      "refused": 2
+    }
+  },
+  {
+    "starting_wave": 4,
+    "feature": "emotional_problems_7d",
+    "records": 2509,
+    "observed": 2504,
+    "missing_fraction": 0.0019928258270227595,
+    "reasons": {
+      "observed": 2504,
+      "refused": 3,
+      "dont_know": 2
+    }
+  },
+  {
+    "starting_wave": 4,
+    "feature": "depressive_problem_recency",
+    "records": 2509,
+    "observed": 2504,
+    "missing_fraction": 0.0019928258270227595,
+    "reasons": {
+      "observed": 2504,
+      "dont_know": 3,
+      "refused": 2
+    }
+  },
+  {
+    "starting_wave": 4,
+    "feature": "anxiety_problem_recency",
+    "records": 2509,
+    "observed": 2503,
+    "missing_fraction": 0.0023913909924272447,
+    "reasons": {
+      "observed": 2503,
+      "refused": 4,
+      "dont_know": 2
+    }
+  },
+  {
+    "starting_wave": 4,
+    "feature": "alcohol_days_30d",
+    "records": 2509,
+    "observed": 1557,
+    "missing_fraction": 0.3794340374651255,
+    "reasons": {
+      "observed": 1557,
+      "structural_skip": 951,
+      "dont_know": 1
+    }
+  },
+  {
+    "starting_wave": 4,
+    "feature": "alcohol_drinks_per_drinking_day",
+    "records": 2509,
+    "observed": 1542,
+    "missing_fraction": 0.38541251494619366,
+    "reasons": {
+      "observed": 1542,
+      "structural_skip": 966,
+      "dont_know": 1
+    }
+  },
+  {
+    "starting_wave": 5,
+    "feature": "age_band",
+    "records": 2346,
+    "observed": 2346,
+    "missing_fraction": 0.0,
+    "reasons": {
+      "observed": 2346
+    }
+  },
+  {
+    "starting_wave": 5,
+    "feature": "sex_recorded",
+    "records": 2346,
+    "observed": 2345,
+    "missing_fraction": 0.0004262574595055302,
+    "reasons": {
+      "observed": 2345,
+      "refused": 1
+    }
+  },
+  {
+    "starting_wave": 5,
+    "feature": "education_level",
+    "records": 2346,
+    "observed": 2346,
+    "missing_fraction": 0.0,
+    "reasons": {
+      "observed": 2346
+    }
+  },
+  {
+    "starting_wave": 5,
+    "feature": "household_income_band",
+    "records": 2346,
+    "observed": 2239,
+    "missing_fraction": 0.04560954816709295,
+    "reasons": {
+      "observed": 2239,
+      "refused": 83,
+      "dont_know": 24
+    }
+  },
+  {
+    "starting_wave": 5,
+    "feature": "employment_status",
+    "records": 2346,
+    "observed": 2341,
+    "missing_fraction": 0.002131287297527762,
+    "reasons": {
+      "observed": 2341,
+      "refused": 3,
+      "dont_know": 2
+    }
+  },
+  {
+    "starting_wave": 5,
+    "feature": "last_cigarette_recency_days",
+    "records": 2346,
+    "observed": 555,
+    "missing_fraction": 0.7634271099744245,
+    "reasons": {
+      "structural_skip": 1772,
+      "observed": 555,
+      "improbable_response_removed": 9,
+      "dont_know": 7,
+      "refused": 3
+    }
+  },
+  {
+    "starting_wave": 5,
+    "feature": "prior_regular_cigarettes_per_day",
+    "records": 2346,
+    "observed": 52,
+    "missing_fraction": 0.9778346121057119,
+    "reasons": {
+      "structural_skip": 2293,
+      "observed": 52,
+      "dont_know": 1
+    }
+  },
+  {
+    "starting_wave": 5,
+    "feature": "regular_smoking_months",
+    "records": 2346,
+    "observed": 75,
+    "missing_fraction": 0.9680306905370843,
+    "reasons": {
+      "structural_skip": 2270,
+      "observed": 75,
+      "dont_know": 1
+    }
+  },
+  {
+    "starting_wave": 5,
+    "feature": "electronic_nicotine_p30d",
+    "records": 2346,
+    "observed": 2344,
+    "missing_fraction": 0.0008525149190110604,
+    "reasons": {
+      "observed": 2344,
+      "refused": 2
+    }
+  },
+  {
+    "starting_wave": 5,
+    "feature": "traditional_cigar_p30d",
+    "records": 2346,
+    "observed": 2346,
+    "missing_fraction": 0.0,
+    "reasons": {
+      "observed": 2346
+    }
+  },
+  {
+    "starting_wave": 5,
+    "feature": "cigarillo_p30d",
+    "records": 2346,
+    "observed": 2346,
+    "missing_fraction": 0.0,
+    "reasons": {
+      "observed": 2346
+    }
+  },
+  {
+    "starting_wave": 5,
+    "feature": "filtered_cigar_p30d",
+    "records": 2346,
+    "observed": 2346,
+    "missing_fraction": 0.0,
+    "reasons": {
+      "observed": 2346
+    }
+  },
+  {
+    "starting_wave": 5,
+    "feature": "hookah_p30d",
+    "records": 2346,
+    "observed": 2346,
+    "missing_fraction": 0.0,
+    "reasons": {
+      "observed": 2346
+    }
+  },
+  {
+    "starting_wave": 5,
+    "feature": "smokeless_tobacco_p30d",
+    "records": 2346,
+    "observed": 2346,
+    "missing_fraction": 0.0,
+    "reasons": {
+      "observed": 2346
+    }
+  },
+  {
+    "starting_wave": 5,
+    "feature": "snus_p30d",
+    "records": 2346,
+    "observed": 2345,
+    "missing_fraction": 0.0004262574595055302,
+    "reasons": {
+      "observed": 2345,
+      "dont_know": 1
+    }
+  },
+  {
+    "starting_wave": 5,
+    "feature": "household_tobacco_any",
+    "records": 2346,
+    "observed": 1935,
+    "missing_fraction": 0.17519181585677746,
+    "reasons": {
+      "observed": 1935,
+      "structural_skip": 401,
+      "dont_know": 5,
+      "refused": 5
+    }
+  },
+  {
+    "starting_wave": 5,
+    "feature": "home_combustible_smoking_rules",
+    "records": 2346,
+    "observed": 2340,
+    "missing_fraction": 0.002557544757033292,
+    "reasons": {
+      "observed": 2340,
+      "refused": 4,
+      "dont_know": 2
+    }
+  },
+  {
+    "starting_wave": 5,
+    "feature": "physical_health",
+    "records": 2346,
+    "observed": 2344,
+    "missing_fraction": 0.0008525149190110604,
+    "reasons": {
+      "observed": 2344,
+      "refused": 1,
+      "dont_know": 1
+    }
+  },
+  {
+    "starting_wave": 5,
+    "feature": "mental_health",
+    "records": 2346,
+    "observed": 2344,
+    "missing_fraction": 0.0008525149190110604,
+    "reasons": {
+      "observed": 2344,
+      "dont_know": 2
+    }
+  },
+  {
+    "starting_wave": 5,
+    "feature": "social_satisfaction",
+    "records": 2346,
+    "observed": 2345,
+    "missing_fraction": 0.0004262574595055302,
+    "reasons": {
+      "observed": 2345,
+      "refused": 1
+    }
+  },
+  {
+    "starting_wave": 5,
+    "feature": "emotional_problems_7d",
+    "records": 2346,
+    "observed": 2344,
+    "missing_fraction": 0.0008525149190110604,
+    "reasons": {
+      "observed": 2344,
+      "refused": 2
+    }
+  },
+  {
+    "starting_wave": 5,
+    "feature": "depressive_problem_recency",
+    "records": 2346,
+    "observed": 2343,
+    "missing_fraction": 0.0012787723785165905,
+    "reasons": {
+      "observed": 2343,
+      "refused": 3
+    }
+  },
+  {
+    "starting_wave": 5,
+    "feature": "anxiety_problem_recency",
+    "records": 2346,
+    "observed": 2343,
+    "missing_fraction": 0.0012787723785165905,
+    "reasons": {
+      "observed": 2343,
+      "refused": 2,
+      "dont_know": 1
+    }
+  },
+  {
+    "starting_wave": 5,
+    "feature": "alcohol_days_30d",
+    "records": 2346,
+    "observed": 1446,
+    "missing_fraction": 0.38363171355498726,
+    "reasons": {
+      "observed": 1446,
+      "structural_skip": 900
+    }
+  },
+  {
+    "starting_wave": 5,
+    "feature": "alcohol_drinks_per_drinking_day",
+    "records": 2346,
+    "observed": 1436,
+    "missing_fraction": 0.3878942881500427,
+    "reasons": {
+      "observed": 1436,
+      "structural_skip": 909,
+      "dont_know": 1
+    }
+  },
+  {
+    "starting_wave": 6,
+    "feature": "age_band",
+    "records": 2587,
+    "observed": 2587,
+    "missing_fraction": 0.0,
+    "reasons": {
+      "observed": 2587
+    }
+  },
+  {
+    "starting_wave": 6,
+    "feature": "sex_recorded",
+    "records": 2587,
+    "observed": 2586,
+    "missing_fraction": 0.00038654812524163695,
+    "reasons": {
+      "observed": 2586,
+      "system_missing": 1
+    }
+  },
+  {
+    "starting_wave": 6,
+    "feature": "education_level",
+    "records": 2587,
+    "observed": 2585,
+    "missing_fraction": 0.0007730962504831629,
+    "reasons": {
+      "observed": 2585,
+      "system_missing": 2
+    }
+  },
+  {
+    "starting_wave": 6,
+    "feature": "household_income_band",
+    "records": 2587,
+    "observed": 2499,
+    "missing_fraction": 0.034016235021260166,
+    "reasons": {
+      "observed": 2499,
+      "system_missing": 88
+    }
+  },
+  {
+    "starting_wave": 6,
+    "feature": "employment_status",
+    "records": 2587,
+    "observed": 2582,
+    "missing_fraction": 0.0019327406262079627,
+    "reasons": {
+      "observed": 2582,
+      "dont_know": 4,
+      "refused": 1
+    }
+  },
+  {
+    "starting_wave": 6,
+    "feature": "last_cigarette_recency_days",
+    "records": 2587,
+    "observed": 574,
+    "missing_fraction": 0.7781213761113259,
+    "reasons": {
+      "structural_skip": 1999,
+      "observed": 574,
+      "outside_analytic_range": 8,
+      "dont_know": 6
+    }
+  },
+  {
+    "starting_wave": 6,
+    "feature": "prior_regular_cigarettes_per_day",
+    "records": 2587,
+    "observed": 18,
+    "missing_fraction": 0.9930421337456513,
+    "reasons": {
+      "structural_skip": 2569,
+      "observed": 18
+    }
+  },
+  {
+    "starting_wave": 6,
+    "feature": "regular_smoking_months",
+    "records": 2587,
+    "observed": 52,
+    "missing_fraction": 0.9798994974874372,
+    "reasons": {
+      "system_missing": 2535,
+      "observed": 52
+    }
+  },
+  {
+    "starting_wave": 6,
+    "feature": "electronic_nicotine_p30d",
+    "records": 2587,
+    "observed": 2587,
+    "missing_fraction": 0.0,
+    "reasons": {
+      "observed": 2587
+    }
+  },
+  {
+    "starting_wave": 6,
+    "feature": "traditional_cigar_p30d",
+    "records": 2587,
+    "observed": 2586,
+    "missing_fraction": 0.00038654812524163695,
+    "reasons": {
+      "observed": 2586,
+      "system_missing": 1
+    }
+  },
+  {
+    "starting_wave": 6,
+    "feature": "cigarillo_p30d",
+    "records": 2587,
+    "observed": 2583,
+    "missing_fraction": 0.0015461925009663258,
+    "reasons": {
+      "observed": 2583,
+      "system_missing": 4
+    }
+  },
+  {
+    "starting_wave": 6,
+    "feature": "filtered_cigar_p30d",
+    "records": 2587,
+    "observed": 2583,
+    "missing_fraction": 0.0015461925009663258,
+    "reasons": {
+      "observed": 2583,
+      "system_missing": 4
+    }
+  },
+  {
+    "starting_wave": 6,
+    "feature": "hookah_p30d",
+    "records": 2587,
+    "observed": 2586,
+    "missing_fraction": 0.00038654812524163695,
+    "reasons": {
+      "observed": 2586,
+      "system_missing": 1
+    }
+  },
+  {
+    "starting_wave": 6,
+    "feature": "smokeless_tobacco_p30d",
+    "records": 2587,
+    "observed": 2585,
+    "missing_fraction": 0.0007730962504831629,
+    "reasons": {
+      "observed": 2585,
+      "system_missing": 2
+    }
+  },
+  {
+    "starting_wave": 6,
+    "feature": "snus_p30d",
+    "records": 2587,
+    "observed": 2586,
+    "missing_fraction": 0.00038654812524163695,
+    "reasons": {
+      "observed": 2586,
+      "system_missing": 1
+    }
+  },
+  {
+    "starting_wave": 6,
+    "feature": "household_tobacco_any",
+    "records": 2587,
+    "observed": 2145,
+    "missing_fraction": 0.17085427135678388,
+    "reasons": {
+      "observed": 2145,
+      "system_missing": 442
+    }
+  },
+  {
+    "starting_wave": 6,
+    "feature": "home_combustible_smoking_rules",
+    "records": 2587,
+    "observed": 2582,
+    "missing_fraction": 0.0019327406262079627,
+    "reasons": {
+      "observed": 2582,
+      "refused": 3,
+      "dont_know": 2
+    }
+  },
+  {
+    "starting_wave": 6,
+    "feature": "physical_health",
+    "records": 2587,
+    "observed": 2585,
+    "missing_fraction": 0.0007730962504831629,
+    "reasons": {
+      "observed": 2585,
+      "refused": 1,
+      "not_ascertained": 1
+    }
+  },
+  {
+    "starting_wave": 6,
+    "feature": "mental_health",
+    "records": 2587,
+    "observed": 2583,
+    "missing_fraction": 0.0015461925009663258,
+    "reasons": {
+      "observed": 2583,
+      "refused": 2,
+      "dont_know": 1,
+      "not_ascertained": 1
+    }
+  },
+  {
+    "starting_wave": 6,
+    "feature": "social_satisfaction",
+    "records": 2587,
+    "observed": 2587,
+    "missing_fraction": 0.0,
+    "reasons": {
+      "observed": 2587
+    }
+  },
+  {
+    "starting_wave": 6,
+    "feature": "emotional_problems_7d",
+    "records": 2587,
+    "observed": 2582,
+    "missing_fraction": 0.0019327406262079627,
+    "reasons": {
+      "observed": 2582,
+      "refused": 4,
+      "dont_know": 1
+    }
+  },
+  {
+    "starting_wave": 6,
+    "feature": "depressive_problem_recency",
+    "records": 2587,
+    "observed": 2580,
+    "missing_fraction": 0.0027058368766911256,
+    "reasons": {
+      "observed": 2580,
+      "refused": 5,
+      "dont_know": 1,
+      "not_ascertained": 1
+    }
+  },
+  {
+    "starting_wave": 6,
+    "feature": "anxiety_problem_recency",
+    "records": 2587,
+    "observed": 2579,
+    "missing_fraction": 0.0030923850019327626,
+    "reasons": {
+      "observed": 2579,
+      "refused": 4,
+      "dont_know": 3,
+      "not_ascertained": 1
+    }
+  },
+  {
+    "starting_wave": 6,
+    "feature": "alcohol_days_30d",
+    "records": 2587,
+    "observed": 1532,
+    "missing_fraction": 0.40780827212988013,
+    "reasons": {
+      "observed": 1532,
+      "structural_skip": 1053,
+      "dont_know": 2
+    }
+  },
+  {
+    "starting_wave": 6,
+    "feature": "alcohol_drinks_per_drinking_day",
+    "records": 2587,
+    "observed": 1524,
+    "missing_fraction": 0.4109006571318129,
+    "reasons": {
+      "observed": 1524,
+      "structural_skip": 1061,
+      "dont_know": 2
+    }
+  }
+]

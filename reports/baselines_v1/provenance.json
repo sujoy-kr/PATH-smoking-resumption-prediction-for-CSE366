@@ -1,0 +1,30 @@
+{
+  "split_signature": "d6829a49c00274ce275569aa359602da128ae3b4d2375ffc456c1802bfa44581",
+  "split_output_sha256": {
+    "artifacts/evaluation_v1/participants.parquet": "e60970fa51e896209d7e820a9206da2b78e1a0e6380f333b47f0ef26a47c685d",
+    "artifacts/evaluation_v1/records.parquet": "7167d6804b86cb1df5dbc364b1052e949d106845ae98ec930a395560eae566f9",
+    "reports/evaluation_protocol_v1.json": "6917b0f3fde496e59108490f620ab23bf0da427cd19c36b5ec86ab938621bb9c"
+  },
+  "source_sha256": {
+    "configs/baseline_models.json": "0987c25d79a10044849fa00f3dba35efa8a4e443d5ba6c7dc0ea30ef415752bd",
+    "configs/feature_mapping_final.json": "53d43e8a8f960660a3da17602004b05b70d91220debebde27002030cd2d18f12",
+    "configs/prediction_specification_final.json": "29e0121757b079bc27b31b6203ac4388399db575a5bed75e74d7c63256b65f72",
+    "configs/app_questions.json": "44058bb735fea56b858837025d80ed34ff0cf99ba5abbc6bed32044384a0a97f",
+    "docs/feature_dictionary_final.csv": "02f99d86e82cc53044f371f872a0659462771e5ea72039d212b3cefeb1edfc1c",
+    "configs/evaluation.json": "4f9283a257daf565bf398dc2e171784b46bc9913010245e606fe711f7cb04519",
+    "src/path_project/baselines.py": "084b6d7644c07509196f8f2bb93284925a3c23ba80d1d54615d50f5a6ffc2e45",
+    "scripts/train_baselines.py": "9f581f927d57bd97185f6a934757fed41346b10cca7e509f2816c21cd07754c0",
+    "src/path_project/training_boundaries.py": "634c4880ceab0dcd5b7b6bcb453e75beb1afe60643550278b5d9af98e76a128f",
+    "src/path_project/final_inputs.py": "51c01981d709a42d0cba4279862af60c8ecd05cbfd3b91dd02e79863c2b8b8d0",
+    "src/path_project/evaluation.py": "02b2fbd138a29ce2ff66c0f204ff64b93378f29f257dee4bf8f806c9a55c0565"
+  },
+  "python": "3.13.5 (main, Aug 10 2026, 12:06:59) [GCC 14.2.0]",
+  "versions": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "joblib": "1.6.0",
+    "pyarrow": "26.0.1"
+  }
+}

@@ -1,0 +1,392 @@
+{
+  "method": "Independent pdftotext -f PAGE -l PAGE page extraction plus contract validation",
+  "page_checks": [
+    {
+      "file": "PATH/DS1001/36498-1001-Codebook.pdf",
+      "variable": "R01R_A_FMR_ESTD_CIGS",
+      "pdf_page": 1101,
+      "found": true
+    },
+    {
+      "file": "PATH/DS1001/36498-1001-Codebook.pdf",
+      "variable": "R01R_A_P30D_CIGS",
+      "pdf_page": 1097,
+      "found": true
+    },
+    {
+      "file": "PATH/DS1001/36498-1001-Codebook.pdf",
+      "variable": "R01R_A_CUR_ESTD_CIGS",
+      "pdf_page": 1096,
+      "found": true
+    },
+    {
+      "file": "PATH/DS1001/36498-1001-Codebook.pdf",
+      "variable": "R01_AC1009_NN",
+      "pdf_page": 67,
+      "found": true
+    },
+    {
+      "file": "PATH/DS1001/36498-1001-Codebook.pdf",
+      "variable": "R01_AN0135",
+      "pdf_page": 692,
+      "found": true
+    },
+    {
+      "file": "PATH/DS1001/36498-1001-Questionnaire.pdf",
+      "variable": "R01_AC1004",
+      "pdf_page": 32,
+      "found": true
+    },
+    {
+      "file": "PATH/DS1001/36498-1001-Questionnaire.pdf",
+      "variable": "R01_AC1009_NN",
+      "pdf_page": 64,
+      "found": true
+    },
+    {
+      "file": "PATH/DS1001/36498-1001-Questionnaire.pdf",
+      "variable": "R01_AN0135",
+      "pdf_page": 308,
+      "found": true
+    },
+    {
+      "file": "PATH/DS2001/36498-2001-Codebook.pdf",
+      "variable": "R02R_A_FMR_ESTD_CIGS_REV",
+      "pdf_page": 1653,
+      "found": true
+    },
+    {
+      "file": "PATH/DS2001/36498-2001-Codebook.pdf",
+      "variable": "R02R_A_P30D_CIGS",
+      "pdf_page": 1651,
+      "found": true
+    },
+    {
+      "file": "PATH/DS2001/36498-2001-Codebook.pdf",
+      "variable": "R02R_A_CUR_ESTD_CIGS",
+      "pdf_page": 1646,
+      "found": true
+    },
+    {
+      "file": "PATH/DS2001/36498-2001-Codebook.pdf",
+      "variable": "R02_AC1009_NN",
+      "pdf_page": 17,
+      "found": true
+    },
+    {
+      "file": "PATH/DS2001/36498-2001-Codebook.pdf",
+      "variable": "R02_AN0135",
+      "pdf_page": 1252,
+      "found": true
+    },
+    {
+      "file": "PATH/DS2001/36498-2001-Questionnaire.pdf",
+      "variable": "R02_AC1004",
+      "pdf_page": 27,
+      "found": true
+    },
+    {
+      "file": "PATH/DS2001/36498-2001-Questionnaire.pdf",
+      "variable": "R02_AC1009_NN",
+      "pdf_page": 30,
+      "found": true
+    },
+    {
+      "file": "PATH/DS2001/36498-2001-Questionnaire.pdf",
+      "variable": "R02_AN0135",
+      "pdf_page": 444,
+      "found": true
+    },
+    {
+      "file": "PATH/DS3001/36498-3001-Codebook.pdf",
+      "variable": "R03R_A_FMR_ESTD_CIGS_REV",
+      "pdf_page": 1663,
+      "found": true
+    },
+    {
+      "file": "PATH/DS3001/36498-3001-Codebook.pdf",
+      "variable": "R03R_A_P30D_CIGS",
+      "pdf_page": 1662,
+      "found": true
+    },
+    {
+      "file": "PATH/DS3001/36498-3001-Codebook.pdf",
+      "variable": "R03R_A_CUR_ESTD_CIGS",
+      "pdf_page": 1657,
+      "found": true
+    },
+    {
+      "file": "PATH/DS3001/36498-3001-Codebook.pdf",
+      "variable": "R03_AC1009_NN",
+      "pdf_page": 19,
+      "found": true
+    },
+    {
+      "file": "PATH/DS3001/36498-3001-Codebook.pdf",
+      "variable": "R03_AN0135",
+      "pdf_page": 1166,
+      "found": true
+    },
+    {
+      "file": "PATH/DS3001/36498-3001-Questionnaire.pdf",
+      "variable": "R03_AC1004",
+      "pdf_page": 31,
+      "found": true
+    },
+    {
+      "file": "PATH/DS3001/36498-3001-Questionnaire.pdf",
+      "variable": "R03_AC1009_NN",
+      "pdf_page": 32,
+      "found": true
+    },
+    {
+      "file": "PATH/DS3001/36498-3001-Questionnaire.pdf",
+      "variable": "R03_AN0135",
+      "pdf_page": 616,
+      "found": true
+    },
+    {
+      "file": "PATH/DS4001/36498-4001-Codebook.pdf",
+      "variable": "R04R_A_FMR_ESTD_CIGS",
+      "pdf_page": 1518,
+      "found": true
+    },
+    {
+      "file": "PATH/DS4001/36498-4001-Codebook.pdf",
+      "variable": "R04R_A_P30D_CIGS",
+      "pdf_page": 1514,
+      "found": true
+    },
+    {
+      "file": "PATH/DS4001/36498-4001-Codebook.pdf",
+      "variable": "R04R_A_CUR_ESTD_CIGS",
+      "pdf_page": 1510,
+      "found": true
+    },
+    {
+      "file": "PATH/DS4001/36498-4001-Codebook.pdf",
+      "variable": "R04_AC1009_NN",
+      "pdf_page": 20,
+      "found": true
+    },
+    {
+      "file": "PATH/DS4001/36498-4001-Codebook.pdf",
+      "variable": "R04_AN0135",
+      "pdf_page": 1009,
+      "found": true
+    },
+    {
+      "file": "PATH/DS4001/36498-4001-Questionnaire.pdf",
+      "variable": "R04_AC1004",
+      "pdf_page": 42,
+      "found": true
+    },
+    {
+      "file": "PATH/DS4001/36498-4001-Questionnaire.pdf",
+      "variable": "R04_AC1009_NN",
+      "pdf_page": 45,
+      "found": true
+    },
+    {
+      "file": "PATH/DS4001/36498-4001-Questionnaire.pdf",
+      "variable": "R04_AN0135",
+      "pdf_page": 680,
+      "found": true
+    },
+    {
+      "file": "PATH/DS5001/36498-5001-Codebook.pdf",
+      "variable": "R05R_A_FMR_ESTD_CIGS",
+      "pdf_page": 1648,
+      "found": true
+    },
+    {
+      "file": "PATH/DS5001/36498-5001-Codebook.pdf",
+      "variable": "R05R_A_P30D_CIGS",
+      "pdf_page": 1645,
+      "found": true
+    },
+    {
+      "file": "PATH/DS5001/36498-5001-Codebook.pdf",
+      "variable": "R05R_A_CUR_ESTD_CIGS",
+      "pdf_page": 1641,
+      "found": true
+    },
+    {
+      "file": "PATH/DS5001/36498-5001-Codebook.pdf",
+      "variable": "R05_AC1009_NN",
+      "pdf_page": 20,
+      "found": true
+    },
+    {
+      "file": "PATH/DS5001/36498-5001-Codebook.pdf",
+      "variable": "R05_AN0135",
+      "pdf_page": 1086,
+      "found": true
+    },
+    {
+      "file": "PATH/DS5001/36498-5001-Questionnaire.pdf",
+      "variable": "R05_AC1004",
+      "pdf_page": 35,
+      "found": true
+    },
+    {
+      "file": "PATH/DS5001/36498-5001-Questionnaire.pdf",
+      "variable": "R05_AC1009_NN",
+      "pdf_page": 38,
+      "found": true
+    },
+    {
+      "file": "PATH/DS5001/36498-5001-Questionnaire.pdf",
+      "variable": "R05_AN0135",
+      "pdf_page": 632,
+      "found": true
+    },
+    {
+      "file": "PATH/DS6001/36498-6001-Codebook.pdf",
+      "variable": "R06R_A_FMR_ESTD_CIGS",
+      "pdf_page": 1838,
+      "found": true
+    },
+    {
+      "file": "PATH/DS6001/36498-6001-Codebook.pdf",
+      "variable": "R06R_A_P30D_CIGS",
+      "pdf_page": 1836,
+      "found": true
+    },
+    {
+      "file": "PATH/DS6001/36498-6001-Codebook.pdf",
+      "variable": "R06R_A_CUR_ESTD_CIGS",
+      "pdf_page": 1833,
+      "found": true
+    },
+    {
+      "file": "PATH/DS6001/36498-6001-Codebook.pdf",
+      "variable": "R06_AC1009_NN",
+      "pdf_page": 19,
+      "found": true
+    },
+    {
+      "file": "PATH/DS6001/36498-6001-Codebook.pdf",
+      "variable": "R06_AN0135",
+      "pdf_page": 1137,
+      "found": true
+    },
+    {
+      "file": "PATH/DS6001/36498-6001-Questionnaire-English.pdf",
+      "variable": "R06_AC1004",
+      "pdf_page": 39,
+      "found": true
+    },
+    {
+      "file": "PATH/DS6001/36498-6001-Questionnaire-English.pdf",
+      "variable": "R06_AC1009_NN",
+      "pdf_page": 42,
+      "found": true
+    },
+    {
+      "file": "PATH/DS6001/36498-6001-Questionnaire-English.pdf",
+      "variable": "R06_AN0135",
+      "pdf_page": 668,
+      "found": true
+    },
+    {
+      "file": "PATH/DS7001/36498-7001-Codebook.pdf",
+      "variable": "R07R_A_FMR_ESTD_CIGS",
+      "pdf_page": 2172,
+      "found": true
+    },
+    {
+      "file": "PATH/DS7001/36498-7001-Codebook.pdf",
+      "variable": "R07R_A_P30D_CIGS",
+      "pdf_page": 2170,
+      "found": true
+    },
+    {
+      "file": "PATH/DS7001/36498-7001-Codebook.pdf",
+      "variable": "R07R_A_CUR_ESTD_CIGS",
+      "pdf_page": 2167,
+      "found": true
+    },
+    {
+      "file": "PATH/DS7001/36498-7001-Codebook.pdf",
+      "variable": "R07_AC1009_NN",
+      "pdf_page": 20,
+      "found": true
+    },
+    {
+      "file": "PATH/DS7001/36498-7001-Codebook.pdf",
+      "variable": "R07_AN0135",
+      "pdf_page": 1391,
+      "found": true
+    },
+    {
+      "file": "PATH/DS7001/36498-7001-Questionnaire-English.pdf",
+      "variable": "R07_AC1004",
+      "pdf_page": 47,
+      "found": true
+    },
+    {
+      "file": "PATH/DS7001/36498-7001-Questionnaire-English.pdf",
+      "variable": "R07_AC1009_NN",
+      "pdf_page": 51,
+      "found": true
+    },
+    {
+      "file": "PATH/DS7001/36498-7001-Questionnaire-English.pdf",
+      "variable": "R07_AN0135",
+      "pdf_page": 712,
+      "found": true
+    },
+    {
+      "file": "PATH/DS8001/36498-8001-Codebook.pdf",
+      "variable": "R08R_A_FMR_ESTD_CIGS",
+      "pdf_page": 2230,
+      "found": true
+    },
+    {
+      "file": "PATH/DS8001/36498-8001-Codebook.pdf",
+      "variable": "R08R_A_P30D_CIGS",
+      "pdf_page": 2228,
+      "found": true
+    },
+    {
+      "file": "PATH/DS8001/36498-8001-Codebook.pdf",
+      "variable": "R08R_A_CUR_ESTD_CIGS",
+      "pdf_page": 2226,
+      "found": true
+    },
+    {
+      "file": "PATH/DS8001/36498-8001-Codebook.pdf",
+      "variable": "R08_AC1009_NN",
+      "pdf_page": 17,
+      "found": true
+    },
+    {
+      "file": "PATH/DS8001/36498-8001-Codebook.pdf",
+      "variable": "R08_AN0135",
+      "pdf_page": 1389,
+      "found": true
+    },
+    {
+      "file": "PATH/DS8001/36498-8001-Questionnaire-English.pdf",
+      "variable": "R08_AC1004",
+      "pdf_page": 38,
+      "found": true
+    },
+    {
+      "file": "PATH/DS8001/36498-8001-Questionnaire-English.pdf",
+      "variable": "R08_AC1009_NN",
+      "pdf_page": 41,
+      "found": true
+    },
+    {
+      "file": "PATH/DS8001/36498-8001-Questionnaire-English.pdf",
+      "variable": "R08_AN0135",
+      "pdf_page": 782,
+      "found": true
+    }
+  ],
+  "page_checks_passed": 64,
+  "page_checks_total": 64,
+  "errors": []
+}

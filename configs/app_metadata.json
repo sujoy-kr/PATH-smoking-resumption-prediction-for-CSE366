@@ -1,0 +1,40 @@
+{
+  "version": "1.0",
+  "timing_decision": "C",
+  "endpoint": "Past-30-day cigarette smoking reported at the next scheduled PATH survey",
+  "prediction_time": "End of starting interview, using baseline answers only",
+  "classifier_available": true,
+  "classifier": {
+    "model": "xgb_minimal_s1_none",
+    "profile": "minimal",
+    "features": [
+      "age_band",
+      "education_level",
+      "employment_status",
+      "last_cigarette_recency_days"
+    ],
+    "artifact": "artifacts/trees_v1/selected_calibrated.joblib",
+    "sha256": "9b46cdb1783302c05c3b56b83d5695a1ad58b90da0614f04188ee687170eae36",
+    "stage8_signature": "60ce6ce4a02442c59204bd17754339ffdeeb74772b208763ba64dfa2690c655b",
+    "status": "Retained unchanged; development-selected/calibrated, final-test evaluation pending"
+  },
+  "probability_validation_status": "Development only; final-test and new-user validity not established",
+  "elapsed_time_estimates_available": false,
+  "survival_model_available": false,
+  "fixed_horizon_probabilities_available": false,
+  "estimated_relapse_date_available": false,
+  "supported_elapsed_time_horizons": [],
+  "interval_description": "Next scheduled interview; individual elapsed time is unavailable and survey intervals vary.",
+  "timing_unavailable_message": "Elapsed-time risks and estimated relapse dates are unavailable. This research classifier predicts smoking reported at the next survey, not when smoking will resume.",
+  "historical_recency_role": "last_cigarette_recency_days is an optional baseline history predictor, not follow-up time or time until relapse",
+  "negative_outcome_meaning": "No cigarette smoking in the observed follow-up 30-day window; not continuous abstinence or an event-free survival interval",
+  "missing_followup_meaning": "Unobserved outcome; not sustained abstinence or a fabricated censoring time",
+  "claim_limits": [
+    "No one-, two- or three-year risks from wave labels or classification probabilities",
+    "No exact, midpoint or interview-endpoint relapse dates",
+    "No time-since-quitting substituted as future event time",
+    "No continuous abstinence or persistent-relapse conclusion from a follow-up snapshot",
+    "No personal confidence percentage, causal effect, clinical validity or national representativeness claim"
+  ],
+  "decision_document": "docs/timing_decision.md"
+}

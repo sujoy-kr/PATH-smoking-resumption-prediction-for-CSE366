@@ -1,0 +1,238 @@
+{
+  ".analysis/cohort.cjs": {
+    "bytes": 1500,
+    "sha256": "f573213ed60d51728965180c2591ca6f779c8accdb824b060bb88af992616ac2"
+  },
+  ".analysis/cohort_counts.json": {
+    "bytes": 4614,
+    "sha256": "70a2f11e29048422a6a70a623bfea0d1016efad3042ea97bda397038fa588d4d"
+  },
+  ".analysis/profile.cjs": {
+    "bytes": 650,
+    "sha256": "27ec3b997dcf118aa20238ffe65134c8963a0ec84c6769af6958c7a7746c4f59"
+  },
+  ".analysis/w1.txt": {
+    "bytes": 4095206,
+    "sha256": "c7d8900cc5350a9a0c7aec94287e04fe4a1acf2ec9cb0b82f6362169a2457d95"
+  },
+  ".analysis/w2.txt": {
+    "bytes": 5881368,
+    "sha256": "b27915622f228f3be376aef21272ab7fb08634b7b30fda06c1105b867a756696"
+  },
+  ".analysis/w8.txt": {
+    "bytes": 7744579,
+    "sha256": "5e696b659aeba2655de030a84989a6d60584a9ceb3cecfb636505d51b04ffce9"
+  },
+  "Build_Project_Prompts.md": {
+    "bytes": 31735,
+    "sha256": "de0f40f389e762976c2c4b32b7968aadbd948f8452957369bf621e5d031118ba"
+  },
+  "PATH/DS1001/36498-1001-Codebook.pdf": {
+    "bytes": 14649196,
+    "sha256": "7659caf6ff72340f78ac7d78a8d33cd6ce61d435bfb297cf58e56fae169b6454"
+  },
+  "PATH/DS1001/36498-1001-Data.tsv": {
+    "bytes": 209655859,
+    "sha256": "82934e96cca68fa8fa84abf18938fd58f6ea6559082a2f205744cd9156baf4ac"
+  },
+  "PATH/DS1001/36498-1001-Documentation-Informed_Consent.pdf": {
+    "bytes": 1155227,
+    "sha256": "d88f6dc7a3e0ffa29f42a6e9d02c3740cbdd5f91a37106b9e257b7bd5564a0a5"
+  },
+  "PATH/DS1001/36498-1001-Documentation-Nonresponse_Report.pdf": {
+    "bytes": 1029080,
+    "sha256": "bc26315b17856360a6858dfb58e7ed122546d151cf1aaf31a629343f49bea686"
+  },
+  "PATH/DS1001/36498-1001-Questionnaire.pdf": {
+    "bytes": 4807321,
+    "sha256": "6e73ede6be7711f37fb188be08fc3c48ea7d93c52ad9fecd6d5d9f093ab2215a"
+  },
+  "PATH/DS1001/convert.py": {
+    "bytes": 484,
+    "sha256": "f9b41623d48a0fbe665d7aa6900c6e1476407495d4fcfee3a1bd0950aa82e6aa"
+  },
+  "PATH/DS2001/36498-2001-Codebook.pdf": {
+    "bytes": 17968349,
+    "sha256": "55c2ac556317db27a077e6d11334fdb72974d00bb46eaccc0b76f4dc75ef5f67"
+  },
+  "PATH/DS2001/36498-2001-Data.tsv": {
+    "bytes": 221592895,
+    "sha256": "97111dbfcc48573b66d650ef9abf2affc5f9f6d2992642ab7f118d06f758dca7"
+  },
+  "PATH/DS2001/36498-2001-Documentation-Nonresponse_Report.pdf": {
+    "bytes": 1161899,
+    "sha256": "07564c2d5a81f1ea15bd3dcbd355fd119aba6a381bac37961f4f95928c37af4a"
+  },
+  "PATH/DS2001/36498-2001-Questionnaire.pdf": {
+    "bytes": 6594277,
+    "sha256": "7f209cc3846858c23080027e34657187c56089dc3e392ba18ea729be9a7c5cb4"
+  },
+  "PATH/DS3001/36498-3001-Codebook.pdf": {
+    "bytes": 17923096,
+    "sha256": "c868451202470cdd02769f25f70f1c3c5ee53a98dd9edb29443be4dd45794305"
+  },
+  "PATH/DS3001/36498-3001-Data.tsv": {
+    "bytes": 185793364,
+    "sha256": "00abb51d75d2eec6675a4d5679532b380b9ce072e5e29e43ac649225b3159b30"
+  },
+  "PATH/DS3001/36498-3001-Documentation-Nonresponse_Report.pdf": {
+    "bytes": 990780,
+    "sha256": "f2568a636205b516bf164f66d9861887dd76803e0e633ac2bef601651d666fc5"
+  },
+  "PATH/DS3001/36498-3001-Questionnaire.pdf": {
+    "bytes": 8099690,
+    "sha256": "b30eface11685678b6e2270cfa91a64d4a25cf57f76627ef58bc21edbd7a325b"
+  },
+  "PATH/DS4001/36498-4001-Codebook.pdf": {
+    "bytes": 19203880,
+    "sha256": "97b8339f29b99f72d69f93e2f96ed8fcae6739e890bf1fdb8fbefb2c92f026de"
+  },
+  "PATH/DS4001/36498-4001-Data.tsv": {
+    "bytes": 228996579,
+    "sha256": "569fb5f5d8cd5e2bf3f7a408afc4ef5ea2d763cffa74fd7c758377bda28346dd"
+  },
+  "PATH/DS4001/36498-4001-Documentation-Informed_Consent.pdf": {
+    "bytes": 1208603,
+    "sha256": "4024ca55d758141b33a1313d2d0bf81ef7c3eb4695f5aa041d707d1c3346b0ae"
+  },
+  "PATH/DS4001/36498-4001-Documentation-Nonresponse_Report.pdf": {
+    "bytes": 2519896,
+    "sha256": "61ed59aa4d9c9f54dfba3794a363abe3074fa4ea1092de03e314a43facdfe6dc"
+  },
+  "PATH/DS4001/36498-4001-Questionnaire.pdf": {
+    "bytes": 8781839,
+    "sha256": "b9deabee729bedd1db3f6cf2781cf7ceb238f7cb2e1a30338f59b43a0d67b190"
+  },
+  "PATH/DS5001/36498-5001-Codebook.pdf": {
+    "bytes": 20455324,
+    "sha256": "c4816218a7a4574bb750d930e914a5fdcc044a22fbecd78fe8eb6ed38a4867f4"
+  },
+  "PATH/DS5001/36498-5001-Data.tsv": {
+    "bytes": 242967682,
+    "sha256": "dbbdeec57131cccd4f1e4e62f8c14820d91b2e1cd1dbefe85d0e63093f02e04e"
+  },
+  "PATH/DS5001/36498-5001-Documentation-Nonresponse_Report.pdf": {
+    "bytes": 2166610,
+    "sha256": "e5e5d302fceebc820b8bcfadf6e837c5bc92c603f79147383779dcdf178b273c"
+  },
+  "PATH/DS5001/36498-5001-Questionnaire.pdf": {
+    "bytes": 7898629,
+    "sha256": "13edc09fdcc112e94bd3d8ad1d238c9ed11fc496baae35c1e4149e07c8240ba3"
+  },
+  "PATH/DS6001/36498-6001-Codebook.pdf": {
+    "bytes": 15981585,
+    "sha256": "6581c518b28f8bc8e90abde4df7e1237d79c0f2c1edd405b3f560991348384c0"
+  },
+  "PATH/DS6001/36498-6001-Data.tsv": {
+    "bytes": 218121275,
+    "sha256": "b51cfa4fa1d1397b9cb7990506cdca575c4f0de9c5b7ea46bb1f22cc5e624a50"
+  },
+  "PATH/DS6001/36498-6001-Documentation-Nonresponse_Report.pdf": {
+    "bytes": 2231270,
+    "sha256": "28350652e5db58764fdc0d02e68acedd91fa45cb770e0815299f082048f95526"
+  },
+  "PATH/DS6001/36498-6001-Questionnaire-English.pdf": {
+    "bytes": 16518368,
+    "sha256": "f34721ca0f01685900e9e2e0fd966830bb3d81f96bdfc98243f496d1ce7cf974"
+  },
+  "PATH/DS7001/36498-7001-Codebook.pdf": {
+    "bytes": 12148495,
+    "sha256": "9ba41898d114b5ac1420ee120200536c3f7f506da9dc82e77f212fb9d0d2dd37"
+  },
+  "PATH/DS7001/36498-7001-Data.tsv": {
+    "bytes": 240119283,
+    "sha256": "37c4fe9dc12366d0c989b4ea766432a2eb77f2aa5a96f2573c8fdd4231423109"
+  },
+  "PATH/DS7001/36498-7001-Documentation-Nonresponse_Report.pdf": {
+    "bytes": 3064264,
+    "sha256": "805bf86a8938569c8150de2557f3ea0bd9ea8a78e7d246a99cfb86e2caf2601b"
+  },
+  "PATH/DS7001/36498-7001-Questionnaire-English.pdf": {
+    "bytes": 11536982,
+    "sha256": "e2a52bbd1437207822c57e91cd5ffd47afb9b1f9ee1aa4c247ce92ed6102878c"
+  },
+  "PATH/DS7001/36498-7001-Questionnaire-English_Telephone_Showcards.pdf": {
+    "bytes": 4785693,
+    "sha256": "49947866895bb3edac459ae9cce7474585a087b2799b4fc2ec952380eb10f0bd"
+  },
+  "PATH/DS7001/36498-7001-Questionnaire-Spanish_Telephone_Showcards.pdf": {
+    "bytes": 4795075,
+    "sha256": "480b0dc90e77cc913e4981568b2587358c905cea9d2b2e59eb1bf0bd9db7946e"
+  },
+  "PATH/DS8001/36498-8001-Codebook.pdf": {
+    "bytes": 14880233,
+    "sha256": "05585ac0cf73789894ae912cf102f7fa01bd8a70a13af0f534f040fdf3da1b74"
+  },
+  "PATH/DS8001/36498-8001-Data.tsv": {
+    "bytes": 270360608,
+    "sha256": "57ae5e526235997f4d9e32e5cc48bc42d3cfa75b9f34751951fe4c70f5940479"
+  },
+  "PATH/DS8001/36498-8001-Documentation-Nonresponse_Report.pdf": {
+    "bytes": 2779161,
+    "sha256": "d78b9d1a5635563bb97fde8f831096adb9d7346a4127169ea7363cb3c5b7a34a"
+  },
+  "PATH/DS8001/36498-8001-Questionnaire-English.pdf": {
+    "bytes": 11527020,
+    "sha256": "fd7ae9b3aa5fd456d77196a526548e5d99e492e8ee47fe7f192effb502c88501"
+  },
+  "PATH/TSV/36498-1001-Data.tsv": {
+    "bytes": 209655859,
+    "sha256": "82934e96cca68fa8fa84abf18938fd58f6ea6559082a2f205744cd9156baf4ac"
+  },
+  "PATH/TSV/36498-2001-Data.tsv": {
+    "bytes": 221592895,
+    "sha256": "97111dbfcc48573b66d650ef9abf2affc5f9f6d2992642ab7f118d06f758dca7"
+  },
+  "PATH/TSV/36498-3001-Data.tsv": {
+    "bytes": 185793364,
+    "sha256": "00abb51d75d2eec6675a4d5679532b380b9ce072e5e29e43ac649225b3159b30"
+  },
+  "PATH/TSV/36498-4001-Data.tsv": {
+    "bytes": 228996579,
+    "sha256": "569fb5f5d8cd5e2bf3f7a408afc4ef5ea2d763cffa74fd7c758377bda28346dd"
+  },
+  "PATH/TSV/36498-5001-Data.tsv": {
+    "bytes": 242967682,
+    "sha256": "dbbdeec57131cccd4f1e4e62f8c14820d91b2e1cd1dbefe85d0e63093f02e04e"
+  },
+  "PATH/TSV/36498-6001-Data.tsv": {
+    "bytes": 218121275,
+    "sha256": "b51cfa4fa1d1397b9cb7990506cdca575c4f0de9c5b7ea46bb1f22cc5e624a50"
+  },
+  "PATH/TSV/36498-7001-Data.tsv": {
+    "bytes": 240119283,
+    "sha256": "37c4fe9dc12366d0c989b4ea766432a2eb77f2aa5a96f2573c8fdd4231423109"
+  },
+  "PATH/TSV/36498-8001-Data.tsv": {
+    "bytes": 270360608,
+    "sha256": "57ae5e526235997f4d9e32e5cc48bc42d3cfa75b9f34751951fe4c70f5940479"
+  },
+  "PATH/TSV/all columns.txt": {
+    "bytes": 275237,
+    "sha256": "8d2773d46b8c2e8217843392f52e867b853e58425ef252589b852d5daad7393c"
+  },
+  "PATH/TSV/common_all_8_waves_ids.csv": {
+    "bytes": 137494,
+    "sha256": "e61dd0f3d9de29e9091b217b84a22a70c93591a590582cba2f1aab5b57d91964"
+  },
+  "PATH/TSV/filter_all_waves.py": {
+    "bytes": 1112,
+    "sha256": "83d4d60d0ff60440a5eebeae4253c8070c16ef0a02d50afdad509797e89afb5d"
+  },
+  "Project_Analysis_and_Implementation_Plan.md": {
+    "bytes": 15758,
+    "sha256": "9e39c1be596a748abd8197cb8f857611efc955c0efd4b5ad62728a7692bd9a92"
+  },
+  "RUNNER_README.md": {
+    "bytes": 3640,
+    "sha256": "de65cd5b4b7458ecc192e08f242e838ca7940828a18fef3599a1f249d7d673b6"
+  },
+  "Smoking_Relapse_Predictor_Presentation.pptx": {
+    "bytes": 1396315,
+    "sha256": "d067a8bd3dd46e47056f2f2d601952acbe117aab2c81ca9cc47a525e81bc3e51"
+  },
+  "run_prompts.py": {
+    "bytes": 13604,
+    "sha256": "da4697f327c448243f7bd6af305b44cb828c4e2340dee8178376b7f3be43c252"
+  }
+}

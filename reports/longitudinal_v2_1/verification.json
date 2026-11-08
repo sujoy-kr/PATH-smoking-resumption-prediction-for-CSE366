@@ -1,0 +1,11 @@
+{
+  "version": "longitudinal_v2_1",
+  "source_and_output_hashes_valid": true,
+  "unique_people_and_disjoint_splits": true,
+  "consecutive_run_bounds_valid": true,
+  "aggregate_counts_reconciled": true,
+  "split_assignment_reproduced": true,
+  "cohort_rebuilt_exactly": false,
+  "model_refitted": false,
+  "test_predictions_recomputed": false
+}

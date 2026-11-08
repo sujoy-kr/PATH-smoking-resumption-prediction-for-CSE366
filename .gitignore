@@ -1,0 +1,53 @@
+# Local orchestration logs may include project data and session identifiers.
+.prompt-runner/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local packaging, tooling, and editor output.
+/build/
+/dist/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Survey sources and participant-level legacy outputs
+/PATH/
+/.analysis/
+/.venv*/
+/.aws/
+/.agents/
+/.codex/
+/data/
+/artifacts/
+*.joblib
+*.pkl
+*.pickle
+*.parquet
+*.feather
+*.csv
+*.tsv
+*.sav
+*.dta
+.pytest_cache/
+*.egg-info/
+.env
+.env.*
+# Reports must contain aggregate, disclosure-reviewed results only.
+/.cache/
+# Public documentation metadata only; contains no participant records or values.
+!/docs/feature_dictionary.csv
+
+# Versioned final-profile documentation; contains metadata only.
+!/docs/feature_dictionary_final.csv
+# Streamlit/local credentials must never be shared.
+.streamlit/secrets.toml
+secrets.toml

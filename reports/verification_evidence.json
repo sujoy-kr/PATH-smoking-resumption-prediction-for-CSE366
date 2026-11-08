@@ -1,0 +1,153 @@
+{
+  "stage": 13,
+  "checks": [
+    {
+      "command": [
+        "/home/hellfire/Downloads/CSE366 Project/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider"
+      ],
+      "cwd": "/home/hellfire/Downloads/CSE366 Project",
+      "kind": "existing evidence",
+      "exit_code": 0,
+      "seconds": 18.28,
+      "log": ".cache/stage13/verification with spaces lxmfgc3a/check_00.log"
+    },
+    {
+      "command": [
+        "/home/hellfire/Downloads/CSE366 Project/.venv/bin/python",
+        "scripts/validate_feature_mapping.py",
+        "--no-write"
+      ],
+      "cwd": "/home/hellfire/Downloads/CSE366 Project",
+      "kind": "existing evidence",
+      "exit_code": 0,
+      "seconds": 0.286,
+      "log": ".cache/stage13/verification with spaces lxmfgc3a/check_01.log"
+    },
+    {
+      "command": [
+        "/home/hellfire/Downloads/CSE366 Project/.venv/bin/python",
+        "scripts/validate_prediction_specification.py"
+      ],
+      "cwd": "/home/hellfire/Downloads/CSE366 Project",
+      "kind": "existing evidence",
+      "exit_code": 0,
+      "seconds": 0.03,
+      "log": ".cache/stage13/verification with spaces lxmfgc3a/check_02.log"
+    },
+    {
+      "command": [
+        "/home/hellfire/Downloads/CSE366 Project/.venv/bin/python",
+        "scripts/verify_cohort.py"
+      ],
+      "cwd": "/home/hellfire/Downloads/CSE366 Project",
+      "kind": "existing evidence",
+      "exit_code": 0,
+      "seconds": 0.807,
+      "log": ".cache/stage13/verification with spaces lxmfgc3a/check_03.log"
+    },
+    {
+      "command": [
+        "/home/hellfire/Downloads/CSE366 Project/.venv/bin/python",
+        "scripts/verify_evaluation_splits.py"
+      ],
+      "cwd": "/home/hellfire/Downloads/CSE366 Project",
+      "kind": "existing evidence",
+      "exit_code": 0,
+      "seconds": 0.537,
+      "log": ".cache/stage13/verification with spaces lxmfgc3a/check_04.log"
+    },
+    {
+      "command": [
+        "/home/hellfire/Downloads/CSE366 Project/.venv/bin/python",
+        "scripts/verify_development.py"
+      ],
+      "cwd": "/home/hellfire/Downloads/CSE366 Project",
+      "kind": "existing evidence",
+      "exit_code": 0,
+      "seconds": 0.751,
+      "log": ".cache/stage13/verification with spaces lxmfgc3a/check_05.log"
+    },
+    {
+      "command": [
+        "/home/hellfire/Downloads/CSE366 Project/.venv/bin/python",
+        "scripts/verify_baselines.py"
+      ],
+      "cwd": "/home/hellfire/Downloads/CSE366 Project",
+      "kind": "existing evidence",
+      "exit_code": 0,
+      "seconds": 3.622,
+      "log": ".cache/stage13/verification with spaces lxmfgc3a/check_06.log"
+    },
+    {
+      "command": [
+        "/home/hellfire/Downloads/CSE366 Project/.venv/bin/python",
+        "scripts/verify_tree_models.py"
+      ],
+      "cwd": "/home/hellfire/Downloads/CSE366 Project",
+      "kind": "existing evidence",
+      "exit_code": 0,
+      "seconds": 7.611,
+      "log": ".cache/stage13/verification with spaces lxmfgc3a/check_07.log"
+    },
+    {
+      "command": [
+        "/home/hellfire/Downloads/CSE366 Project/.venv/bin/python",
+        "scripts/verify_timing.py"
+      ],
+      "cwd": "/home/hellfire/Downloads/CSE366 Project",
+      "kind": "existing evidence",
+      "exit_code": 0,
+      "seconds": 1.833,
+      "log": ".cache/stage13/verification with spaces lxmfgc3a/check_08.log"
+    },
+    {
+      "command": [
+        "/home/hellfire/Downloads/CSE366 Project/.venv/bin/python",
+        "scripts/verify_outputs.py"
+      ],
+      "cwd": "/home/hellfire/Downloads/CSE366 Project",
+      "kind": "existing evidence",
+      "exit_code": 0,
+      "seconds": 3.173,
+      "log": ".cache/stage13/verification with spaces lxmfgc3a/check_09.log"
+    },
+    {
+      "command": [
+        "/home/hellfire/Downloads/CSE366 Project/.venv/bin/python",
+        "scripts/verify_final_evaluation.py"
+      ],
+      "cwd": "/home/hellfire/Downloads/CSE366 Project",
+      "kind": "existing evidence",
+      "exit_code": 0,
+      "seconds": 1.218,
+      "log": ".cache/stage13/verification with spaces lxmfgc3a/check_10.log"
+    }
+  ],
+  "isolated_build": null,
+  "log_directory": ".cache/stage13/verification with spaces lxmfgc3a",
+  "no_final_test_evaluation": true,
+  "no_real_model_training": true,
+  "original_inputs": {
+    "baseline_files": 59,
+    "unchanged": 58,
+    "documented_exceptions": [
+      {
+        "file": "run_prompts.py",
+        "sha256": "4b1f3b9ab1f5efb827bf4a565fffe8051d87ac7d48ec10e8a1fcfa968b7e242e",
+        "reason": "User-confirmed runner-instruction edit, documented in PROJECT_STATUS.md. Original checksum baseline preserved."
+      }
+    ],
+    "unexpected_failures": [],
+    "baseline_rewritten": false
+  },
+  "status": "passed",
+  "protected_evidence": {
+    "files_checked": 212,
+    "hash_and_mtime_changes": []
+  }
+}

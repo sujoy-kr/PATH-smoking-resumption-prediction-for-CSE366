@@ -1,0 +1,301 @@
+{
+  "decision": "C",
+  "timing_analysis_omitted": true,
+  "local_PATH_inventory": {
+    "files_checked": 48,
+    "unexpected_files": []
+  },
+  "reason": [
+    "No usable released individual interview dates or elapsed interview interval for this cohort",
+    "Approximate last-quit-attempt end dates are conditional, potentially product-mixed and not the first cigarette resumption after baseline",
+    "Negative 30-day follow-up status cannot establish an event-free interval",
+    "Unknown follow-up/attrition does not identify an event or censoring time"
+  ],
+  "header_checks": [
+    {
+      "wave": 1,
+      "file": "PATH/DS1001/36498-1001-Data.tsv",
+      "columns": 1742,
+      "interview_clock_candidates": [],
+      "potential_clock_titles": [],
+      "raw_quit_recency_fields": [
+        "R01_AC1009_NN",
+        "R01_AC1009_UN"
+      ],
+      "conditional_last_attempt_date_fields": [
+        "R01_AN0135",
+        "R01_AN0135_VALUE_INFO"
+      ],
+      "rows_read": 0
+    },
+    {
+      "wave": 2,
+      "file": "PATH/DS2001/36498-2001-Data.tsv",
+      "columns": 2208,
+      "interview_clock_candidates": [],
+      "potential_clock_titles": [],
+      "raw_quit_recency_fields": [
+        "R02_AC1009_NN",
+        "R02_AC1009_UN"
+      ],
+      "conditional_last_attempt_date_fields": [
+        "R02_AN0135",
+        "R02_AN0135_VALUE_INFO"
+      ],
+      "rows_read": 0
+    },
+    {
+      "wave": 3,
+      "file": "PATH/DS3001/36498-3001-Data.tsv",
+      "columns": 2140,
+      "interview_clock_candidates": [],
+      "potential_clock_titles": [],
+      "raw_quit_recency_fields": [
+        "R03_AC1009_NN",
+        "R03_AC1009_UN"
+      ],
+      "conditional_last_attempt_date_fields": [
+        "R03_AN0135",
+        "R03_AN0135_VALUE_INFO"
+      ],
+      "rows_read": 0
+    },
+    {
+      "wave": 4,
+      "file": "PATH/DS4001/36498-4001-Data.tsv",
+      "columns": 2181,
+      "interview_clock_candidates": [],
+      "potential_clock_titles": [],
+      "raw_quit_recency_fields": [
+        "R04_AC1009_NN",
+        "R04_AC1009_UN"
+      ],
+      "conditional_last_attempt_date_fields": [
+        "R04_AN0135",
+        "R04_AN0135_VALUE_INFO"
+      ],
+      "rows_read": 0
+    },
+    {
+      "wave": 5,
+      "file": "PATH/DS5001/36498-5001-Data.tsv",
+      "columns": 2315,
+      "interview_clock_candidates": [],
+      "potential_clock_titles": [],
+      "raw_quit_recency_fields": [
+        "R05_AC1009_NN",
+        "R05_AC1009_UN"
+      ],
+      "conditional_last_attempt_date_fields": [
+        "R05_AN0135",
+        "R05_AN0135_VALUE_INFO"
+      ],
+      "rows_read": 0
+    },
+    {
+      "wave": 6,
+      "file": "PATH/DS6001/36498-6001-Data.tsv",
+      "columns": 2588,
+      "interview_clock_candidates": [],
+      "potential_clock_titles": [],
+      "raw_quit_recency_fields": [
+        "R06_AC1009_NN",
+        "R06_AC1009_UN"
+      ],
+      "conditional_last_attempt_date_fields": [
+        "R06_AN0135",
+        "R06_AN0135_VALUE_INFO"
+      ],
+      "rows_read": 0
+    },
+    {
+      "wave": 7,
+      "file": "PATH/DS7001/36498-7001-Data.tsv",
+      "columns": 2813,
+      "interview_clock_candidates": [],
+      "potential_clock_titles": [],
+      "raw_quit_recency_fields": [
+        "R07_AC1009_NN",
+        "R07_AC1009_UN"
+      ],
+      "conditional_last_attempt_date_fields": [
+        "R07_AN0135",
+        "R07_AN0135_VALUE_INFO"
+      ],
+      "rows_read": 0
+    },
+    {
+      "wave": 8,
+      "file": "PATH/DS8001/36498-8001-Data.tsv",
+      "columns": 3085,
+      "interview_clock_candidates": [],
+      "potential_clock_titles": [],
+      "raw_quit_recency_fields": [
+        "R08_AC1009_NN",
+        "R08_AC1009_UN"
+      ],
+      "conditional_last_attempt_date_fields": [
+        "R08_AN0135",
+        "R08_AN0135_VALUE_INFO"
+      ],
+      "rows_read": 0
+    }
+  ],
+  "documentation_hashes": [
+    {
+      "file": "PATH/DS1001/36498-1001-Codebook.pdf",
+      "sha256": "7659caf6ff72340f78ac7d78a8d33cd6ce61d435bfb297cf58e56fae169b6454"
+    },
+    {
+      "file": "PATH/DS1001/36498-1001-Questionnaire.pdf",
+      "sha256": "6e73ede6be7711f37fb188be08fc3c48ea7d93c52ad9fecd6d5d9f093ab2215a"
+    },
+    {
+      "file": "PATH/DS2001/36498-2001-Codebook.pdf",
+      "sha256": "55c2ac556317db27a077e6d11334fdb72974d00bb46eaccc0b76f4dc75ef5f67"
+    },
+    {
+      "file": "PATH/DS2001/36498-2001-Questionnaire.pdf",
+      "sha256": "7f209cc3846858c23080027e34657187c56089dc3e392ba18ea729be9a7c5cb4"
+    },
+    {
+      "file": "PATH/DS3001/36498-3001-Codebook.pdf",
+      "sha256": "c868451202470cdd02769f25f70f1c3c5ee53a98dd9edb29443be4dd45794305"
+    },
+    {
+      "file": "PATH/DS3001/36498-3001-Questionnaire.pdf",
+      "sha256": "b30eface11685678b6e2270cfa91a64d4a25cf57f76627ef58bc21edbd7a325b"
+    },
+    {
+      "file": "PATH/DS4001/36498-4001-Codebook.pdf",
+      "sha256": "97b8339f29b99f72d69f93e2f96ed8fcae6739e890bf1fdb8fbefb2c92f026de"
+    },
+    {
+      "file": "PATH/DS4001/36498-4001-Questionnaire.pdf",
+      "sha256": "b9deabee729bedd1db3f6cf2781cf7ceb238f7cb2e1a30338f59b43a0d67b190"
+    },
+    {
+      "file": "PATH/DS5001/36498-5001-Codebook.pdf",
+      "sha256": "c4816218a7a4574bb750d930e914a5fdcc044a22fbecd78fe8eb6ed38a4867f4"
+    },
+    {
+      "file": "PATH/DS5001/36498-5001-Questionnaire.pdf",
+      "sha256": "13edc09fdcc112e94bd3d8ad1d238c9ed11fc496baae35c1e4149e07c8240ba3"
+    },
+    {
+      "file": "PATH/DS6001/36498-6001-Codebook.pdf",
+      "sha256": "6581c518b28f8bc8e90abde4df7e1237d79c0f2c1edd405b3f560991348384c0"
+    },
+    {
+      "file": "PATH/DS6001/36498-6001-Questionnaire-English.pdf",
+      "sha256": "f34721ca0f01685900e9e2e0fd966830bb3d81f96bdfc98243f496d1ce7cf974"
+    },
+    {
+      "file": "PATH/DS7001/36498-7001-Codebook.pdf",
+      "sha256": "9ba41898d114b5ac1420ee120200536c3f7f506da9dc82e77f212fb9d0d2dd37"
+    },
+    {
+      "file": "PATH/DS7001/36498-7001-Questionnaire-English.pdf",
+      "sha256": "e2a52bbd1437207822c57e91cd5ffd47afb9b1f9ee1aa4c247ce92ed6102878c"
+    },
+    {
+      "file": "PATH/DS8001/36498-8001-Codebook.pdf",
+      "sha256": "05585ac0cf73789894ae912cf102f7fa01bd8a70a13af0f534f040fdf3da1b74"
+    },
+    {
+      "file": "PATH/DS8001/36498-8001-Questionnaire-English.pdf",
+      "sha256": "fd7ae9b3aa5fd456d77196a526548e5d99e492e8ee47fe7f192effb502c88501"
+    }
+  ],
+  "cohort_schema_checks": [
+    {
+      "file": "data/processed/cohort_v1/cohort.parquet",
+      "schema_columns": 87,
+      "prospective_timing_columns": [],
+      "rows_read": 0
+    },
+    {
+      "file": "data/processed/cohort_v1/eligible_interval_ledger.parquet",
+      "schema_columns": 12,
+      "prospective_timing_columns": [],
+      "rows_read": 0
+    }
+  ],
+  "live_documentation_rechecks": [
+    {
+      "file": "PATH/DS1001/36498-1001-Questionnaire.pdf",
+      "first_page": 24,
+      "last_page": 24,
+      "required_text": [
+        "INTVDATE",
+        "date that the interview"
+      ],
+      "sha256": "6e73ede6be7711f37fb188be08fc3c48ea7d93c52ad9fecd6d5d9f093ab2215a",
+      "matched": true,
+      "page_convention": "One-based physical PDF pages"
+    },
+    {
+      "file": "PATH/DS1001/36498-1001-Codebook.pdf",
+      "first_page": 692,
+      "last_page": 693,
+      "required_text": [
+        "R01_AN0135",
+        "approximate end date",
+        "Current users"
+      ],
+      "sha256": "7659caf6ff72340f78ac7d78a8d33cd6ce61d435bfb297cf58e56fae169b6454",
+      "matched": true,
+      "page_convention": "One-based physical PDF pages"
+    },
+    {
+      "file": "PATH/DS8001/36498-8001-Codebook.pdf",
+      "first_page": 1389,
+      "last_page": 1390,
+      "required_text": [
+        "R08_AN0135",
+        "approximate end date"
+      ],
+      "sha256": "05585ac0cf73789894ae912cf102f7fa01bd8a70a13af0f534f040fdf3da1b74",
+      "matched": true,
+      "page_convention": "One-based physical PDF pages"
+    },
+    {
+      "file": "PATH/DS8001/36498-8001-Documentation-Nonresponse_Report.pdf",
+      "first_page": 18,
+      "last_page": 19,
+      "required_text": [
+        "Table 2.1",
+        "2013",
+        "2024"
+      ],
+      "sha256": "d78b9d1a5635563bb97fde8f831096adb9d7346a4127169ea7363cb3c5b7a34a",
+      "matched": true,
+      "page_convention": "One-based physical PDF pages"
+    }
+  ],
+  "classifier": {
+    "model": "xgb_minimal_s1_none",
+    "profile": "minimal",
+    "features": [
+      "age_band",
+      "education_level",
+      "employment_status",
+      "last_cigarette_recency_days"
+    ],
+    "artifact": "artifacts/trees_v1/selected_calibrated.joblib",
+    "sha256": "9b46cdb1783302c05c3b56b83d5695a1ad58b90da0614f04188ee687170eae36",
+    "stage8_signature": "60ce6ce4a02442c59204bd17754339ffdeeb74772b208763ba64dfa2690c655b",
+    "status": "Retained unchanged; development-selected/calibrated, final-test evaluation pending"
+  },
+  "source_sha256": {
+    "configs/timing_decision.json": "c105f94428aed921a26f05e0747863930b808c4c24eed0bef49503b1567ef525",
+    "docs/timing_feasibility.md": "a1b300c5ea98ae3ee0c53be410d5c2bc9665720f51448f28ac93cffcbe723ac0",
+    "configs/prediction_specification_final.json": "29e0121757b079bc27b31b6203ac4388399db575a5bed75e74d7c63256b65f72",
+    "reports/prediction_source_evidence.json": "dd6733837dc8b1d08dbfcb27a79e337b6193c7dfeb2bfcf5a7c84ee3e783bbe6",
+    "src/path_project/timing.py": "35da5b571c56592515f6d76b91cbcc4ea4cb00d461eea4c523b9c6abbc9a0317"
+  },
+  "survey_or_cohort_answer_rows_read": 0,
+  "membership_note": "Existing split key membership is verified by the retained-model integrity checker; no test features/outcomes or survey/cohort answer rows are read.",
+  "models_fitted": 0,
+  "final_test_features_or_outcomes_read": false
+}

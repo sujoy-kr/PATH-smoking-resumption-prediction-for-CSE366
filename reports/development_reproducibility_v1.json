@@ -1,0 +1,67 @@
+{
+  "scope": "Stage 6 tuning-only descriptive preparation; no model fitting or final-test evaluation",
+  "python": "3.13.5 (main, Aug 10 2026, 12:06:59) [GCC 14.2.0]",
+  "versions": {
+    "pandas": "3.1.1",
+    "numpy": "2.5.4",
+    "matplotlib": "3.11.2",
+    "pyarrow": "26.0.1",
+    "scikit-learn": "1.9.1"
+  },
+  "cohort_signature": "da0b2d5bed66345a66c93393bbcafd8f6e36ff3bddc925b585b331c895492965",
+  "split_signature": "d6829a49c00274ce275569aa359602da128ae3b4d2375ffc456c1802bfa44581",
+  "commands": [
+    {
+      "command": ".venv/bin/python scripts/explore_development.py",
+      "exit_code": 0
+    },
+    {
+      "command": ".venv/bin/python scripts/finalize_inputs.py",
+      "exit_code": 0
+    },
+    {
+      "command": ".venv/bin/python scripts/write_development_summary.py",
+      "exit_code": 0
+    },
+    {
+      "command": ".venv/bin/python scripts/verify_development.py",
+      "exit_code": 0
+    }
+  ],
+  "deterministic_outputs": 19,
+  "aggregate_and_final_metadata_byte_identical_on_rebuild": true,
+  "preserved_cohort_split_and_base_metadata_files": 24,
+  "saved_hashes_and_mtimes_unchanged": true,
+  "source_sha256": {
+    "src/path_project/development.py": "c6b52b4ad9d38051179e29cef42440f13a6266a9e439921ffec3514a34274578",
+    "src/path_project/final_inputs.py": "51c01981d709a42d0cba4279862af60c8ecd05cbfd3b91dd02e79863c2b8b8d0",
+    "scripts/explore_development.py": "d7b3035015570e0745e37f86020a42443a70ae53e6f05d52dc475e536d759518",
+    "scripts/finalize_inputs.py": "60d91e72e079d57de38d4775090abc5c7b8d6997f293719ace87b4b8a6ca87cc",
+    "scripts/write_development_summary.py": "b0f190280098755f9681b90353464f33ff284c454920c1609707d37ab318ce74",
+    "scripts/verify_development.py": "2801ef70d1d379fa31774006f617923ce4d8ced6d0590f472eb8bd8d20836922",
+    "tests/test_development.py": "6a77e8d585e1b75cb17de07c2ca27c71fc8ee8f7d121d7c656d7cc82c59157d5",
+    "configs/development_exploration.json": "07fa8585270c03df94d539f279da29cb30b9f7d1a39cf0afc47e3e0febc284ce"
+  },
+  "output_sha256": {
+    "reports/development_v1/interval_prevalence.json": "5c11c0b7d8f2fb68f95bbd8ece244fc55d3a5ee84407addb04cc072138c5bd16",
+    "reports/development_v1/repeated_observations.png": "e6996b7a1707ffd94a66639a0e7e20575cd2fc51934eaf41d681a47f77ef7a9f",
+    "reports/development_v1/missingness.json": "5908d763108d3a9bd3ce6c35c80ca213b4c3b7371d83b0a9852fe6da54903dfb",
+    "reports/development_v1/categorical_distributions.json": "c2a992c0cb276df0848e855013bcfca397df7ed4a3af7a99bed26ff7dd56b601",
+    "reports/development_v1/numeric_distributions.json": "12429c1e0826b2f6d364311278fc39969a3ab62b5d592dd8f2b4d51e012119c4",
+    "reports/development_v1/followup_availability.png": "1bd224934ff314525e59f926a31f1246d5c636a4335e432a56cbab63406ae29b",
+    "reports/development_v1/feature_distributions.png": "3d5d669c2cb50896dac8dbe1ef0adb08fe4684946b16b188bd84dd56a789319f",
+    "reports/development_v1/quit_recency.png": "66cecf258f4aeccd747372f3d330495ca5992a328aff966ceeaa991642b12c52",
+    "reports/development_v1/missingness.png": "f6cf6a6e6b5516e3c00f8820bde084443eecea94513d8f94b21d0d83d6cf5275",
+    "reports/development_v1/followup_by_baseline.json": "560718286bb6163c48c65bb40ce7fcf1964762e4953a22ca530fd48003f5c046",
+    "reports/development_v1/summary.json": "69787a082d142b26d8a071d1832a07085468dfa12969fc5a28db7002755455d6",
+    "reports/development_v1/access_audit.json": "c911d68e4b6da84c67f07aba471e50190cfd56cd37d4ea7b916e21235319198a",
+    "reports/development_v1/interval_prevalence.png": "632ad46e98ebf420e414b71fda50eb492af17880502c27003bc6cc9c5f2d370f",
+    "configs/feature_mapping_final.json": "53d43e8a8f960660a3da17602004b05b70d91220debebde27002030cd2d18f12",
+    "configs/prediction_specification_final.json": "29e0121757b079bc27b31b6203ac4388399db575a5bed75e74d7c63256b65f72",
+    "configs/app_questions.json": "44058bb735fea56b858837025d80ed34ff0cf99ba5abbc6bed32044384a0a97f",
+    "docs/feature_dictionary_final.csv": "02f99d86e82cc53044f371f872a0659462771e5ea72039d212b3cefeb1edfc1c",
+    "docs/app_questions.md": "ed8e8b4d0fc5c9c1b1466545b9b2120d9d2be766790d6d2e5faf3aa19225f88b",
+    "reports/development_data_summary.md": "2cb24929c5e6c83e1d7f78103192af08e8f16b7bf5d6b800b7bf3bcf84964367"
+  },
+  "final_test_features_or_outcomes_used": false
+}

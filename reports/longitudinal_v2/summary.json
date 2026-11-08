@@ -1,0 +1,120 @@
+{
+  "people": 7643,
+  "observed_returns": 1939,
+  "no_return_observed_before_followup_ended": 5704,
+  "consecutive_run_distribution": {
+    "3": 1826,
+    "4": 1313,
+    "5": 1351,
+    "6": 737,
+    "7": 706,
+    "8": 1710
+  },
+  "baseline_wave_distribution": {
+    "1": 3320,
+    "2": 1017,
+    "3": 729,
+    "4": 980,
+    "5": 722,
+    "6": 875
+  },
+  "observation_end_reasons": {
+    "unknown_status": 3595,
+    "end_of_consecutive_observation": 2109,
+    "first_observed_return": 1939
+  },
+  "splits": {
+    "calibration": {
+      "people": 764,
+      "events": 194
+    },
+    "test": {
+      "people": 1148,
+      "events": 291
+    },
+    "train": {
+      "people": 4585,
+      "events": 1163
+    },
+    "validation": {
+      "people": 1146,
+      "events": 291
+    }
+  },
+  "feature_missingness": {
+    "age_band": 0.0,
+    "education_level": 0.0020934188146015963,
+    "employment_status": 0.0036634829255527933,
+    "last_cigarette_recency_days": 0.15504383095643073,
+    "electronic_nicotine_p30d": 0.002878450870077195,
+    "household_tobacco_any": 0.15033363862357713,
+    "mental_health": 0.0009158707313881983,
+    "emotional_problems_7d": 0.0020934188146015963
+  },
+  "median_observed_event_months": 22.965092402464066,
+  "maximum_display_months": 60,
+  "wave_audit": [
+    {
+      "wave": 1,
+      "interviews": 32320,
+      "columns_read": 20,
+      "sha256": "82934e96cca68fa8fa84abf18938fd58f6ea6559082a2f205744cd9156baf4ac"
+    },
+    {
+      "wave": 2,
+      "interviews": 28362,
+      "columns_read": 20,
+      "sha256": "97111dbfcc48573b66d650ef9abf2affc5f9f6d2992642ab7f118d06f758dca7"
+    },
+    {
+      "wave": 3,
+      "interviews": 28148,
+      "columns_read": 23,
+      "sha256": "00abb51d75d2eec6675a4d5679532b380b9ce072e5e29e43ac649225b3159b30"
+    },
+    {
+      "wave": 4,
+      "interviews": 33822,
+      "columns_read": 16,
+      "sha256": "569fb5f5d8cd5e2bf3f7a408afc4ef5ea2d763cffa74fd7c758377bda28346dd"
+    },
+    {
+      "wave": 5,
+      "interviews": 34309,
+      "columns_read": 16,
+      "sha256": "dbbdeec57131cccd4f1e4e62f8c14820d91b2e1cd1dbefe85d0e63093f02e04e"
+    },
+    {
+      "wave": 6,
+      "interviews": 30516,
+      "columns_read": 16,
+      "sha256": "b51cfa4fa1d1397b9cb7990506cdca575c4f0de9c5b7ea46bb1f22cc5e624a50"
+    },
+    {
+      "wave": 7,
+      "interviews": 30801,
+      "columns_read": 4,
+      "sha256": "37c4fe9dc12366d0c989b4ea766432a2eb77f2aa5a96f2573c8fdd4231423109"
+    },
+    {
+      "wave": 8,
+      "interviews": 31477,
+      "columns_read": 3,
+      "sha256": "57ae5e526235997f4d9e32e5cc48bc42d3cfa75b9f34751951fe4c70f5940479"
+    }
+  ],
+  "attendance_longest_run_distribution": {
+    "1": 13232,
+    "2": 8792,
+    "3": 7029,
+    "4": 5971,
+    "5": 7564,
+    "6": 3055,
+    "7": 2187,
+    "8": 11457
+  },
+  "exclusions": {
+    "no_eligible_origin_with_three_consecutive_interviews": 51640,
+    "no_valid_followup_before_unknown_status": 4
+  }
+}

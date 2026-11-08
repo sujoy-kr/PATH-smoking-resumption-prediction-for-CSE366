@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0",
+  "run_name": "cohort_v1",
+  "project_config": "configs/project.json",
+  "prediction_config": "configs/prediction_specification.json",
+  "feature_mapping": "configs/feature_mapping.json",
+  "input_manifest": "docs/original_inputs.sha256.json",
+  "legacy_diagnostic": ".analysis/cohort_counts.json",
+  "output_dir": "data/processed/cohort_v1",
+  "aggregate_dir": "reports/cohort_v1",
+  "files": {
+    "cohort": "cohort.parquet",
+    "ledger": "eligible_interval_ledger.parquet",
+    "schema": "schema.json",
+    "manifest": "run_manifest.json"
+  },
+  "parquet_engine": "pyarrow",
+  "compression": "zstd",
+  "read_encoding": "utf-8-sig",
+  "identifier": "PERSONID",
+  "invalid_identifiers": [
+    "",
+    ".",
+    "-1",
+    "-9",
+    "-97777",
+    "nan",
+    "NaN",
+    "<NA>"
+  ],
+  "feature_reason_suffix": "__reason",
+  "component_reason_suffix": "__component_reasons",
+  "outcome_name": "outcome_p30d",
+  "secondary_outcome_name": "outcome_current_established",
+  "baseline_former_field": "former_established_baseline",
+  "baseline_p30_field": "past30_cigarettes_baseline",
+  "baseline_current_field": "current_established_baseline_qc",
+  "outcome_field": "past30_cigarettes_followup",
+  "secondary_outcome_field": "current_established_followup",
+  "inclusion": {
+    "former_value": 1,
+    "past30_value": 2
+  },
+  "retry_policy": "Reuse only a complete run with identical input/config/code/environment signatures and verified output hashes; never overwrite an existing run.",
+  "component_missingness_policy": "Retain per-feature reason and all non-observed input-component reasons as local JSON metadata. No raw response values retained.",
+  "historical_policy": "Use documented current-wave fields/official historical derivations only; no explicit cross-wave feature carry-forward.",
+  "versions": [
+    "pandas",
+    "pyarrow"
+  ],
+  "code_inputs": [
+    "scripts/build_cohort.py",
+    "src/path_project/cohort.py",
+    "src/path_project/features.py",
+    "src/path_project/documentation.py",
+    "src/path_project/feature_validation.py"
+  ],
+  "recency_feature": "last_cigarette_recency_days",
+  "recent_lower_exclusive_days": 30,
+  "recent_upper_inclusive_days": 365.25
+}
