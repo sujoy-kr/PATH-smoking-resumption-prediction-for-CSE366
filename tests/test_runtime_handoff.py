@@ -23,14 +23,14 @@ def test_current_bundle_matches_five_fictional_predictions():
     assert not result['raw_or_processed_data_required']
 
 
-def test_handoff_archive_has_exact_model_and_runs_without_raw_data(tmp_path):
+def test_handoff_archive_has_json_model_and_runs_without_raw_data(tmp_path):
     builder = load_script('build_handoff')
     archive_path = tmp_path/'course-handoff.zip'
     builder.build(ROOT, archive_path)
     with zipfile.ZipFile(archive_path) as archive:
         names = archive.namelist()
         assert 'reclaim/'+builder.MODEL in names
-        assert sum(p.endswith('.joblib') for p in names) == 1
+        assert not any(p.endswith(('.joblib', '.pkl', '.pickle')) for p in names)
         assert not any(p.startswith(('reclaim/PATH/', 'reclaim/data/', 'reclaim/.venv/', 'reclaim/.aws/', 'reclaim/.cache/')) for p in names)
         assert not any(p.endswith('secrets.toml') for p in names)
         assert not any(p.endswith(('.parquet', '.tsv', '.pyc')) for p in names)
@@ -51,4 +51,5 @@ def test_runtime_requirements_exclude_archived_gpu_packages():
     pins = [line.split('==')[0] for line in requirements.splitlines() if line and not line.startswith('#')]
     assert not any(name.startswith('nvidia') for name in pins)
     assert not {'xgboost', 'shap', 'matplotlib'} & set(pins)
-    assert {'numpy', 'pandas', 'scikit-learn', 'streamlit', 'altair'} <= set(pins)
+    assert {'numpy', 'pandas', 'streamlit', 'altair'} <= set(pins)
+    assert not {'scikit-learn', 'scipy', 'joblib'} & set(pins)  # JSON model: no pickle/sklearn at runtime

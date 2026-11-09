@@ -14,7 +14,7 @@ def verify(root=ROOT):
     expected = json.loads((root/'configs/runtime_handoff.json').read_text())
     errors, notes = [], []
     # Packages that change unpickling or numbers are strict; UI-only ones warn.
-    strict = {'numpy', 'pandas', 'scikit-learn', 'scipy', 'joblib'}
+    strict = set(expected['strict_packages'])
     for package, pinned in expected['core_versions'].items():
         try:
             actual = metadata.version(package)
@@ -29,12 +29,12 @@ def verify(root=ROOT):
         raise ValueError('Dependency mismatch:\n'+'\n'.join(errors)+
             '\nInstall the app dependencies with: python -m pip install -r requirements-app.txt')
     sys.path.insert(0, str(root/'src'))
-    from path_project.longitudinal import load_study
+    from path_project.study import load_study
     from path_project.assessment import assess_available
     bundle = load_study(root)
     features = bundle['model'].features
     background = bundle['background']
-    if list(background.columns) != features or background.shape != (16, 8):
+    if list(background.columns) != features or background.shape != (bundle['config']['background_size'], len(features)):
         raise ValueError('Unexpected explanation reference schema; no values emitted.')
     fixture = json.loads((root/'tests/fixtures/handoff_profiles.json').read_text())
     checks = []

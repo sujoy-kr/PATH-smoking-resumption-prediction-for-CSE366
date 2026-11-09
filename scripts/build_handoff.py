@@ -9,7 +9,7 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[1]
 DIRECTORIES = ['app', 'src', 'scripts', 'configs', 'docs', 'reports', 'tests']
 ROOT_NAMES = ['.gitignore', '.gitattributes', 'pyproject.toml', 'run_app.py']
-MODEL = 'artifacts/longitudinal_v2_1/model.joblib'
+MODEL = 'artifacts/longitudinal_v2_2/model.json'
 
 
 def handoff_files(root):
@@ -42,12 +42,12 @@ def build(root, output):
     if output.exists():
         raise ValueError('Archive already exists; use a new output name instead of overwriting.')
     files = handoff_files(root)
-    model_paths = [p.relative_to(root).as_posix() for p in files if p.suffix == '.joblib']
-    if model_paths != [MODEL]:
-        raise ValueError('The handoff must contain exactly the authorized current model.')
+    names = [p.relative_to(root).as_posix() for p in files]
+    if MODEL not in names or any(n.endswith(('.joblib', '.pkl', '.pickle')) for n in names):
+        raise ValueError('The handoff must contain the current JSON model and no pickle files.')
     manifest = {'purpose': 'Authorized teammate/faculty inference handoff',
         'model_included': MODEL, 'raw_and_processed_data_included': False,
-        'survey_derived_reference_rows_in_model': 16,
+        'survey_derived_reference_rows_in_model': 0,
         'files': {p.relative_to(root).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest() for p in files}}
     output.parent.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(output, 'w', compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:

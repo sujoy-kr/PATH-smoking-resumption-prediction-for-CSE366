@@ -1,4 +1,9 @@
 -r requirements-app.txt
+# Training/evaluation and tests (not needed to run the app).
+scikit-learn==1.9.1
+scipy==1.18.1
+joblib==1.6.0
+threadpoolctl==3.8.0
 pytest==9.2.0
 iniconfig==2.3.1
 pluggy==1.7.0

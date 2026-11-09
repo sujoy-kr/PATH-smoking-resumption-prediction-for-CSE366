@@ -7,10 +7,10 @@ name = "path-smoking-resumption"
 version = "0.1.0"
 description = "CSE366 reproducible PATH smoking resumption research prototype"
 requires-python = ">=3.13"
-dependencies = ["numpy", "pandas", "pyarrow", "scikit-learn", "scipy", "joblib", "streamlit", "altair"]
+dependencies = ["numpy", "pandas", "pyarrow", "streamlit", "altair"]
 
 [project.optional-dependencies]
-dev = ["pytest"]
+dev = ["pytest", "scikit-learn", "scipy", "joblib"]
 research = ["matplotlib", "pypdf", "python-pptx", "shap", "xgboost"]
 
 [tool.setuptools.packages.find]

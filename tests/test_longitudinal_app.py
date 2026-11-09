@@ -6,7 +6,7 @@ import pytest
 from streamlit.testing.v1 import AppTest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT/'src'))
-from path_project.longitudinal import load_study, predict_profile
+from path_project.study import load_study
 from path_project.evaluation import BoundaryError
 
 
@@ -48,7 +48,7 @@ def test_automatic_full_curve_and_matching_probability_factors(profile):
     assert not app.exception and len(app.metric) == 3
     output = record(app)
     assert output['status'] == 'scored' and output['horizon_months'] == 36
-    assert [p['months'] for p in output['curve']] == [12, 18, 24, 36, 48, 60]
+    assert [p['months'] for p in output['curve']] == [18, 24, 36, 48, 60]
     assert app.metric[0].value == f"{100*output['probability']:.1f}%"
     assert app.metric[1].value == output['risk_level']
     assert output['explanation_reference']+sum(f['contribution'] for f in output['factors']) == pytest.approx(output['probability'], abs=1e-8)
@@ -124,16 +124,16 @@ def test_too_few_answers_are_suppressed_not_scored():
     assert not app.json and not app.metric
 
 
-def test_reliability_never_claims_personal_confidence_and_flags_weak_horizons():
+def test_reliability_never_claims_personal_confidence_and_drops_unsupported_horizon():
     app = launch('Example · recent quit')
     submit(app)
     output = record(app)
     assert output['estimate_mode'] == 'assessment'
     assert output['reliability']['personal_confidence_percent'] is None
     assert output['reliability']['label'] == 'Limited'
-    assert output['horizon_evidence']['12']['beats_no_input_baseline'] is False
-    assert output['horizon_evidence']['36']['beats_no_input_baseline'] is True
-    assert any('did not beat a no-information baseline' in w.value for w in app.warning)
+    assert '12' not in output['horizon_evidence']
+    assert all(e['beats_no_input_baseline'] for e in output['horizon_evidence'].values())
+    assert [p['months'] for p in output['curve']] == [18, 24, 36, 48, 60]
     assert any('percent sure' in m.value for m in app.markdown)
 
 
@@ -152,34 +152,16 @@ def test_assessment_suppresses_out_of_profile_and_matches_gate_by_text():
     assert assess_available(ROOT, bundle, {**answers, 'last_cigarette_recency_days': {'number': 5, 'unit': '1'}}, gates)['status'] == 'suppressed'
 
 
-def test_supported_profile_keeps_identical_frozen_prediction():
+
+def test_backend_guards_remain_intact():
     from path_project.assessment import assess_available
     bundle = load_study(ROOT)
     spec = json.loads((ROOT/'configs/app_questions.json').read_text())
     gates = [q['required_answer'] for q in spec['eligibility_questions']]
-    answers = {'age_band': '2', 'education_level': '4', 'employment_status': '1',
-        'last_cigarette_recency_days': {'number': 6, 'unit': '2'},
-        'electronic_nicotine_p30d': '0', 'household_tobacco_any': '0',
-        'mental_health': '2', 'emotional_problems_7d': '2'}
-    a = assess_available(ROOT, bundle, answers, gates)
-    b = predict_profile(ROOT, bundle, answers, gates, 36)
-    assert a['estimate_mode'] == 'assessment'
-    assert a['probability'] == b['probability']
-    assert a['curve'] == b['curve']
-    assert a['factors'] == b['factors']
-    assert a['reliability']['answer_coverage_percent'] == 100
-    assert a['reliability']['personal_confidence_percent'] is None
-
-
-def test_backend_guards_remain_intact():
-    bundle = load_study(ROOT)
-    spec = json.loads((ROOT/'configs/app_questions.json').read_text())
-    gates = [q['required_answer'] for q in spec['eligibility_questions']]
-    assert predict_profile(ROOT, bundle, {}, gates, 18)['status'] == 'suppressed'
-    with pytest.raises(BoundaryError, match='horizon'):
-        predict_profile(ROOT, bundle, {}, gates, 180)
     with pytest.raises(BoundaryError, match='trained questionnaire'):
-        predict_profile(ROOT, bundle, {'PERSONID': 'FICTIONAL'}, gates, 18)
+        assess_available(ROOT, bundle, {'PERSONID': 'FICTIONAL'}, gates)
+    assert assess_available(ROOT, bundle, {}, gates)['estimate_mode'] == 'study_reference'
+
 
 
 def test_deploy_toolbar_disabled_and_responsive_styles_present():

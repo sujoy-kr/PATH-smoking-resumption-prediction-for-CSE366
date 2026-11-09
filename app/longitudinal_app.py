@@ -10,7 +10,7 @@ import streamlit as st
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT/'src'))
 from path_project.evaluation import BoundaryError
-from path_project.longitudinal import load_study
+from path_project.study import load_study
 from path_project.assessment import assess_available
 
 st.set_page_config(page_title='Reclaim · Your smoking outlook', page_icon='◈', layout='wide', initial_sidebar_state='collapsed')
@@ -31,7 +31,7 @@ st.html('''<section class="hero"><div class="eyebrow">A clearer view of what com
 <h1>You’ve quit.<br>Understand your outlook.</h1>
 <p>A short assessment of your current situation. Explore the estimated chance of returning to smoking over time, and the factors influencing your result.</p>
 <div class="hero-chips"><span>8 questions + eligibility</span><span>No account needed</span><span>Answers stay in this session</span></div></section>''')
-st.caption('Survey-based research estimate · Months are approximate, using wave collection-window midpoints. Personal and clinical accuracy are unvalidated.')
+st.caption('Survey-based research estimate · Months are approximate: a return is only known to fall between two survey interviews. Personal and clinical accuracy are unvalidated.')
 
 try:
     bundle = engine()
@@ -177,7 +177,7 @@ if output:
         interval = reliability['test_roc_auc_95_interval']
         interval_text = f' (95% participant-bootstrap interval {interval[0]:.3f}–{interval[1]:.3f})' if interval else ''
         evidence_name = 'questionnaire model' if output['provided'] else 'no-input study baseline'
-        st.caption(f'At {output["horizon_months"]} months, the {evidence_name} had held-out ROC-AUC {reliability["test_roc_auc"]:.3f}{interval_text}. This is group-level discrimination, not your chance of the prediction being correct or validation for a partial/out-of-profile scenario. Mean predicted risk was {100*reliability["test_mean_probability"]:.1f}% versus {100*reliability["test_observed_risk"]:.1f}% observed after censoring adjustment.')
+        st.caption(f'At {output["horizon_months"]} months, the {evidence_name} had held-out ROC-AUC {reliability["test_roc_auc"]:.3f}{interval_text}. This is group-level discrimination, not your chance of the prediction being correct or validation for a partial/out-of-profile scenario. Mean predicted risk was {100*reliability["test_mean_probability"]:.1f}% versus an observed range of {100*reliability["test_observed_risk_bounds"][0]:.1f}–{100*reliability["test_observed_risk_bounds"][1]:.1f}%.')
     outlook_tab, factors_tab, details_tab = st.tabs(['Probability timeline', 'Contributing factors', 'How to read your result'])
     with outlook_tab:
         cards = ''.join(f'<div class="outlook-card {"featured" if p["months"] == 18 else ""}"><dt>Within ≈ {p["months"]} months</dt><dd>{100*p["probability"]:.1f}%</dd><small>{"Cumulative · not better than baseline" if not output["horizon_evidence"][str(p["months"])]["beats_no_input_baseline"] else "Cumulative probability"}</small></div>' for p in output['curve'])
@@ -219,21 +219,22 @@ if output:
 
 st.divider()
 with st.expander('Research evidence & limitations'):
-    st.markdown('### Built on consecutive-wave follow-up')
-    st.write(f'{summary["people"]:,} former established smokers with at least three consecutive surveys: {summary["observed_returns"]:,} first observed returns to current-established smoking, and {summary["no_return_observed_before_followup_ended"]:,} without an observed return before follow-up ended. No observed return is not a permanent negative label.')
-    st.write('Model: consecutive-wave Weibull survival model, using baseline answers only. Participants are separated for fitting, selection, calibration and testing. Evaluation retains observed class proportions.')
+    st.markdown('### Built on PATH Study follow-up')
+    st.write(f'{summary["people"]:,} former established smokers with at least one follow-up interview: {summary["observed_returns"]:,} first observed returns to current-established smoking, and {summary["no_return_observed_before_followup_ended"]:,} without an observed return before follow-up ended. No observed return is not a permanent negative label.')
+    st.write('Model: interval-censored proportional-hazards survival model with a flexible baseline hazard, using baseline answers only. Participants are separated for fitting, selection, calibration and testing. Evaluation retains observed class proportions.')
     rows = []
     for horizon in results['supported_horizons_months']:
         m = results['metrics'][str(horizon)]['model']
         if m['supported']:
-            rows.append({'Approximate months': horizon, 'ROC-AUC (IPCW)': m['ipcw_roc_auc'], 'Brier score': m['ipcw_brier'], 'Mean estimate (%)': 100*m['mean_predicted_risk'], 'Observed risk (IPCW %)': 100*m['ipcw_observed_risk']})
+            rows.append({'Approximate months': horizon, 'ROC-AUC (IPCW)': m['ipcw_roc_auc'], 'Brier score': m['ipcw_brier'], 'Mean estimate (%)': 100*m['mean_predicted_risk'], 'Observed risk range (%)': f"{100*m['observed_risk_lower']:.1f}–{100*m['observed_risk_upper']:.1f}", 'Estimate within range': 'yes' if m['predicted_within_observed_bounds'] else 'no'})
     st.dataframe(pd.DataFrame(rows), hide_index=True, width='stretch')
-    st.caption('IPCW adjusts aggregate evaluation for censoring under an independent-censoring assumption. These measurements do not validate actual month-of-resumption predictions.')
-    st.write('Consecutive attendance selects people using future participation. Attrition can be informative. This unweighted U.S. study does not establish performance for current app users, other populations, or clinical decisions. Current-established means every-day or some-day smoking; it does not establish persistent smoking.')
+    st.caption('A return is known only to lie between interviews, so observed risk at a horizon is a range (lower: returns known by then; upper: also returns that began before it). IPCW weights adjust for lost follow-up by baseline wave. These measurements do not validate actual month-of-resumption predictions.')
+    st.write('People are included if they had at least one follow-up interview; later attendance never affects inclusion, but attrition can still be informative. This unweighted U.S. study does not establish performance for current app users, other populations, or clinical decisions. Current-established means every-day or some-day smoking; it does not establish persistent smoking.')
     st.markdown('[FDA wave collection dates]('+config['timing_source']+')')
-    st.caption('Local documentation: docs/longitudinal_v2.md · reports/longitudinal_v2_1/results.json')
+    st.caption('Local documentation: docs/longitudinal_v2_2.md · reports/longitudinal_v2_2/results.json')
 reference = results['metrics'][str(config['default_horizon_months'])]['model']
-direction = 'underestimates' if reference['mean_predicted_risk'] < reference['ipcw_observed_risk'] else 'overestimates'
-short = [h for h in results['supported_horizons_months'] if results['metrics'][str(h)]['model']['mean_predicted_risk'] > results['metrics'][str(h)]['model']['ipcw_observed_risk']]
-st.caption(f'Probability limitation: at {config["default_horizon_months"]} months, the mean held-out estimate was {100*reference["mean_predicted_risk"]:.1f}% versus {100*reference["ipcw_observed_risk"]:.1f}% censor-adjusted observed risk, so the model {direction} average risk there. Calibration differs by horizon' + (f' (it overestimates at ≈ {", ".join(map(str, short))} months)' if short else '') + '; percentages are not precise personal probabilities.')
-st.html('<div class="page-footer"><span>reclaim / CSE366 · Consecutive-wave research model</span><span>Local inference · No answer files · No external prediction API</span></div>')
+low, high = reference['observed_risk_lower'], reference['observed_risk_upper']
+inside = 'inside' if reference['predicted_within_observed_bounds'] else 'outside'
+outside = [h for h in results['supported_horizons_months'] if not results['metrics'][str(h)]['model']['predicted_within_observed_bounds']]
+st.caption(f'Calibration: at {config["default_horizon_months"]} months the mean held-out estimate was {100*reference["mean_predicted_risk"]:.1f}%, {inside} the {100*low:.1f}–{100*high:.1f}% observed-risk range' + (f'; it fell outside the range at ≈ {", ".join(map(str, outside))} months' if outside else '') + '. Percentages are not precise personal probabilities.')
+st.html('<div class="page-footer"><span>reclaim / CSE366 · Interval-censored research model</span><span>Local inference · No answer files · No external prediction API</span></div>')

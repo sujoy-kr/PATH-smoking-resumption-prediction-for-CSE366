@@ -1,0 +1,21 @@
+{
+  "version": "longitudinal_v2_2",
+  "config_sha256": "b0e167fe90bc71dd92391d0a02c24caf0b383b6a547b478215ba7588b7a37684",
+  "output_sha256": {
+    "artifacts/longitudinal_v2_2/model.json": "2ee1cb33a0692a7e4c92230b0dcdd87824980142f8c158c7134050087cd53c9f",
+    "reports/longitudinal_v2_2/summary.json": "fc94a751a13c7ee1c4b14f75a9c750bec2954aacf3c59f81e473ef1db81d80e9",
+    "reports/longitudinal_v2_2/results.json": "a66dc28b27333db0ab4c11628a4e2dab2e488a2f2e07f9c61ba0b6f4693af441"
+  },
+  "cohort_sha256": "be8a1a728a2bbc40bb5b3cd9cdf12ab33ecdf8ab9409c3989fda58e9eae61208",
+  "source_data_sha256": {
+    "1": "82934e96cca68fa8fa84abf18938fd58f6ea6559082a2f205744cd9156baf4ac",
+    "2": "97111dbfcc48573b66d650ef9abf2affc5f9f6d2992642ab7f118d06f758dca7",
+    "3": "00abb51d75d2eec6675a4d5679532b380b9ce072e5e29e43ac649225b3159b30",
+    "4": "569fb5f5d8cd5e2bf3f7a408afc4ef5ea2d763cffa74fd7c758377bda28346dd",
+    "5": "dbbdeec57131cccd4f1e4e62f8c14820d91b2e1cd1dbefe85d0e63093f02e04e",
+    "6": "b51cfa4fa1d1397b9cb7990506cdca575c4f0de9c5b7ea46bb1f22cc5e624a50",
+    "7": "37c4fe9dc12366d0c989b4ea766432a2eb77f2aa5a96f2573c8fdd4231423109",
+    "8": "57ae5e526235997f4d9e32e5cc48bc42d3cfa75b9f34751951fe4c70f5940479"
+  },
+  "integrity_note": "Hashes detect accidental corruption, not tampering."
+}

@@ -12,7 +12,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 from path_project.final_inputs import encode_app_answers
-from path_project.longitudinal import exact_feature_shap
+from path_project.study import exact_feature_shap
 from path_project.evaluation import BoundaryError
 
 
@@ -64,7 +64,7 @@ def assess_available(root, bundle, answers, eligibility):
     low, high = result['risk_category_cuts']
     category = 'Lower' if p <= low else 'Moderate' if p <= high else 'Higher'
     maximum = max(horizons)
-    median = float(12*(np.log(2)/np.exp(model.log_rate(row)[0]))**(1/model.shape)) if curve[-1] >= .5 else None
+    median = float(model.median_months(row)[0]) if curve[-1] >= .5 else None
     base, factors = exact_feature_shap(model, bundle['background'], row, horizon)
     mode = 'study_reference' if supplied == 0 else 'profile_unconfirmed' if unknown else 'assessment'
     support = {'study_reference': 'Study reference only',
@@ -89,6 +89,7 @@ def assess_available(root, bundle, answers, eligibility):
         'evidence_model': 'questionnaire_model' if supplied else 'no_input_baseline',
         'test_mean_probability': metric['mean_predicted_risk'],
         'test_observed_risk': metric['ipcw_observed_risk'],
+        'test_observed_risk_bounds': [metric['observed_risk_lower'], metric['observed_risk_upper']],
         'timing_evidence': 'Assumed wave midpoints; actual individual resumption dates unavailable.'}
     return {'status': 'scored', 'estimate_mode': mode, 'profile_support': support,
         'unknown_profile_answers': unknown, 'outside_profile_answers': outside, 'excluded_inputs': excluded,

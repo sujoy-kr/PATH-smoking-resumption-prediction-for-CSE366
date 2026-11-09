@@ -1,3 +1,5 @@
+> **Superseded by [v2.2](longitudinal_v2_2.md).** This v2.1 protocol is kept as history; its numbers no longer describe the app.
+
 # Consecutive-wave smoking-return extension (v2.1)
 
 This is a separately trained study requested after completion of v1. It adds

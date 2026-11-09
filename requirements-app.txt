@@ -1,4 +1,4 @@
-# Pinned dependency closure for the current CPU-only prediction app.
+# Pinned dependency closure for the CPU-only prediction app (JSON model: no scikit-learn/scipy/pickle needed).
 # Extracted from the tested Python 3.13.5 environment; no CUDA/XGBoost/SHAP needed.
 altair==6.3.0
 anyio==4.16.0
@@ -11,7 +11,6 @@ h11==0.16.0
 idna==3.20
 itsdangerous==2.2.0
 jinja2==3.1.6
-joblib==1.6.0
 jsonschema==4.26.0
 jsonschema-specifications==2025.9.1
 markupsafe==3.0.4
@@ -28,11 +27,8 @@ python-multipart==0.0.33
 referencing==0.37.0
 requests==2.34.2
 rpds-py==2026.9.1
-scikit-learn==1.9.1
-scipy==1.18.1
 starlette==1.10.0
 streamlit==1.67.0
-threadpoolctl==3.8.0
 typing-extensions==4.16.0
 tzdata==2026.6
 urllib3==2.8.0

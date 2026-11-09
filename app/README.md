@@ -9,7 +9,7 @@ UI/configuration update so toolbar settings take effect. Teammate/faculty setup
 uses the included trained bundle and pinned CPU-only `requirements-app.txt`;
 see [TEAM_SETUP.md](../TEAM_SETUP.md). No API keys are needed.
 
-The app uses only the consecutive-wave v2.1 model. `legacy_app.py` is restored
+The app uses only the interval-censored v2.2 model. `legacy_app.py` is restored
 as historical research source, with no route in the current interface. The
 development prompt runner remains removed.
 
