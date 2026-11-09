@@ -106,10 +106,11 @@ answers including recency; the current UI uses a separate available-answer
 adapter without altering that frozen model or strict API. Partial inputs use
 fitted missing-value handling and have unvalidated personal performance. Unknown
 profile answers produce a conditional estimate; known unsupported profiles
-produce a clearly labeled hypothetical adult former-smoker scenario, not a
+are suppressed (no probability shown), since the model offers no
 validated forecast for that user's reported situation. Recency of 30 days or
-less is excluded from this scenario and documented as excluded, never replaced
-with a fabricated eligible value. No usable model answers yields the separately
+less conflicts with the study population and is likewise suppressed, never
+replaced with a fabricated eligible value. Personalized estimates require the
+recency answer and at least six of eight inputs (`minimum_answers_fraction`). No usable model answers yields the separately
 fitted no-input baseline, with no personalized factor attributions.
 
 The UI reliability panel displays usable-answer coverage (not confidence),

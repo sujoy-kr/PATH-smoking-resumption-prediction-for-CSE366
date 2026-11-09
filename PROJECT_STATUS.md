@@ -1,5 +1,7 @@
 # Current project status
 
+Latest change: the app now suppresses out-of-profile and too-sparse inputs, flags horizons that do not beat the baseline, and reports per-horizon calibration. Remaining model-level limitations are in docs/known_limitations.md.
+
 ## Active application
 
 Reclaim uses the frozen consecutive-wave v2.1 model. Launch with
@@ -9,11 +11,11 @@ application, models, scripts, reports and tests have been removed.
 
 The current study has 7,643 people with at least three consecutive main-wave
 interviews, 1,939 observed returns and 5,704 without an observed return before
-follow-up ended. Eight baseline inputs produce approximate12–60-month
-probabilities, fixed36-month relative risk and exact feature explanations.
+follow-up ended. Eight baseline inputs produce approximate 12–60-month
+probabilities, fixed 36-month relative risk and exact feature explanations.
 Timing uses assumed survey-window midpoints, not individual resumption dates.
-Calibration underestimates average held-out risk; personal confidence is not
-validated. Partial/unsupported answers receive explicitly conditional scenarios;
+Calibration varies by horizon (overestimates at 12 months, underestimates from 18); personal confidence is not
+validated. Out-of-profile or too-sparse answers are suppressed;
 blank submissions use the fitted study reference. No personal confidence
 percentage is invented. Runtime answers/results stay in session memory.
 
@@ -37,14 +39,14 @@ percentage is invented. Runtime answers/results stay in session memory.
 ## Cleanup verification
 
 User explicitly authorized removal of obsolete files while keeping PATH.
-The reviewed removal list is in reports/cleanup.json. Approximately517MiB of
+The reviewed removal list is in reports/cleanup.json. Approximately 517 MiB of
 old prompt logs, caches, initial analysis, retired model/data runs and obsolete
 code/docs were removed. The Python environment and Git repository were kept.
 The obsolete full research dependency lock was removed; use requirements-app.txt
-and requirements-test.txt. No pip uninstall/install or Git commit/push performed.
+and requirements-test.txt. No pip uninstall/install performed.
 
-All22 current tests passed. The current cohort rebuilt exactly, including
-features, observation labels, assumed times and participant assignments. All48
+All 22 current tests passed. The current cohort rebuilt exactly, including
+features, observation labels, assumed times and participant assignments. All 48
 original PATH files matched the retained original-input hashes. Current model
 source/artifact/result hashes and five fictional prediction/explanation/timing
 checks pass. No model refit or held-out prediction rescoring occurred.
@@ -62,14 +64,14 @@ interactive browser verification and public deployment are not claimed.
 ## Research and faculty-reference restoration
 
 The user requested restoring files useful for maintenance, development and
-faculty review. Restored165 versioned files from HEAD without changing the Git
+faculty review. Restored 165 versioned files from HEAD without changing the Git
 index/history or overwriting any existing current file. They include original
 research/model comparison code, validation utilities, synthetic tests/configs,
 aggregate reports, planning/final-report/viva/presentation documentation, archived
 legacy-app source and the original full research dependency snapshot.
 
 The previous cleanup removal list is historical and partly reversed; see
-reports/restoration.json for exact recovered paths/hashes. All165 restored files
+reports/restoration.json for exact recovered paths/hashes. All 165 restored files
 match their original Git bytes. Current model, inference behavior, source
 fingerprints, processed cohort and PATH data are unchanged. No model refit or
 held-out participant rescoring. Old ignored model/cohort artifacts were not in
@@ -81,14 +83,14 @@ Added docs/RESEARCH_GUIDE.md to distinguish historical v1 references from the
 current v2.1 protocol, and docs/faculty_guide.md for current presentation claims.
 The original legacy-app source is not routed in the active interface. Current
 app dependencies stay CPU-only. Historical tests opt in through
---research-tests; the default suite remains the22 supported current app tests.
+--research-tests; the default suite remains the 22 supported current app tests.
 The research dependency snapshot/optional extras are not the app setup route.
 
-Validation:22 current tests passed;99 selected restored research tests passed,
+Validation: 22 current tests passed; 99 selected restored research tests passed,
 covering synthetic cohort, leakage/group boundaries, preprocessing/calibration,
 feature mapping and local source headers, metrics/report logic and tiny tree
 comparisons. Full old artifact-dependent tests were not claimed runnable without
 separately recovered original artifacts. Model startup regression checks remain
-unchanged. No Git commit/push or remote publication. Restored handoff archive
+unchanged. Earlier work is on GitHub (main); see git log for what is committed. Restored handoff archive
 contains code/docs/reports plus exactly the current authorized model, not raw
 PATH data or removed private v1 artifacts.

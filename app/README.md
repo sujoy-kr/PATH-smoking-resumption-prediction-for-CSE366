@@ -21,16 +21,16 @@ development prompt runner remains removed.
   it directly. There is no separate “supply a number” toggle. The amount can also
   be cleared, including in fictional examples.
 - Live completion updates immediately. Partial answers are accepted; unknown
-  values use fitted missing handling. A blank submission uses the separate
-  no-input study baseline, labeled as a study reference rather than a personal
-  prediction. There is no eligibility rejection message.
+  values use fitted missing handling, but a personalized estimate needs the
+  last-cigarette duration and at least six of eight answers; with fewer, no
+  probability is shown. A blank submission uses the separate no-input study
+  baseline, labeled as a study reference rather than a personal prediction.
 - Profile answers determine interpretation: a confirmed matching profile yields
   a study-profile assessment; unknown profile answers yield a conditional
-  estimate; unsupported answers yield a hypothetical adult former-smoker
-  scenario. The model is not validated for current/recent smokers, never-smokers
-  or minors. A last-cigarette duration of 30 days or less is excluded from the
-  quit-for-over-30-days scenario, with a visible note and the original answer
-  preserved in the summary. It is not changed to an invented eligible duration.
+  estimate; answers outside the study population (current/recent smokers,
+  never-smokers, minors, or a last cigarette 30 days ago or less) are
+  suppressed: the app explains why and shows no probability. Short horizons
+  where the model did not beat the no-input baseline are flagged.
 - “How reliable is this estimate?” shows usable-answer coverage, population
   support, group test ROC-AUC/its available bootstrap interval and calibration.
   Personal prediction confidence is unvalidated and never fabricated as an

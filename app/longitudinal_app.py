@@ -35,7 +35,7 @@ st.caption('Survey-based research estimate · Months are approximate, using wave
 
 try:
     bundle = engine()
-except (OSError, BoundaryError, ValueError):
+except Exception:  # unreadable/incompatible pickle, dependency mismatch, tampered files
     st.error('The assessment is temporarily unavailable because the local model could not be verified. No substitute prediction is shown.')
     st.stop()
 
@@ -132,7 +132,7 @@ with st.container(border=True, key='situation_card'):
 supplied = sum(isinstance(v, dict) or v in questions[f]['options'] for f, v in answers.items())
 gates_answered = sum(v is not None for v in eligibility)
 st.progress((supplied+gates_answered)/(len(features)+4), text=f'{supplied} of {len(features)} answers entered · {gates_answered} of 4 profile questions')
-st.caption('More usable answers give the model more context. You can continue with partial answers; with no usable model answers, we show the study reference instead.')
+st.caption(f'A personalized estimate needs the time since your last cigarette and at least {-(-int(len(features)*config['minimum_answers_fraction']*100)//100)} of {len(features)} answers (“not sure” answers count as unanswered). With none, we show the study reference instead; with fewer, no probability is shown.')
 signature = json.dumps({'adapter': 'available_answers_v1', 'profile': preset, 'answers': answers, 'eligibility': eligibility}, sort_keys=True)
 if st.session_state.get('assessment_signature') != signature:
     st.session_state.pop('assessment_result', None)
@@ -150,15 +150,17 @@ if submitted:
 output = st.session_state.get('assessment_result')
 if output:
     st.divider()
-    st.markdown('## '+('Your outlook, over time' if output['estimate_mode'] == 'assessment' else 'Your conditional scenario outlook' if output['estimate_mode'] != 'study_reference' else 'The study reference outlook'))
+    if output['status'] == 'suppressed':
+        st.warning(output['reason'])
+        st.stop()
+    st.markdown('## '+('Your outlook, over time' if output['estimate_mode'] == 'assessment' else 'Your conditional outlook' if output['estimate_mode'] != 'study_reference' else 'The study reference outlook'))
     if output['estimate_mode'] == 'study_reference':
         st.info('No usable model answers were supplied, so this is the fitted study reference—not a personalized prediction. Add answers to build a more informed scenario.')
-    elif output['estimate_mode'] == 'scenario':
-        st.info('This is a hypothetical scenario for an adult former established smoker who has quit for more than 30 days, using your compatible answers. The model has not been validated for your reported profile; this is not a personal forecast for current smoking, recent use, never-smokers or minors.')
     elif output['estimate_mode'] == 'profile_unconfirmed':
         st.info('This estimate assumes an adult former established smoker with no current or past-30-day smoking. Some profile answers are unknown, so it is a conditional scenario rather than a confirmed profile match.')
-    if output['excluded_inputs']:
-        st.caption('Your recent-use duration was retained in your answer summary but excluded from this quit-for-over-30-days scenario. The model uses its fitted missing-value handling for that input.')
+    weak = [h for h, e in output['horizon_evidence'].items() if not e['beats_no_input_baseline']]
+    if weak:
+        st.warning('Short horizons are the least reliable: at ≈ ' + ', '.join(weak) + ' months the model did not beat a no-information baseline on held-out data. Treat those percentages as uninformative; use the longer horizons.')
     st.caption('Estimated first reported return to current smoking. Each percentage is cumulative by that approximate month horizon, not an additional monthly risk.')
     a, b, c = st.columns(3)
     a.metric(f'Chance by approx. {output["horizon_months"]} months', f'{100*output["probability"]:.1f}%')
@@ -178,7 +180,7 @@ if output:
         st.caption(f'At {output["horizon_months"]} months, the {evidence_name} had held-out ROC-AUC {reliability["test_roc_auc"]:.3f}{interval_text}. This is group-level discrimination, not your chance of the prediction being correct or validation for a partial/out-of-profile scenario. Mean predicted risk was {100*reliability["test_mean_probability"]:.1f}% versus {100*reliability["test_observed_risk"]:.1f}% observed after censoring adjustment.')
     outlook_tab, factors_tab, details_tab = st.tabs(['Probability timeline', 'Contributing factors', 'How to read your result'])
     with outlook_tab:
-        cards = ''.join(f'<div class="outlook-card {"featured" if p["months"] == 18 else ""}"><dt>Within ≈ {p["months"]} months</dt><dd>{100*p["probability"]:.1f}%</dd><small>Cumulative probability</small></div>' for p in output['curve'])
+        cards = ''.join(f'<div class="outlook-card {"featured" if p["months"] == 18 else ""}"><dt>Within ≈ {p["months"]} months</dt><dd>{100*p["probability"]:.1f}%</dd><small>{"Cumulative · not better than baseline" if not output["horizon_evidence"][str(p["months"])]["beats_no_input_baseline"] else "Cumulative probability"}</small></div>' for p in output['curve'])
         st.html('<dl class="outlook-grid" aria-label="Probabilities by approximate follow-up horizon">'+cards+'</dl>')
         chart_data = pd.DataFrame(output['curve']).assign(percentage=lambda f: 100*f['probability'])
         base = alt.Chart(chart_data).encode(
@@ -231,5 +233,7 @@ with st.expander('Research evidence & limitations'):
     st.markdown('[FDA wave collection dates]('+config['timing_source']+')')
     st.caption('Local documentation: docs/longitudinal_v2.md · reports/longitudinal_v2_1/results.json')
 reference = results['metrics'][str(config['default_horizon_months'])]['model']
-st.caption(f'Probability limitation: at {config["default_horizon_months"]} months, the mean held-out estimate was {100*reference["mean_predicted_risk"]:.1f}% versus {100*reference["ipcw_observed_risk"]:.1f}% censor-adjusted observed risk. The model underestimates average risk; percentages are not precise personal probabilities.')
+direction = 'underestimates' if reference['mean_predicted_risk'] < reference['ipcw_observed_risk'] else 'overestimates'
+short = [h for h in results['supported_horizons_months'] if results['metrics'][str(h)]['model']['mean_predicted_risk'] > results['metrics'][str(h)]['model']['ipcw_observed_risk']]
+st.caption(f'Probability limitation: at {config["default_horizon_months"]} months, the mean held-out estimate was {100*reference["mean_predicted_risk"]:.1f}% versus {100*reference["ipcw_observed_risk"]:.1f}% censor-adjusted observed risk, so the model {direction} average risk there. Calibration differs by horizon' + (f' (it overestimates at ≈ {", ".join(map(str, short))} months)' if short else '') + '; percentages are not precise personal probabilities.')
 st.html('<div class="page-footer"><span>reclaim / CSE366 · Consecutive-wave research model</span><span>Local inference · No answer files · No external prediction API</span></div>')

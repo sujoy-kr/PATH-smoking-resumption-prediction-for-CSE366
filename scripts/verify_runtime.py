@@ -12,15 +12,19 @@ def verify(root=ROOT):
     root = Path(root)
     # These packages affect loading, numeric predictions or the current UI.
     expected = json.loads((root/'configs/runtime_handoff.json').read_text())
-    errors = []
+    errors, notes = [], []
+    # Packages that change unpickling or numbers are strict; UI-only ones warn.
+    strict = {'numpy', 'pandas', 'scikit-learn', 'scipy', 'joblib'}
     for package, pinned in expected['core_versions'].items():
         try:
             actual = metadata.version(package)
         except metadata.PackageNotFoundError:
-            errors.append(f'{package}: not installed (expected {pinned})')
+            (errors if package in strict or package == 'streamlit' else notes).append(f'{package}: not installed (expected {pinned})')
             continue
         if actual != pinned:
-            errors.append(f'{package}: installed {actual}, expected {pinned}')
+            (errors if package in strict else notes).append(f'{package}: installed {actual}, expected {pinned}')
+    for note in notes:
+        print(f'Warning (UI-only package differs): {note}', file=sys.stderr)
     if errors:
         raise ValueError('Dependency mismatch:\n'+'\n'.join(errors)+
             '\nInstall the app dependencies with: python -m pip install -r requirements-app.txt')
@@ -37,6 +41,11 @@ def verify(root=ROOT):
     for case in fixture['profiles']:
         result = assess_available(root, bundle, case['answers'], case['profile_answers'])
         saved = case['expected']
+        if saved.get('status') == 'suppressed':
+            if result.get('status') != 'suppressed' or 'probability' in result:
+                raise ValueError(f'Fictional profile {case["name"]}: expected suppression.')
+            checks.append(case['name'])
+            continue
         for key in ['estimate_mode', 'risk_level', 'provided']:
             if result[key] != saved[key]:
                 raise ValueError(f'Fictional profile {case["name"]}: {key} differs.')

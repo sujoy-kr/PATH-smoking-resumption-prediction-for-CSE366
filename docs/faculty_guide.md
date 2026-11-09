@@ -12,7 +12,7 @@ for the older next-survey classifier are historical references.
 4. Show the 36-month relative risk group and contributing factors for the same
    probability. Contributions plus the model reference equal the displayed risk.
 5. Explain timing and reliability limitations. Unknown/unsupported profiles are
-   conditional scenarios; a blank assessment shows the no-input study reference.
+   suppression of out-of-profile or too-sparse answers; a blank assessment shows the no-input study reference.
 
 ## Questions to be ready for
 
@@ -49,7 +49,7 @@ protocol for the selection rule and preserved validation results.
 
 **How sure is an individual prediction?** Personal confidence has not been
 validated. The app distinguishes input completeness, profile support and group
-test evidence. Partial/out-of-profile scenario accuracy is unvalidated.
+test evidence. Out-of-profile profiles are suppressed; accuracy for partial answers is unvalidated. At 12 months the model did not beat the no-input baseline (Brier 0.0311 vs 0.0305) and overestimates risk (5.1% vs 3.0%); 36-month risk is underestimated (13.6% vs 17.3%).
 
 **Where do predictions come from?** The included frozen model in
 `artifacts/longitudinal_v2_1/model.joblib`, not a live search through survey rows.

@@ -67,8 +67,8 @@ health and recent emotional problems. Four profile questions establish context.
 Fixed-choice controls prevent arbitrary category entry.
 
 Partial answers use fitted missing-value handling. Unknown profile answers
-produce conditional estimates; unsupported profiles produce explicitly labeled
-hypothetical adult former-smoker scenarios. With no usable model answers, the
+produce conditional estimates; unsupported profiles are suppressed with an explanation, as are
+submissions with fewer than six usable answers or no recency answer. With no usable model answers, the
 app shows the fitted study reference rather than a personal prediction. These
 fallbacks do not expand the model's validated population.
 
@@ -214,7 +214,7 @@ risk. See the [full protocol](docs/longitudinal_v2.md),
 - Risk levels are relative calibration-score groups, not medical thresholds.
   Contributing factors explain model associations, not causes.
 - Individual confidence, actual month-of-resumption error, and performance for
-  partial/out-of-profile scenarios are not validated. Complete answers do not
+  personalized estimates for partial answers are not validated. Complete answers do not
   guarantee a precise prediction.
 - This unweighted U.S. study does not establish national representativeness,
   clinical usefulness or performance for present-day users or other countries.

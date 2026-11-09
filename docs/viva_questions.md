@@ -1,3 +1,5 @@
+> **Historical (v1 next-survey model).** Not the current v2.1 consecutive-wave app; see docs/faculty_guide.md and docs/known_limitations.md.
+
 # Viva questions and short answers
 
 ## What exactly is predicted?

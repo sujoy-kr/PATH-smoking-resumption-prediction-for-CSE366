@@ -1,8 +1,10 @@
 """Available-answer UI estimates, with explicit population and evidence scope.
 
-Does not expand the frozen model's validated population. Unsupported profiles
-receive a labeled hypothetical scenario; no-answer submissions receive the
-separate fitted study baseline, never a fabricated personal probability.
+Does not expand the frozen model's validated population. Out-of-profile
+answers (not an adult former established smoker, or use in the past 30 days)
+and submissions with too few answers are suppressed, never scored. No-answer
+submissions receive the separate fitted study baseline, never a fabricated
+personal probability.
 """
 import json
 import math
@@ -23,7 +25,7 @@ def assess_available(root, bundle, answers, eligibility):
         raise BoundaryError('Profile context has an unexpected shape.')
     unknown, outside = [], []
     for i, (value, gate) in enumerate(zip(eligibility, spec['eligibility_questions'])):
-        if value is None or value == gate['options'][-1]:
+        if value is None or str(value).lower().startswith(("don't know", 'dont know', 'prefer not')):
             unknown.append(i)
         elif value not in gate['options']:
             raise BoundaryError('Unknown profile response.')
@@ -44,6 +46,13 @@ def assess_available(root, bundle, answers, eligibility):
             excluded.append('last_cigarette_recency_days')
     values, reasons = encode_app_answers(root, usable, 7)
     supplied = sum(reasons[f] == 'observed' for f in features)
+    required = math.ceil(len(features)*bundle['config']['minimum_answers_fraction'])
+    if supplied and (outside or excluded):
+        return {'status': 'suppressed', 'estimate_mode': 'suppressed', 'provided': supplied, 'expected': len(features),
+            'reason': 'The model only covers adults who smoked at least 100 cigarettes, have quit and have not smoked in the past 30 days. Your answers fall outside that group, so no probability is shown.'}
+    if supplied and (supplied < required or reasons['last_cigarette_recency_days'] != 'observed'):
+        return {'status': 'suppressed', 'estimate_mode': 'suppressed', 'provided': supplied, 'expected': len(features),
+            'reason': f'Please give the time since your last cigarette and at least {required} of the {len(features)} answers. With fewer, a probability would be unreliable. Unknown answers are allowed up to that limit.'}
     missing = [f for f in features if reasons[f] != 'observed']
     model = bundle['model'] if supplied else bundle['baseline']
     row = pd.DataFrame([{f: values[f] for f in model.features}], dtype=float)
@@ -57,10 +66,19 @@ def assess_available(root, bundle, answers, eligibility):
     maximum = max(horizons)
     median = float(12*(np.log(2)/np.exp(model.log_rate(row)[0]))**(1/model.shape)) if curve[-1] >= .5 else None
     base, factors = exact_feature_shap(model, bundle['background'], row, horizon)
-    mode = 'study_reference' if supplied == 0 else 'scenario' if outside or excluded else 'profile_unconfirmed' if unknown else 'assessment'
-    support = {'study_reference': 'Study reference only', 'scenario': 'Hypothetical former-smoker scenario',
+    mode = 'study_reference' if supplied == 0 else 'profile_unconfirmed' if unknown else 'assessment'
+    support = {'study_reference': 'Study reference only',
                'profile_unconfirmed': 'Former-smoker profile unconfirmed', 'assessment': 'Matches the study profile'}[mode]
     metric = result['metrics'][str(horizon)]['model' if supplied else 'no_input_baseline']
+    # Per-horizon evidence: the fitted model must beat the no-input baseline and
+    # its mean estimate must be reported against censor-adjusted observed risk.
+    evidence = {}
+    for h in horizons:
+        pair = result['metrics'][str(h)]
+        m, b = pair['model'], pair['no_input_baseline']
+        evidence[str(h)] = {'beats_no_input_baseline': bool(m['ipcw_brier'] < b['ipcw_brier']),
+            'test_roc_auc': m['ipcw_roc_auc'], 'mean_predicted_risk': m['mean_predicted_risk'],
+            'observed_risk': m['ipcw_observed_risk']}
     reliability = {
         'label': 'Limited', 'profile_support': support,
         'answer_coverage_percent': 100*supplied/len(features),
@@ -81,4 +99,4 @@ def assess_available(root, bundle, answers, eligibility):
         'conditional_median_months': float(model.conditional_median(row, maximum)[0]),
         'conditional_window_months': maximum, 'explanation_reference': base, 'factors': factors,
         'provided': supplied, 'expected': len(features), 'timing_basis': config['timing_assumption'],
-        'reliability': reliability}
+        'reliability': reliability, 'horizon_evidence': evidence}

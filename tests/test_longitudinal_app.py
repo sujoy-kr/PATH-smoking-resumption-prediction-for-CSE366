@@ -87,17 +87,15 @@ def test_eligibility_conflict_specific_errors_and_correction():
     app.radio(key=profile+'_gate_3').set_value('Yes')
     submit(app)
     assert not app.exception and not app.error
-    assert record(app)['estimate_mode'] == 'scenario'
-    assert any('hypothetical scenario' in i.value for i in app.info)
+    assert any('outside that group' in w.value for w in app.warning)
+    assert not app.json
     app.radio(key=profile+'_gate_3').set_value('No').run()
     assert not app.error
     app.radio(key=profile+'_recency_unit').set_value('1')
     app.number_input(key=profile+'_recency_number').set_value(2)
     submit(app)
     assert not app.exception and not app.error
-    assert record(app)['estimate_mode'] == 'scenario'
-    assert record(app)['excluded_inputs'] == ['last_cigarette_recency_days']
-    assert record(app)['provided'] == 7
+    assert any('outside that group' in w.value for w in app.warning)
     app.radio(key=profile+'_recency_unit').set_value('2').run()
     assert not app.error
     submit(app)
@@ -114,22 +112,44 @@ def test_unknown_answers_are_optional_and_missing_number_is_explicit():
     app.number_input(key=profile+'_recency_number').set_value(None)
     submit(app)
     assert not app.exception and not app.error
-    assert record(app)['provided'] == 5
-    assert 'last_cigarette_recency_days' in record(app)['missing_inputs']
+    assert any('time since your last cigarette' in w.value for w in app.warning)
 
 
-def test_partial_profile_and_reliability_never_claim_personal_confidence():
+def test_too_few_answers_are_suppressed_not_scored():
     app = launch()
     app.radio(key='My assessment_age_band').set_value('3')
     submit(app)
     assert not app.exception and not app.error
+    assert any('at least 6 of the 8' in w.value for w in app.warning)
+    assert not app.json and not app.metric
+
+
+def test_reliability_never_claims_personal_confidence_and_flags_weak_horizons():
+    app = launch('Example · recent quit')
+    submit(app)
     output = record(app)
-    assert output['provided'] == 1
-    assert output['estimate_mode'] == 'profile_unconfirmed'
-    assert output['reliability']['answer_coverage_percent'] == 12.5
+    assert output['estimate_mode'] == 'assessment'
     assert output['reliability']['personal_confidence_percent'] is None
     assert output['reliability']['label'] == 'Limited'
+    assert output['horizon_evidence']['12']['beats_no_input_baseline'] is False
+    assert output['horizon_evidence']['36']['beats_no_input_baseline'] is True
+    assert any('did not beat a no-information baseline' in w.value for w in app.warning)
     assert any('percent sure' in m.value for m in app.markdown)
+
+
+def test_assessment_suppresses_out_of_profile_and_matches_gate_by_text():
+    from path_project.assessment import assess_available
+    bundle = load_study(ROOT)
+    spec = json.loads((ROOT/'configs/app_questions.json').read_text())
+    gates = [q['required_answer'] for q in spec['eligibility_questions']]
+    answers = {'age_band': '2', 'education_level': '4', 'employment_status': '1',
+        'last_cigarette_recency_days': {'number': 6, 'unit': '2'},
+        'electronic_nicotine_p30d': '0', 'household_tobacco_any': '0',
+        'mental_health': '2', 'emotional_problems_7d': '2'}
+    assert assess_available(ROOT, bundle, answers, ['Yes', 'Yes', 'Some days', 'No'])['status'] == 'suppressed'
+    unsure = [q['options'][-1] for q in spec['eligibility_questions']]
+    assert assess_available(ROOT, bundle, answers, unsure)['estimate_mode'] == 'profile_unconfirmed'
+    assert assess_available(ROOT, bundle, {**answers, 'last_cigarette_recency_days': {'number': 5, 'unit': '1'}}, gates)['status'] == 'suppressed'
 
 
 def test_supported_profile_keeps_identical_frozen_prediction():

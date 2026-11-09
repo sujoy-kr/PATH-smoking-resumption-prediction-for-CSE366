@@ -1,3 +1,5 @@
+> **Historical (v1 next-survey model).** Not the current v2.1 consecutive-wave app; see docs/faculty_guide.md and docs/known_limitations.md.
+
 # Presentation outline
 
 A 10–12 minute presentation plus a short local demonstration. Keep the original proposal PPTX unchanged; this is an outline for a future revised deck. Use only aggregate figures and fictional app presets.
