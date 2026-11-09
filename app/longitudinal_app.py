@@ -28,7 +28,7 @@ def heading(number, title, copy):
 
 st.html('<div class="brand"><div class="brand-name"><span class="brand-mark">↗</span>reclaim<span style="color:#8a9da8;font-weight:400"> / </span></div><div class="brand-meta">Your quit journey, in perspective</div></div>')
 st.html('''<section class="hero"><div class="eyebrow">A clearer view of what comes next</div>
-<h1>Where are you on your smoking journey?<br>Understand your outlook.</h1>
+<h1>Where are you on your smoking journey? Understand your outlook.</h1>
 <p>Whether you have quit, still smoke or have never smoked regularly, answer a few questions to see the estimated chance of what happens next (returning, stopping or starting) over time, and the factors behind it.</p>
 <div class="hero-chips"><span>Up to 10 questions + 4 profile questions</span><span>No account needed</span><span>Answers stay in this session</span></div></section>''')
 st.caption('Survey-based research estimate · Months are approximate: a return is only known to fall between two survey interviews. Personal and clinical accuracy are unvalidated.')
