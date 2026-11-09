@@ -2,7 +2,7 @@
 
 ## Current application
 
-The active project is the **interval-censored v2.2 survival model** ([protocol](longitudinal_v2_2.md)); v2.1 is retired history. Start with
+The active project is the **interval-censored v2.3 survival model** ([protocol](longitudinal_v2_3.md)); v2.1 is retired history. Start with
 [the v2.1 protocol (superseded)](longitudinal_v2.md), [the app guide](../app/README.md),
 [team setup](../TEAM_SETUP.md) and the corrected results in
 `reports/longitudinal_v2_1/`. Launch with `run_app.py`.

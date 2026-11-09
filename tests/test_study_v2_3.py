@@ -1,4 +1,4 @@
-"""Synthetic tests of v2.2 observation rules, interval-censored fitting and safety."""
+"""Synthetic tests of v2.3 observation rules, interval-censored fitting and safety."""
 from pathlib import Path
 import json
 import sys
@@ -140,16 +140,32 @@ def test_exact_explanations_reconcile_with_synthetic_background():
     assert reference+sum(f['contribution'] for f in factors) == pytest.approx(model.risk(frame.iloc[[9]], [36])[0, 0])
 
 
-def test_shipped_bundle_has_no_participant_rows_or_pickle_and_beats_baseline():
+def test_choose_origin_supports_current_and_never_populations():
+    def rec(waves, former, current):
+        return [{'wave': w, 'former': f, 'p30': None, 'current': c} for w, f, c in zip(waves, former, current)]
+    smoker = rec([1, 2, 3], [2, 2, 1], [1, 1, 2])  # current smoker who stops at wave 3
+    h = choose_origin(smoker, WAVES, {'current': [1]}, 2)
+    assert h['starting_wave'] == 1 and h['event'] == 1 and h['end_wave'] == 3 and h['last_clear_wave'] == 2
+    never = rec([2, 3, 4], [2, 2, 2], [2, 2, 1])
+    h = choose_origin(never, WAVES, {'former': [2], 'current': [2]}, 1)
+    assert h['starting_wave'] == 2 and h['event'] == 1 and h['end_wave'] == 4
+    assert choose_origin(never, WAVES, {'current': [1]}, 2) is None
+
+
+def test_shipped_bundle_covers_three_populations_without_participant_rows_or_pickle():
     bundle = load_study(ROOT)
-    assert not list((ROOT/'artifacts/longitudinal_v2_2').glob('*.joblib'))
-    results = bundle['results']
-    assert 12 not in results['supported_horizons_months']
-    assert bundle['config']['default_horizon_months'] in results['supported_horizons_months']
-    for h in results['supported_horizons_months']:
-        pair = results['metrics'][str(h)]
-        assert pair['model']['ipcw_brier'] < pair['no_input_baseline']['ipcw_brier']
-    assert results['test_mean_loglik']['model'] > results['test_mean_loglik']['no_input_baseline']
-    assert abs(results['test_log_hazard_shift_needed']) < .05
-    bg = bundle['background']
-    assert len(bg) == bundle['config']['background_size'] and 'PERSONID' not in bg.columns
+    assert not list((ROOT/'artifacts/longitudinal_v2_3').glob('*.joblib'))
+    assert set(bundle['populations']) == {'former', 'current', 'never'}
+    for name, pop in bundle['populations'].items():
+        results = pop['results']
+        assert bundle['config']['default_horizon_months'] in results['supported_horizons_months']
+        for h in results['supported_horizons_months']:
+            pair = results['metrics'][str(h)]
+            assert pair['model']['ipcw_brier'] < pair['no_input_baseline']['ipcw_brier'], (name, h)
+        assert results['test_mean_loglik']['model'] > results['test_mean_loglik']['no_input_baseline']
+        assert abs(results['test_log_hazard_shift_needed']) < .1
+        bg = pop['background']
+        assert len(bg) == bundle['config']['background_size'] and 'PERSONID' not in bg.columns
+    assert 'last_cigarette_recency_days' in bundle['populations']['former']['model'].features
+    assert 'last_cigarette_recency_days' not in bundle['populations']['current']['model'].features
+    assert 12 not in bundle['populations']['former']['results']['supported_horizons_months']

@@ -1,6 +1,6 @@
 # Teammate and faculty setup
 
-The handoff includes the **already-trained interval-censored v2.2 model**, application,
+The handoff includes the **already-trained interval-censored v2.3 model**, application,
 exact prediction checks, source, configuration and aggregate research evidence.
 You do not need PATH files, processed participant histories, a GPU or API keys to
 run the active app and its current-model tests.
@@ -42,13 +42,13 @@ verified; the clean handoff was tested with the existing Linux environment.
 ```bash
 .venv/bin/python scripts/verify_runtime.py
 .venv/bin/python -m pip install -r requirements-test.txt
-.venv/bin/python -m pytest tests/test_study_v2_2.py tests/test_longitudinal_app.py tests/test_runtime_handoff.py -q -p no:cacheprovider
+.venv/bin/python -m pytest tests/test_study_v2_3.py tests/test_longitudinal_app.py tests/test_runtime_handoff.py -q -p no:cacheprovider
 ```
 
 Use the Windows interpreter path above when appropriate. The complete current
 suite tests the active model and interface without raw data. You can also run
 `python -m pytest -q -p no:cacheprovider` with the chosen environment interpreter.
-`scripts/verify_longitudinal_v2_2.py` is the full research verifier: it requires raw
+`scripts/verify_longitudinal_v2_3.py` is the full research verifier: it requires raw
 PATH files and the processed cohort, unlike `verify_runtime.py`.
 
 Restored research code/tests and older reports are included for development and
@@ -60,7 +60,7 @@ the current application.
 
 ## Included prediction bundle
 
-`artifacts/longitudinal_v2_2/model.json` is the trained v2.2 model as plain JSON:
+`artifacts/longitudinal_v2_3/model.json` is the trained v2.3 model as plain JSON:
 coefficients, preprocessing parameters and a 128-row *synthetic* explanation
 background (independent draws from training marginals). It contains no
 participant rows, PERSONIDs, raw survey files or histories, and no pickle is
@@ -80,7 +80,7 @@ month-of-resumption precision are not established by successful setup checks.
 
 | Problem | Action |
 |---|---|
-| Model missing after download | Check that `artifacts/longitudinal_v2_2/model.json` was included in the repository/archive. |
+| Model missing after download | Check that `artifacts/longitudinal_v2_3/model.json` was included in the repository/archive. |
 | Dependency mismatch | Use the same virtual environment for install, checks and launch; install `requirements-app.txt`. |
 | Fingerprint mismatch | Restore the complete original bundle, including configs and metadata dictionaries. Do not edit checksums to force a pass. |
 | Prediction regression mismatch | Stop and check Python/dependency versions and bundle integrity. Do not retrain to imitate expected values. |

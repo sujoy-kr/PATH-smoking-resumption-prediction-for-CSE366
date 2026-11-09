@@ -32,10 +32,10 @@ def verify(root=ROOT):
     from path_project.study import load_study
     from path_project.assessment import assess_available
     bundle = load_study(root)
-    features = bundle['model'].features
-    background = bundle['background']
-    if list(background.columns) != features or background.shape != (bundle['config']['background_size'], len(features)):
-        raise ValueError('Unexpected explanation reference schema; no values emitted.')
+    for name, pop in bundle['populations'].items():
+        background = pop['background']
+        if list(background.columns) != pop['model'].features or background.shape != (bundle['config']['background_size'], len(pop['model'].features)):
+            raise ValueError(f'{name}: unexpected explanation reference schema; no values emitted.')
     fixture = json.loads((root/'tests/fixtures/handoff_profiles.json').read_text())
     checks = []
     for case in fixture['profiles']:
@@ -46,7 +46,7 @@ def verify(root=ROOT):
                 raise ValueError(f'Fictional profile {case["name"]}: expected suppression.')
             checks.append(case['name'])
             continue
-        for key in ['estimate_mode', 'risk_level', 'provided']:
+        for key in ['estimate_mode', 'risk_level', 'provided', 'population']:
             if result[key] != saved[key]:
                 raise ValueError(f'Fictional profile {case["name"]}: {key} differs.')
         if not math.isclose(result['probability'], saved['probability'], rel_tol=0, abs_tol=1e-10):

@@ -1,4 +1,4 @@
-# Faculty presentation guide — current v2.2 interval-censored model
+# Faculty presentation guide — current v2.3 interval-censored model
 
 This guide describes the active model. Restored reports and presentation notes
 for the older next-survey classifier are historical references.
@@ -16,44 +16,28 @@ for the older next-survey classifier are historical references.
 
 ## Questions to be ready for
 
-**Who is in the dataset?** 9,593 former established smokers with an eligible baseline and at
-least one follow-up interview. There are 2,311 first reported returns and 7,282
-without an observed return before follow-up ended.
+**Who is covered?** Any adult: former smokers, current smokers and adults with fewer
+than 100 lifetime cigarettes, each with its own model (about 10,400 / 14,300 / 28,600
+people). Under-18s are not covered because the adult PATH files contain no minors.
 
-**What is being predicted?** First reported current established smoking after
-baseline, meaning every-day or some-day smoking. This is not an exact
-first-cigarette date or proof of permanent relapse.
+**What is predicted?** Former smokers: first reported return to current smoking. Current
+smokers: first reported stopping (may be temporary). Never-established: first reported
+current established smoking. Not exact dates or lasting change.
 
-**How are months obtained?** Interval-censored: a return lies between two interviews; interview times are window midpoints.
-Individual interview dates and actual resumption times are unavailable. Month
-outputs depend on this clock and a parametric survival assumption.
+**How are months obtained?** Interval-censored: an event lies between two interviews;
+interview times are wave-window midpoints.
 
-**Why a survival model?** It incorporates variable observation duration and
-participants whose follow-up ends without an observed return. Those participants
-are not treated as known permanent abstainers. Censoring and attendance-selection
-assumptions can still be wrong.
+**What was selected?** Per population, an interval-censored penalized proportional-hazards
+model with a piecewise baseline; inputs and penalty chosen on validation log-likelihood.
 
-**How was leakage controlled?** One origin per participant, baseline answers
-only, disjoint fitting/selection/calibration/test participants. Transformations
-are fitted in development only; final test results do not guide retuning.
+**What performance can be claimed?** 36-month ROC-AUC 0.81 (former), 0.69 (current),
+0.78 (never-established); every shown horizon beats a no-input model.
+Current-smoker discrimination is modest. AUC is ranking, not "percent accurate".
 
-**What was selected?** An eight-input penalized proportional-hazards model with a
-piecewise-exponential baseline and an interval-censored likelihood, chosen by
-held-out log-likelihood over two input sets and three penalties. See
-[longitudinal_v2_2.md](longitudinal_v2_2.md).
+**How sure is an individual prediction?** Personal confidence is not validated. The app
+withholds a result only for under-18s, un-routable or contradictory answers, or too few answers.
 
-**What performance can be claimed?** Held-out ROC-AUC 0.736 (18 months), 0.781
-(36 months, 95% interval 0.757-0.809) and 0.790 (60 months); Brier at 36 months
-0.118 vs 0.141 without inputs. At 36 months the mean estimate was 22.4% against an
-observed-risk range of 18.1-23.1%; at 60 months the estimate (25.4%) is 0.3 points
-above its range. AUC is ranking performance, not "percent accurate" or personal
-confidence. The 12-month horizon is not shown because it did not beat a
-no-input baseline.
-
-**How sure is an individual prediction?** Personal confidence has not been
-validated. Out-of-profile or too-sparse answers get no probability.
-
-**Where do predictions come from?** `artifacts/longitudinal_v2_2/model.json`, plain
+**Where do predictions come from?** `artifacts/longitudinal_v2_3/model.json`, plain
 JSON coefficients and preprocessing parameters; no pickle and no participant
 rows (explanations use synthetic independent draws from training marginals).
 

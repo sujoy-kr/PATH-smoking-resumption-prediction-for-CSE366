@@ -1,20 +1,20 @@
 {
-  "purpose": "Fictional software regression profiles for the v2.2 JSON model. Not participants or outcomes.",
+  "purpose": "Fictional software regression profiles for the v2.3 multi-population JSON model. Not participants or outcomes.",
   "profiles": [
     {
       "name": "fictional_recent_quit",
       "answers": {
-        "age_band": "2",
-        "education_level": "4",
+        "age_band": "3",
+        "education_level": "3",
         "employment_status": "1",
+        "electronic_nicotine_p30d": "1",
+        "household_tobacco_any": "1",
+        "mental_health": "3",
+        "emotional_problems_7d": "3",
         "last_cigarette_recency_days": {
           "number": 6,
           "unit": "2"
-        },
-        "electronic_nicotine_p30d": "1",
-        "household_tobacco_any": "1",
-        "mental_health": "4",
-        "emotional_problems_7d": "4"
+        }
       },
       "profile_answers": [
         "Yes",
@@ -23,83 +23,84 @@
         "No"
       ],
       "expected": {
-        "probability": 0.3520587705806645,
+        "probability": 0.3493966867076325,
         "curve": [
           {
             "months": 18,
-            "probability": 0.25457872837569784
+            "probability": 0.26329838154262464
           },
           {
             "months": 24,
-            "probability": 0.29578411571385416
+            "probability": 0.29782395031818715
           },
           {
             "months": 36,
-            "probability": 0.3520587705806645
+            "probability": 0.3493966867076325
           },
           {
             "months": 48,
-            "probability": 0.38308452930618764
+            "probability": 0.37962334487134036
           },
           {
             "months": 60,
-            "probability": 0.3990709851704893
+            "probability": 0.39288888002685807
           }
         ],
         "risk_level": "Higher",
         "provided": 8,
         "estimate_mode": "assessment",
-        "conditional_median_months": 11.271813812963405,
+        "conditional_median_months": 10.189351949325246,
         "factors": [
           {
             "feature": "last_cigarette_recency_days",
-            "contribution": 0.1358064567668403
+            "contribution": 0.05687151705505349
           },
           {
             "feature": "age_band",
-            "contribution": 0.05514506662723848
+            "contribution": 0.02616032399571596
           },
           {
             "feature": "employment_status",
-            "contribution": -0.021787066355274814
+            "contribution": -0.015355577356355742
           },
           {
             "feature": "electronic_nicotine_p30d",
-            "contribution": -0.017712666781715285
-          },
-          {
-            "feature": "emotional_problems_7d",
-            "contribution": -0.012217014285960644
-          },
-          {
-            "feature": "education_level",
-            "contribution": -0.00665017581235627
-          },
-          {
-            "feature": "household_tobacco_any",
-            "contribution": 0.004701494983844178
+            "contribution": -0.013914125789019292
           },
           {
             "feature": "mental_health",
-            "contribution": 0.003497341120797978
+            "contribution": 0.013376547800340132
+          },
+          {
+            "feature": "household_tobacco_any",
+            "contribution": 0.01158503086264975
+          },
+          {
+            "feature": "education_level",
+            "contribution": 0.011273103493455637
+          },
+          {
+            "feature": "emotional_problems_7d",
+            "contribution": -0.0049726906029044764
           }
-        ]
+        ],
+        "population": "former"
       }
     },
     {
       "name": "fictional_longer_quit",
       "answers": {
         "age_band": "5",
-        "education_level": "5",
+        "education_level": "3",
         "employment_status": "1",
+        "electronic_nicotine_p30d": "1",
+        "household_tobacco_any": "1",
+        "mental_health": "2",
+        "emotional_problems_7d": "3",
         "last_cigarette_recency_days": {
           "number": 8,
           "unit": "3"
-        },
-        "electronic_nicotine_p30d": "0",
-        "household_tobacco_any": "0",
-        "mental_health": "2",
-        "emotional_problems_7d": "2"
+        }
       },
       "profile_answers": [
         "Yes",
@@ -108,117 +109,415 @@
         "No"
       ],
       "expected": {
-        "probability": 0.051576503991349255,
+        "probability": 0.11473483663466347,
         "curve": [
           {
             "months": 18,
-            "probability": 0.03521708363795817
+            "probability": 0.08298613088235587
           },
           {
             "months": 24,
-            "probability": 0.041888536317405294
+            "probability": 0.09538044111198815
           },
           {
             "months": 36,
-            "probability": 0.051576503991349255
+            "probability": 0.11473483663466347
           },
           {
             "months": 48,
-            "probability": 0.05723832316088032
+            "probability": 0.1265946800700985
           },
           {
             "months": 60,
-            "probability": 0.060253943971167755
+            "probability": 0.13193058477649544
           }
         ],
         "risk_level": "Lower",
         "provided": 8,
         "estimate_mode": "assessment",
-        "conditional_median_months": 13.450024095269766,
+        "conditional_median_months": 11.214037140339505,
         "factors": [
           {
             "feature": "last_cigarette_recency_days",
-            "contribution": -0.0732423030551916
+            "contribution": -0.11411203201309734
           },
           {
             "feature": "age_band",
-            "contribution": -0.03898055163071906
-          },
-          {
-            "feature": "education_level",
-            "contribution": -0.03143523501837716
+            "contribution": -0.032656606979000184
           },
           {
             "feature": "employment_status",
-            "contribution": -0.01053936029623459
-          },
-          {
-            "feature": "household_tobacco_any",
-            "contribution": -0.006118788078632287
+            "contribution": -0.010341943955280335
           },
           {
             "feature": "electronic_nicotine_p30d",
-            "contribution": 0.0021473140414399097
+            "contribution": -0.009018716149212997
           },
           {
-            "feature": "emotional_problems_7d",
-            "contribution": -0.001410973947105685
+            "feature": "household_tobacco_any",
+            "contribution": 0.007432682265441978
+          },
+          {
+            "feature": "education_level",
+            "contribution": 0.007243524130138223
           },
           {
             "feature": "mental_health",
-            "contribution": -0.00011893234108082433
+            "contribution": 0.005089578174927625
+          },
+          {
+            "feature": "emotional_problems_7d",
+            "contribution": -0.0032742060879505774
           }
-        ]
+        ],
+        "population": "former"
       }
     },
     {
-      "name": "fictional_partial",
+      "name": "fictional_just_quit_20_days",
       "answers": {
-        "age_band": "3"
+        "age_band": "3",
+        "education_level": "3",
+        "employment_status": "1",
+        "electronic_nicotine_p30d": "1",
+        "household_tobacco_any": "1",
+        "mental_health": "3",
+        "emotional_problems_7d": "3",
+        "last_cigarette_recency_days": {
+          "number": 20,
+          "unit": "1"
+        }
       },
       "profile_answers": [
-        null,
-        null,
-        null,
-        null
+        "Yes",
+        "Yes",
+        "Not at all",
+        "Yes"
+      ],
+      "expected": {
+        "probability": 0.5874796003900017,
+        "curve": [
+          {
+            "months": 18,
+            "probability": 0.46711850977989394
+          },
+          {
+            "months": 24,
+            "probability": 0.5172856291668058
+          },
+          {
+            "months": 36,
+            "probability": 0.5874796003900017
+          },
+          {
+            "months": 48,
+            "probability": 0.6259878829298036
+          },
+          {
+            "months": 60,
+            "probability": 0.6422755555435942
+          }
+        ],
+        "risk_level": "Higher",
+        "provided": 8,
+        "estimate_mode": "assessment",
+        "conditional_median_months": 8.76027179998812,
+        "factors": [
+          {
+            "feature": "last_cigarette_recency_days",
+            "contribution": 0.28553189799740436
+          },
+          {
+            "feature": "age_band",
+            "contribution": 0.03335936400593524
+          },
+          {
+            "feature": "employment_status",
+            "contribution": -0.0176094793771907
+          },
+          {
+            "feature": "electronic_nicotine_p30d",
+            "contribution": -0.016330211411790002
+          },
+          {
+            "feature": "mental_health",
+            "contribution": 0.015962343716394777
+          },
+          {
+            "feature": "education_level",
+            "contribution": 0.01421952114059632
+          },
+          {
+            "feature": "household_tobacco_any",
+            "contribution": 0.013761080884160585
+          },
+          {
+            "feature": "emotional_problems_7d",
+            "contribution": -0.005787473814206042
+          }
+        ],
+        "population": "former"
+      }
+    },
+    {
+      "name": "fictional_current_smoker",
+      "answers": {
+        "age_band": "3",
+        "education_level": "3",
+        "employment_status": "1",
+        "electronic_nicotine_p30d": "1",
+        "household_tobacco_any": "1",
+        "mental_health": "3",
+        "emotional_problems_7d": "3",
+        "home_combustible_smoking_rules": "2",
+        "physical_health": "3",
+        "social_satisfaction": "3"
+      },
+      "profile_answers": [
+        "Yes",
+        "Yes",
+        "Every day",
+        "Yes"
+      ],
+      "expected": {
+        "probability": 0.1884479906171083,
+        "curve": [
+          {
+            "months": 18,
+            "probability": 0.11738523836097968
+          },
+          {
+            "months": 24,
+            "probability": 0.14615800340341353
+          },
+          {
+            "months": 36,
+            "probability": 0.1884479906171083
+          },
+          {
+            "months": 48,
+            "probability": 0.22632560967772364
+          },
+          {
+            "months": 60,
+            "probability": 0.26098437008888736
+          }
+        ],
+        "risk_level": "Lower",
+        "provided": 10,
+        "estimate_mode": "assessment",
+        "conditional_median_months": 20.70856349604393,
+        "factors": [
+          {
+            "feature": "age_band",
+            "contribution": -0.047283084770988
+          },
+          {
+            "feature": "home_combustible_smoking_rules",
+            "contribution": -0.03837481027058246
+          },
+          {
+            "feature": "household_tobacco_any",
+            "contribution": -0.027927711782950473
+          },
+          {
+            "feature": "employment_status",
+            "contribution": 0.022648298431432692
+          },
+          {
+            "feature": "electronic_nicotine_p30d",
+            "contribution": 0.01815234412509882
+          },
+          {
+            "feature": "education_level",
+            "contribution": -0.012327628848406765
+          },
+          {
+            "feature": "mental_health",
+            "contribution": -0.00812612428812039
+          },
+          {
+            "feature": "physical_health",
+            "contribution": -0.006450092297857596
+          },
+          {
+            "feature": "emotional_problems_7d",
+            "contribution": 0.004943078082975869
+          },
+          {
+            "feature": "social_satisfaction",
+            "contribution": -5.525219594838533e-05
+          }
+        ],
+        "population": "current"
+      }
+    },
+    {
+      "name": "fictional_never_smoked",
+      "answers": {
+        "age_band": "1",
+        "education_level": "3",
+        "employment_status": "1",
+        "electronic_nicotine_p30d": "1",
+        "household_tobacco_any": "1",
+        "mental_health": "3",
+        "emotional_problems_7d": "3",
+        "home_combustible_smoking_rules": "2",
+        "physical_health": "3",
+        "social_satisfaction": "3"
+      },
+      "profile_answers": [
+        "Yes",
+        "No",
+        "Not at all",
+        "No"
+      ],
+      "expected": {
+        "probability": 0.2664633005269828,
+        "curve": [
+          {
+            "months": 12,
+            "probability": 0.1653356557131916
+          },
+          {
+            "months": 18,
+            "probability": 0.19817584583356634
+          },
+          {
+            "months": 24,
+            "probability": 0.22972392602433356
+          },
+          {
+            "months": 36,
+            "probability": 0.2664633005269828
+          },
+          {
+            "months": 48,
+            "probability": 0.2973972322900393
+          },
+          {
+            "months": 60,
+            "probability": 0.31515500293138243
+          }
+        ],
+        "risk_level": "Higher",
+        "provided": 10,
+        "estimate_mode": "assessment",
+        "conditional_median_months": 11.385676003773067,
+        "factors": [
+          {
+            "feature": "electronic_nicotine_p30d",
+            "contribution": 0.10067188083898286
+          },
+          {
+            "feature": "household_tobacco_any",
+            "contribution": 0.055122479619186204
+          },
+          {
+            "feature": "home_combustible_smoking_rules",
+            "contribution": 0.04919479274661764
+          },
+          {
+            "feature": "age_band",
+            "contribution": -0.04655401846080391
+          },
+          {
+            "feature": "physical_health",
+            "contribution": 0.022990203902229743
+          },
+          {
+            "feature": "education_level",
+            "contribution": 0.015279578811726197
+          },
+          {
+            "feature": "mental_health",
+            "contribution": 0.006463046923933723
+          },
+          {
+            "feature": "social_satisfaction",
+            "contribution": 0.004418486716973952
+          },
+          {
+            "feature": "emotional_problems_7d",
+            "contribution": -0.0021344938099910993
+          },
+          {
+            "feature": "employment_status",
+            "contribution": 0.0017157364288335783
+          }
+        ],
+        "population": "never"
+      }
+    },
+    {
+      "name": "fictional_under_18",
+      "answers": {
+        "age_band": "3",
+        "education_level": "3",
+        "employment_status": "1",
+        "electronic_nicotine_p30d": "1",
+        "household_tobacco_any": "1",
+        "mental_health": "3",
+        "emotional_problems_7d": "3"
+      },
+      "profile_answers": [
+        "No",
+        "No",
+        "Not at all",
+        "No"
       ],
       "expected": {
         "status": "suppressed"
       }
     },
     {
-      "name": "study_reference",
+      "name": "fictional_too_few_answers",
+      "answers": {
+        "age_band": "3"
+      },
+      "profile_answers": [
+        "Yes",
+        "Yes",
+        "Not at all",
+        "No"
+      ],
+      "expected": {
+        "status": "suppressed"
+      }
+    },
+    {
+      "name": "fictional_conflicting_recency",
+      "answers": {
+        "age_band": "3",
+        "education_level": "3",
+        "employment_status": "1",
+        "electronic_nicotine_p30d": "1",
+        "household_tobacco_any": "1",
+        "mental_health": "3",
+        "emotional_problems_7d": "3",
+        "last_cigarette_recency_days": {
+          "number": 6,
+          "unit": "2"
+        }
+      },
+      "profile_answers": [
+        "Yes",
+        "Yes",
+        "Not at all",
+        "Yes"
+      ],
+      "expected": {
+        "status": "suppressed"
+      }
+    },
+    {
+      "name": "fictional_blank",
       "answers": {},
       "profile_answers": [
         null,
         null,
         null,
         null
-      ],
-      "expected": {
-        "status": "suppressed"
-      }
-    },
-    {
-      "name": "fictional_current_use_scenario",
-      "answers": {
-        "age_band": "2",
-        "education_level": "4",
-        "employment_status": "1",
-        "last_cigarette_recency_days": {
-          "number": 2,
-          "unit": "1"
-        },
-        "electronic_nicotine_p30d": "1",
-        "household_tobacco_any": "1",
-        "mental_health": "4",
-        "emotional_problems_7d": "4"
-      },
-      "profile_answers": [
-        "Yes",
-        "Yes",
-        "Some days",
-        "Yes"
       ],
       "expected": {
         "status": "suppressed"

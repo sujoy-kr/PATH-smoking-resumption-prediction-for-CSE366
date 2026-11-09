@@ -14,7 +14,7 @@ import pandas as pd
 from path_project.evaluation import BoundaryError
 from path_project.survival import PiecewiseHazardModel
 
-CONFIG = 'configs/longitudinal_v2_2.json'
+CONFIG = 'configs/longitudinal_v2_3.json'
 
 
 def read_config(root):
@@ -36,14 +36,18 @@ def load_study(root):
     if manifest['config_sha256'] != sha256(root/CONFIG):
         raise BoundaryError('Study configuration changed after training; retrain under a new version.')
     stored = json.loads((artifact/'model.json').read_text())
-    if stored.get('format') != 'reclaim-survival-json-v1':
+    if stored.get('format') != 'reclaim-survival-json-v2':
         raise BoundaryError('Unsupported model format.')
-    model = PiecewiseHazardModel.from_dict(stored['model'])
-    baseline = PiecewiseHazardModel.from_dict(stored['baseline'])
-    background = pd.DataFrame(stored['background']['rows'], columns=stored['background']['columns']).astype(float)
-    return {'model': model, 'baseline': baseline, 'background': background, 'config': config,
-            'results': json.loads((report/'results.json').read_text()),
-            'summary': json.loads((report/'summary.json').read_text())}
+    results = json.loads((report/'results.json').read_text())
+    summary = json.loads((report/'summary.json').read_text())['populations']
+    populations = {}
+    for name, item in stored['populations'].items():
+        populations[name] = {
+            'model': PiecewiseHazardModel.from_dict(item['model']),
+            'baseline': PiecewiseHazardModel.from_dict(item['baseline']),
+            'background': pd.DataFrame(item['background']['rows'], columns=item['background']['columns']).astype(float),
+            'spec': config['populations'][name], 'results': results[name], 'summary': summary[name]}
+    return {'populations': populations, 'config': config}
 
 
 def exact_feature_shap(model, background, row, horizon):

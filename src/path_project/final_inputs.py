@@ -48,7 +48,7 @@ def validate_final_inputs(root):
     return final,questions
 
 
-def encode_app_answers(root, answers, wave):
+def encode_app_answers(root, answers, wave, allow_recent=False):
     """Return values and explicit reason metadata; never fabricate an answer."""
     final,questions=validate_final_inputs(root)
     if str(wave) not in {str(w) for w in range(1,8)}:raise BoundaryError('Select a documented starting-wave context, 1–7.')
@@ -72,7 +72,7 @@ def encode_app_answers(root, answers, wave):
             if maximum is not None and number>maximum:raise BoundaryError('Recency quantity exceeds the documented entry width for this unit/context; do not truncate or invent a value.')
             value=number*entry['unit_multipliers'][unit]
             if not math.isfinite(value):raise BoundaryError('Recency conversion is not finite.')
-            if value<=30:raise BoundaryError('Recency conflicts with the no-past-30-day-use cohort; clarify eligibility rather than altering answers.')
+            if value<=30 and not allow_recent:raise BoundaryError('Recency conflicts with the no-past-30-day-use cohort; clarify eligibility rather than altering answers.')
         result[name]=value;reasons[name]='observed'
     return result,reasons
 

@@ -34,7 +34,7 @@ def test_blank_submission_shows_no_result_and_no_dropdowns():
     submit(app)
     assert not app.exception and not app.error
     assert not app.json and not app.metric
-    assert any('Please answer the questions above' in w.value for w in app.warning)
+    assert any('Please answer' in w.value for w in app.warning)
 
 
 @pytest.mark.parametrize('profile', ['Example · recent quit', 'Example · longer quit'])
@@ -65,6 +65,7 @@ def test_manual_complete_answers_work_without_hidden_recency_toggle():
     spec = json.loads((ROOT/'configs/app_questions.json').read_text())
     for i, gate in enumerate(spec['eligibility_questions']):
         app.radio(key=f'My assessment_gate_{i}').set_value(gate['required_answer'])
+    app.run()  # the question list depends on the routed population
     values = {'age_band': '2', 'education_level': '4', 'employment_status': '1',
         'electronic_nicotine_p30d': '0', 'household_tobacco_any': '0',
         'mental_health': '2', 'emotional_problems_7d': '2'}
@@ -83,7 +84,7 @@ def test_eligibility_conflict_specific_errors_and_correction():
     app.radio(key=profile+'_gate_3').set_value('Yes')
     submit(app)
     assert not app.exception and not app.error
-    assert any('outside that group' in w.value for w in app.warning)
+    assert any('conflict' in w.value for w in app.warning)
     assert not app.json
     app.radio(key=profile+'_gate_3').set_value('No').run()
     assert not app.error
@@ -91,7 +92,7 @@ def test_eligibility_conflict_specific_errors_and_correction():
     app.number_input(key=profile+'_recency_number').set_value(2)
     submit(app)
     assert not app.exception and not app.error
-    assert any('outside that group' in w.value for w in app.warning)
+    assert any('conflict' in w.value for w in app.warning)
     app.radio(key=profile+'_recency_unit').set_value('2').run()
     assert not app.error
     submit(app)
@@ -113,6 +114,9 @@ def test_unknown_answers_are_optional_and_missing_number_is_explicit():
 
 def test_too_few_answers_are_suppressed_not_scored():
     app = launch()
+    for i, answer in enumerate(['Yes', 'Yes', 'Not at all', 'No']):
+        app.radio(key=f'My assessment_gate_{i}').set_value(answer)
+    app.run()
     app.radio(key='My assessment_age_band').set_value('3')
     submit(app)
     assert not app.exception and not app.error
@@ -133,20 +137,46 @@ def test_reliability_never_claims_personal_confidence_and_drops_unsupported_hori
     assert any('percent sure' in m.value for m in app.markdown)
 
 
-def test_assessment_suppresses_out_of_profile_and_matches_gate_by_text():
+SHARED = {'age_band': '3', 'education_level': '3', 'employment_status': '1', 'electronic_nicotine_p30d': '1',
+          'household_tobacco_any': '1', 'mental_health': '3', 'emotional_problems_7d': '3'}
+EXTRA = {'home_combustible_smoking_rules': '2', 'physical_health': '3', 'social_satisfaction': '3'}
+
+
+def test_every_adult_profile_is_routed_to_its_own_model_or_explained():
     from path_project.assessment import assess_available
     bundle = load_study(ROOT)
-    spec = json.loads((ROOT/'configs/app_questions.json').read_text())
-    gates = [q['required_answer'] for q in spec['eligibility_questions']]
-    answers = {'age_band': '2', 'education_level': '4', 'employment_status': '1',
-        'last_cigarette_recency_days': {'number': 6, 'unit': '2'},
-        'electronic_nicotine_p30d': '0', 'household_tobacco_any': '0',
-        'mental_health': '2', 'emotional_problems_7d': '2'}
-    assert assess_available(ROOT, bundle, answers, ['Yes', 'Yes', 'Some days', 'No'])['status'] == 'suppressed'
-    unsure = [q['options'][-1] for q in spec['eligibility_questions']]
-    assert assess_available(ROOT, bundle, answers, unsure)['estimate_mode'] == 'profile_unconfirmed'
-    assert assess_available(ROOT, bundle, {**answers, 'last_cigarette_recency_days': {'number': 5, 'unit': '1'}}, gates)['status'] == 'suppressed'
+    run = lambda a, g: assess_available(ROOT, bundle, a, g)
+    quit_answers = {**SHARED, 'last_cigarette_recency_days': {'number': 6, 'unit': '2'}}
+    r = run(quit_answers, ['Yes', 'Yes', 'Not at all', 'No'])
+    assert (r['status'], r['population'], r['estimate_mode']) == ('scored', 'former', 'assessment')
+    assert run({**SHARED, 'last_cigarette_recency_days': {'number': 20, 'unit': '1'}}, ['Yes', 'Yes', 'Not at all', 'Yes'])['population'] == 'former'
+    assert run({**SHARED, **EXTRA}, ['Yes', 'Yes', 'Every day', 'Yes'])['population'] == 'current'
+    assert run({**SHARED, **EXTRA}, ['Yes', 'Yes', 'Some days', 'No'])['population'] == 'current'
+    assert run({**SHARED, **EXTRA}, ['Yes', 'No', 'Not at all', 'No'])['population'] == 'never'
+    assert run({**SHARED, **EXTRA}, ['Yes', 'No', 'Every day', 'Yes'])['population'] == 'never'
+    # Unknown age is allowed but flagged; unknown routing answers are not.
+    assert run(quit_answers, [None, 'Yes', 'Not at all', 'No'])['estimate_mode'] == 'profile_unconfirmed'
+    assert run(quit_answers, ['Yes', "Don't know / prefer not to answer", 'Not at all', 'No'])['status'] == 'suppressed'
+    assert 'under 18' in run(quit_answers, ['No', 'Yes', 'Not at all', 'No'])['reason']
+    # Contradictory recency versus past-30-day answer is never forced through a model.
+    assert 'conflict' in run(quit_answers, ['Yes', 'Yes', 'Not at all', 'Yes'])['reason']
+    assert run({**SHARED, 'last_cigarette_recency_days': {'number': 5, 'unit': '1'}}, ['Yes', 'Yes', 'Not at all', 'No'])['status'] == 'suppressed'
 
+
+def test_outcome_direction_is_labelled_per_population():
+    from path_project.assessment import assess_available
+    bundle = load_study(ROOT)
+    r = assess_available(ROOT, bundle, {**SHARED, **EXTRA}, ['Yes', 'Yes', 'Every day', 'Yes'])
+    assert r['outcome'] == 'stopping smoking' and 'last_cigarette_recency_days' not in r['features']
+    assert r['reliability']['test_roc_auc'] > .6
+
+
+@pytest.mark.parametrize('profile,population', [('Example · current smoker', 'current'), ('Example · never smoked regularly', 'never')])
+def test_ui_examples_for_other_populations(profile, population):
+    app = launch(profile)
+    submit(app)
+    assert not app.exception and not app.error and len(app.metric) == 3
+    assert record(app)['population'] == population and record(app)['status'] == 'scored'
 
 
 def test_backend_guards_remain_intact():

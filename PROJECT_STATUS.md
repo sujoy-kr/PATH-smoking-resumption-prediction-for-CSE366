@@ -1,6 +1,6 @@
 # Current project status
 
-**Active model: v2.2** (interval-censored; see docs/longitudinal_v2_2.md). The v2.1 text below is historical; v2.1 numbers, the pickle bundle and its tests were retired.
+**Active model: v2.3** (interval-censored; see docs/longitudinal_v2_3.md). The v2.1 text below is historical; v2.1 numbers, the pickle bundle and its tests were retired.
 
 Latest change: the app now suppresses out-of-profile and too-sparse inputs, flags horizons that do not beat the baseline, and reports per-horizon calibration. Remaining model-level limitations are in docs/known_limitations.md.
 
@@ -24,10 +24,10 @@ percentage is invented. Runtime answers/results stay in session memory.
 ## Necessary files retained
 
 - PATH/: all original survey data and documentation, unchanged and Git-ignored.
-- artifacts/longitudinal_v2_2/model.json: plain-JSON v2.2 model,
+- artifacts/longitudinal_v2_3/model.json: plain-JSON v2.3 model,
   included for authorized teammate/faculty inference. Contains sixteen survey-
   derived baseline explanation reference records; no PERSONIDs or full histories.
-- data/processed/longitudinal_v2_2/: private current cohort for research verification.
+- data/processed/longitudinal_v2_3/: private current cohort for research verification.
 - app/, src/, configs/: current interface and runtime/training dependency closure.
   Some shared module/metadata names are historical and remain necessary for
   deserialization and validated transformations. Do not remove/rename them.

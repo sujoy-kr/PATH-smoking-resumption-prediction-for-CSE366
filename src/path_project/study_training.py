@@ -1,4 +1,7 @@
-"""Build, fit and evaluate the v2.2 interval-censored study from raw PATH files.
+"""Build, fit and evaluate the v2.3 multi-population study from raw PATH files.
+
+Three separately fitted populations (former, current, never-established smokers),
+each with its own event and evidence. Method as in v2.2:
 
 Differences from v2.1 (see docs/longitudinal_v2_2.md): no conditioning on future
 attendance beyond one follow-up interview; interval-censored likelihood; wave-7
@@ -28,24 +31,29 @@ def suffix(position):
     return '' if position == 'midpoint' else f'_{position}'
 
 
-def choose_origin(records, baseline_waves):
+def eligible(base, rule):
+    return all(base.get(key) in allowed for key, allowed in rule.items())
+
+
+def choose_origin(records, baseline_waves, rule=None, event_current=1):
     """Earliest eligible baseline with at least one later known-status interview.
 
-    Observation then continues through consecutive attended waves until the
-    first reported return, loss of a known status, or the last wave. Interviews
-    after the first return and later attendance never influence inclusion.
+    ``rule`` maps status names to allowed baseline values; the event is the first
+    later interview with ``current == event_current``. Observation continues
+    through consecutive attended waves until the event, a lost status, or the
+    last wave. Later attendance never influences inclusion.
     """
+    rule = rule or {'former': [1], 'current': [2]}
     indexed = {r['wave']: r for r in records}
     for wave in sorted(indexed):
-        base = indexed[wave]
-        if wave not in baseline_waves or base['former'] != 1 or base['p30'] != 2 or base['current'] != 2:
+        if wave not in baseline_waves or not eligible(indexed[wave], rule):
             continue
         if indexed.get(wave+1, {}).get('current') not in (1, 2):
             continue
         last, event, reason, step = wave, False, 'end_of_consecutive_observation', wave+1
         while step in indexed and indexed[step]['current'] in (1, 2):
-            if indexed[step]['current'] == 1:
-                event, reason = True, 'first_observed_return'
+            if indexed[step]['current'] == event_current:
+                event, reason = True, 'first_observed_event'
                 last = step
                 break
             last, step = step, step+1
@@ -58,14 +66,10 @@ def choose_origin(records, baseline_waves):
     return None
 
 
-def build_cohort(root, config):
-    root = Path(root)
+def read_statuses(root, config):
     cc, project, _, mapping = load_contract(root)
     fields = field_index(mapping)
-    all_features = list(dict.fromkeys(n for names in config['feature_profiles'].values() for n in names))
-    reduced = {**mapping, 'fields': [f for f in mapping['fields'] if f['name'] in all_features]}
-    baseline_waves = set(config['baseline_waves'])
-    people, features, audits = {}, {}, []
+    people, audits = {}, []
     for source in project['waves']:
         wave = source['wave']
         names = {'former': cc['baseline_former_field'],
@@ -76,48 +80,80 @@ def build_cohort(root, config):
         columns = {'PERSONID'}
         for name in names.values():
             columns.update(fields[name]['waves'][str(wave)]['source_columns'])
-        if wave in baseline_waves:
-            for f in reduced['fields']:
-                columns.update(f['waves'][str(wave)]['source_columns'])
         raw = read_wave(root/source['data'], wave, sorted(columns), cc)
         status = {k: status_series(raw, fields[v]['waves'][str(wave)])[0] for k, v in names.items()}
         for i, person in enumerate(raw['PERSONID']):
             record = {'wave': wave, 'former': None}
             record.update({k: history_status(v.iloc[i], outcome_coded=wave == 8) for k, v in status.items()})
             people.setdefault(person, []).append(record)
-        if wave in baseline_waves:
-            eligible = status['former'].eq(1).fillna(False) & status['p30'].eq(2).fillna(False) & status['current'].eq(2).fillna(False)
-            subset = raw.loc[eligible].reset_index(drop=True)
-            values, _ = harmonize_features(subset, wave, reduced, cc)
-            for person, row in zip(subset['PERSONID'], values[all_features].to_dict('records')):
-                features[(person, wave)] = {k: (np.nan if pd.isna(v) else float(v)) for k, v in row.items()}
-        audits.append({'wave': wave, 'interviews': len(raw), 'columns_read': len(columns), 'sha256': fingerprint(root/source['data'])})
-        print(f'Wave {wave}: read and harmonized (aggregate only).', flush=True)
-    clocks = {p: wave_clock(config, p) for p in CLOCKS}
-    rows, exclusions = [], Counter()
-    for person, records in people.items():
-        origin = choose_origin(records, baseline_waves)
-        if origin is None:
-            exclusions['no_eligible_baseline_with_a_follow_up_interview'] += 1
+        audits.append({'wave': wave, 'interviews': len(raw), 'sha256': fingerprint(root/source['data'])})
+        print(f'Wave {wave}: statuses read (aggregate only).', flush=True)
+    return people, audits
+
+
+def read_features(root, config, chosen):
+    """Harmonize baseline answers only for the (person, wave) pairs actually used."""
+    cc, project, _, mapping = load_contract(root)
+    names = list(dict.fromkeys(n for pop in config['populations'].values()
+                               for prof in pop['feature_profiles'].values() for n in prof))
+    reduced = {**mapping, 'fields': [f for f in mapping['fields'] if f['name'] in names]}
+    wanted = {}
+    for pop, origins in chosen.items():
+        for person, origin in origins.items():
+            wanted.setdefault(origin['starting_wave'], {}).setdefault(person, []).append(pop)
+    features = {}
+    for source in project['waves']:
+        wave = source['wave']
+        if wave not in wanted:
             continue
-        start, end, clear = origin['starting_wave'], origin['end_wave'], origin['last_clear_wave']
-        row = {'PERSONID': person, **origin, **features[(person, start)]}
-        for position, clock in clocks.items():
-            right = months_between(clock[start], clock[end])
-            left = months_between(clock[start], clock[clear]) if origin['event'] else 0.
-            row['left_months'+suffix(position)] = max(left, 0.)
-            row['right_months'+suffix(position)] = right
-        rows.append(row)
-    cohort = pd.DataFrame(rows).sort_values('PERSONID').reset_index(drop=True)
-    for position in CLOCKS:
-        if cohort['right_months'+suffix(position)].le(0).any():
-            raise BoundaryError('Nonpositive follow-up time.')
-        event = cohort['event'].eq(1)
-        if (cohort.loc[event, 'left_months'+suffix(position)] >= cohort.loc[event, 'right_months'+suffix(position)]).any():
-            raise BoundaryError('Return interval is empty.')
-    if cohort['PERSONID'].duplicated().any():
-        raise BoundaryError('Duplicate participant.')
-    return cohort, {'wave_audit': audits, 'exclusions': dict(exclusions)}
+        columns = {'PERSONID'}
+        for f in reduced['fields']:
+            columns.update(f['waves'][str(wave)]['source_columns'])
+        raw = read_wave(root/source['data'], wave, sorted(columns), cc)
+        subset = raw.loc[raw['PERSONID'].isin(wanted[wave])].reset_index(drop=True)
+        values, _ = harmonize_features(subset, wave, reduced, cc)
+        for person, row in zip(subset['PERSONID'], values[names].to_dict('records')):
+            clean = {k: (np.nan if pd.isna(v) else float(v)) for k, v in row.items()}
+            for pop in wanted[wave][person]:
+                features[(pop, person)] = clean
+        print(f'Wave {wave}: baseline answers harmonized for {len(subset)} participants.', flush=True)
+    return features
+
+
+def build_cohorts(root, config):
+    root = Path(root)
+    people, audits = read_statuses(root, config)
+    baseline_waves = set(config['baseline_waves'])
+    chosen, exclusions = {pop: {} for pop in config['populations']}, {pop: Counter() for pop in config['populations']}
+    for pop, spec in config['populations'].items():
+        for person, records in people.items():
+            origin = choose_origin(records, baseline_waves, spec['baseline'], spec['event_current'])
+            if origin is None:
+                exclusions[pop]['no_eligible_baseline_with_a_follow_up_interview'] += 1
+            else:
+                chosen[pop][person] = origin
+    features = read_features(root, config, chosen)
+    clocks = {p: wave_clock(config, p) for p in CLOCKS}
+    cohorts = {}
+    for pop, origins in chosen.items():
+        names = list(dict.fromkeys(n for prof in config['populations'][pop]['feature_profiles'].values() for n in prof))
+        rows = []
+        for person, origin in origins.items():
+            start, end, clear = origin['starting_wave'], origin['end_wave'], origin['last_clear_wave']
+            row = {'PERSONID': person, **origin, **{n: features[(pop, person)][n] for n in names}}
+            for position, clock in clocks.items():
+                row['left_months'+suffix(position)] = max(months_between(clock[start], clock[clear]), 0.) if origin['event'] else 0.
+                row['right_months'+suffix(position)] = months_between(clock[start], clock[end])
+            rows.append(row)
+        cohort = pd.DataFrame(rows).sort_values('PERSONID').reset_index(drop=True)
+        for position in CLOCKS:
+            right, left = cohort['right_months'+suffix(position)], cohort['left_months'+suffix(position)]
+            if right.le(0).any() or (left[cohort['event'].eq(1)] >= right[cohort['event'].eq(1)]).any():
+                raise BoundaryError('Invalid follow-up interval.')
+        if cohort['PERSONID'].duplicated().any():
+            raise BoundaryError('Duplicate participant.')
+        cohorts[pop] = cohort
+    return cohorts, {'wave_audit': audits, 'exclusions': {k: dict(v) for k, v in exclusions.items()}}
 
 
 def split_participants(frame, seed):
@@ -163,11 +199,26 @@ def bootstrap_intervals(test, probabilities, horizon, curves, upper, repetitions
     return result
 
 
-def fit_study(frame, config, mapping):
+def oof_shift(frame, features, mapping, config, penalty, folds=5):
+    """Log-hazard calibration shift from out-of-fold predictions on all non-test people."""
+    from scipy.optimize import minimize_scalar
+    from sklearn.model_selection import StratifiedKFold
+    parts = []
+    splitter = StratifiedKFold(folds, shuffle=True, random_state=config['seed'])
+    for fit_ix, hold_ix in splitter.split(frame, frame['event']):
+        model = make_model(features, mapping, config, penalty).fit(frame.iloc[fit_ix])
+        hold = frame.iloc[hold_ix]
+        left, right, event = model._arrays(hold)
+        parts.append((model, model.log_rate(hold), left, right, event))
+    total = lambda s: sum(len(e)*m._nll(eta+s, m.log_baseline, l, r, e) for m, eta, l, r, e in parts)/len(frame)
+    return float(minimize_scalar(total, bounds=(-2, 2), method='bounded').x)
+
+
+def fit_study(frame, config, mapping, spec):
     part = {name: frame.loc[frame['split'].eq(name)].reset_index(drop=True) for name in ['train', 'validation', 'calibration', 'test']}
     train, validation, calibration, test = part['train'], part['validation'], part['calibration'], part['test']
     candidates = []
-    for profile, names in config['feature_profiles'].items():
+    for profile, names in spec['feature_profiles'].items():
         for penalty in config['regularization']:
             model = make_model(names, mapping, config, penalty).fit(train)
             score = model.mean_log_likelihood(validation)
@@ -192,15 +243,15 @@ def fit_study(frame, config, mapping):
         if ok:
             shown.append(h)
     if config['default_horizon_months'] not in shown:
-        raise BoundaryError('The default horizon is not supported by validation evidence.')
-    development = pd.concat([train, validation], ignore_index=True)
+        raise BoundaryError(f"Default horizon unsupported for {spec['label']}: {horizon_rule}")
+    # Final fit uses every non-test person; calibration comes from out-of-fold predictions.
+    development = pd.concat([train, validation, calibration], ignore_index=True)
     model = make_model(best['_model'].features, mapping, config, best['penalty']).fit(development)
-    model.calibrate(calibration)
+    model.shift = oof_shift(development, model.features, mapping, config, best['penalty'])
     baseline = make_model([], mapping, config, 1.).fit(development)
-    baseline.calibrate(calibration)
+    baseline.shift = oof_shift(development, [], mapping, config, 1.)
     default = config['default_horizon_months']
-    pool = pd.concat([development, calibration], ignore_index=True)
-    cuts = np.quantile(model.risk(pool, [default])[:, 0], [1/3, 2/3]).tolist()
+    cuts = np.quantile(model.risk(development, [default])[:, 0], [1/3, 2/3]).tolist()
     metrics, intervals = {}, {}
     for h in config['display_horizons_months']:
         curves, upper = censor_curves(development, h), censor_curves(development, h, straddle_lost=False)
@@ -226,9 +277,9 @@ def fit_study(frame, config, mapping):
         'test_mean_loglik': {'model': model.mean_log_likelihood(test), 'no_input_baseline': baseline.mean_log_likelihood(test)},
         'test_log_hazard_shift_needed': model.likelihood_shift(test),
         'clock_sensitivity_at_default_horizon': sensitivity,
-        'selection_rule': 'Maximum validation interval-censored log-likelihood; prefer eight inputs within tolerance. Horizons shown only if validation Brier beats a no-input baseline. Refit on train+validation; calibration shift fitted on calibration people; test evaluated once after all decisions.',
+        'selection_rule': 'Maximum validation interval-censored log-likelihood; prefer eight inputs within tolerance. Horizons shown only if validation Brier beats a no-input baseline. Final refit on all non-test people; calibration shift from out-of-fold predictions; test evaluated once after all decisions.',
         'censoring_assumption': 'Interval-censored likelihood assumes loss to follow-up is noninformative given the model inputs. IPCW evaluation weights by baseline-wave-stratified Kaplan-Meier loss curves, treating returns whose interval straddles the horizon as unresolved.',
-        'calibration_method': 'One maximum-likelihood log-hazard shift on calibration people only, on top of a flexible piecewise baseline hazard.'}
+        'calibration_method': 'One log-hazard shift fitted by maximum likelihood on 5-fold out-of-fold predictions over all non-test participants, on top of a flexible piecewise baseline hazard.'}
     return model, baseline, results, development, calibration
 
 
@@ -244,31 +295,38 @@ def build_study(root):
     config = read_config(root)
     dirs = [root/config[k] for k in ['data_dir', 'artifact_dir', 'report_dir']]
     if any(p.exists() for p in dirs):
-        raise BoundaryError('v2.2 outputs already exist; preserve them and use a new version for changes.')
-    cohort, audit = build_cohort(root, config)
-    frame = split_participants(cohort, config['seed'])
+        raise BoundaryError('Outputs already exist; preserve them and use a new version for changes.')
+    cohorts, audit = build_cohorts(root, config)
     mapping = json.loads((root/'configs/feature_mapping_final.json').read_text())
-    model, baseline, results, development, calibration = fit_study(frame, config, mapping)
-    pool = pd.concat([development, calibration], ignore_index=True)
-    background = synthetic_background(pool, model.features, config['background_size'], config['seed'])
-    summary = {'people': len(frame), 'observed_returns': int(frame['event'].sum()),
-               'no_return_observed_before_followup_ended': int(frame['event'].eq(0).sum()),
-               'followup_interview_distribution': {str(k): int(v) for k, v in frame['followup_interviews'].value_counts().sort_index().items()},
-               'baseline_wave_distribution': {str(k): int(v) for k, v in frame['starting_wave'].value_counts().sort_index().items()},
-               'observation_end_reasons': frame['observation_end_reason'].value_counts().to_dict(),
-               'splits': {n: {'people': len(g), 'events': int(g['event'].sum())} for n, g in frame.groupby('split')},
-               'feature_missingness': {n: float(frame[n].isna().mean()) for n in model.features},
-               'median_followup_months': float(frame['right_months'].median()),
-               'maximum_display_months': max(results['supported_horizons_months']), **audit}
+    frames, models, results, summaries = {}, {}, {}, {}
+    for pop, spec in config['populations'].items():
+        print(f'--- {spec["label"]} ---', flush=True)
+        frame = split_participants(cohorts[pop], config['seed'])
+        model, baseline, result, development, calibration = fit_study(frame, config, mapping, spec)
+        pool = pd.concat([development, calibration], ignore_index=True)
+        background = synthetic_background(pool, model.features, config['background_size'], config['seed'])
+        frames[pop] = frame.assign(population=pop)
+        models[pop] = {'model': model.to_dict(), 'baseline': baseline.to_dict(),
+            'background': {'kind': 'independent_training_marginals', 'columns': model.features,
+                           'rows': [[None if pd.isna(v) else float(v) for v in r] for r in background.to_numpy()]}}
+        results[pop] = result
+        summaries[pop] = {'people': len(frame), 'events': int(frame['event'].sum()),
+            'no_event_observed_before_followup_ended': int(frame['event'].eq(0).sum()),
+            'followup_interview_distribution': {str(k): int(v) for k, v in frame['followup_interviews'].value_counts().sort_index().items()},
+            'baseline_wave_distribution': {str(k): int(v) for k, v in frame['starting_wave'].value_counts().sort_index().items()},
+            'observation_end_reasons': frame['observation_end_reason'].value_counts().to_dict(),
+            'splits': {n: {'people': len(g), 'events': int(g['event'].sum())} for n, g in frame.groupby('split')},
+            'feature_missingness': {n: float(frame[n].isna().mean()) for n in model.features},
+            'median_followup_months': float(frame['right_months'].median()),
+            'maximum_display_months': max(result['supported_horizons_months']),
+            'exclusions': audit['exclusions'][pop]}
     for p in dirs:
         p.mkdir(parents=True, exist_ok=False)
     data_dir, artifact_dir, report_dir = dirs
-    frame.to_parquet(data_dir/'participants.parquet', index=False)
-    rows = [[None if pd.isna(v) else float(v) for v in r] for r in background.to_numpy()]
-    (artifact_dir/'model.json').write_text(json.dumps({
-        'format': 'reclaim-survival-json-v1', 'version': config['version'], 'model': model.to_dict(),
-        'baseline': baseline.to_dict(), 'background': {'kind': 'independent_training_marginals', 'columns': model.features, 'rows': rows}}))
-    json_write(report_dir/'summary.json', summary)
+    union = sorted(set().union(*[f.columns for f in frames.values()]))
+    pd.concat(frames.values(), ignore_index=True)[union].to_parquet(data_dir/'participants.parquet', index=False)
+    (artifact_dir/'model.json').write_text(json.dumps({'format': 'reclaim-survival-json-v2', 'version': config['version'], 'populations': models}))
+    json_write(report_dir/'summary.json', {'populations': summaries, 'wave_audit': audit['wave_audit']})
     json_write(report_dir/'results.json', results)
     outputs = [artifact_dir/'model.json', report_dir/'summary.json', report_dir/'results.json']
     json_write(report_dir/'manifest.json', {
@@ -277,5 +335,4 @@ def build_study(root):
         'cohort_sha256': sha256(data_dir/'participants.parquet'),
         'source_data_sha256': {str(w['wave']): w['sha256'] for w in audit['wave_audit']},
         'integrity_note': 'Hashes detect accidental corruption, not tampering.'})
-    print(json.dumps({k: summary[k] for k in ['people', 'observed_returns', 'splits']}), flush=True)
-    return model
+    print(json.dumps({k: {'people': v['people'], 'events': v['events']} for k, v in summaries.items()}), flush=True)

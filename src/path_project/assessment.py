@@ -1,62 +1,87 @@
-"""Available-answer UI estimates, with explicit population and evidence scope.
+"""Route any adult answer set to the matching population model, or explain why not.
 
-Does not expand the frozen model's validated population. Out-of-profile
-answers (not an adult former established smoker, or use in the past 30 days)
-and submissions with too few answers are suppressed, never scored. No-answer
-submissions receive the separate fitted study baseline, never a fabricated
-personal probability.
+Three separately fitted populations (see docs/longitudinal_v2_3.md):
+  former  - quit smoking (any time since the last cigarette): chance of returning
+  current - smoke every day / some days: chance of stopping
+  never   - have not smoked 100 cigarettes: chance of becoming a regular smoker
+People under 18 are not covered (the adult PATH files contain no minors). A
+result is withheld only when the answers are too sparse, contradict each other,
+or cannot be routed; it is never forced through a model fitted on someone else.
 """
 import json
 import math
 from pathlib import Path
+
 import numpy as np
 import pandas as pd
+
+from path_project.evaluation import BoundaryError
 from path_project.final_inputs import encode_app_answers
 from path_project.study import exact_feature_shap
-from path_project.evaluation import BoundaryError
+
+UNKNOWN = ("don't know", 'dont know', 'prefer not')
+
+
+def _unknown(value):
+    return value is None or str(value).lower().startswith(UNKNOWN)
+
+
+def suppressed(reason, provided=0, expected=0):
+    return {'status': 'suppressed', 'estimate_mode': 'suppressed', 'reason': reason,
+            'provided': provided, 'expected': expected}
+
+
+def route(eligibility):
+    """Return (population, unconfirmed_profile) or (None, reason)."""
+    age, hundred, now, _ = eligibility
+    if age == 'No':
+        return None, 'This tool is built on adult (18+) PATH Study data, so it cannot estimate for people under 18.'
+    if hundred == 'No':
+        return 'never', age is None or _unknown(age)
+    if _unknown(hundred) or _unknown(now):
+        return None, ('Please answer “Have you smoked at least 100 cigarettes in your life?” and “Do you now smoke…?” '
+                      'with a definite answer, so the model fitted for your situation can be chosen.')
+    if now in ('Every day', 'Some days'):
+        return 'current', _unknown(age)
+    return 'former', _unknown(age)
 
 
 def assess_available(root, bundle, answers, eligibility):
-    features = bundle['model'].features
-    if set(answers)-set(features):
-        raise BoundaryError('Only trained questionnaire inputs are accepted.')
     spec = json.loads((Path(root)/'configs/app_questions.json').read_text())
-    if len(eligibility) != len(spec['eligibility_questions']):
+    gates = spec['eligibility_questions']
+    if len(eligibility) != len(gates):
         raise BoundaryError('Profile context has an unexpected shape.')
-    unknown, outside = [], []
-    for i, (value, gate) in enumerate(zip(eligibility, spec['eligibility_questions'])):
-        if value is None or str(value).lower().startswith(("don't know", 'dont know', 'prefer not')):
-            unknown.append(i)
-        elif value not in gate['options']:
+    for value, gate in zip(eligibility, gates):
+        if value is not None and value not in gate['options']:
             raise BoundaryError('Unknown profile response.')
-        elif value != gate['required_answer']:
-            outside.append(i)
-    usable = dict(answers)
-    excluded = []
+    app_features = [q['feature'] for q in spec['questions']]
+    if set(answers)-set(app_features):
+        raise BoundaryError('Only trained questionnaire inputs are accepted.')
+    population, flag = route(eligibility)
+    if population is None:
+        return suppressed(flag)
+    pop = bundle['populations'][population]
+    model, config, result, label = pop['model'], bundle['config'], pop['results'], pop['spec']
+    features = model.features
+    usable = {f: v for f, v in answers.items() if f in features}
     recency = usable.get('last_cigarette_recency_days')
-    if isinstance(recency, dict) and set(recency) == {'number', 'unit'}:
+    if population == 'former' and isinstance(recency, dict):
         try:
-            number = float(recency['number'])
-        except (ValueError, TypeError):
-            number = float('nan')
-        multipliers = {'1': 1., '2': 365.25/12, '3': 365.25}
-        multiplier = multipliers.get(str(recency['unit']))
-        if math.isfinite(number) and number > 0 and number == int(number) and multiplier and number*multiplier <= 30:
-            usable['last_cigarette_recency_days'] = 'unanswered'
-            excluded.append('last_cigarette_recency_days')
-    values, reasons = encode_app_answers(root, usable, 7)
+            days = float(recency['number'])*{'1': 1., '2': 365.25/12, '3': 365.25}[str(recency['unit'])]
+        except (KeyError, ValueError, TypeError):
+            days = float('nan')
+        past30 = eligibility[3]
+        if math.isfinite(days) and ((past30 == 'Yes' and days > 30.5) or (past30 == 'No' and days <= 30.5)):
+            return suppressed('Your answers conflict: the past-30-day smoking answer and the time since your last cigarette do not match. Please correct one of them.')
+    values, reasons = encode_app_answers(root, usable, 7, allow_recent=True)
     supplied = sum(reasons[f] == 'observed' for f in features)
-    required = math.ceil(len(features)*bundle['config']['minimum_answers_fraction'])
-    if outside or excluded:
-        return {'status': 'suppressed', 'estimate_mode': 'suppressed', 'provided': supplied, 'expected': len(features),
-            'reason': 'The model only covers adults who smoked at least 100 cigarettes, have quit and have not smoked in the past 30 days. Your answers fall outside that group, so no probability is shown.'}
-    if (supplied < required or reasons['last_cigarette_recency_days'] != 'observed'):
-        return {'status': 'suppressed', 'estimate_mode': 'suppressed', 'provided': supplied, 'expected': len(features),
-            'reason': f'Please answer the questions above: give the time since your last cigarette and at least {required} of the {len(features)} answers. With fewer, a probability would be unreliable. Unknown answers are allowed up to that limit.'}
+    required = math.ceil(len(features)*config['minimum_answers_fraction'])
+    needs_recency = 'last_cigarette_recency_days' in features
+    if supplied < required or (needs_recency and reasons['last_cigarette_recency_days'] != 'observed'):
+        extra = 'give the time since your last cigarette and ' if needs_recency else ''
+        return suppressed(f'Please answer the questions above: {extra}at least {required} of the {len(features)} answers. With fewer, a probability would be unreliable. “Not sure” counts as unanswered.', supplied, len(features))
     missing = [f for f in features if reasons[f] != 'observed']
-    model = bundle['model'] if supplied else bundle['baseline']
-    row = pd.DataFrame([{f: values[f] for f in model.features}], dtype=float)
-    config, result = bundle['config'], bundle['results']
+    row = pd.DataFrame([{f: values[f] for f in features}], dtype=float)
     horizons = result['supported_horizons_months']
     horizon = config['default_horizon_months']
     curve = model.risk(row, horizons)[0]
@@ -65,13 +90,11 @@ def assess_available(root, bundle, answers, eligibility):
     category = 'Lower' if p <= low else 'Moderate' if p <= high else 'Higher'
     maximum = max(horizons)
     median = float(model.median_months(row)[0]) if curve[-1] >= .5 else None
-    base, factors = exact_feature_shap(model, bundle['background'], row, horizon)
-    mode = 'study_reference' if supplied == 0 else 'profile_unconfirmed' if unknown else 'assessment'
-    support = {'study_reference': 'Study reference only',
-               'profile_unconfirmed': 'Former-smoker profile unconfirmed', 'assessment': 'Matches the study profile'}[mode]
-    metric = result['metrics'][str(horizon)]['model' if supplied else 'no_input_baseline']
-    # Per-horizon evidence: the fitted model must beat the no-input baseline and
-    # its mean estimate must be reported against censor-adjusted observed risk.
+    base, factors = exact_feature_shap(model, pop['background'], row, horizon)
+    unknown_context = flag or (population == 'former' and _unknown(eligibility[3]))
+    mode = 'profile_unconfirmed' if unknown_context else 'assessment'
+    support = {'assessment': 'Matches the study population', 'profile_unconfirmed': 'Population assumed (some context answers unknown)'}[mode]
+    metric = result['metrics'][str(horizon)]['model']
     evidence = {}
     for h in horizons:
         pair = result['metrics'][str(h)]
@@ -85,19 +108,20 @@ def assess_available(root, bundle, answers, eligibility):
         'personal_confidence_percent': None,
         'explanation': 'Personal prediction confidence has not been validated. Answer coverage is completeness, not the chance this prediction is correct.',
         'test_roc_auc': metric['ipcw_roc_auc'],
-        'test_roc_auc_95_interval': result['default_horizon_bootstrap_95_intervals']['ipcw_roc_auc'] if supplied else None,
-        'evidence_model': 'questionnaire_model' if supplied else 'no_input_baseline',
+        'test_roc_auc_95_interval': result['default_horizon_bootstrap_95_intervals']['ipcw_roc_auc'],
+        'evidence_model': 'questionnaire_model',
         'test_mean_probability': metric['mean_predicted_risk'],
         'test_observed_risk': metric['ipcw_observed_risk'],
         'test_observed_risk_bounds': [metric['observed_risk_lower'], metric['observed_risk_upper']],
-        'timing_evidence': 'Assumed wave midpoints; actual individual resumption dates unavailable.'}
+        'timing_evidence': 'Assumed wave midpoints; actual individual dates unavailable.'}
     return {'status': 'scored', 'estimate_mode': mode, 'profile_support': support,
-        'unknown_profile_answers': unknown, 'outside_profile_answers': outside, 'excluded_inputs': excluded,
-        'missing_inputs': missing, 'probability': p, 'horizon_months': horizon,
+        'population': population, 'population_label': label['label'], 'outcome': label['outcome'],
+        'outcome_long': label['outcome_long'], 'missing_inputs': missing,
+        'probability': p, 'horizon_months': horizon,
         'curve': [{'months': h, 'probability': float(v)} for h, v in zip(horizons, curve)],
         'risk_level': category, 'risk_reference_months': horizon, 'risk_reference_probability': p,
         'risk_cuts': [low, high], 'median_months': median,
         'conditional_median_months': float(model.conditional_median(row, maximum)[0]),
         'conditional_window_months': maximum, 'explanation_reference': base, 'factors': factors,
-        'provided': supplied, 'expected': len(features), 'timing_basis': config['timing_assumption'],
-        'reliability': reliability, 'horizon_evidence': evidence}
+        'provided': supplied, 'expected': len(features), 'features': features,
+        'timing_basis': config['timing_assumption'], 'reliability': reliability, 'horizon_evidence': evidence}

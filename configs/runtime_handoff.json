@@ -1,5 +1,5 @@
 {
-  "model_version": "longitudinal_v2_2",
+  "model_version": "longitudinal_v2_3",
   "tested_python": "3.13.5",
   "core_versions": {
     "numpy": "2.5.4",
@@ -8,8 +8,8 @@
     "streamlit": "1.67.0",
     "altair": "6.3.0"
   },
-  "model_path": "artifacts/longitudinal_v2_2/model.json",
-  "model_includes": "Fitted coefficients, preprocessing parameters and a synthetic explanation background (independent draws from training marginals) as plain JSON. No participant rows, PERSONIDs or pickle data.",
+  "model_path": "artifacts/longitudinal_v2_3/model.json",
+  "model_includes": "Three population models (former, current, never-established smokers): fitted coefficients, preprocessing parameters and synthetic explanation backgrounds as plain JSON. No participant rows, PERSONIDs or pickle data.",
   "strict_packages": [
     "numpy",
     "pandas"

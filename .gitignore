@@ -29,8 +29,8 @@ Thumbs.db
 /data/
 /artifacts/*
 # Authorized team/faculty prediction handoff: only the active frozen bundle.
-!/artifacts/longitudinal_v2_2/
-/artifacts/longitudinal_v2_2/*
+!/artifacts/longitudinal_v2_3/
+/artifacts/longitudinal_v2_3/*
 *.joblib
 *.pkl
 *.pickle
@@ -56,7 +56,7 @@ Thumbs.db
 secrets.toml
 
 # Include this exact active JSON model only (no pickle files are ever tracked).
-!/artifacts/longitudinal_v2_2/model.json
+!/artifacts/longitudinal_v2_3/model.json
 
 # Locally generated handoff archives (source + selected model are tracked instead).
 /releases/

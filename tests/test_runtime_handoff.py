@@ -16,10 +16,10 @@ def load_script(name):
     return module
 
 
-def test_current_bundle_matches_five_fictional_predictions():
+def test_current_bundle_matches_fictional_predictions():
     result = load_script('verify_runtime').verify(ROOT)
     assert result['status'] == 'passed'
-    assert len(result['fictional_profiles_verified']) == 5
+    assert len(result['fictional_profiles_verified']) == 9
     assert not result['raw_or_processed_data_required']
 
 

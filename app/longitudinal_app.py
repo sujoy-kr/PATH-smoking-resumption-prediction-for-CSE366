@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT/'src'))
 from path_project.evaluation import BoundaryError
 from path_project.study import load_study
-from path_project.assessment import assess_available
+from path_project.assessment import assess_available, route
 
 st.set_page_config(page_title='Reclaim · Your smoking outlook', page_icon='◈', layout='wide', initial_sidebar_state='collapsed')
 st.html('<style>'+(ROOT/'app/styles.css').read_text()+'</style>')
@@ -28,9 +28,9 @@ def heading(number, title, copy):
 
 st.html('<div class="brand"><div class="brand-name"><span class="brand-mark">↗</span>reclaim<span style="color:#8a9da8;font-weight:400"> / </span></div><div class="brand-meta">Your quit journey, in perspective</div></div>')
 st.html('''<section class="hero"><div class="eyebrow">A clearer view of what comes next</div>
-<h1>You’ve quit.<br>Understand your outlook.</h1>
-<p>A short assessment of your current situation. Explore the estimated chance of returning to smoking over time, and the factors influencing your result.</p>
-<div class="hero-chips"><span>8 questions + eligibility</span><span>No account needed</span><span>Answers stay in this session</span></div></section>''')
+<h1>Where are you on your smoking journey?<br>Understand your outlook.</h1>
+<p>Whether you have quit, still smoke or have never smoked regularly, answer a few questions to see the estimated chance of what happens next (returning, stopping or starting) over time, and the factors behind it.</p>
+<div class="hero-chips"><span>Up to 10 questions + 4 profile questions</span><span>No account needed</span><span>Answers stay in this session</span></div></section>''')
 st.caption('Survey-based research estimate · Months are approximate: a return is only known to fall between two survey interviews. Personal and clinical accuracy are unvalidated.')
 
 try:
@@ -40,9 +40,8 @@ except Exception:  # unreadable/incompatible pickle, dependency mismatch, tamper
     st.stop()
 
 question_spec = json.loads((ROOT/'configs/app_questions.json').read_text())
-features = bundle['model'].features
 questions = {q['feature']: q for q in question_spec['questions']}
-config, results, summary = bundle['config'], bundle['results'], bundle['summary']
+config = bundle['config']
 labels = {
     'age_band': 'Age group', 'education_level': 'Education', 'employment_status': 'Employment',
     'last_cigarette_recency_days': 'Time since last cigarette', 'electronic_nicotine_p30d': 'Electronic nicotine use',
@@ -59,13 +58,20 @@ prompts = {
     'mental_health': 'How would you rate your overall mental health?',
     'emotional_problems_7d': 'How often have emotional problems bothered you in the past 7 days?'
 }
+GATES_QUIT = ['Yes', 'Yes', 'Not at all', 'No']
 presets = {
     'My assessment': {},
-    'Example · recent quit': {'age_band': '2', 'education_level': '4', 'employment_status': '1',
+    'Example · current smoker': {'_gates': ['Yes', 'Yes', 'Every day', 'Yes'], 'age_band': '3', 'education_level': '3', 'employment_status': '1',
+        'electronic_nicotine_p30d': '1', 'household_tobacco_any': '1', 'mental_health': '3', 'emotional_problems_7d': '3',
+        'home_combustible_smoking_rules': '2', 'physical_health': '3', 'social_satisfaction': '3'},
+    'Example · never smoked regularly': {'_gates': ['Yes', 'No', 'Not at all', 'No'], 'age_band': '1', 'education_level': '3', 'employment_status': '1',
+        'electronic_nicotine_p30d': '1', 'household_tobacco_any': '0', 'mental_health': '2', 'emotional_problems_7d': '2',
+        'home_combustible_smoking_rules': '1', 'physical_health': '2', 'social_satisfaction': '2'},
+    'Example · recent quit': {'_gates': GATES_QUIT,'age_band': '2', 'education_level': '4', 'employment_status': '1',
         'last_cigarette_recency_days': {'number': 6, 'unit': '2'}, 'electronic_nicotine_p30d': '1',
         'household_tobacco_any': '1', 'mental_health': '4', 'emotional_problems_7d': '4',
         'home_combustible_smoking_rules': '2', 'physical_health': '3', 'social_satisfaction': '3'},
-    'Example · longer quit': {'age_band': '5', 'education_level': '5', 'employment_status': '1',
+    'Example · longer quit': {'_gates': GATES_QUIT, 'age_band': '5', 'education_level': '5', 'employment_status': '1',
         'last_cigarette_recency_days': {'number': 8, 'unit': '3'}, 'electronic_nicotine_p30d': '0',
         'household_tobacco_any': '0', 'mental_health': '2', 'emotional_problems_7d': '2',
         'home_combustible_smoking_rules': '1', 'physical_health': '2', 'social_satisfaction': '2'}
@@ -87,13 +93,22 @@ with st.container(border=True, key='eligibility_card'):
     for i, q in enumerate(question_spec['eligibility_questions']):
         with columns[i % 2]:
             value = st.radio(q['question'], q['options'],
-                index=q['options'].index(q['required_answer']) if example else None,
+                index=q['options'].index(example['_gates'][i]) if example else None,
                 horizontal=True, key=f'{prefix}_gate_{i}')
             eligibility.append(value)
 
+population, context_flag = route(eligibility)
+pop = bundle['populations'].get(population) if population else None
+features = pop['model'].features if pop else []
 answers, displayed = {}, []
 with st.container(border=True, key='situation_card'):
     heading('02', 'A little about your current situation', 'Answer what you can. Unknown answers use the model’s fitted missing-value handling, with reduced personal support.')
+    if pop is None:
+        _, reason = (None, None) if all(v is not None for v in eligibility) and population else route(eligibility)
+        st.info('Answer the four profile questions above so we can choose the model fitted for your situation. '
+                + (reason if isinstance(reason, str) else ''))
+    else:
+        st.caption(f'Model used: **{pop["spec"]["label"]}** · outcome: {pop["spec"]["outcome_long"]}.')
     columns = st.columns(2, gap='large')
     categories = [f for f in features if f != 'last_cigarette_recency_days']
     for i, feature in enumerate(categories):
@@ -113,33 +128,36 @@ with st.container(border=True, key='situation_card'):
                      'Includes cigarettes, cigars, electronic nicotine and other tobacco/nicotine products.' if feature == 'household_tobacco_any' else None)
         answers[feature] = value if value is not None else 'unanswered'
         displayed.append({'Question': labels[feature], 'Answer': options[value] if value is not None else 'Not answered'})
-    st.divider()
-    st.markdown('**How long has it been since your last cigarette?**')
-    left, right = st.columns([1, 2], gap='large')
-    raw = example.get('last_cigarette_recency_days', {})
-    recency_key = f'{prefix}_recency_number'
-    if recency_key not in st.session_state and raw.get('number') is not None:
-        st.session_state[recency_key] = raw['number']
-    number = left.number_input('Amount', min_value=1, max_value=99, step=1,
-        value=None, placeholder='Enter a whole number', key=recency_key)
-    units = {'1': 'Days', '2': 'Months', '3': 'Years'}
-    unit = right.radio('Time unit', list(units), format_func=lambda v: units[v],
-        index=list(units).index(raw.get('unit', '2')), horizontal=True, key=f'{prefix}_recency_unit')
-    answers['last_cigarette_recency_days'] = {'number': number, 'unit': unit} if number is not None else 'unanswered'
-    displayed.append({'Question': labels['last_cigarette_recency_days'], 'Answer': f'{number} {units[unit].lower()}' if number is not None else 'Not answered'})
-    st.caption('Entering an amount records your answer automatically. Recent or current use is shown as a hypothetical former-smoker scenario; it is not treated as a validated prediction for your current situation.')
+    if 'last_cigarette_recency_days' in features:
+        st.divider()
+        st.markdown('**How long has it been since your last cigarette?**')
+        left, right = st.columns([1, 2], gap='large')
+        raw = example.get('last_cigarette_recency_days', {})
+        recency_key = f'{prefix}_recency_number'
+        if recency_key not in st.session_state and raw.get('number') is not None:
+            st.session_state[recency_key] = raw['number']
+        number = left.number_input('Amount', min_value=1, max_value=99, step=1,
+            value=None, placeholder='Enter a whole number', key=recency_key)
+        units = {'1': 'Days', '2': 'Months', '3': 'Years'}
+        unit = right.radio('Time unit', list(units), format_func=lambda v: units[v],
+            index=list(units).index(raw.get('unit', '2')), horizontal=True, key=f'{prefix}_recency_unit')
+        answers['last_cigarette_recency_days'] = {'number': number, 'unit': unit} if number is not None else 'unanswered'
+        displayed.append({'Question': labels['last_cigarette_recency_days'], 'Answer': f'{number} {units[unit].lower()}' if number is not None else 'Not answered'})
+        st.caption('Entering an amount records your answer automatically. It must agree with your past-30-day smoking answer above.')
 
 supplied = sum(isinstance(v, dict) or v in questions[f]['options'] for f, v in answers.items())
 gates_answered = sum(v is not None for v in eligibility)
 st.progress((supplied+gates_answered)/(len(features)+4), text=f'{supplied} of {len(features)} answers entered · {gates_answered} of 4 profile questions')
-st.caption(f'A personalized estimate needs the time since your last cigarette and at least {-(-int(len(features)*config['minimum_answers_fraction']*100)//100)} of {len(features)} answers (“not sure” answers count as unanswered). With none, we show the study reference instead; with fewer, no probability is shown.')
+if pop:
+    need = -(-int(len(features)*config['minimum_answers_fraction']*100)//100)
+    st.caption(f'A personalized estimate needs {"the time since your last cigarette and " if "last_cigarette_recency_days" in features else ""}at least {need} of {len(features)} answers (“not sure” counts as unanswered). With fewer, no probability is shown.')
 signature = json.dumps({'adapter': 'available_answers_v1', 'profile': preset, 'answers': answers, 'eligibility': eligibility}, sort_keys=True)
 if st.session_state.get('assessment_signature') != signature:
     st.session_state.pop('assessment_result', None)
     st.session_state['assessment_signature'] = signature
 
 submitted = st.button('See my complete outlook →', type='primary', width='stretch', key='predict_assessment')
-st.caption('All supported month horizons are included automatically. No account or contact information is needed.')
+st.caption('All horizons supported by validation evidence are included automatically. No account or contact information is needed.')
 if submitted:
     try:
         with st.spinner('Building your outlook and explaining the factors…'):
@@ -153,18 +171,19 @@ if output:
     if output['status'] == 'suppressed':
         st.warning(output['reason'])
         st.stop()
-    st.markdown('## '+('Your outlook, over time' if output['estimate_mode'] == 'assessment' else 'Your conditional outlook' if output['estimate_mode'] != 'study_reference' else 'The study reference outlook'))
-    if output['estimate_mode'] == 'study_reference':
-        st.info('No usable model answers were supplied, so this is the fitted study reference—not a personalized prediction. Add answers to build a more informed scenario.')
-    elif output['estimate_mode'] == 'profile_unconfirmed':
-        st.info('This estimate assumes an adult former established smoker with no current or past-30-day smoking. Some profile answers are unknown, so it is a conditional scenario rather than a confirmed profile match.')
+    results, summary = bundle['populations'][output['population']]['results'], bundle['populations'][output['population']]['summary']
+    meaning = {'former': 'more likely to return to smoking', 'current': 'more likely to stop smoking', 'never': 'more likely to become a regular smoker'}[output['population']]
+    st.markdown(f'## Your outlook · chance of {output["outcome"]}')
+    st.caption(f'Model: {output["population_label"]}. “Higher” means {meaning}.')
+    if output['estimate_mode'] == 'profile_unconfirmed':
+        st.info('Some profile answers (such as age or past-30-day smoking) are unknown, so this assumes you belong to the study population above. It is a conditional estimate rather than a confirmed profile match.')
     weak = [h for h, e in output['horizon_evidence'].items() if not e['beats_no_input_baseline']]
     if weak:
         st.warning('Short horizons are the least reliable: at ≈ ' + ', '.join(weak) + ' months the model did not beat a no-information baseline on held-out data. Treat those percentages as uninformative; use the longer horizons.')
-    st.caption('Estimated first reported return to current smoking. Each percentage is cumulative by that approximate month horizon, not an additional monthly risk.')
+    st.caption(f'Outcome: {output["outcome_long"]}. Each percentage is cumulative by that approximate month horizon, not an additional monthly risk.')
     a, b, c = st.columns(3)
     a.metric(f'Chance by approx. {output["horizon_months"]} months', f'{100*output["probability"]:.1f}%')
-    b.metric(f'Relative risk · {output["risk_reference_months"]} months', output['risk_level'])
+    b.metric(f'Relative level · {output["risk_reference_months"]} months', output['risk_level'])
     if output['median_months'] is not None:
         c.metric('Approximate median observation time', f'{round(output["median_months"])} months')
     else:
@@ -191,12 +210,10 @@ if output:
         st.altair_chart(chart, width='stretch')
         if output['median_months'] is None:
             st.write(f'The modeled probability does **not reach 50% within {output["conditional_window_months"]} months**. A return is therefore not predicted as more likely than not within that window.')
-        st.html(f'<div class="note"><strong>About the timing:</strong> if a return is observed within {output["conditional_window_months"]} months, the model’s conditional median observation time is approximately <strong>{round(output["conditional_median_months"])} months</strong>. This conditional estimate does not mean a return is likely for the person represented by this scenario. Month estimates use assumed survey timing, not a measured first-cigarette date.</div>')
+        st.html(f'<div class="note"><strong>About the timing:</strong> if the outcome is observed within {output["conditional_window_months"]} months, the model’s conditional median observation time is approximately <strong>{round(output["conditional_median_months"])} months</strong>. This conditional estimate does not mean a return is likely for the person represented by this scenario. Month estimates use assumed survey timing, not a measured first-cigarette date.</div>')
     with factors_tab:
         st.write(f'These factors explain your **{output["horizon_months"]}-month probability**, relative to a fixed model reference. They show model associations, not causes.')
         table = pd.DataFrame([{'Factor': labels[f['feature']], 'Contribution': 100*f['contribution']} for f in output['factors']], columns=['Factor', 'Contribution'])
-        if output['provided'] == 0:
-            st.info('The study reference has no personalized contributing factors because no usable model answers were supplied.')
         factors_chart = alt.Chart(table).mark_bar(cornerRadiusEnd=4).encode(
             x=alt.X('Contribution:Q', title='Contribution to probability (percentage points)'),
             y=alt.Y('Factor:N', sort=table['Factor'].tolist(), title=None),
@@ -211,30 +228,31 @@ if output:
     with details_tab:
         low, high = output['risk_cuts']
         st.write(f'**Risk level:** a relative category using the {output["risk_reference_months"]}-month score. Lower ≤ {100*low:.2f}%; moderate through {100*high:.2f}%; higher above that. These are project-defined groups, not medical thresholds.')
-        st.write('**Timing:** approximate months use survey-window midpoints. Smoking may resume before it is reported; brief episodes between surveys can be missed. A reported return does not prove persistent smoking.')
+        st.write('**Timing:** approximate months use survey-window midpoints. Changes may happen before they are reported; brief episodes between surveys can be missed. A reported event does not prove a lasting change.')
         st.write(f'**Your answers:** {output["provided"]} of {output["expected"]} model inputs supplied. Missing answers use fitted missing-value handling; completeness is not confidence.')
         st.dataframe(pd.DataFrame(displayed), hide_index=True, width='stretch')
         with st.expander('Technical prediction record'):
             st.json(output)
 
-st.divider()
-with st.expander('Research evidence & limitations'):
-    st.markdown('### Built on PATH Study follow-up')
-    st.write(f'{summary["people"]:,} former established smokers with at least one follow-up interview: {summary["observed_returns"]:,} first observed returns to current-established smoking, and {summary["no_return_observed_before_followup_ended"]:,} without an observed return before follow-up ended. No observed return is not a permanent negative label.')
-    st.write('Model: interval-censored proportional-hazards survival model with a flexible baseline hazard, using baseline answers only. Participants are separated for fitting, selection, calibration and testing. Evaluation retains observed class proportions.')
-    rows = []
-    for horizon in results['supported_horizons_months']:
-        m = results['metrics'][str(horizon)]['model']
-        if m['supported']:
-            rows.append({'Approximate months': horizon, 'ROC-AUC (IPCW)': m['ipcw_roc_auc'], 'Brier score': m['ipcw_brier'], 'Mean estimate (%)': 100*m['mean_predicted_risk'], 'Observed risk range (%)': f"{100*m['observed_risk_lower']:.1f}–{100*m['observed_risk_upper']:.1f}", 'Estimate within range': 'yes' if m['predicted_within_observed_bounds'] else 'no'})
-    st.dataframe(pd.DataFrame(rows), hide_index=True, width='stretch')
-    st.caption('A return is known only to lie between interviews, so observed risk at a horizon is a range (lower: returns known by then; upper: also returns that began before it). IPCW weights adjust for lost follow-up by baseline wave. These measurements do not validate actual month-of-resumption predictions.')
-    st.write('People are included if they had at least one follow-up interview; later attendance never affects inclusion, but attrition can still be informative. This unweighted U.S. study does not establish performance for current app users, other populations, or clinical decisions. Current-established means every-day or some-day smoking; it does not establish persistent smoking.')
-    st.markdown('[FDA wave collection dates]('+config['timing_source']+')')
-    st.caption('Local documentation: docs/longitudinal_v2_2.md · reports/longitudinal_v2_2/results.json')
-reference = results['metrics'][str(config['default_horizon_months'])]['model']
-low, high = reference['observed_risk_lower'], reference['observed_risk_upper']
-inside = 'inside' if reference['predicted_within_observed_bounds'] else 'outside'
-outside = [h for h in results['supported_horizons_months'] if not results['metrics'][str(h)]['model']['predicted_within_observed_bounds']]
-st.caption(f'Calibration: at {config["default_horizon_months"]} months the mean held-out estimate was {100*reference["mean_predicted_risk"]:.1f}%, {inside} the {100*low:.1f}–{100*high:.1f}% observed-risk range' + (f'; it fell outside the range at ≈ {", ".join(map(str, outside))} months' if outside else '') + '. Percentages are not precise personal probabilities.')
+if output and output['status'] == 'scored':
+    st.divider()
+    with st.expander('Research evidence & limitations'):
+        st.markdown('### Built on PATH Study follow-up')
+        st.write(f'{summary["people"]:,} people in the “{output["population_label"]}” group with at least one follow-up interview: {summary["events"]:,} first reported events ({output["outcome_long"]}) and {summary["no_event_observed_before_followup_ended"]:,} without an observed event before follow-up ended. No observed event is not a permanent negative label.')
+        st.write('Model: interval-censored proportional-hazards survival model with a flexible baseline hazard, using baseline answers only. Participants are separated for fitting, selection, calibration and testing. Evaluation retains observed class proportions.')
+        rows = []
+        for horizon in results['supported_horizons_months']:
+            m = results['metrics'][str(horizon)]['model']
+            if m['supported']:
+                rows.append({'Approximate months': horizon, 'ROC-AUC (IPCW)': m['ipcw_roc_auc'], 'Brier score': m['ipcw_brier'], 'Mean estimate (%)': 100*m['mean_predicted_risk'], 'Observed risk range (%)': f"{100*m['observed_risk_lower']:.1f}–{100*m['observed_risk_upper']:.1f}", 'Estimate within range': 'yes' if m['predicted_within_observed_bounds'] else 'no'})
+        st.dataframe(pd.DataFrame(rows), hide_index=True, width='stretch')
+        st.caption('A return is known only to lie between interviews, so observed risk at a horizon is a range (lower: returns known by then; upper: also returns that began before it). IPCW weights adjust for lost follow-up by baseline wave. These measurements do not validate actual month-of-resumption predictions.')
+        st.write('People are included if they had at least one follow-up interview; later attendance never affects inclusion, but attrition can still be informative. This unweighted U.S. study does not establish performance for current app users, other populations, or clinical decisions. Current-established means every-day or some-day smoking; it does not establish persistent smoking.')
+        st.markdown('[FDA wave collection dates]('+config['timing_source']+')')
+        st.caption('Local documentation: docs/longitudinal_v2_3.md · reports/longitudinal_v2_3/results.json')
+    reference = results['metrics'][str(config['default_horizon_months'])]['model']
+    low, high = reference['observed_risk_lower'], reference['observed_risk_upper']
+    inside = 'inside' if reference['predicted_within_observed_bounds'] else 'outside'
+    outside = [h for h in results['supported_horizons_months'] if not results['metrics'][str(h)]['model']['predicted_within_observed_bounds']]
+    st.caption(f'Calibration: at {config["default_horizon_months"]} months the mean held-out estimate was {100*reference["mean_predicted_risk"]:.1f}%, {inside} the {100*low:.1f}–{100*high:.1f}% observed-risk range' + (f'; it fell outside the range at ≈ {", ".join(map(str, outside))} months' if outside else '') + '. Percentages are not precise personal probabilities.')
 st.html('<div class="page-footer"><span>reclaim / CSE366 · Interval-censored research model</span><span>Local inference · No answer files · No external prediction API</span></div>')
