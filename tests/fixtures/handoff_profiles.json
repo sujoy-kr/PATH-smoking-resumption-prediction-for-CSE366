@@ -196,34 +196,7 @@
         null
       ],
       "expected": {
-        "probability": 0.22911866499451294,
-        "curve": [
-          {
-            "months": 18,
-            "probability": 0.1666435733413885
-          },
-          {
-            "months": 24,
-            "probability": 0.19405863433125628
-          },
-          {
-            "months": 36,
-            "probability": 0.22911866499451294
-          },
-          {
-            "months": 48,
-            "probability": 0.24919917115278745
-          },
-          {
-            "months": 60,
-            "probability": 0.2570839115818588
-          }
-        ],
-        "risk_level": "Moderate",
-        "provided": 0,
-        "estimate_mode": "study_reference",
-        "conditional_median_months": 11.092535127134397,
-        "factors": []
+        "status": "suppressed"
       }
     },
     {

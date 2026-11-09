@@ -36,8 +36,8 @@ then `python -m pytest -q -p no:cacheprovider`.
   observed risk (a return is only known to lie between two interviews).
 - No probability is shown for answers outside the study population (current or
   recent smokers, never-smokers, minors, last cigarette 30 days ago or less) or
-  with fewer than 6 of 8 answers / no recency answer. A blank form shows the
-  fitted study reference, labelled as not personal.
+  with fewer than 6 of 8 answers / no recency answer. A blank form shows no result.
+  
 
 ## Headline results (1,440 held-out people)
 

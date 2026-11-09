@@ -47,12 +47,12 @@ def assess_available(root, bundle, answers, eligibility):
     values, reasons = encode_app_answers(root, usable, 7)
     supplied = sum(reasons[f] == 'observed' for f in features)
     required = math.ceil(len(features)*bundle['config']['minimum_answers_fraction'])
-    if supplied and (outside or excluded):
+    if outside or excluded:
         return {'status': 'suppressed', 'estimate_mode': 'suppressed', 'provided': supplied, 'expected': len(features),
             'reason': 'The model only covers adults who smoked at least 100 cigarettes, have quit and have not smoked in the past 30 days. Your answers fall outside that group, so no probability is shown.'}
-    if supplied and (supplied < required or reasons['last_cigarette_recency_days'] != 'observed'):
+    if (supplied < required or reasons['last_cigarette_recency_days'] != 'observed'):
         return {'status': 'suppressed', 'estimate_mode': 'suppressed', 'provided': supplied, 'expected': len(features),
-            'reason': f'Please give the time since your last cigarette and at least {required} of the {len(features)} answers. With fewer, a probability would be unreliable. Unknown answers are allowed up to that limit.'}
+            'reason': f'Please answer the questions above: give the time since your last cigarette and at least {required} of the {len(features)} answers. With fewer, a probability would be unreliable. Unknown answers are allowed up to that limit.'}
     missing = [f for f in features if reasons[f] != 'observed']
     model = bundle['model'] if supplied else bundle['baseline']
     row = pd.DataFrame([{f: values[f] for f in model.features}], dtype=float)

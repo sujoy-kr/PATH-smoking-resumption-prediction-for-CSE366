@@ -26,19 +26,15 @@ def record(app):
     return json.loads(app.json[0].value)
 
 
-def test_single_model_no_editable_dropdowns_or_horizon_selector():
+def test_blank_submission_shows_no_result_and_no_dropdowns():
     app = launch()
     assert not app.sidebar.radio
     assert not app.selectbox and not app.text_input
     assert not any('Show the chance' in r.label for r in app.radio)
     submit(app)
     assert not app.exception and not app.error
-    assert record(app)['estimate_mode'] == 'study_reference'
-    assert record(app)['provided'] == 0
-    assert record(app)['factors'] == []
-    assert record(app)['reliability']['test_roc_auc'] == .5
-    assert record(app)['reliability']['test_roc_auc_95_interval'] is None
-    assert any('not a personalized prediction' in i.value for i in app.info)
+    assert not app.json and not app.metric
+    assert any('Please answer the questions above' in w.value for w in app.warning)
 
 
 @pytest.mark.parametrize('profile', ['Example · recent quit', 'Example · longer quit'])
@@ -160,7 +156,7 @@ def test_backend_guards_remain_intact():
     gates = [q['required_answer'] for q in spec['eligibility_questions']]
     with pytest.raises(BoundaryError, match='trained questionnaire'):
         assess_available(ROOT, bundle, {'PERSONID': 'FICTIONAL'}, gates)
-    assert assess_available(ROOT, bundle, {}, gates)['estimate_mode'] == 'study_reference'
+    assert assess_available(ROOT, bundle, {}, gates)['status'] == 'suppressed'
 
 
 
