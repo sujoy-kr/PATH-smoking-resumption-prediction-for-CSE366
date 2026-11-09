@@ -60,3 +60,9 @@ secrets.toml
 
 # Locally generated handoff archives (source + selected model are tracked instead).
 /releases/
+
+# Local assistant/tooling state and logs
+/.claude/
+*.log
+# Retired model bundles and handoff zips stay local (active v2.4 is allowed above).
+/artifacts/longitudinal_v2_[0-3]/

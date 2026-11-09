@@ -50,7 +50,7 @@ dependencies, subject to the startup numerical tolerances. The current test
 suite runs without raw data. Full cohort rebuilding uses the preserved local
 PATH files and is a separate verification step.
 
-Detailed evidence: [protocol](longitudinal_v2.md),
-[results](../reports/longitudinal_v2_1/results.json),
-[cohort summary](../reports/longitudinal_v2_1/summary.json) and
+Detailed evidence: [protocol](longitudinal_v2_4.md),
+[results](../reports/longitudinal_v2_4/results.json),
+[cohort summary](../reports/longitudinal_v2_4/summary.json) and
 [research reference index](RESEARCH_GUIDE.md).

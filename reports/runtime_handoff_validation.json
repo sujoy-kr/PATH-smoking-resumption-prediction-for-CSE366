@@ -1,6 +1,6 @@
 {
   "purpose": "Authorized teammate/faculty prediction handoff",
-  "included_model": "artifacts/longitudinal_v2_1/model.joblib",
+  "included_model": "artifacts/longitudinal_v2_4/model.json",
   "model_sha256": "4507751e37d0f62fe98c166438cba29a92a5e9aa144b3ff6b1a3768aef1b81c4",
   "included_model_bytes": 18202,
   "raw_and_processed_participant_data_included": false,

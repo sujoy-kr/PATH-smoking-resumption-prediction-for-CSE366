@@ -242,7 +242,7 @@ if output and output['status'] == 'scored':
         st.caption('A return is known only to lie between interviews, so observed risk at a horizon is a range (lower: returns known by then; upper: also returns that began before it). IPCW weights adjust for lost follow-up by baseline wave. These measurements do not validate actual month-of-resumption predictions.')
         st.write('People are included if they had at least one follow-up interview; later attendance never affects inclusion, but attrition can still be informative. This unweighted U.S. study does not establish performance for current app users, other populations, or clinical decisions. Current-established means every-day or some-day smoking; it does not establish persistent smoking.')
         st.markdown('[FDA wave collection dates]('+config['timing_source']+')')
-        st.caption('Local documentation: docs/longitudinal_v2_3.md · reports/longitudinal_v2_3/results.json')
+        st.caption('Local documentation: docs/longitudinal_v2_4.md · reports/longitudinal_v2_4/results.json')
     reference = results['metrics'][str(config['default_horizon_months'])]['model']
     low, high = reference['observed_risk_lower'], reference['observed_risk_upper']
     inside = 'inside' if reference['predicted_within_observed_bounds'] else 'outside'

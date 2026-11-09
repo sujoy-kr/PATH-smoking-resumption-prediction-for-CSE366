@@ -5,7 +5,7 @@
 The active project is the **interval-censored v2.4 survival model** ([protocol](longitudinal_v2_4.md)); v2.1 is retired history. Start with
 [the v2.1 protocol (superseded)](longitudinal_v2.md), [the app guide](../app/README.md),
 [team setup](../TEAM_SETUP.md) and the corrected results in
-`reports/longitudinal_v2_1/`. Launch with `run_app.py`.
+`reports/longitudinal_v2_4/`. Launch with `run_app.py`.
 
 The original next-survey classifier is **historical research only**. Its code,
 tests, reports and documentation have been restored for comparison, maintenance

@@ -1,10 +1,10 @@
 # Current research evidence
 
-- `longitudinal_v2_1/results.json`: current model selection, held-out metrics,
+- `longitudinal_v2_4/results.json`: current model selection, held-out metrics,
   calibration and timing sensitivity.
-- `longitudinal_v2_1/summary.json`: aggregate cohort counts and source audit.
-- `longitudinal_v2_1/manifest.json`: immutable current source/model/result hashes.
-- `longitudinal_v2_1/verification.json`: latest cohort verification result.
+- `longitudinal_v2_4/summary.json`: aggregate cohort counts and source audit.
+- `longitudinal_v2_4/manifest.json`: immutable current source/model/result hashes.
+- `longitudinal_v2_4/verification.json`: latest cohort verification result.
 - `runtime_handoff_validation.json`: current-model delivery validation.
 - `cleanup.json`: user-authorized removal record and preservation checks.
 - `restoration.json`: useful tracked research code/docs/tests recovered from

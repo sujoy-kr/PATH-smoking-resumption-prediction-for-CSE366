@@ -1,6 +1,6 @@
 """Route any adult answer set to the matching population model, or explain why not.
 
-Three separately fitted populations (see docs/longitudinal_v2_3.md):
+Three separately fitted populations (see docs/longitudinal_v2_4.md):
   former  - quit smoking (any time since the last cigarette): chance of returning
   current - smoke every day / some days: chance of stopping
   never   - have not smoked 100 cigarettes: chance of becoming a regular smoker
