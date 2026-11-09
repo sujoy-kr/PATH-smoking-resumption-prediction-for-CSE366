@@ -182,7 +182,7 @@ Configuration: `configs/longitudinal_v2.json`; implementation:
 `src/path_project/longitudinal.py`. Current outputs live in
 `data/processed/longitudinal_v2_1` (private local cohort),
 `artifacts/longitudinal_v2_1` (included authorized model bundle) and
-`reports/longitudinal_v2_1` (aggregates only). Loading verifies
+`reports/longitudinal_v2_1` (aggregates only; removed from the tree, recover with `git show v2.3-final:reports/longitudinal_v2_1/...`). Loading verifies
 source/config/model/report hashes. Existing outputs refuse overwrite. Preserve
 this experiment and choose a separately versioned run for future changes.
 
