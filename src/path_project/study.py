@@ -14,7 +14,7 @@ import pandas as pd
 from path_project.evaluation import BoundaryError
 from path_project.survival import PiecewiseHazardModel
 
-CONFIG = 'configs/longitudinal_v2_3.json'
+CONFIG = 'configs/longitudinal_v2_4.json'
 
 
 def read_config(root):
@@ -36,7 +36,7 @@ def load_study(root):
     if manifest['config_sha256'] != sha256(root/CONFIG):
         raise BoundaryError('Study configuration changed after training; retrain under a new version.')
     stored = json.loads((artifact/'model.json').read_text())
-    if stored.get('format') != 'reclaim-survival-json-v2':
+    if stored.get('format') != 'reclaim-survival-json-v4':
         raise BoundaryError('Unsupported model format.')
     results = json.loads((report/'results.json').read_text())
     summary = json.loads((report/'summary.json').read_text())['populations']
@@ -50,29 +50,40 @@ def load_study(root):
     return {'populations': populations, 'config': config}
 
 
-def exact_feature_shap(model, background, row, horizon):
-    """Exact Shapley values of the horizon probability over the original inputs.
+def exact_feature_shap(model, background, row, horizon, groups=None, chunk=256):
+    """Exact Shapley values of the horizon probability over input groups.
 
-    Features outside a coalition take values from independent draws of the
-    training marginals (interventional Shapley; feature dependence ignored).
+    ``groups`` maps a group name to its features (default: one group per feature).
+    Inputs outside a coalition take values from independent draws of the training
+    marginals (interventional Shapley; dependence between inputs is ignored).
     """
-    features, n = model.features, len(model.features)
-    batches = []
-    for mask in range(1 << n):
-        block = background[features].copy()
-        for j, feature in enumerate(features):
-            if mask & (1 << j):
-                block[feature] = row[feature].iloc[0]
-        batches.append(block)
-    values = model.risk(pd.concat(batches, ignore_index=True), [horizon])[:, 0].reshape(1 << n, len(background)).mean(axis=1)
+    features = model.features
+    groups = groups or {f: {'features': [f]} for f in features}
+    names = list(groups)
+    n = len(names)
+    if n > 14:
+        raise BoundaryError('Too many input groups for exact explanations.')
+    columns = {name: [features.index(f) for f in groups[name]['features']] for name in names}
+    base = background[features].to_numpy(float)
+    target = row[features].to_numpy(float)[0]
+    masks = np.arange(1 << n)
+    values = np.empty(1 << n)
+    for start in range(0, len(masks), chunk):
+        block = masks[start:start+chunk]
+        data = np.broadcast_to(base, (len(block),)+base.shape).copy()
+        for j, name in enumerate(names):
+            on = ((block >> j) & 1).astype(bool)
+            for c in columns[name]:
+                data[on, :, c] = target[c]
+        frame = pd.DataFrame(data.reshape(-1, len(features)), columns=features)
+        values[start:start+len(block)] = model.risk(frame, [horizon])[:, 0].reshape(len(block), len(base)).mean(axis=1)
     contributions = []
-    for j, feature in enumerate(features):
+    for j, name in enumerate(names):
         total = 0.
-        for mask in range(1 << n):
-            if not mask & (1 << j):
-                weight = 1/(n*math.comb(n-1, mask.bit_count()))
-                total += weight*(values[mask | (1 << j)]-values[mask])
-        contributions.append({'feature': feature, 'contribution': float(total)})
+        for mask in masks:
+            if not (mask >> j) & 1:
+                total += (values[mask | (1 << j)]-values[mask])/(n*math.comb(n-1, int(mask).bit_count()))
+        contributions.append({'feature': name, 'contribution': float(total)})
     predicted = float(model.risk(row, [horizon])[0, 0])
     if not np.isclose(values[0]+sum(c['contribution'] for c in contributions), predicted, atol=1e-8):
         raise BoundaryError('Probability explanation does not reconcile.')

@@ -1,0 +1,2632 @@
+{
+  "former": {
+    "selected_groups": {
+      "recency": {
+        "label": "Time since last cigarette",
+        "features": [
+          "last_cigarette_recency_days"
+        ]
+      },
+      "age": {
+        "label": "Age group",
+        "features": [
+          "age_band"
+        ]
+      },
+      "education": {
+        "label": "Education",
+        "features": [
+          "education_level"
+        ]
+      },
+      "employment": {
+        "label": "Employment",
+        "features": [
+          "employment_status"
+        ]
+      },
+      "ecig": {
+        "label": "Electronic nicotine use",
+        "features": [
+          "electronic_nicotine_p30d"
+        ]
+      },
+      "household": {
+        "label": "Household tobacco exposure",
+        "features": [
+          "household_tobacco_any"
+        ]
+      },
+      "mental_health": {
+        "label": "Mental health",
+        "features": [
+          "mental_health"
+        ]
+      },
+      "emotional": {
+        "label": "Recent emotional difficulties",
+        "features": [
+          "emotional_problems_7d"
+        ]
+      },
+      "smoking_history": {
+        "label": "Past smoking pattern",
+        "features": [
+          "prior_regular_cigarettes_per_day",
+          "regular_smoking_months"
+        ]
+      },
+      "home_rules": {
+        "label": "Home smoking rules",
+        "features": [
+          "home_combustible_smoking_rules"
+        ]
+      },
+      "social": {
+        "label": "Social satisfaction",
+        "features": [
+          "social_satisfaction"
+        ]
+      }
+    },
+    "selection_path": [
+      {
+        "groups": [
+          "recency",
+          "age",
+          "education",
+          "employment",
+          "ecig",
+          "household",
+          "mental_health",
+          "emotional"
+        ],
+        "validation_mean_loglik": -0.7294000585380913,
+        "added": null
+      },
+      {
+        "groups": [
+          "recency",
+          "age",
+          "education",
+          "employment",
+          "ecig",
+          "household",
+          "mental_health",
+          "emotional",
+          "smoking_history"
+        ],
+        "validation_mean_loglik": -0.7255935773560915,
+        "added": "smoking_history",
+        "gain": 0.003806481181999777
+      },
+      {
+        "groups": [
+          "recency",
+          "age",
+          "education",
+          "employment",
+          "ecig",
+          "household",
+          "mental_health",
+          "emotional",
+          "smoking_history",
+          "home_rules"
+        ],
+        "validation_mean_loglik": -0.7243775226448879,
+        "added": "home_rules",
+        "gain": 0.0012160547112036735
+      },
+      {
+        "groups": [
+          "recency",
+          "age",
+          "education",
+          "employment",
+          "ecig",
+          "household",
+          "mental_health",
+          "emotional",
+          "smoking_history",
+          "home_rules",
+          "social"
+        ],
+        "validation_mean_loglik": -0.7238290835636915,
+        "added": "social",
+        "gain": 0.0005484390811963946
+      }
+    ],
+    "core_only_validation_loglik": -0.7294000585380913,
+    "selected_candidate": {
+      "penalty": 30.0,
+      "tvc_penalty": null,
+      "validation_mean_loglik": -0.7233499912677217
+    },
+    "candidates": [
+      {
+        "penalty": 1.0,
+        "tvc_penalty": null,
+        "validation_mean_loglik": -0.7242797730414827
+      },
+      {
+        "penalty": 1.0,
+        "tvc_penalty": 100.0,
+        "validation_mean_loglik": -0.7275078583399956
+      },
+      {
+        "penalty": 1.0,
+        "tvc_penalty": 10.0,
+        "validation_mean_loglik": -0.7310378791529832
+      },
+      {
+        "penalty": 10.0,
+        "tvc_penalty": null,
+        "validation_mean_loglik": -0.7238290835636915
+      },
+      {
+        "penalty": 10.0,
+        "tvc_penalty": 100.0,
+        "validation_mean_loglik": -0.7270599734016886
+      },
+      {
+        "penalty": 10.0,
+        "tvc_penalty": 10.0,
+        "validation_mean_loglik": -0.7306779239241765
+      },
+      {
+        "penalty": 30.0,
+        "tvc_penalty": null,
+        "validation_mean_loglik": -0.7233499912677217
+      },
+      {
+        "penalty": 30.0,
+        "tvc_penalty": 100.0,
+        "validation_mean_loglik": -0.7266110160705246
+      },
+      {
+        "penalty": 30.0,
+        "tvc_penalty": 10.0,
+        "validation_mean_loglik": -0.7303512101305469
+      }
+    ],
+    "features": [
+      "last_cigarette_recency_days",
+      "age_band",
+      "education_level",
+      "employment_status",
+      "electronic_nicotine_p30d",
+      "household_tobacco_any",
+      "mental_health",
+      "emotional_problems_7d",
+      "prior_regular_cigarettes_per_day",
+      "regular_smoking_months",
+      "home_combustible_smoking_rules",
+      "social_satisfaction"
+    ],
+    "supported_horizons_months": [
+      12,
+      18,
+      24,
+      36,
+      48,
+      60
+    ],
+    "horizon_selection": {
+      "12": {
+        "train_rows_at_risk": 6650,
+        "validation_brier_model": 0.058866287270546235,
+        "validation_brier_no_input": 0.06424643565236397,
+        "displayed": true
+      },
+      "18": {
+        "train_rows_at_risk": 5838,
+        "validation_brier_model": 0.09393219240563215,
+        "validation_brier_no_input": 0.10518847893934896,
+        "displayed": true
+      },
+      "24": {
+        "train_rows_at_risk": 4448,
+        "validation_brier_model": 0.11693879785505916,
+        "validation_brier_no_input": 0.14028359515453168,
+        "displayed": true
+      },
+      "36": {
+        "train_rows_at_risk": 3477,
+        "validation_brier_model": 0.12683450456847212,
+        "validation_brier_no_input": 0.15375772076437058,
+        "displayed": true
+      },
+      "48": {
+        "train_rows_at_risk": 3002,
+        "validation_brier_model": 0.13116236955030217,
+        "validation_brier_no_input": 0.16252158520316295,
+        "displayed": true
+      },
+      "60": {
+        "train_rows_at_risk": 2747,
+        "validation_brier_model": 0.1282036095656018,
+        "validation_brier_no_input": 0.16288977531736437,
+        "displayed": true
+      }
+    },
+    "category_reference_horizon_months": 36,
+    "risk_category_cuts": [
+      0.14982241991530584,
+      0.3633574122142603
+    ],
+    "calibration_log_hazard_shift": 0.012794489029841587,
+    "calibration_slope": 0.9723217418119485,
+    "metrics": {
+      "12": {
+        "model": {
+          "supported": true,
+          "known_outcomes": 1440,
+          "events_by_horizon": 74,
+          "unresolved_at_horizon": 350,
+          "ipcw_brier": 0.052745959851011714,
+          "ipcw_roc_auc": 0.796396268568742,
+          "ipcw_average_precision": 0.15102555192771808,
+          "mean_predicted_risk": 0.16065853279098347,
+          "observed_risk_lower": 0.03412241416080186,
+          "observed_risk_upper": 0.1798891021539774,
+          "ipcw_observed_risk": 0.10700575815738964,
+          "predicted_within_observed_bounds": true,
+          "calibration_ratio": 1.5014008176520608,
+          "maximum_censor_weight": 1.4566929133858268
+        },
+        "no_input_baseline": {
+          "supported": true,
+          "known_outcomes": 1440,
+          "events_by_horizon": 74,
+          "unresolved_at_horizon": 350,
+          "ipcw_brier": 0.0575109408922094,
+          "ipcw_roc_auc": 0.36648208726342324,
+          "ipcw_average_precision": 0.041025145286842486,
+          "mean_predicted_risk": 0.16428825888937432,
+          "observed_risk_lower": 0.03412241416080186,
+          "observed_risk_upper": 0.1798891021539774,
+          "ipcw_observed_risk": 0.10700575815738964,
+          "predicted_within_observed_bounds": true,
+          "calibration_ratio": 1.5353216660334352,
+          "maximum_censor_weight": 1.4566929133858268
+        },
+        "displayed": true
+      },
+      "18": {
+        "model": {
+          "supported": true,
+          "known_outcomes": 1483,
+          "events_by_horizon": 220,
+          "unresolved_at_horizon": 307,
+          "ipcw_brier": 0.08591530812949906,
+          "ipcw_roc_auc": 0.8410555827543859,
+          "ipcw_average_precision": 0.3956722919282393,
+          "mean_predicted_risk": 0.19683027407312176,
+          "observed_risk_lower": 0.10769886969503091,
+          "observed_risk_upper": 0.20078908082746852,
+          "ipcw_observed_risk": 0.15424397526124972,
+          "predicted_within_observed_bounds": true,
+          "calibration_ratio": 1.2760969998325171,
+          "maximum_censor_weight": 1.3236124176857949
+        },
+        "no_input_baseline": {
+          "supported": true,
+          "known_outcomes": 1483,
+          "events_by_horizon": 220,
+          "unresolved_at_horizon": 307,
+          "ipcw_brier": 0.09731632928841044,
+          "ipcw_roc_auc": 0.672371753081694,
+          "ipcw_average_precision": 0.22769933040525706,
+          "mean_predicted_risk": 0.20001547255458,
+          "observed_risk_lower": 0.10769886969503091,
+          "observed_risk_upper": 0.20078908082746852,
+          "ipcw_observed_risk": 0.15424397526124972,
+          "predicted_within_observed_bounds": true,
+          "calibration_ratio": 1.296747391370101,
+          "maximum_censor_weight": 1.3236124176857949
+        },
+        "displayed": true
+      },
+      "24": {
+        "model": {
+          "supported": true,
+          "known_outcomes": 1360,
+          "events_by_horizon": 328,
+          "unresolved_at_horizon": 430,
+          "ipcw_brier": 0.11019760674414053,
+          "ipcw_roc_auc": 0.8103007907554015,
+          "ipcw_average_precision": 0.4579861888524578,
+          "mean_predicted_risk": 0.2319827784884581,
+          "observed_risk_lower": 0.15675090546396325,
+          "observed_risk_upper": 0.21493107423725827,
+          "ipcw_observed_risk": 0.18584098985061076,
+          "predicted_within_observed_bounds": false,
+          "calibration_ratio": 1.248286390827657,
+          "maximum_censor_weight": 1.3076208178438662
+        },
+        "no_input_baseline": {
+          "supported": true,
+          "known_outcomes": 1360,
+          "events_by_horizon": 328,
+          "unresolved_at_horizon": 430,
+          "ipcw_brier": 0.13153772606775244,
+          "ipcw_roc_auc": 0.626460375518053,
+          "ipcw_average_precision": 0.2421896969309185,
+          "mean_predicted_risk": 0.23620585151139373,
+          "observed_risk_lower": 0.15675090546396325,
+          "observed_risk_upper": 0.21493107423725827,
+          "ipcw_observed_risk": 0.18584098985061076,
+          "predicted_within_observed_bounds": false,
+          "calibration_ratio": 1.271010511197067,
+          "maximum_censor_weight": 1.3076208178438662
+        },
+        "displayed": true
+      },
+      "36": {
+        "model": {
+          "supported": true,
+          "known_outcomes": 1234,
+          "events_by_horizon": 399,
+          "unresolved_at_horizon": 556,
+          "ipcw_brier": 0.1163512358715183,
+          "ipcw_roc_auc": 0.8204089698300855,
+          "ipcw_average_precision": 0.5458539317587952,
+          "mean_predicted_risk": 0.26612366022741113,
+          "observed_risk_lower": 0.19404406438158822,
+          "observed_risk_upper": 0.23285195800857617,
+          "ipcw_observed_risk": 0.2134480111950822,
+          "predicted_within_observed_bounds": false,
+          "calibration_ratio": 1.246784445249226,
+          "maximum_censor_weight": 1.3369652501141533
+        },
+        "no_input_baseline": {
+          "supported": true,
+          "known_outcomes": 1234,
+          "events_by_horizon": 399,
+          "unresolved_at_horizon": 556,
+          "ipcw_brier": 0.14402000947256927,
+          "ipcw_roc_auc": 0.6579360513394883,
+          "ipcw_average_precision": 0.321289166259652,
+          "mean_predicted_risk": 0.2704408852870381,
+          "observed_risk_lower": 0.19404406438158822,
+          "observed_risk_upper": 0.23285195800857617,
+          "ipcw_observed_risk": 0.2134480111950822,
+          "predicted_within_observed_bounds": false,
+          "calibration_ratio": 1.2670105651153942,
+          "maximum_censor_weight": 1.3369652501141533
+        },
+        "displayed": true
+      },
+      "48": {
+        "model": {
+          "supported": true,
+          "known_outcomes": 1176,
+          "events_by_horizon": 446,
+          "unresolved_at_horizon": 614,
+          "ipcw_brier": 0.12140940536452739,
+          "ipcw_roc_auc": 0.827813337807674,
+          "ipcw_average_precision": 0.6012111798343711,
+          "mean_predicted_risk": 0.2881112453623071,
+          "observed_risk_lower": 0.22960232773387557,
+          "observed_risk_upper": 0.24966336151232163,
+          "ipcw_observed_risk": 0.23963284462309858,
+          "predicted_within_observed_bounds": false,
+          "calibration_ratio": 1.2023028221171297,
+          "maximum_censor_weight": 1.4701410325556845
+        },
+        "no_input_baseline": {
+          "supported": true,
+          "known_outcomes": 1176,
+          "events_by_horizon": 446,
+          "unresolved_at_horizon": 614,
+          "ipcw_brier": 0.15402726162579294,
+          "ipcw_roc_auc": 0.6775023420727022,
+          "ipcw_average_precision": 0.3842009530848486,
+          "mean_predicted_risk": 0.2931848793003615,
+          "observed_risk_lower": 0.22960232773387557,
+          "observed_risk_upper": 0.24966336151232163,
+          "ipcw_observed_risk": 0.23963284462309858,
+          "predicted_within_observed_bounds": false,
+          "calibration_ratio": 1.223475353562201,
+          "maximum_censor_weight": 1.4701410325556845
+        },
+        "displayed": true
+      },
+      "60": {
+        "model": {
+          "supported": true,
+          "known_outcomes": 1155,
+          "events_by_horizon": 464,
+          "unresolved_at_horizon": 635,
+          "ipcw_brier": 0.12036091732413583,
+          "ipcw_roc_auc": 0.8392485561471038,
+          "ipcw_average_precision": 0.6434580196651928,
+          "mean_predicted_risk": 0.29782590968403627,
+          "observed_risk_lower": 0.2428805696257051,
+          "observed_risk_upper": 0.2557639803561604,
+          "ipcw_observed_risk": 0.24932227499093274,
+          "predicted_within_observed_bounds": false,
+          "calibration_ratio": 1.1945419224771132,
+          "maximum_censor_weight": 1.596930715414128
+        },
+        "no_input_baseline": {
+          "supported": true,
+          "known_outcomes": 1155,
+          "events_by_horizon": 464,
+          "unresolved_at_horizon": 635,
+          "ipcw_brier": 0.15514613815395423,
+          "ipcw_roc_auc": 0.6878122321128057,
+          "ipcw_average_precision": 0.4042608336224333,
+          "mean_predicted_risk": 0.3025300743770941,
+          "observed_risk_lower": 0.2428805696257051,
+          "observed_risk_upper": 0.2557639803561604,
+          "ipcw_observed_risk": 0.24932227499093274,
+          "predicted_within_observed_bounds": false,
+          "calibration_ratio": 1.213409729989414,
+          "maximum_censor_weight": 1.596930715414128
+        },
+        "displayed": true
+      }
+    },
+    "default_horizon_bootstrap_95_intervals": {
+      "ipcw_brier": [
+        0.10792817327413155,
+        0.12455496672312534
+      ],
+      "ipcw_roc_auc": [
+        0.79632831773941,
+        0.8427721676333146
+      ],
+      "ipcw_average_precision": [
+        0.4879730685700322,
+        0.6043905058938073
+      ],
+      "calibration_ratio": [
+        1.1624772161171304,
+        1.3480140958369222
+      ],
+      "observed_risk_lower": [
+        0.17391784895639234,
+        0.21366757833875563
+      ],
+      "observed_risk_upper": [
+        0.2131021982229294,
+        0.25603824853055374
+      ]
+    },
+    "bootstrap_95_intervals_by_horizon": {
+      "12": {
+        "ipcw_brier": [
+          0.04822387661035973,
+          0.05955715147380892
+        ],
+        "ipcw_roc_auc": [
+          0.7443848161250557,
+          0.8456725353748388
+        ],
+        "ipcw_average_precision": [
+          0.09378718611537626,
+          0.24116743825125422
+        ],
+        "calibration_ratio": [
+          1.377655612559111,
+          1.646036732217581
+        ],
+        "observed_risk_lower": [
+          0.02740456387289399,
+          0.04298091277457881
+        ],
+        "observed_risk_upper": [
+          0.16367029217317125,
+          0.19569204521219882
+        ]
+      },
+      "18": {
+        "ipcw_brier": [
+          0.0795270808321106,
+          0.09372353144367769
+        ],
+        "ipcw_roc_auc": [
+          0.8113837533896816,
+          0.8676493559318171
+        ],
+        "ipcw_average_precision": [
+          0.3174623326667407,
+          0.45817622900308935
+        ],
+        "calibration_ratio": [
+          1.1683486176038376,
+          1.4019922380275458
+        ],
+        "observed_risk_lower": [
+          0.09319417786308383,
+          0.12252079334612924
+        ],
+        "observed_risk_upper": [
+          0.1840744295158882,
+          0.21771166560034125
+        ]
+      },
+      "24": {
+        "ipcw_brier": [
+          0.10095767173522181,
+          0.11794268627210112
+        ],
+        "ipcw_roc_auc": [
+          0.7825665438089698,
+          0.836229774385327
+        ],
+        "ipcw_average_precision": [
+          0.3977395510908492,
+          0.520974338903745
+        ],
+        "calibration_ratio": [
+          1.1500708027117512,
+          1.3747738402263292
+        ],
+        "observed_risk_lower": [
+          0.13904627068228909,
+          0.1727696752126202
+        ],
+        "observed_risk_upper": [
+          0.19115314716019552,
+          0.2340614499146186
+        ]
+      },
+      "36": {
+        "ipcw_brier": [
+          0.10792817327413155,
+          0.12455496672312534
+        ],
+        "ipcw_roc_auc": [
+          0.79632831773941,
+          0.8427721676333146
+        ],
+        "ipcw_average_precision": [
+          0.4879730685700322,
+          0.6043905058938073
+        ],
+        "calibration_ratio": [
+          1.1624772161171304,
+          1.3480140958369222
+        ],
+        "observed_risk_lower": [
+          0.17391784895639234,
+          0.21366757833875563
+        ],
+        "observed_risk_upper": [
+          0.2131021982229294,
+          0.25603824853055374
+        ]
+      },
+      "48": {
+        "ipcw_brier": [
+          0.11354860245020139,
+          0.12995961213030524
+        ],
+        "ipcw_roc_auc": [
+          0.8050587551266324,
+          0.8489412107233961
+        ],
+        "ipcw_average_precision": [
+          0.5424152916853769,
+          0.6617113483773854
+        ],
+        "calibration_ratio": [
+          1.1068088421639848,
+          1.311193613786185
+        ],
+        "observed_risk_lower": [
+          0.2075687702344321,
+          0.2549810483487726
+        ],
+        "observed_risk_upper": [
+          0.22727050205458818,
+          0.27560275485868535
+        ]
+      },
+      "60": {
+        "ipcw_brier": [
+          0.11219742846737135,
+          0.1286179498686615
+        ],
+        "ipcw_roc_auc": [
+          0.8182374516001407,
+          0.8634834689980072
+        ],
+        "ipcw_average_precision": [
+          0.5971733462071361,
+          0.7106564815795383
+        ],
+        "calibration_ratio": [
+          1.104994529589942,
+          1.2930674270364348
+        ],
+        "observed_risk_lower": [
+          0.22246224895304112,
+          0.2619856798613364
+        ],
+        "observed_risk_upper": [
+          0.2342523118708529,
+          0.2760570708758308
+        ]
+      }
+    },
+    "prediction_interval": {
+      "replicates": 100,
+      "level": 0.95,
+      "test_mean_width_at_default_horizon": 0.10395629174679526,
+      "meaning": "Sampling uncertainty of the fitted model only."
+    },
+    "test_mean_loglik": {
+      "model": -0.7261079950002447,
+      "no_input_baseline": -0.8274219438620187
+    },
+    "test_log_hazard_shift_needed": -0.014492505561383493,
+    "clock_sensitivity_at_default_horizon": {
+      "start": {
+        "supported": true,
+        "known_outcomes": 1234,
+        "events_by_horizon": 399,
+        "unresolved_at_horizon": 556,
+        "ipcw_brier": 0.1163512358715183,
+        "ipcw_roc_auc": 0.8204089698300855,
+        "ipcw_average_precision": 0.5458539317587952,
+        "mean_predicted_risk": 0.26612366022741113,
+        "observed_risk_lower": 0.19404406438158822,
+        "observed_risk_upper": 0.23285195800857617,
+        "ipcw_observed_risk": 0.2134480111950822,
+        "predicted_within_observed_bounds": false,
+        "calibration_ratio": 1.246784445249226,
+        "maximum_censor_weight": 1.3369652501141533
+      },
+      "end": {
+        "supported": true,
+        "known_outcomes": 1359,
+        "events_by_horizon": 392,
+        "unresolved_at_horizon": 431,
+        "ipcw_brier": 0.12355687071660365,
+        "ipcw_roc_auc": 0.8128386260567334,
+        "ipcw_average_precision": 0.5054445654222409,
+        "mean_predicted_risk": 0.26918537827381694,
+        "observed_risk_lower": 0.19352958916175045,
+        "observed_risk_upper": 0.23169536377678523,
+        "ipcw_observed_risk": 0.21261247646926784,
+        "predicted_within_observed_bounds": false,
+        "calibration_ratio": 1.2660845814132007,
+        "maximum_censor_weight": 1.3369652501141533
+      }
+    },
+    "subgroups_at_default_horizon": {
+      "sex_recorded": {
+        "1": {
+          "label": "Male",
+          "people": 835,
+          "supported": true,
+          "ipcw_roc_auc": 0.8362552374834245,
+          "mean_predicted_risk": 0.25547651505546054,
+          "observed_risk_lower": 0.17453579925414883,
+          "observed_risk_upper": 0.20574598454477314,
+          "predicted_within_observed_bounds": false
+        },
+        "2": {
+          "label": "Female",
+          "people": 727,
+          "supported": true,
+          "ipcw_roc_auc": 0.802454888440965,
+          "mean_predicted_risk": 0.27920516309274007,
+          "observed_risk_lower": 0.21787430984614928,
+          "observed_risk_upper": 0.265808885259713,
+          "predicted_within_observed_bounds": false
+        }
+      },
+      "age_band": {
+        "1": {
+          "label": "18–24",
+          "people": 283,
+          "supported": true,
+          "ipcw_roc_auc": 0.615704732907042,
+          "mean_predicted_risk": 0.46322509317652083,
+          "observed_risk_lower": 0.45389221556886217,
+          "observed_risk_upper": 0.48854214647627814,
+          "predicted_within_observed_bounds": true
+        },
+        "2": {
+          "label": "25–34",
+          "people": 424,
+          "supported": true,
+          "ipcw_roc_auc": 0.727474301407518,
+          "mean_predicted_risk": 0.31735303736765347,
+          "observed_risk_lower": 0.2129671031619291,
+          "observed_risk_upper": 0.27057216484857877,
+          "predicted_within_observed_bounds": false
+        },
+        "3": {
+          "label": "35–44",
+          "people": 258,
+          "supported": true,
+          "ipcw_roc_auc": 0.7686341364472016,
+          "mean_predicted_risk": 0.21124184705579183,
+          "observed_risk_lower": 0.11736413365623988,
+          "observed_risk_upper": 0.16320008994361213,
+          "predicted_within_observed_bounds": false
+        },
+        "4": {
+          "label": "45–54",
+          "people": 243,
+          "supported": true,
+          "ipcw_roc_auc": 0.841771093607104,
+          "mean_predicted_risk": 0.14197055896368302,
+          "observed_risk_lower": 0.08139076284379865,
+          "observed_risk_upper": 0.08990671837333597,
+          "predicted_within_observed_bounds": false
+        },
+        "5": {
+          "label": "55–64",
+          "people": 252,
+          "supported": true,
+          "ipcw_roc_auc": 0.9163283614421389,
+          "mean_predicted_risk": 0.10135775966259962,
+          "observed_risk_lower": 0.013238227649156609,
+          "observed_risk_upper": 0.0315005263584095,
+          "predicted_within_observed_bounds": false
+        },
+        "6": {
+          "label": "65+",
+          "people": 212,
+          "supported": true,
+          "ipcw_roc_auc": 0.9476516705992609,
+          "mean_predicted_risk": 0.05979855687210104,
+          "observed_risk_lower": 0.033816425120772986,
+          "observed_risk_upper": 0.03429159737071352,
+          "predicted_within_observed_bounds": false
+        }
+      },
+      "education_level": {
+        "1": {
+          "label": "Less than high school",
+          "people": 158,
+          "supported": true,
+          "ipcw_roc_auc": 0.8225873892254145,
+          "mean_predicted_risk": 0.2893016493651254,
+          "observed_risk_lower": 0.20212765957446807,
+          "observed_risk_upper": 0.20269503546099288,
+          "predicted_within_observed_bounds": false
+        },
+        "2": {
+          "label": "GED",
+          "people": 103,
+          "supported": false
+        },
+        "3": {
+          "label": "High school graduate",
+          "people": 348,
+          "supported": true,
+          "ipcw_roc_auc": 0.8252518905617633,
+          "mean_predicted_risk": 0.24199565567969347,
+          "observed_risk_lower": 0.1906373934005547,
+          "observed_risk_upper": 0.2372837924407431,
+          "predicted_within_observed_bounds": false
+        },
+        "4": {
+          "label": "Some college or associate degree",
+          "people": 606,
+          "supported": true,
+          "ipcw_roc_auc": 0.7852327557778925,
+          "mean_predicted_risk": 0.27436529850868197,
+          "observed_risk_lower": 0.20659461281887626,
+          "observed_risk_upper": 0.24781630580410452,
+          "predicted_within_observed_bounds": false
+        },
+        "5": {
+          "label": "Bachelor or advanced degree",
+          "people": 387,
+          "supported": true,
+          "ipcw_roc_auc": 0.8269825095269878,
+          "mean_predicted_risk": 0.1589372942562746,
+          "observed_risk_lower": 0.0701976072052695,
+          "observed_risk_upper": 0.10041288191577205,
+          "predicted_within_observed_bounds": false
+        }
+      }
+    },
+    "weighted_sensitivity_at_default_horizon": {
+      "supported": true,
+      "known_outcomes": 686,
+      "events_by_horizon": 176,
+      "unresolved_at_horizon": 142,
+      "ipcw_brier": 0.06083841196256747,
+      "ipcw_roc_auc": 0.9174532101444163,
+      "ipcw_average_precision": 0.4988344879574042,
+      "mean_predicted_risk": 0.14988611832862908,
+      "observed_risk_lower": 0.08934209350034614,
+      "observed_risk_upper": 0.10497605607636594,
+      "ipcw_observed_risk": 0.09715907478835603,
+      "predicted_within_observed_bounds": false,
+      "calibration_ratio": 1.5426877896391011,
+      "maximum_censor_weight": 1.3369652501141533,
+      "people": 828,
+      "note": "Cross-sectional adult weights of baseline waves 1-2 only; later waves have no weights in the supplied files; attrition handled by IPCW, not weights."
+    },
+    "selection_rule": "Greedy forward selection of input groups by validation interval-censored log-likelihood (gain threshold in config), then ridge and time-varying-effect penalties by validation (proportional hazards stays a candidate). Horizons shown only if validation Brier beats a no-input baseline. Final refit on all non-test people; calibration shift and slope from out-of-fold predictions; test evaluated once after all decisions.",
+    "censoring_assumption": "Interval-censored likelihood assumes loss to follow-up is noninformative given the inputs. IPCW weights use baseline-wave-stratified loss curves; returns whose interval straddles the horizon are unresolved. Fitting counts every baseline row equally; evaluation gives each person total weight one.",
+    "calibration_method": "Log-hazard shift and slope fitted by maximum likelihood on 5-fold out-of-fold predictions (folds by person) over all non-test participants."
+  },
+  "current": {
+    "selected_groups": {
+      "age": {
+        "label": "Age group",
+        "features": [
+          "age_band"
+        ]
+      },
+      "education": {
+        "label": "Education",
+        "features": [
+          "education_level"
+        ]
+      },
+      "employment": {
+        "label": "Employment",
+        "features": [
+          "employment_status"
+        ]
+      },
+      "ecig": {
+        "label": "Electronic nicotine use",
+        "features": [
+          "electronic_nicotine_p30d"
+        ]
+      },
+      "household": {
+        "label": "Household tobacco exposure",
+        "features": [
+          "household_tobacco_any"
+        ]
+      },
+      "mental_health": {
+        "label": "Mental health",
+        "features": [
+          "mental_health"
+        ]
+      },
+      "emotional": {
+        "label": "Recent emotional difficulties",
+        "features": [
+          "emotional_problems_7d"
+        ]
+      },
+      "dependence": {
+        "label": "Cigarettes per day / time to first cigarette",
+        "features": [
+          "cigarettes_per_day",
+          "minutes_to_first_cigarette"
+        ]
+      },
+      "smoking_duration": {
+        "label": "Years smoked",
+        "features": [
+          "regular_smoking_months"
+        ]
+      },
+      "quit_behaviour": {
+        "label": "Quit attempts and plans",
+        "features": [
+          "tried_to_quit_12m",
+          "quit_plan_timeframe"
+        ]
+      },
+      "addiction": {
+        "label": "Self-rated addiction",
+        "features": [
+          "tobacco_addiction_self"
+        ]
+      },
+      "home_rules": {
+        "label": "Home smoking rules",
+        "features": [
+          "home_combustible_smoking_rules"
+        ]
+      }
+    },
+    "selection_path": [
+      {
+        "groups": [
+          "age",
+          "education",
+          "employment",
+          "ecig",
+          "household",
+          "mental_health",
+          "emotional"
+        ],
+        "validation_mean_loglik": -1.1208873430897006,
+        "added": null
+      },
+      {
+        "groups": [
+          "age",
+          "education",
+          "employment",
+          "ecig",
+          "household",
+          "mental_health",
+          "emotional",
+          "dependence"
+        ],
+        "validation_mean_loglik": -1.0769739074424853,
+        "added": "dependence",
+        "gain": 0.04391343564721528
+      },
+      {
+        "groups": [
+          "age",
+          "education",
+          "employment",
+          "ecig",
+          "household",
+          "mental_health",
+          "emotional",
+          "dependence",
+          "smoking_duration"
+        ],
+        "validation_mean_loglik": -1.0727640060338717,
+        "added": "smoking_duration",
+        "gain": 0.004209901408613659
+      },
+      {
+        "groups": [
+          "age",
+          "education",
+          "employment",
+          "ecig",
+          "household",
+          "mental_health",
+          "emotional",
+          "dependence",
+          "smoking_duration",
+          "quit_behaviour"
+        ],
+        "validation_mean_loglik": -1.0689562162386668,
+        "added": "quit_behaviour",
+        "gain": 0.003807789795204908
+      },
+      {
+        "groups": [
+          "age",
+          "education",
+          "employment",
+          "ecig",
+          "household",
+          "mental_health",
+          "emotional",
+          "dependence",
+          "smoking_duration",
+          "quit_behaviour",
+          "addiction"
+        ],
+        "validation_mean_loglik": -1.066711329888952,
+        "added": "addiction",
+        "gain": 0.0022448863497148697
+      },
+      {
+        "groups": [
+          "age",
+          "education",
+          "employment",
+          "ecig",
+          "household",
+          "mental_health",
+          "emotional",
+          "dependence",
+          "smoking_duration",
+          "quit_behaviour",
+          "addiction",
+          "home_rules"
+        ],
+        "validation_mean_loglik": -1.0648836778842,
+        "added": "home_rules",
+        "gain": 0.0018276520047519895
+      }
+    ],
+    "core_only_validation_loglik": -1.1208873430897006,
+    "selected_candidate": {
+      "penalty": 30.0,
+      "tvc_penalty": null,
+      "validation_mean_loglik": -1.0646207458847057
+    },
+    "candidates": [
+      {
+        "penalty": 1.0,
+        "tvc_penalty": null,
+        "validation_mean_loglik": -1.06520358392284
+      },
+      {
+        "penalty": 1.0,
+        "tvc_penalty": 100.0,
+        "validation_mean_loglik": -1.0735838999306333
+      },
+      {
+        "penalty": 1.0,
+        "tvc_penalty": 10.0,
+        "validation_mean_loglik": -1.0822348296503619
+      },
+      {
+        "penalty": 10.0,
+        "tvc_penalty": null,
+        "validation_mean_loglik": -1.0648836778842
+      },
+      {
+        "penalty": 10.0,
+        "tvc_penalty": 100.0,
+        "validation_mean_loglik": -1.073105355354421
+      },
+      {
+        "penalty": 10.0,
+        "tvc_penalty": 10.0,
+        "validation_mean_loglik": -1.0816410919478037
+      },
+      {
+        "penalty": 30.0,
+        "tvc_penalty": null,
+        "validation_mean_loglik": -1.0646207458847057
+      },
+      {
+        "penalty": 30.0,
+        "tvc_penalty": 100.0,
+        "validation_mean_loglik": -1.0725572911120727
+      },
+      {
+        "penalty": 30.0,
+        "tvc_penalty": 10.0,
+        "validation_mean_loglik": -1.0809533660894568
+      }
+    ],
+    "features": [
+      "age_band",
+      "education_level",
+      "employment_status",
+      "electronic_nicotine_p30d",
+      "household_tobacco_any",
+      "mental_health",
+      "emotional_problems_7d",
+      "cigarettes_per_day",
+      "minutes_to_first_cigarette",
+      "regular_smoking_months",
+      "tried_to_quit_12m",
+      "quit_plan_timeframe",
+      "tobacco_addiction_self",
+      "home_combustible_smoking_rules"
+    ],
+    "supported_horizons_months": [
+      12,
+      18,
+      24,
+      36,
+      48,
+      60
+    ],
+    "horizon_selection": {
+      "12": {
+        "train_rows_at_risk": 8628,
+        "validation_brier_model": 0.058526709063334084,
+        "validation_brier_no_input": 0.0633919361089405,
+        "displayed": true
+      },
+      "18": {
+        "train_rows_at_risk": 7960,
+        "validation_brier_model": 0.07653302234461533,
+        "validation_brier_no_input": 0.08771126370735219,
+        "displayed": true
+      },
+      "24": {
+        "train_rows_at_risk": 6007,
+        "validation_brier_model": 0.12224245205905131,
+        "validation_brier_no_input": 0.14672907805735758,
+        "displayed": true
+      },
+      "36": {
+        "train_rows_at_risk": 5362,
+        "validation_brier_model": 0.12810236771575204,
+        "validation_brier_no_input": 0.15631812419601443,
+        "displayed": true
+      },
+      "48": {
+        "train_rows_at_risk": 4359,
+        "validation_brier_model": 0.14327139624040772,
+        "validation_brier_no_input": 0.1766110229076631,
+        "displayed": true
+      },
+      "60": {
+        "train_rows_at_risk": 3952,
+        "validation_brier_model": 0.15058832705312714,
+        "validation_brier_no_input": 0.18761522578895262,
+        "displayed": true
+      }
+    },
+    "category_reference_horizon_months": 36,
+    "risk_category_cuts": [
+      0.19073421090024856,
+      0.3547825510048777
+    ],
+    "calibration_log_hazard_shift": 0.0018449901554132243,
+    "calibration_slope": 0.9736593384553519,
+    "metrics": {
+      "12": {
+        "model": {
+          "supported": true,
+          "known_outcomes": 1963,
+          "events_by_horizon": 166,
+          "unresolved_at_horizon": 488,
+          "ipcw_brier": 0.06634749677381928,
+          "ipcw_roc_auc": 0.6748920754998999,
+          "ipcw_average_precision": 0.12061301183317047,
+          "mean_predicted_risk": 0.15055894659044378,
+          "observed_risk_lower": 0.061321489792738035,
+          "observed_risk_upper": 0.18653576437587654,
+          "ipcw_observed_risk": 0.1239286270843073,
+          "predicted_within_observed_bounds": true,
+          "calibration_ratio": 1.214884326024367,
+          "maximum_censor_weight": 1.6093750000000002
+        },
+        "no_input_baseline": {
+          "supported": true,
+          "known_outcomes": 1963,
+          "events_by_horizon": 166,
+          "unresolved_at_horizon": 488,
+          "ipcw_brier": 0.07219998725141609,
+          "ipcw_roc_auc": 0.27210406419553124,
+          "ipcw_average_precision": 0.05992286620544417,
+          "mean_predicted_risk": 0.14738249625642333,
+          "observed_risk_lower": 0.061321489792738035,
+          "observed_risk_upper": 0.18653576437587654,
+          "ipcw_observed_risk": 0.1239286270843073,
+          "predicted_within_observed_bounds": true,
+          "calibration_ratio": 1.1892530380100201,
+          "maximum_censor_weight": 1.6093750000000002
+        },
+        "displayed": true
+      },
+      "18": {
+        "model": {
+          "supported": true,
+          "known_outcomes": 1958,
+          "events_by_horizon": 275,
+          "unresolved_at_horizon": 493,
+          "ipcw_brier": 0.09016884510054142,
+          "ipcw_roc_auc": 0.7555749899998517,
+          "ipcw_average_precision": 0.30618491927685854,
+          "mean_predicted_risk": 0.2014301833618004,
+          "observed_risk_lower": 0.0998909147576749,
+          "observed_risk_upper": 0.2057815178432289,
+          "ipcw_observed_risk": 0.1528362163004519,
+          "predicted_within_observed_bounds": true,
+          "calibration_ratio": 1.3179479853506737,
+          "maximum_censor_weight": 1.6093750000000002
+        },
+        "no_input_baseline": {
+          "supported": true,
+          "known_outcomes": 1958,
+          "events_by_horizon": 275,
+          "unresolved_at_horizon": 493,
+          "ipcw_brier": 0.10089527868686328,
+          "ipcw_roc_auc": 0.5051548329031406,
+          "ipcw_average_precision": 0.13321194584626636,
+          "mean_predicted_risk": 0.1966525809674821,
+          "observed_risk_lower": 0.0998909147576749,
+          "observed_risk_upper": 0.2057815178432289,
+          "ipcw_observed_risk": 0.1528362163004519,
+          "predicted_within_observed_bounds": true,
+          "calibration_ratio": 1.2866883630571835,
+          "maximum_censor_weight": 1.6093750000000002
+        },
+        "displayed": true
+      },
+      "24": {
+        "model": {
+          "supported": true,
+          "known_outcomes": 1755,
+          "events_by_horizon": 464,
+          "unresolved_at_horizon": 696,
+          "ipcw_brier": 0.12166494320802874,
+          "ipcw_roc_auc": 0.7550247523616563,
+          "ipcw_average_precision": 0.45362907326041063,
+          "mean_predicted_risk": 0.24160717512888144,
+          "observed_risk_lower": 0.16624305063701766,
+          "observed_risk_upper": 0.2502885938196092,
+          "ipcw_observed_risk": 0.20826582222831344,
+          "predicted_within_observed_bounds": true,
+          "calibration_ratio": 1.1600903717366415,
+          "maximum_censor_weight": 1.6093750000000002
+        },
+        "no_input_baseline": {
+          "supported": true,
+          "known_outcomes": 1755,
+          "events_by_horizon": 464,
+          "unresolved_at_horizon": 696,
+          "ipcw_brier": 0.14430729699752076,
+          "ipcw_roc_auc": 0.5299730138648772,
+          "ipcw_average_precision": 0.22704710868094233,
+          "mean_predicted_risk": 0.23710999254345008,
+          "observed_risk_lower": 0.16624305063701766,
+          "observed_risk_upper": 0.2502885938196092,
+          "ipcw_observed_risk": 0.20826582222831344,
+          "predicted_within_observed_bounds": true,
+          "calibration_ratio": 1.138496897890024,
+          "maximum_censor_weight": 1.6093750000000002
+        },
+        "displayed": true
+      },
+      "36": {
+        "model": {
+          "supported": true,
+          "known_outcomes": 1715,
+          "events_by_horizon": 550,
+          "unresolved_at_horizon": 736,
+          "ipcw_brier": 0.13050999126822577,
+          "ipcw_roc_auc": 0.7808853045775455,
+          "ipcw_average_precision": 0.552116247911037,
+          "mean_predicted_risk": 0.3026147236546636,
+          "observed_risk_lower": 0.1900447547755754,
+          "observed_risk_upper": 0.26173604152064733,
+          "ipcw_observed_risk": 0.22589039814811135,
+          "predicted_within_observed_bounds": false,
+          "calibration_ratio": 1.3396528853618903,
+          "maximum_censor_weight": 1.551337359792925
+        },
+        "no_input_baseline": {
+          "supported": true,
+          "known_outcomes": 1715,
+          "events_by_horizon": 550,
+          "unresolved_at_horizon": 736,
+          "ipcw_brier": 0.15331509285590442,
+          "ipcw_roc_auc": 0.6239152567007957,
+          "ipcw_average_precision": 0.37552782842620386,
+          "mean_predicted_risk": 0.2953268163403627,
+          "observed_risk_lower": 0.1900447547755754,
+          "observed_risk_upper": 0.26173604152064733,
+          "ipcw_observed_risk": 0.22589039814811135,
+          "predicted_within_observed_bounds": false,
+          "calibration_ratio": 1.30738986146159,
+          "maximum_censor_weight": 1.551337359792925
+        },
+        "displayed": true
+      },
+      "48": {
+        "model": {
+          "supported": true,
+          "known_outcomes": 1592,
+          "events_by_horizon": 657,
+          "unresolved_at_horizon": 859,
+          "ipcw_brier": 0.14857296021817656,
+          "ipcw_roc_auc": 0.7726432997081374,
+          "ipcw_average_precision": 0.5957572780524507,
+          "mean_predicted_risk": 0.34997748361091346,
+          "observed_risk_lower": 0.24840995498619695,
+          "observed_risk_upper": 0.31483993446335845,
+          "ipcw_observed_risk": 0.2816249447247777,
+          "predicted_within_observed_bounds": false,
+          "calibration_ratio": 1.2427076868241707,
+          "maximum_censor_weight": 1.837173729316691
+        },
+        "no_input_baseline": {
+          "supported": true,
+          "known_outcomes": 1592,
+          "events_by_horizon": 657,
+          "unresolved_at_horizon": 859,
+          "ipcw_brier": 0.17739743769763938,
+          "ipcw_roc_auc": 0.605268314174953,
+          "ipcw_average_precision": 0.4170075605445977,
+          "mean_predicted_risk": 0.345231933168865,
+          "observed_risk_lower": 0.24840995498619695,
+          "observed_risk_upper": 0.31483993446335845,
+          "ipcw_observed_risk": 0.2816249447247777,
+          "predicted_within_observed_bounds": false,
+          "calibration_ratio": 1.2258570827461615,
+          "maximum_censor_weight": 1.837173729316691
+        },
+        "displayed": true
+      },
+      "60": {
+        "model": {
+          "supported": true,
+          "known_outcomes": 1576,
+          "events_by_horizon": 722,
+          "unresolved_at_horizon": 875,
+          "ipcw_brier": 0.15505844242797448,
+          "ipcw_roc_auc": 0.7849253157620382,
+          "ipcw_average_precision": 0.6498770800203629,
+          "mean_predicted_risk": 0.40178400870825076,
+          "observed_risk_lower": 0.284830020159232,
+          "observed_risk_upper": 0.3338776925964867,
+          "ipcw_observed_risk": 0.30935385637785934,
+          "predicted_within_observed_bounds": false,
+          "calibration_ratio": 1.298784548583396,
+          "maximum_censor_weight": 1.837173729316691
+        },
+        "no_input_baseline": {
+          "supported": true,
+          "known_outcomes": 1576,
+          "events_by_horizon": 722,
+          "unresolved_at_horizon": 875,
+          "ipcw_brier": 0.18706539601331465,
+          "ipcw_roc_auc": 0.6352275295699572,
+          "ipcw_average_precision": 0.42448499874865203,
+          "mean_predicted_risk": 0.3929361867628281,
+          "observed_risk_lower": 0.284830020159232,
+          "observed_risk_upper": 0.3338776925964867,
+          "ipcw_observed_risk": 0.30935385637785934,
+          "predicted_within_observed_bounds": false,
+          "calibration_ratio": 1.2701835734767029,
+          "maximum_censor_weight": 1.837173729316691
+        },
+        "displayed": true
+      }
+    },
+    "default_horizon_bootstrap_95_intervals": {
+      "ipcw_brier": [
+        0.12326807973512639,
+        0.13793560404494098
+      ],
+      "ipcw_roc_auc": [
+        0.7577311240029629,
+        0.8071500824893867
+      ],
+      "ipcw_average_precision": [
+        0.5101775787532962,
+        0.6053273842531901
+      ],
+      "calibration_ratio": [
+        1.27105793168652,
+        1.4254923132446615
+      ],
+      "observed_risk_lower": [
+        0.17478035721127777,
+        0.20532205378305396
+      ],
+      "observed_risk_upper": [
+        0.24275139350829733,
+        0.27749138775382104
+      ]
+    },
+    "bootstrap_95_intervals_by_horizon": {
+      "12": {
+        "ipcw_brier": [
+          0.06062921486357814,
+          0.0734644195737481
+        ],
+        "ipcw_roc_auc": [
+          0.6323980614748979,
+          0.7192349642553865
+        ],
+        "ipcw_average_precision": [
+          0.09590480462403048,
+          0.16638360588491607
+        ],
+        "calibration_ratio": [
+          1.129875645129986,
+          1.319590224137445
+        ],
+        "observed_risk_lower": [
+          0.05321801464858966,
+          0.07231572385850082
+        ],
+        "observed_risk_upper": [
+          0.1718092566619916,
+          0.200968131525635
+        ]
+      },
+      "18": {
+        "ipcw_brier": [
+          0.08379996937126108,
+          0.09624082041282178
+        ],
+        "ipcw_roc_auc": [
+          0.728725322254434,
+          0.7841849872973216
+        ],
+        "ipcw_average_precision": [
+          0.2536378912875068,
+          0.36661478911869
+        ],
+        "calibration_ratio": [
+          1.2248727036714757,
+          1.4188641053428785
+        ],
+        "observed_risk_lower": [
+          0.08928042699080564,
+          0.11244935328034908
+        ],
+        "observed_risk_upper": [
+          0.18987844787283778,
+          0.22264687548698772
+        ]
+      },
+      "24": {
+        "ipcw_brier": [
+          0.11318459117882229,
+          0.12897252652734936
+        ],
+        "ipcw_roc_auc": [
+          0.7283173200025767,
+          0.781306680596516
+        ],
+        "ipcw_average_precision": [
+          0.40644234350458813,
+          0.4951103695556295
+        ],
+        "calibration_ratio": [
+          1.07883981258112,
+          1.2477061376710321
+        ],
+        "observed_risk_lower": [
+          0.1498811463735964,
+          0.18284685386748045
+        ],
+        "observed_risk_upper": [
+          0.2340484033696506,
+          0.2705292117025466
+        ]
+      },
+      "36": {
+        "ipcw_brier": [
+          0.12326807973512639,
+          0.13793560404494098
+        ],
+        "ipcw_roc_auc": [
+          0.7577311240029629,
+          0.8071500824893867
+        ],
+        "ipcw_average_precision": [
+          0.5101775787532962,
+          0.6053273842531901
+        ],
+        "calibration_ratio": [
+          1.27105793168652,
+          1.4254923132446615
+        ],
+        "observed_risk_lower": [
+          0.17478035721127777,
+          0.20532205378305396
+        ],
+        "observed_risk_upper": [
+          0.24275139350829733,
+          0.27749138775382104
+        ]
+      },
+      "48": {
+        "ipcw_brier": [
+          0.1412849443074142,
+          0.1582724788239716
+        ],
+        "ipcw_roc_auc": [
+          0.7482617494500338,
+          0.7947819400008088
+        ],
+        "ipcw_average_precision": [
+          0.5546890947444735,
+          0.6454929451157897
+        ],
+        "calibration_ratio": [
+          1.1728877934367707,
+          1.3243281845222026
+        ],
+        "observed_risk_lower": [
+          0.22866503061016474,
+          0.2665354869893452
+        ],
+        "observed_risk_upper": [
+          0.29394736993206166,
+          0.33504972064847194
+        ]
+      },
+      "60": {
+        "ipcw_brier": [
+          0.14650257993440108,
+          0.16440235486963048
+        ],
+        "ipcw_roc_auc": [
+          0.7623890391970817,
+          0.8078450088890042
+        ],
+        "ipcw_average_precision": [
+          0.6070944937244807,
+          0.7012983765962911
+        ],
+        "calibration_ratio": [
+          1.2225395570829332,
+          1.378063491663608
+        ],
+        "observed_risk_lower": [
+          0.26478284139612707,
+          0.3089295101707672
+        ],
+        "observed_risk_upper": [
+          0.31314014039227883,
+          0.3566752586305909
+        ]
+      }
+    },
+    "prediction_interval": {
+      "replicates": 100,
+      "level": 0.95,
+      "test_mean_width_at_default_horizon": 0.09239985805628674,
+      "meaning": "Sampling uncertainty of the fitted model only."
+    },
+    "test_mean_loglik": {
+      "model": -1.0687141024561415,
+      "no_input_baseline": -1.1507989457870356
+    },
+    "test_log_hazard_shift_needed": -0.07957600834859041,
+    "clock_sensitivity_at_default_horizon": {
+      "start": {
+        "supported": true,
+        "known_outcomes": 1715,
+        "events_by_horizon": 550,
+        "unresolved_at_horizon": 736,
+        "ipcw_brier": 0.13050999126822577,
+        "ipcw_roc_auc": 0.7808853045775455,
+        "ipcw_average_precision": 0.552116247911037,
+        "mean_predicted_risk": 0.3026147236546636,
+        "observed_risk_lower": 0.1900447547755754,
+        "observed_risk_upper": 0.26173604152064733,
+        "ipcw_observed_risk": 0.22589039814811135,
+        "predicted_within_observed_bounds": false,
+        "calibration_ratio": 1.3396528853618903,
+        "maximum_censor_weight": 1.551337359792925
+      },
+      "end": {
+        "supported": true,
+        "known_outcomes": 1740,
+        "events_by_horizon": 538,
+        "unresolved_at_horizon": 711,
+        "ipcw_brier": 0.13399532340778475,
+        "ipcw_roc_auc": 0.7705530422398568,
+        "ipcw_average_precision": 0.5221483466649005,
+        "mean_predicted_risk": 0.31015723604207285,
+        "observed_risk_lower": 0.1942530958282279,
+        "observed_risk_upper": 0.2678336971109797,
+        "ipcw_observed_risk": 0.2310433964696038,
+        "predicted_within_observed_bounds": false,
+        "calibration_ratio": 1.3424198258047912,
+        "maximum_censor_weight": 1.551337359792925
+      }
+    },
+    "subgroups_at_default_horizon": {
+      "sex_recorded": {
+        "1": {
+          "label": "Male",
+          "people": 1082,
+          "supported": true,
+          "ipcw_roc_auc": 0.7751131249417595,
+          "mean_predicted_risk": 0.3121761765206981,
+          "observed_risk_lower": 0.21038914089780064,
+          "observed_risk_upper": 0.2757570727476763,
+          "predicted_within_observed_bounds": false
+        },
+        "2": {
+          "label": "Female",
+          "people": 1056,
+          "supported": true,
+          "ipcw_roc_auc": 0.7848988249229922,
+          "mean_predicted_risk": 0.29276965455973536,
+          "observed_risk_lower": 0.16937693179219582,
+          "observed_risk_upper": 0.2473347969065081,
+          "predicted_within_observed_bounds": false
+        }
+      },
+      "age_band": {
+        "1": {
+          "label": "18–24",
+          "people": 622,
+          "supported": true,
+          "ipcw_roc_auc": 0.755444610494655,
+          "mean_predicted_risk": 0.38622037020810046,
+          "observed_risk_lower": 0.248987591146491,
+          "observed_risk_upper": 0.33814247381872414,
+          "predicted_within_observed_bounds": false
+        },
+        "2": {
+          "label": "25–34",
+          "people": 521,
+          "supported": true,
+          "ipcw_roc_auc": 0.819083707262856,
+          "mean_predicted_risk": 0.29388900361669773,
+          "observed_risk_lower": 0.1719105358624679,
+          "observed_risk_upper": 0.23517722639696761,
+          "predicted_within_observed_bounds": false
+        },
+        "3": {
+          "label": "35–44",
+          "people": 391,
+          "supported": true,
+          "ipcw_roc_auc": 0.7260520274391706,
+          "mean_predicted_risk": 0.23697226005393143,
+          "observed_risk_lower": 0.16571164024903715,
+          "observed_risk_upper": 0.21400351563509779,
+          "predicted_within_observed_bounds": false
+        },
+        "4": {
+          "label": "45–54",
+          "people": 340,
+          "supported": true,
+          "ipcw_roc_auc": 0.758749377026393,
+          "mean_predicted_risk": 0.1759785587649855,
+          "observed_risk_lower": 0.11750486054954312,
+          "observed_risk_upper": 0.1462770638972012,
+          "predicted_within_observed_bounds": false
+        },
+        "5": {
+          "label": "55–64",
+          "people": 264,
+          "supported": true,
+          "ipcw_roc_auc": 0.7141812964620612,
+          "mean_predicted_risk": 0.1888526937166654,
+          "observed_risk_lower": 0.09781073446327693,
+          "observed_risk_upper": 0.15712556208924244,
+          "predicted_within_observed_bounds": false
+        },
+        "6": {
+          "label": "65+",
+          "people": 151,
+          "supported": true,
+          "ipcw_roc_auc": 0.7145684313195056,
+          "mean_predicted_risk": 0.2654537681126189,
+          "observed_risk_lower": 0.221322184478704,
+          "observed_risk_upper": 0.2724719101123596,
+          "predicted_within_observed_bounds": true
+        }
+      },
+      "education_level": {
+        "1": {
+          "label": "Less than high school",
+          "people": 399,
+          "supported": true,
+          "ipcw_roc_auc": 0.7894793737131482,
+          "mean_predicted_risk": 0.21109090445021353,
+          "observed_risk_lower": 0.11692653526975563,
+          "observed_risk_upper": 0.17989009860386004,
+          "predicted_within_observed_bounds": false
+        },
+        "2": {
+          "label": "GED",
+          "people": 240,
+          "supported": true,
+          "ipcw_roc_auc": 0.7782070103803899,
+          "mean_predicted_risk": 0.19949004790339833,
+          "observed_risk_lower": 0.09214429610947095,
+          "observed_risk_upper": 0.12888431042702087,
+          "predicted_within_observed_bounds": false
+        },
+        "3": {
+          "label": "High school graduate",
+          "people": 535,
+          "supported": true,
+          "ipcw_roc_auc": 0.7938540397185138,
+          "mean_predicted_risk": 0.2667674950781429,
+          "observed_risk_lower": 0.14644490644490643,
+          "observed_risk_upper": 0.19853015799792406,
+          "predicted_within_observed_bounds": false
+        },
+        "4": {
+          "label": "Some college or associate degree",
+          "people": 791,
+          "supported": true,
+          "ipcw_roc_auc": 0.7465751322069518,
+          "mean_predicted_risk": 0.3230301108019177,
+          "observed_risk_lower": 0.2179355888176304,
+          "observed_risk_upper": 0.29227271947039063,
+          "predicted_within_observed_bounds": false
+        },
+        "5": {
+          "label": "Bachelor or advanced degree",
+          "people": 230,
+          "supported": true,
+          "ipcw_roc_auc": 0.7689462604437395,
+          "mean_predicted_risk": 0.3724184168325583,
+          "observed_risk_lower": 0.26499377351669096,
+          "observed_risk_upper": 0.3863238659308117,
+          "predicted_within_observed_bounds": true
+        }
+      }
+    },
+    "weighted_sensitivity_at_default_horizon": {
+      "supported": true,
+      "known_outcomes": 1211,
+      "events_by_horizon": 316,
+      "unresolved_at_horizon": 381,
+      "ipcw_brier": 0.1267627866632637,
+      "ipcw_roc_auc": 0.7627106276474133,
+      "ipcw_average_precision": 0.4817148998854603,
+      "mean_predicted_risk": 0.26393326808344786,
+      "observed_risk_lower": 0.17824950919076463,
+      "observed_risk_upper": 0.2312342126484674,
+      "ipcw_observed_risk": 0.20474186091961602,
+      "predicted_within_observed_bounds": false,
+      "calibration_ratio": 1.2891026138864248,
+      "maximum_censor_weight": 1.089839016582987,
+      "people": 1592,
+      "note": "Cross-sectional adult weights of baseline waves 1-2 only; later waves have no weights in the supplied files; attrition handled by IPCW, not weights."
+    },
+    "selection_rule": "Greedy forward selection of input groups by validation interval-censored log-likelihood (gain threshold in config), then ridge and time-varying-effect penalties by validation (proportional hazards stays a candidate). Horizons shown only if validation Brier beats a no-input baseline. Final refit on all non-test people; calibration shift and slope from out-of-fold predictions; test evaluated once after all decisions.",
+    "censoring_assumption": "Interval-censored likelihood assumes loss to follow-up is noninformative given the inputs. IPCW weights use baseline-wave-stratified loss curves; returns whose interval straddles the horizon are unresolved. Fitting counts every baseline row equally; evaluation gives each person total weight one.",
+    "calibration_method": "Log-hazard shift and slope fitted by maximum likelihood on 5-fold out-of-fold predictions (folds by person) over all non-test participants."
+  },
+  "never": {
+    "selected_groups": {
+      "age": {
+        "label": "Age group",
+        "features": [
+          "age_band"
+        ]
+      },
+      "education": {
+        "label": "Education",
+        "features": [
+          "education_level"
+        ]
+      },
+      "employment": {
+        "label": "Employment",
+        "features": [
+          "employment_status"
+        ]
+      },
+      "ecig": {
+        "label": "Electronic nicotine use",
+        "features": [
+          "electronic_nicotine_p30d"
+        ]
+      },
+      "household": {
+        "label": "Household tobacco exposure",
+        "features": [
+          "household_tobacco_any"
+        ]
+      },
+      "mental_health": {
+        "label": "Mental health",
+        "features": [
+          "mental_health"
+        ]
+      },
+      "emotional": {
+        "label": "Recent emotional difficulties",
+        "features": [
+          "emotional_problems_7d"
+        ]
+      },
+      "alcohol": {
+        "label": "Alcohol use",
+        "features": [
+          "alcohol_days_30d",
+          "alcohol_drinks_per_drinking_day"
+        ]
+      },
+      "home_rules": {
+        "label": "Home smoking rules",
+        "features": [
+          "home_combustible_smoking_rules"
+        ]
+      },
+      "sex": {
+        "label": "Sex",
+        "features": [
+          "sex_recorded"
+        ]
+      },
+      "other_tobacco": {
+        "label": "Other tobacco products",
+        "features": [
+          "traditional_cigar_p30d",
+          "cigarillo_p30d",
+          "filtered_cigar_p30d",
+          "hookah_p30d",
+          "smokeless_tobacco_p30d",
+          "snus_p30d"
+        ]
+      }
+    },
+    "selection_path": [
+      {
+        "groups": [
+          "age",
+          "education",
+          "employment",
+          "ecig",
+          "household",
+          "mental_health",
+          "emotional"
+        ],
+        "validation_mean_loglik": -0.3022081915929838,
+        "added": null
+      },
+      {
+        "groups": [
+          "age",
+          "education",
+          "employment",
+          "ecig",
+          "household",
+          "mental_health",
+          "emotional",
+          "alcohol"
+        ],
+        "validation_mean_loglik": -0.2996772038103094,
+        "added": "alcohol",
+        "gain": 0.00253098778267441
+      },
+      {
+        "groups": [
+          "age",
+          "education",
+          "employment",
+          "ecig",
+          "household",
+          "mental_health",
+          "emotional",
+          "alcohol",
+          "home_rules"
+        ],
+        "validation_mean_loglik": -0.29778000893069134,
+        "added": "home_rules",
+        "gain": 0.001897194879618036
+      },
+      {
+        "groups": [
+          "age",
+          "education",
+          "employment",
+          "ecig",
+          "household",
+          "mental_health",
+          "emotional",
+          "alcohol",
+          "home_rules",
+          "sex"
+        ],
+        "validation_mean_loglik": -0.297053825483203,
+        "added": "sex",
+        "gain": 0.0007261834474883155
+      },
+      {
+        "groups": [
+          "age",
+          "education",
+          "employment",
+          "ecig",
+          "household",
+          "mental_health",
+          "emotional",
+          "alcohol",
+          "home_rules",
+          "sex",
+          "other_tobacco"
+        ],
+        "validation_mean_loglik": -0.29653585850665,
+        "added": "other_tobacco",
+        "gain": 0.0005179669765530415
+      }
+    ],
+    "core_only_validation_loglik": -0.3022081915929838,
+    "selected_candidate": {
+      "penalty": 30.0,
+      "tvc_penalty": 100.0,
+      "validation_mean_loglik": -0.29607867410004785
+    },
+    "candidates": [
+      {
+        "penalty": 1.0,
+        "tvc_penalty": null,
+        "validation_mean_loglik": -0.29653080628164963
+      },
+      {
+        "penalty": 1.0,
+        "tvc_penalty": 100.0,
+        "validation_mean_loglik": -0.29611377605482214
+      },
+      {
+        "penalty": 1.0,
+        "tvc_penalty": 10.0,
+        "validation_mean_loglik": -0.2996724367007165
+      },
+      {
+        "penalty": 10.0,
+        "tvc_penalty": null,
+        "validation_mean_loglik": -0.29653585850665
+      },
+      {
+        "penalty": 10.0,
+        "tvc_penalty": 100.0,
+        "validation_mean_loglik": -0.2961266122401425
+      },
+      {
+        "penalty": 10.0,
+        "tvc_penalty": 10.0,
+        "validation_mean_loglik": -0.2996787254555089
+      },
+      {
+        "penalty": 30.0,
+        "tvc_penalty": null,
+        "validation_mean_loglik": -0.29654238549556466
+      },
+      {
+        "penalty": 30.0,
+        "tvc_penalty": 100.0,
+        "validation_mean_loglik": -0.29607867410004785
+      },
+      {
+        "penalty": 30.0,
+        "tvc_penalty": 10.0,
+        "validation_mean_loglik": -0.2994566878011144
+      }
+    ],
+    "features": [
+      "age_band",
+      "education_level",
+      "employment_status",
+      "electronic_nicotine_p30d",
+      "household_tobacco_any",
+      "mental_health",
+      "emotional_problems_7d",
+      "alcohol_days_30d",
+      "alcohol_drinks_per_drinking_day",
+      "home_combustible_smoking_rules",
+      "sex_recorded",
+      "traditional_cigar_p30d",
+      "cigarillo_p30d",
+      "filtered_cigar_p30d",
+      "hookah_p30d",
+      "smokeless_tobacco_p30d",
+      "snus_p30d"
+    ],
+    "supported_horizons_months": [
+      12,
+      18,
+      24,
+      36,
+      48,
+      60
+    ],
+    "horizon_selection": {
+      "12": {
+        "train_rows_at_risk": 16729,
+        "validation_brier_model": 0.022990531944852625,
+        "validation_brier_no_input": 0.025234006499621906,
+        "displayed": true
+      },
+      "18": {
+        "train_rows_at_risk": 16104,
+        "validation_brier_model": 0.025305851787386237,
+        "validation_brier_no_input": 0.027813244776934132,
+        "displayed": true
+      },
+      "24": {
+        "train_rows_at_risk": 12868,
+        "validation_brier_model": 0.03933504344812589,
+        "validation_brier_no_input": 0.04351039092909002,
+        "displayed": true
+      },
+      "36": {
+        "train_rows_at_risk": 10814,
+        "validation_brier_model": 0.04372177858829473,
+        "validation_brier_no_input": 0.04810978046645097,
+        "displayed": true
+      },
+      "48": {
+        "train_rows_at_risk": 9668,
+        "validation_brier_model": 0.05088114558266589,
+        "validation_brier_no_input": 0.05699681412700824,
+        "displayed": true
+      },
+      "60": {
+        "train_rows_at_risk": 9154,
+        "validation_brier_model": 0.05317169332239102,
+        "validation_brier_no_input": 0.05978686412629433,
+        "displayed": true
+      }
+    },
+    "category_reference_horizon_months": 36,
+    "risk_category_cuts": [
+      0.023304943600107944,
+      0.05473779357091039
+    ],
+    "calibration_log_hazard_shift": 0.07845931512919675,
+    "calibration_slope": 0.9104308106869726,
+    "metrics": {
+      "12": {
+        "model": {
+          "supported": true,
+          "known_outcomes": 4191,
+          "events_by_horizon": 98,
+          "unresolved_at_horizon": 284,
+          "ipcw_brier": 0.019658978478571648,
+          "ipcw_roc_auc": 0.8997665724008841,
+          "ipcw_average_precision": 0.2305282163798308,
+          "mean_predicted_risk": 0.03220268296273213,
+          "observed_risk_lower": 0.022833178005591783,
+          "observed_risk_upper": 0.04881174277726001,
+          "ipcw_observed_risk": 0.0358224603914259,
+          "predicted_within_observed_bounds": true,
+          "calibration_ratio": 0.8989522944783502,
+          "maximum_censor_weight": 1.1264461963755503
+        },
+        "no_input_baseline": {
+          "supported": true,
+          "known_outcomes": 4191,
+          "events_by_horizon": 98,
+          "unresolved_at_horizon": 284,
+          "ipcw_brier": 0.021884833938473774,
+          "ipcw_roc_auc": 0.7905885454717388,
+          "ipcw_average_precision": 0.053032192271462684,
+          "mean_predicted_risk": 0.036037766741967514,
+          "observed_risk_lower": 0.022833178005591783,
+          "observed_risk_upper": 0.04881174277726001,
+          "ipcw_observed_risk": 0.0358224603914259,
+          "predicted_within_observed_bounds": true,
+          "calibration_ratio": 1.0060103730505665,
+          "maximum_censor_weight": 1.1264461963755503
+        },
+        "displayed": true
+      },
+      "18": {
+        "model": {
+          "supported": true,
+          "known_outcomes": 4059,
+          "events_by_horizon": 127,
+          "unresolved_at_horizon": 416,
+          "ipcw_brier": 0.025451684070661524,
+          "ipcw_roc_auc": 0.8627425591453122,
+          "ipcw_average_precision": 0.2279871857337338,
+          "mean_predicted_risk": 0.04107448930245821,
+          "observed_risk_lower": 0.029589934762348547,
+          "observed_risk_upper": 0.054403541472506985,
+          "ipcw_observed_risk": 0.04199673811742777,
+          "predicted_within_observed_bounds": true,
+          "calibration_ratio": 0.9780399893822506,
+          "maximum_censor_weight": 1.2130474452554745
+        },
+        "no_input_baseline": {
+          "supported": true,
+          "known_outcomes": 4059,
+          "events_by_horizon": 127,
+          "unresolved_at_horizon": 416,
+          "ipcw_brier": 0.028395801190056445,
+          "ipcw_roc_auc": 0.7156192241740692,
+          "ipcw_average_precision": 0.052245033314997594,
+          "mean_predicted_risk": 0.04383260945843129,
+          "observed_risk_lower": 0.029589934762348547,
+          "observed_risk_upper": 0.054403541472506985,
+          "ipcw_observed_risk": 0.04199673811742777,
+          "predicted_within_observed_bounds": true,
+          "calibration_ratio": 1.0437146174512462,
+          "maximum_censor_weight": 1.2130474452554745
+        },
+        "displayed": true
+      },
+      "24": {
+        "model": {
+          "supported": true,
+          "known_outcomes": 3375,
+          "events_by_horizon": 199,
+          "unresolved_at_horizon": 1100,
+          "ipcw_brier": 0.03913031278643419,
+          "ipcw_roc_auc": 0.8215954065184452,
+          "ipcw_average_precision": 0.2736623029788361,
+          "mean_predicted_risk": 0.05404175194569206,
+          "observed_risk_lower": 0.051041470776501834,
+          "observed_risk_upper": 0.06717921880630691,
+          "ipcw_observed_risk": 0.05911034479140437,
+          "predicted_within_observed_bounds": true,
+          "calibration_ratio": 0.9142520169083945,
+          "maximum_censor_weight": 1.349112426035503
+        },
+        "no_input_baseline": {
+          "supported": true,
+          "known_outcomes": 3375,
+          "events_by_horizon": 199,
+          "unresolved_at_horizon": 1100,
+          "ipcw_brier": 0.04394995667315695,
+          "ipcw_roc_auc": 0.6626237632021896,
+          "ipcw_average_precision": 0.07658162638525759,
+          "mean_predicted_risk": 0.05564469131489599,
+          "observed_risk_lower": 0.051041470776501834,
+          "observed_risk_upper": 0.06717921880630691,
+          "ipcw_observed_risk": 0.05911034479140437,
+          "predicted_within_observed_bounds": true,
+          "calibration_ratio": 0.9413697638080375,
+          "maximum_censor_weight": 1.349112426035503
+        },
+        "displayed": true
+      },
+      "36": {
+        "model": {
+          "supported": true,
+          "known_outcomes": 2893,
+          "events_by_horizon": 223,
+          "unresolved_at_horizon": 1582,
+          "ipcw_brier": 0.043924573982045904,
+          "ipcw_roc_auc": 0.7707109306919215,
+          "ipcw_average_precision": 0.2664755001055622,
+          "mean_predicted_risk": 0.06923208479561269,
+          "observed_risk_lower": 0.06270476689311968,
+          "observed_risk_upper": 0.07641239451827772,
+          "ipcw_observed_risk": 0.0695585807056987,
+          "predicted_within_observed_bounds": true,
+          "calibration_ratio": 0.9953061734904078,
+          "maximum_censor_weight": 1.349112426035503
+        },
+        "no_input_baseline": {
+          "supported": true,
+          "known_outcomes": 2893,
+          "events_by_horizon": 223,
+          "unresolved_at_horizon": 1582,
+          "ipcw_brier": 0.04930552059405772,
+          "ipcw_roc_auc": 0.5657690258340561,
+          "ipcw_average_precision": 0.07670143680452837,
+          "mean_predicted_risk": 0.07095047000854518,
+          "observed_risk_lower": 0.06270476689311968,
+          "observed_risk_upper": 0.07641239451827772,
+          "ipcw_observed_risk": 0.0695585807056987,
+          "predicted_within_observed_bounds": true,
+          "calibration_ratio": 1.0200103177598683,
+          "maximum_censor_weight": 1.349112426035503
+        },
+        "displayed": true
+      },
+      "48": {
+        "model": {
+          "supported": true,
+          "known_outcomes": 2688,
+          "events_by_horizon": 262,
+          "unresolved_at_horizon": 1787,
+          "ipcw_brier": 0.05189485789538952,
+          "ipcw_roc_auc": 0.7770966315305506,
+          "ipcw_average_precision": 0.28793617904871116,
+          "mean_predicted_risk": 0.07787508066319661,
+          "observed_risk_lower": 0.07611735184458494,
+          "observed_risk_upper": 0.08079190481959568,
+          "ipcw_observed_risk": 0.07845462833209031,
+          "predicted_within_observed_bounds": true,
+          "calibration_ratio": 0.9926129575626751,
+          "maximum_censor_weight": 1.5283129428059024
+        },
+        "no_input_baseline": {
+          "supported": true,
+          "known_outcomes": 2688,
+          "events_by_horizon": 262,
+          "unresolved_at_horizon": 1787,
+          "ipcw_brier": 0.0585858129850956,
+          "ipcw_roc_auc": 0.5669609937304831,
+          "ipcw_average_precision": 0.08942483651534017,
+          "mean_predicted_risk": 0.07998997723944566,
+          "observed_risk_lower": 0.07611735184458494,
+          "observed_risk_upper": 0.08079190481959568,
+          "ipcw_observed_risk": 0.07845462833209031,
+          "predicted_within_observed_bounds": true,
+          "calibration_ratio": 1.0195698958748027,
+          "maximum_censor_weight": 1.5283129428059024
+        },
+        "displayed": true
+      },
+      "60": {
+        "model": {
+          "supported": true,
+          "known_outcomes": 2558,
+          "events_by_horizon": 273,
+          "unresolved_at_horizon": 1917,
+          "ipcw_brier": 0.054125986798361975,
+          "ipcw_roc_auc": 0.7875813054980118,
+          "ipcw_average_precision": 0.2968158733983565,
+          "mean_predicted_risk": 0.08319306276237062,
+          "observed_risk_lower": 0.08031049341436385,
+          "observed_risk_upper": 0.08289102340298124,
+          "ipcw_observed_risk": 0.08160075840867254,
+          "predicted_within_observed_bounds": false,
+          "calibration_ratio": 1.0195133523848334,
+          "maximum_censor_weight": 1.6284108709702154
+        },
+        "no_input_baseline": {
+          "supported": true,
+          "known_outcomes": 2558,
+          "events_by_horizon": 273,
+          "unresolved_at_horizon": 1917,
+          "ipcw_brier": 0.061400873324090305,
+          "ipcw_roc_auc": 0.5495703817898188,
+          "ipcw_average_precision": 0.09059453174042487,
+          "mean_predicted_risk": 0.08470488205496447,
+          "observed_risk_lower": 0.08031049341436385,
+          "observed_risk_upper": 0.08289102340298124,
+          "ipcw_observed_risk": 0.08160075840867254,
+          "predicted_within_observed_bounds": false,
+          "calibration_ratio": 1.0380403774036742,
+          "maximum_censor_weight": 1.6284108709702154
+        },
+        "displayed": true
+      }
+    },
+    "default_horizon_bootstrap_95_intervals": {
+      "ipcw_brier": [
+        0.03893882201050291,
+        0.04953002260742378
+      ],
+      "ipcw_roc_auc": [
+        0.735170664259054,
+        0.8077904450834077
+      ],
+      "ipcw_average_precision": [
+        0.21432304405127897,
+        0.33298001864402116
+      ],
+      "calibration_ratio": [
+        0.8949498339041051,
+        1.107984895268563
+      ],
+      "observed_risk_lower": [
+        0.05608924104166482,
+        0.07086514734906554
+      ],
+      "observed_risk_upper": [
+        0.0677034916664927,
+        0.08447377877260237
+      ]
+    },
+    "bootstrap_95_intervals_by_horizon": {
+      "12": {
+        "ipcw_brier": [
+          0.016342494547150248,
+          0.02298617523259901
+        ],
+        "ipcw_roc_auc": [
+          0.8675696437849598,
+          0.9241174032942959
+        ],
+        "ipcw_average_precision": [
+          0.17181429415466554,
+          0.332616082020311
+        ],
+        "calibration_ratio": [
+          0.7960738940512244,
+          1.0047600382470432
+        ],
+        "observed_risk_lower": [
+          0.019099487418452916,
+          0.02727166821994411
+        ],
+        "observed_risk_upper": [
+          0.043683014911463175,
+          0.05581314072693388
+        ]
+      },
+      "18": {
+        "ipcw_brier": [
+          0.022206350627693088,
+          0.029471258504585887
+        ],
+        "ipcw_roc_auc": [
+          0.8302914160672766,
+          0.889602457947222
+        ],
+        "ipcw_average_precision": [
+          0.17432262055645772,
+          0.30290226621701594
+        ],
+        "calibration_ratio": [
+          0.8680511052689949,
+          1.0963665265491953
+        ],
+        "observed_risk_lower": [
+          0.02516309412861138,
+          0.03495456663560114
+        ],
+        "observed_risk_upper": [
+          0.0472943849021435,
+          0.06084867194780989
+        ]
+      },
+      "24": {
+        "ipcw_brier": [
+          0.034642660325331476,
+          0.043641197130399836
+        ],
+        "ipcw_roc_auc": [
+          0.7942009642028189,
+          0.8519847788293573
+        ],
+        "ipcw_average_precision": [
+          0.22223722523269607,
+          0.35456179683965305
+        ],
+        "calibration_ratio": [
+          0.8137094650306401,
+          1.019856420811672
+        ],
+        "observed_risk_lower": [
+          0.045153069327055,
+          0.05794138733757815
+        ],
+        "observed_risk_upper": [
+          0.06036585265278879,
+          0.07597847850957155
+        ]
+      },
+      "36": {
+        "ipcw_brier": [
+          0.03893882201050291,
+          0.04953002260742378
+        ],
+        "ipcw_roc_auc": [
+          0.735170664259054,
+          0.8077904450834077
+        ],
+        "ipcw_average_precision": [
+          0.21432304405127897,
+          0.33298001864402116
+        ],
+        "calibration_ratio": [
+          0.8949498339041051,
+          1.107984895268563
+        ],
+        "observed_risk_lower": [
+          0.05608924104166482,
+          0.07086514734906554
+        ],
+        "observed_risk_upper": [
+          0.0677034916664927,
+          0.08447377877260237
+        ]
+      },
+      "48": {
+        "ipcw_brier": [
+          0.046012119216993407,
+          0.056995644419324476
+        ],
+        "ipcw_roc_auc": [
+          0.7488504852984579,
+          0.8101842386346246
+        ],
+        "ipcw_average_precision": [
+          0.24660061486108054,
+          0.34977051683683885
+        ],
+        "calibration_ratio": [
+          0.894640921136436,
+          1.1271386921149367
+        ],
+        "observed_risk_lower": [
+          0.06628120340567291,
+          0.08522647147488426
+        ],
+        "observed_risk_upper": [
+          0.07115015874965855,
+          0.0899538685701308
+        ]
+      },
+      "60": {
+        "ipcw_brier": [
+          0.04826863936705693,
+          0.059356722070884084
+        ],
+        "ipcw_roc_auc": [
+          0.7616439343633047,
+          0.8129923444348395
+        ],
+        "ipcw_average_precision": [
+          0.25219296822936954,
+          0.35722136936464066
+        ],
+        "calibration_ratio": [
+          0.9289016244446315,
+          1.1375301375188351
+        ],
+        "observed_risk_lower": [
+          0.07166759785872642,
+          0.08851746985584703
+        ],
+        "observed_risk_upper": [
+          0.07411579576942649,
+          0.09199955802958401
+        ]
+      }
+    },
+    "prediction_interval": {
+      "replicates": 100,
+      "level": 0.95,
+      "test_mean_width_at_default_horizon": 0.04044710016910662,
+      "meaning": "Sampling uncertainty of the fitted model only."
+    },
+    "test_mean_loglik": {
+      "model": -0.2973631414307606,
+      "no_input_baseline": -0.32986545938358935
+    },
+    "test_log_hazard_shift_needed": 0.022653411241768312,
+    "clock_sensitivity_at_default_horizon": {
+      "start": {
+        "supported": true,
+        "known_outcomes": 2893,
+        "events_by_horizon": 223,
+        "unresolved_at_horizon": 1582,
+        "ipcw_brier": 0.043924573982045904,
+        "ipcw_roc_auc": 0.7707109306919215,
+        "ipcw_average_precision": 0.2664755001055622,
+        "mean_predicted_risk": 0.06923208479561269,
+        "observed_risk_lower": 0.06270476689311968,
+        "observed_risk_upper": 0.07641239451827772,
+        "ipcw_observed_risk": 0.0695585807056987,
+        "predicted_within_observed_bounds": true,
+        "calibration_ratio": 0.9953061734904078,
+        "maximum_censor_weight": 1.349112426035503
+      },
+      "end": {
+        "supported": true,
+        "known_outcomes": 3275,
+        "events_by_horizon": 220,
+        "unresolved_at_horizon": 1200,
+        "ipcw_brier": 0.043219199589516345,
+        "ipcw_roc_auc": 0.7988332684562943,
+        "ipcw_average_precision": 0.2674710216975292,
+        "mean_predicted_risk": 0.06338232767531815,
+        "observed_risk_lower": 0.05652020098565901,
+        "observed_risk_upper": 0.06936830685297561,
+        "ipcw_observed_risk": 0.06294425391931731,
+        "predicted_within_observed_bounds": true,
+        "calibration_ratio": 1.0069597100406078,
+        "maximum_censor_weight": 1.349112426035503
+      }
+    },
+    "subgroups_at_default_horizon": {
+      "sex_recorded": {
+        "1": {
+          "label": "Male",
+          "people": 2067,
+          "supported": true,
+          "ipcw_roc_auc": 0.7944993370964295,
+          "mean_predicted_risk": 0.07773205344937226,
+          "observed_risk_lower": 0.06703436063634717,
+          "observed_risk_upper": 0.08342494814639462,
+          "predicted_within_observed_bounds": true
+        },
+        "2": {
+          "label": "Female",
+          "people": 2212,
+          "supported": true,
+          "ipcw_roc_auc": 0.7491275138397899,
+          "mean_predicted_risk": 0.06169424862206468,
+          "observed_risk_lower": 0.05901257082312652,
+          "observed_risk_upper": 0.07035932897879907,
+          "predicted_within_observed_bounds": true
+        }
+      },
+      "age_band": {
+        "1": {
+          "label": "18–24",
+          "people": 2823,
+          "supported": true,
+          "ipcw_roc_auc": 0.7012200354455755,
+          "mean_predicted_risk": 0.06094378580068263,
+          "observed_risk_lower": 0.04738970473570973,
+          "observed_risk_upper": 0.06373666428943672,
+          "predicted_within_observed_bounds": true
+        },
+        "2": {
+          "label": "25–34",
+          "people": 492,
+          "supported": true,
+          "ipcw_roc_auc": 0.8319371457339398,
+          "mean_predicted_risk": 0.07509890895882457,
+          "observed_risk_lower": 0.06610202147504358,
+          "observed_risk_upper": 0.07276204986544735,
+          "predicted_within_observed_bounds": false
+        },
+        "3": {
+          "label": "35–44",
+          "people": 326,
+          "supported": true,
+          "ipcw_roc_auc": 0.9077549389291182,
+          "mean_predicted_risk": 0.07387345265231926,
+          "observed_risk_lower": 0.07850385038503849,
+          "observed_risk_upper": 0.10105457057333633,
+          "predicted_within_observed_bounds": false
+        },
+        "4": {
+          "label": "45–54",
+          "people": 319,
+          "supported": true,
+          "ipcw_roc_auc": 0.8405564287710116,
+          "mean_predicted_risk": 0.09628455914627511,
+          "observed_risk_lower": 0.1211379833866803,
+          "observed_risk_upper": 0.13130179043379767,
+          "predicted_within_observed_bounds": false
+        },
+        "5": {
+          "label": "55–64",
+          "people": 232,
+          "supported": true,
+          "ipcw_roc_auc": 0.7645715739018931,
+          "mean_predicted_risk": 0.1195565434844007,
+          "observed_risk_lower": 0.10836501901140681,
+          "observed_risk_upper": 0.1102558609922184,
+          "predicted_within_observed_bounds": false
+        },
+        "6": {
+          "label": "65+",
+          "people": 186,
+          "supported": true,
+          "ipcw_roc_auc": 0.7387424374928285,
+          "mean_predicted_risk": 0.06888140778687413,
+          "observed_risk_lower": 0.05633802816901412,
+          "observed_risk_upper": 0.05696274420717861,
+          "predicted_within_observed_bounds": false
+        }
+      },
+      "education_level": {
+        "1": {
+          "label": "Less than high school",
+          "people": 706,
+          "supported": true,
+          "ipcw_roc_auc": 0.819861327441534,
+          "mean_predicted_risk": 0.10523794172657687,
+          "observed_risk_lower": 0.07376537730782892,
+          "observed_risk_upper": 0.10853300741217972,
+          "predicted_within_observed_bounds": true
+        },
+        "2": {
+          "label": "GED",
+          "people": 140,
+          "supported": false
+        },
+        "3": {
+          "label": "High school graduate",
+          "people": 1449,
+          "supported": true,
+          "ipcw_roc_auc": 0.6969423349825794,
+          "mean_predicted_risk": 0.07149334654975457,
+          "observed_risk_lower": 0.07347940067555742,
+          "observed_risk_upper": 0.09016268706911044,
+          "predicted_within_observed_bounds": false
+        },
+        "4": {
+          "label": "Some college or associate degree",
+          "people": 1301,
+          "supported": true,
+          "ipcw_roc_auc": 0.7839224314529533,
+          "mean_predicted_risk": 0.06252908769589922,
+          "observed_risk_lower": 0.055721694212110144,
+          "observed_risk_upper": 0.0644077063400082,
+          "predicted_within_observed_bounds": true
+        },
+        "5": {
+          "label": "Bachelor or advanced degree",
+          "people": 750,
+          "supported": true,
+          "ipcw_roc_auc": 0.8736770211848595,
+          "mean_predicted_risk": 0.02994854833734799,
+          "observed_risk_lower": 0.03164394134293792,
+          "observed_risk_upper": 0.03216508962418978,
+          "predicted_within_observed_bounds": false
+        }
+      }
+    },
+    "weighted_sensitivity_at_default_horizon": {
+      "supported": true,
+      "known_outcomes": 1771,
+      "events_by_horizon": 161,
+      "unresolved_at_horizon": 376,
+      "ipcw_brier": 0.03455324149323686,
+      "ipcw_roc_auc": 0.8220017796395305,
+      "ipcw_average_precision": 0.24448315309523969,
+      "mean_predicted_risk": 0.07211098902837644,
+      "observed_risk_lower": 0.038934708621267036,
+      "observed_risk_upper": 0.043501944532342324,
+      "ipcw_observed_risk": 0.04121832657680468,
+      "predicted_within_observed_bounds": false,
+      "calibration_ratio": 1.7494885168132077,
+      "maximum_censor_weight": 1.229177282751249,
+      "people": 2147,
+      "note": "Cross-sectional adult weights of baseline waves 1-2 only; later waves have no weights in the supplied files; attrition handled by IPCW, not weights."
+    },
+    "selection_rule": "Greedy forward selection of input groups by validation interval-censored log-likelihood (gain threshold in config), then ridge and time-varying-effect penalties by validation (proportional hazards stays a candidate). Horizons shown only if validation Brier beats a no-input baseline. Final refit on all non-test people; calibration shift and slope from out-of-fold predictions; test evaluated once after all decisions.",
+    "censoring_assumption": "Interval-censored likelihood assumes loss to follow-up is noninformative given the inputs. IPCW weights use baseline-wave-stratified loss curves; returns whose interval straddles the horizon are unresolved. Fitting counts every baseline row equally; evaluation gives each person total weight one.",
+    "calibration_method": "Log-hazard shift and slope fitted by maximum likelihood on 5-fold out-of-fold predictions (folds by person) over all non-test participants."
+  }
+}

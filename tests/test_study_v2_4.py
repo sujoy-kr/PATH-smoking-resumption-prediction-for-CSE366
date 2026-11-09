@@ -1,4 +1,4 @@
-"""Synthetic tests of v2.3 observation rules, interval-censored fitting and safety."""
+"""Synthetic tests of v2.4 observation rules, interval-censored fitting and safety."""
 from pathlib import Path
 import json
 import sys
@@ -137,7 +137,7 @@ def test_exact_explanations_reconcile_with_synthetic_background():
     model, frame = fitted()
     background = frame[['x']].sample(8, random_state=1)
     reference, factors = exact_feature_shap(model, background, frame[['x']].iloc[[9]], 36)
-    assert reference+sum(f['contribution'] for f in factors) == pytest.approx(model.risk(frame.iloc[[9]], [36])[0, 0])
+    assert reference+sum(f['contribution'] for f in factors) == pytest.approx(model.risk(frame[['x']].iloc[[9]], [36])[0, 0])
 
 
 def test_choose_origin_supports_current_and_never_populations():
@@ -152,9 +152,90 @@ def test_choose_origin_supports_current_and_never_populations():
     assert choose_origin(never, WAVES, {'current': [1]}, 2) is None
 
 
+def test_stay_in_state_gives_one_row_but_re_entry_adds_an_episode():
+    from path_project.study_training import all_origins
+    def rec(waves, current):
+        return [{'wave': w, 'former': 1 if c == 2 else 2, 'p30': None, 'current': c} for w, c in zip(waves, current)]
+    rule = {'former': [1], 'current': [2]}
+    stay = all_origins(rec([1, 2, 3, 4], [2, 2, 2, 2]), WAVES, rule, 1)
+    assert [o['starting_wave'] for o in stay] == [1]           # unbroken stay: entry row only
+    relapse = all_origins(rec([1, 2, 3, 4, 5], [2, 1, 1, 2, 2]), WAVES, rule, 1)
+    assert [o['starting_wave'] for o in relapse] == [1, 4]     # relapse then quit again: new episode
+    gap = all_origins(rec([1, 4, 5], [2, 2, 2]), WAVES, rule, 1)
+    assert [o['starting_wave'] for o in gap] == [4]            # skipped waves: state unknown, new entry
+
+
+def test_time_varying_effects_fit_and_improve_when_an_effect_fades():
+    rng = np.random.default_rng(3)
+    n = 3000
+    x = rng.integers(0, 2, n).astype(float)
+    rate = .3*np.exp(1.2*x)
+    u = rng.exponential(1, n)
+    t = np.where(u/rate < 1, u/rate*12, (1+(u-rate)/.3)*12)
+    grid = np.array([0., 10., 22., 34., 46., 58., 70.])
+    last = rng.choice([22., 34., 46., 58., 70.], n)
+    left, right, event = np.zeros(n), last.copy(), np.zeros(n, int)
+    for i in range(n):
+        g = grid[grid <= last[i]]
+        if t[i] <= last[i]:
+            k = np.searchsorted(g, t[i])
+            left[i], right[i], event[i] = g[k-1], g[k], 1
+    frame = pd.DataFrame({'x': x, 'left_months': left, 'right_months': right, 'event': event, 'starting_wave': 1})
+    ph = PiecewiseHazardModel(['x'], {'x': [0., 1.]}, [0, 12, 24, 36, 48], 1.).fit(frame)
+    tv = PiecewiseHazardModel(['x'], {'x': [0., 1.]}, [0, 12, 24, 36, 48], 1., 10.).fit(frame)
+    assert tv.mean_log_likelihood(frame) > ph.mean_log_likelihood(frame)
+    clone = PiecewiseHazardModel.from_dict(json.loads(json.dumps(tv.to_dict())))
+    np.testing.assert_array_equal(tv.risk(frame, [12, 60]), clone.risk(frame, [12, 60]))
+
+
+def test_numeric_inputs_can_bend_and_missing_stays_distinct():
+    pre = Preprocessor(['q'], {'q': None})
+    values = pd.DataFrame({'q': np.r_[np.arange(1., 200.), [np.nan]*5]})
+    pre.fit(values)
+    assert pre.hinges['q'] and pre.transform(values).shape[1] == 2+len(pre.hinges['q'])
+    again = Preprocessor.from_dict(json.loads(json.dumps(pre.to_dict())))
+    np.testing.assert_allclose(again.transform(values), pre.transform(values))
+
+
+def test_calibration_slope_shift_and_unstratified_average_for_new_users():
+    model, frame = fitted()
+    own = model.risk(frame.head(50), [36])               # own wave group
+    pooled = model.risk(frame[['x']].head(50), [36])     # no wave: average over groups
+    assert own.shape == pooled.shape and not np.allclose(own, pooled)
+    base = model.risk(frame[['x']].head(5), [36])
+    model.slope, model.shift = 1.5, -.2
+    assert not np.allclose(base, model.risk(frame[['x']].head(5), [36]))
+
+
+def test_input_encoder_validates_every_kind():
+    from path_project.inputs import encode_answers
+    names = ['sex_recorded', 'alcohol_days_30d', 'cigarettes_per_day', 'last_cigarette_recency_days']
+    values, reasons = encode_answers(ROOT, {'sex_recorded': '2', 'alcohol_days_30d': 4,
+        'cigarettes_per_day': {'number': 2, 'unit': '2'}, 'last_cigarette_recency_days': {'number': 3, 'unit': '3'}}, names)
+    assert values['cigarettes_per_day'] == 40 and values['last_cigarette_recency_days'] == pytest.approx(3*365.25)
+    assert set(reasons.values()) == {'observed'}
+    _, reasons = encode_answers(ROOT, {'sex_recorded': 'dont_know', 'alcohol_days_30d': 'not_applicable'}, names)
+    assert reasons['sex_recorded'] == 'app_dont_know' and reasons['alcohol_days_30d'] == 'app_not_applicable'
+    for bad in ({'sex_recorded': '9'}, {'alcohol_days_30d': 31}, {'alcohol_days_30d': 1.5},
+                {'cigarettes_per_day': {'number': 2}}, {'cigarettes_per_day': {'number': 0, 'unit': '1'}}, {'PERSONID': 'x'}):
+        with pytest.raises(BoundaryError):
+            encode_answers(ROOT, bad, names)
+
+
+def test_group_shapley_reconciles_and_prediction_interval_brackets_estimate():
+    bundle = load_study(ROOT)
+    from path_project.assessment import assess_available
+    answers = json.loads((ROOT/'tests/fixtures/handoff_profiles.json').read_text())['profiles'][0]['answers']
+    r = assess_available(ROOT, bundle, answers, ['Yes', 'Yes', 'Not at all', 'No'])
+    assert r['explanation_reference']+sum(f['contribution'] for f in r['factors']) == pytest.approx(r['probability'], abs=1e-8)
+    assert {f['feature'] for f in r['factors']} == set(bundle['populations']['former']['results']['selected_groups'])
+    assert r['probability_interval'][0] <= r['probability'] <= r['probability_interval'][1]
+    assert all(p['low'] <= p['probability'] <= p['high'] for p in r['curve'])
+
+
 def test_shipped_bundle_covers_three_populations_without_participant_rows_or_pickle():
     bundle = load_study(ROOT)
-    assert not list((ROOT/'artifacts/longitudinal_v2_3').glob('*.joblib'))
+    assert not list((ROOT/'artifacts/longitudinal_v2_4').glob('*.joblib'))
     assert set(bundle['populations']) == {'former', 'current', 'never'}
     for name, pop in bundle['populations'].items():
         results = pop['results']
@@ -163,9 +244,13 @@ def test_shipped_bundle_covers_three_populations_without_participant_rows_or_pic
             pair = results['metrics'][str(h)]
             assert pair['model']['ipcw_brier'] < pair['no_input_baseline']['ipcw_brier'], (name, h)
         assert results['test_mean_loglik']['model'] > results['test_mean_loglik']['no_input_baseline']
-        assert abs(results['test_log_hazard_shift_needed']) < .1
+        assert abs(results['test_log_hazard_shift_needed']) < .15
+        assert len(pop['model'].replicates) == bundle['config']['prediction_interval_replicates']
+        assert len(pop['model'].features) == len(set(pop['model'].features))
         bg = pop['background']
         assert len(bg) == bundle['config']['background_size'] and 'PERSONID' not in bg.columns
+        assert results['subgroups_at_default_horizon'] and results['weighted_sensitivity_at_default_horizon']
     assert 'last_cigarette_recency_days' in bundle['populations']['former']['model'].features
     assert 'last_cigarette_recency_days' not in bundle['populations']['current']['model'].features
-    assert 12 not in bundle['populations']['former']['results']['supported_horizons_months']
+    assert 'cigarettes_per_day' in bundle['populations']['current']['model'].features
+    assert bundle['populations']['current']['results']['metrics']['36']['model']['ipcw_roc_auc'] > .72

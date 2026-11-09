@@ -1,0 +1,282 @@
+{
+  "populations": {
+    "former": {
+      "people": 10412,
+      "baseline_rows": 11917,
+      "events": 3068,
+      "event_rows": 3441,
+      "no_event_observed_before_followup_ended": 7344,
+      "followup_interview_distribution": {
+        "1": 4496,
+        "2": 2254,
+        "3": 1375,
+        "4": 1215,
+        "5": 569,
+        "6": 510,
+        "7": 1498
+      },
+      "baseline_wave_distribution": {
+        "1": 4098,
+        "2": 1351,
+        "3": 1089,
+        "4": 1643,
+        "5": 1258,
+        "6": 1359,
+        "7": 1119
+      },
+      "rows_per_person": {
+        "1": 9002,
+        "2": 1318,
+        "3": 89,
+        "4": 3
+      },
+      "observation_end_reasons": {
+        "end_of_consecutive_observation": 8476,
+        "first_observed_event": 3441
+      },
+      "splits": {
+        "calibration": {
+          "people": 1041,
+          "rows": 1180,
+          "events": 307
+        },
+        "test": {
+          "people": 1563,
+          "rows": 1790,
+          "events": 460
+        },
+        "train": {
+          "people": 6247,
+          "rows": 7144,
+          "events": 1841
+        },
+        "validation": {
+          "people": 1561,
+          "rows": 1803,
+          "events": 460
+        }
+      },
+      "feature_missingness": {
+        "last_cigarette_recency_days": 0.1323319627423009,
+        "age_band": 8.39137366786943e-05,
+        "education_level": 0.003272635730469078,
+        "employment_status": 0.004615255517328187,
+        "electronic_nicotine_p30d": 0.003356549467147772,
+        "household_tobacco_any": 0.15666694637912226,
+        "mental_health": 0.0015943609968951918,
+        "emotional_problems_7d": 0.002433498363682135,
+        "prior_regular_cigarettes_per_day": 0.5710329780985147,
+        "regular_smoking_months": 0.5612989846437861,
+        "home_combustible_smoking_rules": 0.0031887219937903836,
+        "social_satisfaction": 0.0011747923135017203
+      },
+      "median_followup_months": 35.53182751540041,
+      "maximum_display_months": 60,
+      "exclusions": {
+        "no_eligible_baseline_with_a_follow_up_interview": 48875
+      }
+    },
+    "current": {
+      "people": 14258,
+      "baseline_rows": 16341,
+      "events": 5837,
+      "event_rows": 6696,
+      "no_event_observed_before_followup_ended": 8421,
+      "followup_interview_distribution": {
+        "1": 5470,
+        "2": 2897,
+        "3": 2026,
+        "4": 2272,
+        "5": 1030,
+        "6": 731,
+        "7": 1915
+      },
+      "baseline_wave_distribution": {
+        "1": 9282,
+        "2": 1282,
+        "3": 1079,
+        "4": 2103,
+        "5": 985,
+        "6": 702,
+        "7": 908
+      },
+      "rows_per_person": {
+        "1": 12287,
+        "2": 1860,
+        "3": 110,
+        "4": 1
+      },
+      "observation_end_reasons": {
+        "end_of_consecutive_observation": 9627,
+        "first_observed_event": 6696,
+        "unknown_status": 18
+      },
+      "splits": {
+        "calibration": {
+          "people": 1426,
+          "rows": 1633,
+          "events": 584
+        },
+        "test": {
+          "people": 2139,
+          "rows": 2451,
+          "events": 875
+        },
+        "train": {
+          "people": 8554,
+          "rows": 9795,
+          "events": 3502
+        },
+        "validation": {
+          "people": 2139,
+          "rows": 2462,
+          "events": 876
+        }
+      },
+      "feature_missingness": {
+        "age_band": 0.00012239153050608897,
+        "education_level": 0.005324031577014871,
+        "employment_status": 0.0068539257083409825,
+        "electronic_nicotine_p30d": 0.006241968055810538,
+        "household_tobacco_any": 0.14705342390306592,
+        "mental_health": 0.0025702221406278683,
+        "emotional_problems_7d": 0.003243375558411358,
+        "cigarettes_per_day": 0.03304571323664402,
+        "minutes_to_first_cigarette": 0.023254390796156908,
+        "regular_smoking_months": 0.2904962976562022,
+        "tried_to_quit_12m": 0.011015237745548008,
+        "quit_plan_timeframe": 0.22556759072272198,
+        "tobacco_addiction_self": 0.008750994431185362,
+        "home_combustible_smoking_rules": 0.004100116271953981
+      },
+      "median_followup_months": 38.012320328542096,
+      "maximum_display_months": 60,
+      "exclusions": {
+        "no_eligible_baseline_with_a_follow_up_interview": 45029
+      }
+    },
+    "never": {
+      "people": 28604,
+      "baseline_rows": 29803,
+      "events": 2110,
+      "event_rows": 2134,
+      "no_event_observed_before_followup_ended": 26494,
+      "followup_interview_distribution": {
+        "1": 7791,
+        "2": 5474,
+        "3": 4172,
+        "4": 3980,
+        "5": 1700,
+        "6": 1203,
+        "7": 5483
+      },
+      "baseline_wave_distribution": {
+        "1": 12925,
+        "2": 1508,
+        "3": 1607,
+        "4": 4293,
+        "5": 3392,
+        "6": 3132,
+        "7": 2946
+      },
+      "rows_per_person": {
+        "1": 27424,
+        "2": 1161,
+        "3": 19
+      },
+      "observation_end_reasons": {
+        "end_of_consecutive_observation": 27618,
+        "first_observed_event": 2134,
+        "unknown_status": 51
+      },
+      "splits": {
+        "calibration": {
+          "people": 2860,
+          "rows": 2977,
+          "events": 211
+        },
+        "test": {
+          "people": 4292,
+          "rows": 4475,
+          "events": 317
+        },
+        "train": {
+          "people": 17162,
+          "rows": 17899,
+          "events": 1266
+        },
+        "validation": {
+          "people": 4290,
+          "rows": 4452,
+          "events": 316
+        }
+      },
+      "feature_missingness": {
+        "age_band": 0.000167768345468577,
+        "education_level": 0.005267926047713318,
+        "employment_status": 0.006475858135087072,
+        "electronic_nicotine_p30d": 0.0021138811529040702,
+        "household_tobacco_any": 0.08250847230144616,
+        "mental_health": 0.001845451800154347,
+        "emotional_problems_7d": 0.002281649498372647,
+        "alcohol_days_30d": 0.5748079052444385,
+        "alcohol_drinks_per_drinking_day": 0.5841022715833977,
+        "home_combustible_smoking_rules": 0.004127101298526994,
+        "sex_recorded": 0.0016776834546857698,
+        "traditional_cigar_p30d": 0.004965943025869879,
+        "cigarillo_p30d": 0.01305237727745529,
+        "filtered_cigar_p30d": 0.01305237727745529,
+        "hookah_p30d": 0.0007717343891554541,
+        "smokeless_tobacco_p30d": 0.0025500788511223704,
+        "snus_p30d": 0.001946112807435493
+      },
+      "median_followup_months": 60.97741273100616,
+      "maximum_display_months": 60,
+      "exclusions": {
+        "no_eligible_baseline_with_a_follow_up_interview": 30683
+      }
+    }
+  },
+  "wave_audit": [
+    {
+      "wave": 1,
+      "interviews": 32320,
+      "sha256": "82934e96cca68fa8fa84abf18938fd58f6ea6559082a2f205744cd9156baf4ac"
+    },
+    {
+      "wave": 2,
+      "interviews": 28362,
+      "sha256": "97111dbfcc48573b66d650ef9abf2affc5f9f6d2992642ab7f118d06f758dca7"
+    },
+    {
+      "wave": 3,
+      "interviews": 28148,
+      "sha256": "00abb51d75d2eec6675a4d5679532b380b9ce072e5e29e43ac649225b3159b30"
+    },
+    {
+      "wave": 4,
+      "interviews": 33822,
+      "sha256": "569fb5f5d8cd5e2bf3f7a408afc4ef5ea2d763cffa74fd7c758377bda28346dd"
+    },
+    {
+      "wave": 5,
+      "interviews": 34309,
+      "sha256": "dbbdeec57131cccd4f1e4e62f8c14820d91b2e1cd1dbefe85d0e63093f02e04e"
+    },
+    {
+      "wave": 6,
+      "interviews": 30516,
+      "sha256": "b51cfa4fa1d1397b9cb7990506cdca575c4f0de9c5b7ea46bb1f22cc5e624a50"
+    },
+    {
+      "wave": 7,
+      "interviews": 30801,
+      "sha256": "37c4fe9dc12366d0c989b4ea766432a2eb77f2aa5a96f2573c8fdd4231423109"
+    },
+    {
+      "wave": 8,
+      "interviews": 31477,
+      "sha256": "57ae5e526235997f4d9e32e5cc48bc42d3cfa75b9f34751951fe4c70f5940479"
+    }
+  ]
+}

@@ -19,7 +19,7 @@ def load_script(name):
 def test_current_bundle_matches_fictional_predictions():
     result = load_script('verify_runtime').verify(ROOT)
     assert result['status'] == 'passed'
-    assert len(result['fictional_profiles_verified']) == 9
+    assert len(result['fictional_profiles_verified']) == 10
     assert not result['raw_or_processed_data_required']
 
 

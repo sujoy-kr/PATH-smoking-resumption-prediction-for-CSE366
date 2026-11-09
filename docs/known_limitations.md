@@ -1,8 +1,8 @@
 # Known limitations
 
-The v2.3 models resolve the v2.1 design and logic flaws (see the table in
+The v2.4 models resolve the v2.1 design and logic flaws (see the table in
 [longitudinal_v2_2.md](longitudinal_v2_2.md)) and extend coverage to every adult
-([longitudinal_v2_3.md](longitudinal_v2_3.md)). What remains is inherent to the
+([longitudinal_v2_4.md](longitudinal_v2_4.md)). What remains is inherent to the
 data or the question:
 
 1. Interview dates are not in the public-use files; wave-window midpoints are used.

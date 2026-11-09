@@ -31,14 +31,15 @@ def main():
     frame = pd.read_parquet(ROOT/config['data_dir']/'participants.parquet')
     for name, summary in bundle_summary(bundle).items():
         part = frame.loc[frame['population'].eq(name)]
-        assert not part['PERSONID'].duplicated().any()
+        assert not part.duplicated(['PERSONID', 'starting_wave']).any()
         assert part['event'].isin([0, 1]).all() and part['right_months'].gt(0).all()
         ev = part['event'].eq(1)
         assert (part.loc[ev, 'left_months'] < part.loc[ev, 'right_months']).all()
         assert part.loc[~ev, 'left_months'].eq(0).all()
         assert part['end_wave'].gt(part['starting_wave']).all() and part['starting_wave'].between(1, 7).all()
         assert set(part['split']) == {'train', 'validation', 'calibration', 'test'}
-        assert len(part) == summary['people'] and int(part['event'].sum()) == summary['events']
+        persons = part.groupby('PERSONID')['event'].max()
+        assert len(persons) == summary['people'] and int(persons.sum()) == summary['events'] and len(part) == summary['baseline_rows']
         pd.testing.assert_series_equal(split_participants(part.drop(columns=['split', 'population']), config['seed'])['split'], part['split'])
     if args.rebuild_cohort:
         rebuilt, _ = build_cohorts(ROOT, config)

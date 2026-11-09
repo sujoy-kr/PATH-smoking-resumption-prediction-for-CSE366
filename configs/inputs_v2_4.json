@@ -1,0 +1,315 @@
+{
+  "age_band": {
+    "kind": "category",
+    "options": {
+      "1": "18–24",
+      "2": "25–34",
+      "3": "35–44",
+      "4": "45–54",
+      "5": "55–64",
+      "6": "65+"
+    },
+    "prompt": "What is your age group?"
+  },
+  "education_level": {
+    "kind": "category",
+    "options": {
+      "1": "Less than high school",
+      "2": "GED",
+      "3": "High school graduate",
+      "4": "Some college or associate degree",
+      "5": "Bachelor or advanced degree"
+    },
+    "prompt": "What is your highest completed education?"
+  },
+  "employment_status": {
+    "kind": "category",
+    "options": {
+      "1": "Full-time, at least 35 hours/week",
+      "2": "Part-time, 15–34 hours/week",
+      "3": "Part-time, under 15 hours/week",
+      "4": "Not currently working for pay"
+    },
+    "prompt": "What is your current work situation?"
+  },
+  "last_cigarette_recency_days": {
+    "kind": "number_unit",
+    "prompt": "How long has it been since your last cigarette?",
+    "units": {
+      "1": [
+        "Days",
+        1.0
+      ],
+      "2": [
+        "Months",
+        30.4375
+      ],
+      "3": [
+        "Years",
+        365.25
+      ]
+    },
+    "minimum": 0,
+    "maximum": null,
+    "default_unit": "2",
+    "minimum_exclusive": 0
+  },
+  "electronic_nicotine_p30d": {
+    "kind": "category",
+    "options": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "prompt": "Have you used electronic nicotine products in the past 30 days?"
+  },
+  "household_tobacco_any": {
+    "kind": "category",
+    "options": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "prompt": "Does anyone else at home use tobacco or nicotine?"
+  },
+  "home_combustible_smoking_rules": {
+    "kind": "category",
+    "options": {
+      "1": "Not allowed anywhere or at any time",
+      "2": "Allowed in some places or at some times",
+      "3": "Allowed anywhere and at any time"
+    },
+    "prompt": "Which statement best describes the rules about smoking products that are burned inside your home?"
+  },
+  "physical_health": {
+    "kind": "category",
+    "options": {
+      "1": "Excellent",
+      "2": "Very good",
+      "3": "Good",
+      "4": "Fair",
+      "5": "Poor"
+    },
+    "prompt": "In general, how would you rate your physical health?"
+  },
+  "mental_health": {
+    "kind": "category",
+    "options": {
+      "1": "Excellent",
+      "2": "Very good",
+      "3": "Good",
+      "4": "Fair",
+      "5": "Poor"
+    },
+    "prompt": "How would you rate your overall mental health?"
+  },
+  "social_satisfaction": {
+    "kind": "category",
+    "options": {
+      "1": "Extremely satisfied",
+      "2": "Very satisfied",
+      "3": "Moderately satisfied",
+      "4": "A little satisfied",
+      "5": "Not at all satisfied"
+    },
+    "prompt": "In general, how satisfied are you with your social activities and relationships?"
+  },
+  "emotional_problems_7d": {
+    "kind": "category",
+    "options": {
+      "1": "Never",
+      "2": "Rarely",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Very often"
+    },
+    "prompt": "How often have emotional problems bothered you in the past 7 days?"
+  },
+  "sex_recorded": {
+    "kind": "category",
+    "options": {
+      "1": "Male",
+      "2": "Female"
+    },
+    "prompt": "What is your sex?"
+  },
+  "traditional_cigar_p30d": {
+    "kind": "category",
+    "options": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "prompt": "In the past 30 days, have you smoked traditional cigars?"
+  },
+  "cigarillo_p30d": {
+    "kind": "category",
+    "options": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "prompt": "In the past 30 days, have you smoked cigarillos?"
+  },
+  "filtered_cigar_p30d": {
+    "kind": "category",
+    "options": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "prompt": "In the past 30 days, have you smoked filtered cigars?"
+  },
+  "hookah_p30d": {
+    "kind": "category",
+    "options": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "prompt": "In the past 30 days, have you used a hookah (waterpipe)?"
+  },
+  "smokeless_tobacco_p30d": {
+    "kind": "category",
+    "options": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "prompt": "In the past 30 days, have you used smokeless tobacco (not snus)?"
+  },
+  "snus_p30d": {
+    "kind": "category",
+    "options": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "prompt": "In the past 30 days, have you used snus?"
+  },
+  "depressive_problem_recency": {
+    "kind": "category",
+    "options": {
+      "1": "Past month",
+      "2": "2–12 months ago",
+      "3": "Over a year ago",
+      "4": "Never"
+    },
+    "prompt": "When did you last have a problem with depression?"
+  },
+  "anxiety_problem_recency": {
+    "kind": "category",
+    "options": {
+      "1": "Past month",
+      "2": "2–12 months ago",
+      "3": "Over a year ago",
+      "4": "Never"
+    },
+    "prompt": "When did you last have a problem with anxiety?"
+  },
+  "tried_to_quit_12m": {
+    "kind": "category",
+    "options": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "prompt": "In the past 12 months, have you tried to quit using tobacco completely?"
+  },
+  "quit_plan_timeframe": {
+    "kind": "category",
+    "options": {
+      "1": "In the next 7 days",
+      "2": "In the next 30 days",
+      "3": "In the next 6 months",
+      "4": "In the next year",
+      "5": "More than one year from now",
+      "6": "I do not plan to quit"
+    },
+    "prompt": "When do you plan to quit using tobacco for good?"
+  },
+  "tobacco_addiction_self": {
+    "kind": "category",
+    "options": {
+      "1": "No, not at all",
+      "2": "Yes, somewhat addicted",
+      "3": "Yes, very addicted"
+    },
+    "prompt": "Do you consider yourself addicted to tobacco products?"
+  },
+  "alcohol_days_30d": {
+    "kind": "number",
+    "prompt": "On how many of the past 30 days did you drink alcohol?",
+    "minimum": 0,
+    "maximum": 30
+  },
+  "alcohol_drinks_per_drinking_day": {
+    "kind": "number",
+    "prompt": "On days when you drink, about how many drinks do you have?",
+    "minimum": 1,
+    "maximum": 90
+  },
+  "prior_regular_cigarettes_per_day": {
+    "kind": "number_unit",
+    "prompt": "When you last smoked regularly, about how many did you smoke per day?",
+    "units": {
+      "1": [
+        "Cigarettes",
+        1.0
+      ],
+      "2": [
+        "Packs",
+        20.0
+      ]
+    },
+    "minimum": 0,
+    "minimum_exclusive": 0,
+    "maximum": null,
+    "default_unit": "1"
+  },
+  "regular_smoking_months": {
+    "kind": "number_unit",
+    "prompt": "For about how long have you smoked (or did you smoke) cigarettes regularly?",
+    "units": {
+      "1": [
+        "Months",
+        1.0
+      ],
+      "2": [
+        "Years",
+        12.0
+      ]
+    },
+    "minimum": 0,
+    "minimum_exclusive": 0,
+    "maximum": null,
+    "default_unit": "2"
+  },
+  "cigarettes_per_day": {
+    "kind": "number_unit",
+    "prompt": "On days you smoke, about how many cigarettes do you smoke per day?",
+    "units": {
+      "1": [
+        "Cigarettes",
+        1.0
+      ],
+      "2": [
+        "Packs",
+        20.0
+      ]
+    },
+    "minimum": 0,
+    "minimum_exclusive": 0,
+    "maximum": null,
+    "default_unit": "1"
+  },
+  "minutes_to_first_cigarette": {
+    "kind": "number_unit",
+    "prompt": "How soon after waking do you smoke your first cigarette?",
+    "units": {
+      "1": [
+        "Minutes",
+        1.0
+      ],
+      "2": [
+        "Hours",
+        60.0
+      ]
+    },
+    "minimum": 0,
+    "minimum_exclusive": 0,
+    "maximum": null,
+    "default_unit": "1"
+  }
+}

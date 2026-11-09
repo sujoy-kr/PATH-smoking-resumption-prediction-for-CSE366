@@ -16,7 +16,7 @@ import numpy as np
 import pandas as pd
 
 from path_project.evaluation import BoundaryError
-from path_project.final_inputs import encode_app_answers
+from path_project.inputs import encode_answers, load_inputs
 from path_project.study import exact_feature_shap
 
 UNKNOWN = ("don't know", 'dont know', 'prefer not')
@@ -54,8 +54,7 @@ def assess_available(root, bundle, answers, eligibility):
     for value, gate in zip(eligibility, gates):
         if value is not None and value not in gate['options']:
             raise BoundaryError('Unknown profile response.')
-    app_features = [q['feature'] for q in spec['questions']]
-    if set(answers)-set(app_features):
+    if set(answers)-set(load_inputs(root)):
         raise BoundaryError('Only trained questionnaire inputs are accepted.')
     population, flag = route(eligibility)
     if population is None:
@@ -73,7 +72,7 @@ def assess_available(root, bundle, answers, eligibility):
         past30 = eligibility[3]
         if math.isfinite(days) and ((past30 == 'Yes' and days > 30.5) or (past30 == 'No' and days <= 30.5)):
             return suppressed('Your answers conflict: the past-30-day smoking answer and the time since your last cigarette do not match. Please correct one of them.')
-    values, reasons = encode_app_answers(root, usable, 7, allow_recent=True)
+    values, reasons = encode_answers(root, usable, features)
     supplied = sum(reasons[f] == 'observed' for f in features)
     required = math.ceil(len(features)*config['minimum_answers_fraction'])
     needs_recency = 'last_cigarette_recency_days' in features
@@ -90,7 +89,9 @@ def assess_available(root, bundle, answers, eligibility):
     category = 'Lower' if p <= low else 'Moderate' if p <= high else 'Higher'
     maximum = max(horizons)
     median = float(model.median_months(row)[0]) if curve[-1] >= .5 else None
-    base, factors = exact_feature_shap(model, pop['background'], row, horizon)
+    base, factors = exact_feature_shap(model, pop['background'], row, horizon, result['selected_groups'])
+    low_ci, high_ci = model.risk_interval(row, horizons, config['prediction_interval_level'])
+    p_low, p_high = float(model.risk_interval(row, [horizon], config['prediction_interval_level'])[0][0, 0]), float(model.risk_interval(row, [horizon], config['prediction_interval_level'])[1][0, 0])
     unknown_context = flag or (population == 'former' and _unknown(eligibility[3]))
     mode = 'profile_unconfirmed' if unknown_context else 'assessment'
     support = {'assessment': 'Matches the study population', 'profile_unconfirmed': 'Population assumed (some context answers unknown)'}[mode]
@@ -118,7 +119,8 @@ def assess_available(root, bundle, answers, eligibility):
         'population': population, 'population_label': label['label'], 'outcome': label['outcome'],
         'outcome_long': label['outcome_long'], 'missing_inputs': missing,
         'probability': p, 'horizon_months': horizon,
-        'curve': [{'months': h, 'probability': float(v)} for h, v in zip(horizons, curve)],
+        'probability_interval': [p_low, p_high], 'interval_level': config['prediction_interval_level'],
+        'curve': [{'months': h, 'probability': float(v), 'low': float(lo), 'high': float(hi)} for h, v, lo, hi in zip(horizons, curve, low_ci[0], high_ci[0])],
         'risk_level': category, 'risk_reference_months': horizon, 'risk_reference_probability': p,
         'risk_cuts': [low, high], 'median_months': median,
         'conditional_median_months': float(model.conditional_median(row, maximum)[0]),

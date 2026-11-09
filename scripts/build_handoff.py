@@ -9,7 +9,7 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[1]
 DIRECTORIES = ['app', 'src', 'scripts', 'configs', 'docs', 'reports', 'tests']
 ROOT_NAMES = ['.gitignore', '.gitattributes', 'pyproject.toml', 'run_app.py']
-MODEL = 'artifacts/longitudinal_v2_3/model.json'
+MODEL = 'artifacts/longitudinal_v2_4/model.json'
 
 
 def handoff_files(root):

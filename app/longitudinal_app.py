@@ -40,41 +40,26 @@ except Exception:  # unreadable/incompatible pickle, dependency mismatch, tamper
     st.stop()
 
 question_spec = json.loads((ROOT/'configs/app_questions.json').read_text())
-questions = {q['feature']: q for q in question_spec['questions']}
+inputs = json.loads((ROOT/'configs/inputs_v2_4.json').read_text())
 config = bundle['config']
-labels = {
-    'age_band': 'Age group', 'education_level': 'Education', 'employment_status': 'Employment',
-    'last_cigarette_recency_days': 'Time since last cigarette', 'electronic_nicotine_p30d': 'Electronic nicotine use',
-    'household_tobacco_any': 'Household tobacco exposure', 'mental_health': 'Mental health',
-    'emotional_problems_7d': 'Recent emotional difficulties', 'home_combustible_smoking_rules': 'Home smoking rules',
-    'physical_health': 'Physical health', 'social_satisfaction': 'Social satisfaction'
-}
-prompts = {
-    'age_band': 'What is your age group?',
-    'education_level': 'What is your highest completed education?',
-    'employment_status': 'What is your current work situation?',
-    'electronic_nicotine_p30d': 'Have you used electronic nicotine products in the past 30 days?',
-    'household_tobacco_any': 'Does anyone else at home use tobacco or nicotine?',
-    'mental_health': 'How would you rate your overall mental health?',
-    'emotional_problems_7d': 'How often have emotional problems bothered you in the past 7 days?'
-}
+FILL = {'age_band': '3', 'education_level': '3', 'employment_status': '1', 'electronic_nicotine_p30d': '0',
+    'household_tobacco_any': '0', 'mental_health': '3', 'emotional_problems_7d': '3', 'sex_recorded': '2',
+    'home_combustible_smoking_rules': '2', 'physical_health': '3', 'social_satisfaction': '3',
+    'traditional_cigar_p30d': '0', 'cigarillo_p30d': '0', 'filtered_cigar_p30d': '0', 'hookah_p30d': '0',
+    'smokeless_tobacco_p30d': '0', 'snus_p30d': '0', 'depressive_problem_recency': '4', 'anxiety_problem_recency': '4',
+    'alcohol_days_30d': 4, 'alcohol_drinks_per_drinking_day': 2,
+    'prior_regular_cigarettes_per_day': {'number': 1, 'unit': '2'}, 'regular_smoking_months': {'number': 10, 'unit': '2'},
+    'cigarettes_per_day': {'number': 10, 'unit': '1'}, 'minutes_to_first_cigarette': {'number': 30, 'unit': '1'},
+    'tried_to_quit_12m': '1', 'quit_plan_timeframe': '4', 'tobacco_addiction_self': '2'}
 GATES_QUIT = ['Yes', 'Yes', 'Not at all', 'No']
 presets = {
     'My assessment': {},
-    'Example · current smoker': {'_gates': ['Yes', 'Yes', 'Every day', 'Yes'], 'age_band': '3', 'education_level': '3', 'employment_status': '1',
-        'electronic_nicotine_p30d': '1', 'household_tobacco_any': '1', 'mental_health': '3', 'emotional_problems_7d': '3',
-        'home_combustible_smoking_rules': '2', 'physical_health': '3', 'social_satisfaction': '3'},
-    'Example · never smoked regularly': {'_gates': ['Yes', 'No', 'Not at all', 'No'], 'age_band': '1', 'education_level': '3', 'employment_status': '1',
-        'electronic_nicotine_p30d': '1', 'household_tobacco_any': '0', 'mental_health': '2', 'emotional_problems_7d': '2',
-        'home_combustible_smoking_rules': '1', 'physical_health': '2', 'social_satisfaction': '2'},
-    'Example · recent quit': {'_gates': GATES_QUIT,'age_band': '2', 'education_level': '4', 'employment_status': '1',
-        'last_cigarette_recency_days': {'number': 6, 'unit': '2'}, 'electronic_nicotine_p30d': '1',
-        'household_tobacco_any': '1', 'mental_health': '4', 'emotional_problems_7d': '4',
-        'home_combustible_smoking_rules': '2', 'physical_health': '3', 'social_satisfaction': '3'},
-    'Example · longer quit': {'_gates': GATES_QUIT, 'age_band': '5', 'education_level': '5', 'employment_status': '1',
-        'last_cigarette_recency_days': {'number': 8, 'unit': '3'}, 'electronic_nicotine_p30d': '0',
-        'household_tobacco_any': '0', 'mental_health': '2', 'emotional_problems_7d': '2',
-        'home_combustible_smoking_rules': '1', 'physical_health': '2', 'social_satisfaction': '2'}
+    'Example · current smoker': {**FILL, '_gates': ['Yes', 'Yes', 'Every day', 'Yes'], 'electronic_nicotine_p30d': '1', 'household_tobacco_any': '1'},
+    'Example · never smoked regularly': {**FILL, '_gates': ['Yes', 'No', 'Not at all', 'No'], 'age_band': '1', 'electronic_nicotine_p30d': '1'},
+    'Example · recent quit': {**FILL, '_gates': GATES_QUIT, 'last_cigarette_recency_days': {'number': 6, 'unit': '2'},
+        'electronic_nicotine_p30d': '1', 'household_tobacco_any': '1', 'mental_health': '4', 'emotional_problems_7d': '4'},
+    'Example · longer quit': {**FILL, '_gates': GATES_QUIT, 'age_band': '5', 'education_level': '5',
+        'last_cigarette_recency_days': {'number': 8, 'unit': '3'}, 'mental_health': '2', 'emotional_problems_7d': '2'}
 }
 with st.expander('Try an example assessment'):
     preset = st.radio('Assessment profile', list(presets), index=0, horizontal=True, key='assessment_profile')
@@ -101,51 +86,55 @@ population, context_flag = route(eligibility)
 pop = bundle['populations'].get(population) if population else None
 features = pop['model'].features if pop else []
 answers, displayed = {}, []
+HELP = {'mental_health': 'Includes stress, depression and problems with emotions.',
+        'emotional_problems_7d': 'For example, anxiety, depression or irritability.',
+        'household_tobacco_any': 'Includes cigarettes, cigars, electronic nicotine and other tobacco/nicotine products.'}
 with st.container(border=True, key='situation_card'):
     heading('02', 'A little about your current situation', 'Answer what you can. Unknown answers use the model’s fitted missing-value handling, with reduced personal support.')
     if pop is None:
-        _, reason = (None, None) if all(v is not None for v in eligibility) and population else route(eligibility)
-        st.info('Answer the four profile questions above so we can choose the model fitted for your situation. '
-                + (reason if isinstance(reason, str) else ''))
+        _, reason = route(eligibility)
+        st.info('Answer the four profile questions above so we can choose the model fitted for your situation. ' + (reason if isinstance(reason, str) else ''))
     else:
         st.caption(f'Model used: **{pop["spec"]["label"]}** · outcome: {pop["spec"]["outcome_long"]}.')
     columns = st.columns(2, gap='large')
-    categories = [f for f in features if f != 'last_cigarette_recency_days']
-    for i, feature in enumerate(categories):
-        q = questions[feature]
-        options = {**q['options'], 'dont_know': 'Not sure / prefer not to say'}
-        if feature == 'household_tobacco_any':
-            options['not_applicable'] = 'I live alone / not applicable'
-        raw = example.get(feature)
+    for i, feature in enumerate(features):
+        item, raw = inputs[feature], example.get(feature)
+        key = f'{prefix}_{feature}'
         with columns[i % 2]:
-            value = st.radio(prompts.get(feature, q['waves']['7']['prompt']), list(options),
-                format_func=lambda v, options=options: options[v],
-                index=list(options).index(raw) if raw is not None else None,
-                key=f'{prefix}_{feature}',
-                horizontal=feature in ['age_band', 'electronic_nicotine_p30d', 'household_tobacco_any'],
-                help='Includes stress, depression and problems with emotions.' if feature == 'mental_health' else
-                     'For example, anxiety, depression or irritability.' if feature == 'emotional_problems_7d' else
-                     'Includes cigarettes, cigars, electronic nicotine and other tobacco/nicotine products.' if feature == 'household_tobacco_any' else None)
-        answers[feature] = value if value is not None else 'unanswered'
-        displayed.append({'Question': labels[feature], 'Answer': options[value] if value is not None else 'Not answered'})
+            if item['kind'] == 'category':
+                options = {**item['options'], 'dont_know': 'Not sure / prefer not to say'}
+                if feature == 'household_tobacco_any':
+                    options['not_applicable'] = 'I live alone / not applicable'
+                value = st.radio(item['prompt'], list(options), format_func=lambda v, o=options: o[v],
+                    index=list(options).index(raw) if raw is not None else None, key=key,
+                    horizontal=len(options) <= 4, help=HELP.get(feature))
+                answers[feature] = value if value is not None else 'unanswered'
+                shown = options[value] if value is not None else 'Not answered'
+            elif item['kind'] == 'number':
+                if key not in st.session_state and raw is not None:
+                    st.session_state[key] = raw
+                number = st.number_input(item['prompt'], min_value=item['minimum'], max_value=item['maximum'], step=1,
+                    value=None, placeholder='Enter a whole number', key=key)
+                answers[feature] = int(number) if number is not None else 'unanswered'
+                shown = f'{number}' if number is not None else 'Not answered'
+            else:
+                if key not in st.session_state and raw is not None:
+                    st.session_state[key] = raw['number']
+                st.markdown(f'**{item["prompt"]}**')
+                left, right = st.columns([1, 2], gap='small')
+                number = left.number_input('Amount', min_value=1, max_value=999, step=1, value=None,
+                    placeholder='Whole number', key=key, label_visibility='collapsed')
+                units = {k: v[0] for k, v in item['units'].items()}
+                unit = right.radio('Unit', list(units), format_func=lambda v, u=units: u[v],
+                    index=list(units).index(raw['unit'] if raw else item['default_unit']), horizontal=True,
+                    key=key+'_unit', label_visibility='collapsed')
+                answers[feature] = {'number': number, 'unit': unit} if number is not None else 'unanswered'
+                shown = f'{number} {units[unit].lower()}' if number is not None else 'Not answered'
+        displayed.append({'Question': item['prompt'], 'Answer': shown})
     if 'last_cigarette_recency_days' in features:
-        st.divider()
-        st.markdown('**How long has it been since your last cigarette?**')
-        left, right = st.columns([1, 2], gap='large')
-        raw = example.get('last_cigarette_recency_days', {})
-        recency_key = f'{prefix}_recency_number'
-        if recency_key not in st.session_state and raw.get('number') is not None:
-            st.session_state[recency_key] = raw['number']
-        number = left.number_input('Amount', min_value=1, max_value=99, step=1,
-            value=None, placeholder='Enter a whole number', key=recency_key)
-        units = {'1': 'Days', '2': 'Months', '3': 'Years'}
-        unit = right.radio('Time unit', list(units), format_func=lambda v: units[v],
-            index=list(units).index(raw.get('unit', '2')), horizontal=True, key=f'{prefix}_recency_unit')
-        answers['last_cigarette_recency_days'] = {'number': number, 'unit': unit} if number is not None else 'unanswered'
-        displayed.append({'Question': labels['last_cigarette_recency_days'], 'Answer': f'{number} {units[unit].lower()}' if number is not None else 'Not answered'})
-        st.caption('Entering an amount records your answer automatically. It must agree with your past-30-day smoking answer above.')
+        st.caption('Your last-cigarette answer must agree with your past-30-day smoking answer above.')
 
-supplied = sum(isinstance(v, dict) or v in questions[f]['options'] for f, v in answers.items())
+supplied = sum(v != 'unanswered' and v not in ('dont_know', 'prefer_not_to_answer', 'not_applicable') for v in answers.values())
 gates_answered = sum(v is not None for v in eligibility)
 st.progress((supplied+gates_answered)/(len(features)+4), text=f'{supplied} of {len(features)} answers entered · {gates_answered} of 4 profile questions')
 if pop:
@@ -183,6 +172,8 @@ if output:
     st.caption(f'Outcome: {output["outcome_long"]}. Each percentage is cumulative by that approximate month horizon, not an additional monthly risk.')
     a, b, c = st.columns(3)
     a.metric(f'Chance by approx. {output["horizon_months"]} months', f'{100*output["probability"]:.1f}%')
+    lo_p, hi_p = output['probability_interval']
+    a.caption(f'{100*output["interval_level"]:.0f}% uncertainty range: **{100*lo_p:.1f}–{100*hi_p:.1f}%**')
     b.metric(f'Relative level · {output["risk_reference_months"]} months', output['risk_level'])
     if output['median_months'] is not None:
         c.metric('Approximate median observation time', f'{round(output["median_months"])} months')
@@ -199,21 +190,23 @@ if output:
         st.caption(f'At {output["horizon_months"]} months, the {evidence_name} had held-out ROC-AUC {reliability["test_roc_auc"]:.3f}{interval_text}. This is group-level discrimination, not your chance of the prediction being correct or validation for a partial/out-of-profile scenario. Mean predicted risk was {100*reliability["test_mean_probability"]:.1f}% versus an observed range of {100*reliability["test_observed_risk_bounds"][0]:.1f}–{100*reliability["test_observed_risk_bounds"][1]:.1f}%.')
     outlook_tab, factors_tab, details_tab = st.tabs(['Probability timeline', 'Contributing factors', 'How to read your result'])
     with outlook_tab:
-        cards = ''.join(f'<div class="outlook-card {"featured" if p["months"] == 18 else ""}"><dt>Within ≈ {p["months"]} months</dt><dd>{100*p["probability"]:.1f}%</dd><small>{"Cumulative · not better than baseline" if not output["horizon_evidence"][str(p["months"])]["beats_no_input_baseline"] else "Cumulative probability"}</small></div>' for p in output['curve'])
+        cards = ''.join(f'<div class="outlook-card {"featured" if p["months"] == 18 else ""}"><dt>Within ≈ {p["months"]} months</dt><dd>{100*p["probability"]:.1f}%</dd><small>{100*p["low"]:.0f}–{100*p["high"]:.0f}% range · </small><small>{"Cumulative · not better than baseline" if not output["horizon_evidence"][str(p["months"])]["beats_no_input_baseline"] else "Cumulative probability"}</small></div>' for p in output['curve'])
         st.html('<dl class="outlook-grid" aria-label="Probabilities by approximate follow-up horizon">'+cards+'</dl>')
-        chart_data = pd.DataFrame(output['curve']).assign(percentage=lambda f: 100*f['probability'])
+        chart_data = pd.DataFrame(output['curve']).assign(percentage=lambda f: 100*f['probability'], low_pct=lambda f: 100*f['low'], high_pct=lambda f: 100*f['high'])
         base = alt.Chart(chart_data).encode(
             x=alt.X('months:Q', title='Approximate months from your assessment', axis=alt.Axis(values=[p['months'] for p in output['curve']], grid=False)),
             y=alt.Y('percentage:Q', title='Cumulative probability (%)', scale=alt.Scale(domain=[0, 100])),
             tooltip=[alt.Tooltip('months:Q', title='Approximate months'), alt.Tooltip('percentage:Q', title='Probability (%)', format='.1f')])
-        chart = (base.mark_area(color='#087f72', opacity=.08)+base.mark_line(color='#087f72', strokeWidth=3, point=alt.OverlayMarkDef(size=65, filled=True))).properties(height=280).configure_view(strokeWidth=0)
+        band = alt.Chart(chart_data).mark_area(color='#087f72', opacity=.16).encode(x='months:Q', y=alt.Y('low_pct:Q', scale=alt.Scale(domain=[0, 100])), y2='high_pct:Q')
+        chart = (band+base.mark_line(color='#087f72', strokeWidth=3, point=alt.OverlayMarkDef(size=65, filled=True))).properties(height=280).configure_view(strokeWidth=0)
         st.altair_chart(chart, width='stretch')
+        st.caption(f'Shaded band and ranges: {100*output["interval_level"]:.0f}% interval from {bundle["populations"][output["population"]]["results"]["prediction_interval"]["replicates"]} bootstrap refits of the model. It shows how much the estimate could shift with different training samples; it is not a range for what will happen to one person and does not cover model misspecification.')
         if output['median_months'] is None:
             st.write(f'The modeled probability does **not reach 50% within {output["conditional_window_months"]} months**. A return is therefore not predicted as more likely than not within that window.')
         st.html(f'<div class="note"><strong>About the timing:</strong> if the outcome is observed within {output["conditional_window_months"]} months, the model’s conditional median observation time is approximately <strong>{round(output["conditional_median_months"])} months</strong>. This conditional estimate does not mean a return is likely for the person represented by this scenario. Month estimates use assumed survey timing, not a measured first-cigarette date.</div>')
     with factors_tab:
         st.write(f'These factors explain your **{output["horizon_months"]}-month probability**, relative to a fixed model reference. They show model associations, not causes.')
-        table = pd.DataFrame([{'Factor': labels[f['feature']], 'Contribution': 100*f['contribution']} for f in output['factors']], columns=['Factor', 'Contribution'])
+        table = pd.DataFrame([{'Factor': results['selected_groups'][f['feature']]['label'], 'Contribution': 100*f['contribution']} for f in output['factors']], columns=['Factor', 'Contribution'])
         factors_chart = alt.Chart(table).mark_bar(cornerRadiusEnd=4).encode(
             x=alt.X('Contribution:Q', title='Contribution to probability (percentage points)'),
             y=alt.Y('Factor:N', sort=table['Factor'].tolist(), title=None),
@@ -255,4 +248,6 @@ if output and output['status'] == 'scored':
     inside = 'inside' if reference['predicted_within_observed_bounds'] else 'outside'
     outside = [h for h in results['supported_horizons_months'] if not results['metrics'][str(h)]['model']['predicted_within_observed_bounds']]
     st.caption(f'Calibration: at {config["default_horizon_months"]} months the mean held-out estimate was {100*reference["mean_predicted_risk"]:.1f}%, {inside} the {100*low:.1f}–{100*high:.1f}% observed-risk range' + (f'; it fell outside the range at ≈ {", ".join(map(str, outside))} months' if outside else '') + '. Percentages are not precise personal probabilities.')
+    if reference['mean_predicted_risk'] > reference['observed_risk_upper']:
+        st.warning(f'Heads-up: for this group the average estimate at {config["default_horizon_months"]} months is above the simple observed-risk range, so absolute percentages may be somewhat high. Rankings and comparisons between answers are more reliable than the exact number.')
 st.html('<div class="page-footer"><span>reclaim / CSE366 · Interval-censored research model</span><span>Local inference · No answer files · No external prediction API</span></div>')

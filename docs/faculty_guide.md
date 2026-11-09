@@ -1,4 +1,4 @@
-# Faculty presentation guide — current v2.3 interval-censored model
+# Faculty presentation guide — current v2.4 interval-censored model
 
 This guide describes the active model. Restored reports and presentation notes
 for the older next-survey classifier are historical references.
@@ -24,20 +24,24 @@ people). Under-18s are not covered because the adult PATH files contain no minor
 smokers: first reported stopping (may be temporary). Never-established: first reported
 current established smoking. Not exact dates or lasting change.
 
-**How are months obtained?** Interval-censored: an event lies between two interviews;
-interview times are wave-window midpoints.
+**How did you use the data more efficiently?** 29 candidate inputs (up from 11) with
+greedy selection on validation; one row per state entry (more people-time without
+survivor bias); a baseline hazard per survey period; weighted and subgroup checks.
+Reusing every wave for the same unbroken stay was tried and rejected: it overpredicted.
 
-**What was selected?** Per population, an interval-censored penalized proportional-hazards
-model with a piecewise baseline; inputs and penalty chosen on validation log-likelihood.
+**What performance can be claimed?** 36-month ROC-AUC 0.82 (former), 0.78 (current;
+0.69 before the extra smoking-dependence inputs), 0.77 (never-established); every shown horizon
+beats a no-input model. Honest caveat: for former and current smokers the mean estimate at
+36+ months is above a simple Kaplan-Meier observed range even though likelihood-based
+calibration checks look fine, so absolute percentages may be somewhat high. The cause is unresolved.
 
-**What performance can be claimed?** 36-month ROC-AUC 0.81 (former), 0.69 (current),
-0.78 (never-established); every shown horizon beats a no-input model.
-Current-smoker discrimination is modest. AUC is ranking, not "percent accurate".
+**What are the uncertainty ranges?** 95% ranges from 100 bootstrap refits: sampling
+uncertainty of the fitted model only, not individual outcome randomness.
 
 **How sure is an individual prediction?** Personal confidence is not validated. The app
 withholds a result only for under-18s, un-routable or contradictory answers, or too few answers.
 
-**Where do predictions come from?** `artifacts/longitudinal_v2_3/model.json`, plain
+**Where do predictions come from?** `artifacts/longitudinal_v2_4/model.json`, plain
 JSON coefficients and preprocessing parameters; no pickle and no participant
 rows (explanations use synthetic independent draws from training marginals).
 

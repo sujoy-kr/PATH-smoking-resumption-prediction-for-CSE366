@@ -56,6 +56,9 @@ def verify(root=ROOT):
                 raise ValueError(f'Fictional profile {case["name"]}: horizon result differs.')
         if not math.isclose(result['conditional_median_months'], saved['conditional_median_months'], rel_tol=0, abs_tol=1e-8):
             raise ValueError(f'Fictional profile {case["name"]}: timing differs.')
+        for got, want in zip(result['probability_interval'], saved['probability_interval'], strict=True):
+            if not math.isclose(got, want, rel_tol=0, abs_tol=1e-9):
+                raise ValueError(f'Fictional profile {case["name"]}: uncertainty range differs.')
         if len(result['factors']) != len(saved['factors']):
             raise ValueError('Explanation feature count differs.')
         for got, want in zip(result['factors'], saved['factors'], strict=True):
